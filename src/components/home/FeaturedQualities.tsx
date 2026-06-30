@@ -102,7 +102,7 @@ export default function FeaturedQualities() {
                   className="inline-flex items-center gap-2 text-sm font-medium tracking-widest uppercase transition-all duration-300 hover:opacity-70 group/link mt-auto"
                   style={{ color: "var(--color-text-primary)" }}
                 >
-                  <span>Send Enquiry</span>
+                  <span>Get a Quote</span>
                   <span className="transition-transform duration-300 group-hover/link:translate-x-1">
                     →
                   </span>

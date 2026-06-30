@@ -12,7 +12,7 @@ type Props = {
 export default function ContactCTABand({
   heading = "Let's Create Something Exceptional",
   subText = "Reach out to discuss your fabric requirements, request samples, or explore our latest collections.",
-  ctaLabel = "Send Enquiry",
+  ctaLabel = "Get a Quote",
   ctaHref = "/contact",
   dark = true,
 }: Props) {
@@ -57,7 +57,7 @@ export default function ContactCTABand({
               href={ctaHref}
               className="inline-flex items-center gap-3 px-8 py-4 text-sm font-medium tracking-widest uppercase transition-opacity hover:opacity-80"
               style={{
-                backgroundColor: "var(--color-accent)",
+                backgroundColor: "#5C8A65",
                 color: "var(--color-text-light)",
               }}
             >

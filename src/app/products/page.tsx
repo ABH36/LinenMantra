@@ -31,7 +31,7 @@ export default function ProductsPage() {
       <ContactCTABand
         heading="Interested in Our Fabrics?"
         subText="Send us an enquiry and our team will get back to you with detailed specifications, pricing, and sampling options."
-        ctaLabel="Send Enquiry"
+        ctaLabel="Get a Quote"
       />
     </>
   );

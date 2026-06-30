@@ -90,11 +90,11 @@ export default function Header() {
                 href="/contact"
                 className="hidden md:inline-flex items-center gap-2 text-sm font-medium tracking-widest uppercase px-5 py-2.5 transition-all duration-300 hover:opacity-80"
                 style={{
-                  backgroundColor: "var(--color-accent)",
+                  backgroundColor: "#5C8A65",
                   color: "var(--color-text-light)",
                 }}
               >
-                Send Enquiry
+                Get a Quote
               </Link>
 
               {/* Mobile hamburger */}

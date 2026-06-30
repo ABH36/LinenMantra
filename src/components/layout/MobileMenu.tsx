@@ -118,7 +118,7 @@ export default function MobileMenu({ isOpen, onClose, currentPath }: Props) {
                 className="inline-flex items-center gap-3 text-sm font-medium tracking-widest uppercase transition-opacity hover:opacity-70"
                 style={{ color: "var(--color-accent)" }}
               >
-                Send Enquiry
+                Get a Quote
               </Link>
               <p
                 className="mt-6 text-sm leading-relaxed opacity-40"

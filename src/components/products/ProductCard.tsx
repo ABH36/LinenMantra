@@ -99,7 +99,7 @@ export default function ProductCard({ product }: Props) {
           className="inline-flex items-center gap-2 text-sm font-medium tracking-widest uppercase transition-opacity hover:opacity-60 group/link"
           style={{ color: "var(--color-text-primary)" }}
         >
-          <span>Send Enquiry</span>
+          <span>Get a Quote</span>
           <span className="transition-transform duration-300 group-hover/link:translate-x-1">
             →
           </span>

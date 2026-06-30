@@ -282,7 +282,7 @@ export default function EnquiryForm() {
                 fontFamily: "inherit",
               }}
             >
-              <span>{status === "sending" ? "Sending..." : "Send Enquiry"}</span>
+              <span>{status === "sending" ? "Sending..." : "Get a Quote"}</span>
               {status !== "sending" && (
                 <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
               )}

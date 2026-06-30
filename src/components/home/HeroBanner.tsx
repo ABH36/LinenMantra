@@ -14,7 +14,7 @@ const slides = [
     italic: "Great Brands",
     sub: "From flax fields to premium collections, we craft linen fabrics trusted by designers, manufacturers and brands worldwide.",
     cta1: { label: "Explore Products", href: "/products" },
-    cta2: { label: "Send Enquiry", href: "/contact" },
+    cta2: { label: "Get a Quote", href: "/contact" },
   },
   {
     id: 1,
@@ -34,7 +34,7 @@ const slides = [
     italic: "Perfection",
     sub: "The full spectrum of linen excellence — from lightweight shirting to luxury suiting, built for premium fashion brands.",
     cta1: { label: "Our Products", href: "/products" },
-    cta2: { label: "Send Enquiry", href: "/contact" },
+    cta2: { label: "Get a Quote", href: "/contact" },
   },
   {
     id: 3,
