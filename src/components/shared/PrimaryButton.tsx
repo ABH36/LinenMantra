@@ -27,7 +27,7 @@ export default function PrimaryButton({
     "inline-flex items-center gap-3 px-7 py-3.5 text-sm font-medium tracking-widest uppercase transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed";
 
   const style = {
-    backgroundColor: "var(--color-accent)",
+    backgroundColor: "var(--color-cta)",
     color: "var(--color-text-light)",
   } as React.CSSProperties;
 
@@ -54,7 +54,7 @@ export default function PrimaryButton({
       type={type}
       onClick={onClick}
       disabled={disabled}
-      whileHover={{ backgroundColor: "var(--color-accent-hover)" }}
+      whileHover={{ backgroundColor: "var(--color-cta-hover)" }}
       transition={{ duration: 0.2 }}
       className={`${base} ${className} group cursor-pointer`}
       style={style}

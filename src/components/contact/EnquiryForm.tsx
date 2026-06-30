@@ -105,7 +105,7 @@ export default function EnquiryForm() {
         >
           <div
             className="w-14 h-14 flex items-center justify-center mb-6"
-            style={{ backgroundColor: "var(--color-accent)" }}
+            style={{ backgroundColor: "var(--color-cta)" }}
           >
             <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
               <path d="M4 11L9 16L18 7" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -275,7 +275,7 @@ export default function EnquiryForm() {
                 backgroundColor:
                   status === "sending"
                     ? "var(--color-text-muted)"
-                    : "var(--color-accent)",
+                    : "var(--color-cta)",
                 color: "var(--color-text-light)",
                 cursor: status === "sending" ? "not-allowed" : "pointer",
                 border: "none",

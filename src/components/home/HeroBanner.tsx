@@ -187,7 +187,7 @@ export default function HeroBanner() {
                     href={slide.cta1.href}
                     className="inline-flex items-center gap-2.5 px-6 py-3.5 text-xs font-medium tracking-widest uppercase group"
                     style={{
-                      backgroundColor: "var(--color-accent)",
+                      backgroundColor: "var(--color-cta)",
                       color: "var(--color-text-light)",
                     }}
                   >

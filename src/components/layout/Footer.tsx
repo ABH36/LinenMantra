@@ -64,7 +64,7 @@ export default function Footer() {
             <Link
               href="/contact"
               className="inline-flex items-center gap-2.5 mt-8 px-6 py-3 text-xs font-medium tracking-widest uppercase transition-opacity hover:opacity-80"
-              style={{ backgroundColor: "#5C8A65", color: "var(--color-text-light)" }}
+              style={{ backgroundColor: "var(--color-cta)", color: "var(--color-text-light)" }}
             >
               Get a Quote
               <span>→</span>

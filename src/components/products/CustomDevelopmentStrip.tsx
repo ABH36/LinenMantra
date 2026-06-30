@@ -92,7 +92,7 @@ export default function CustomDevelopmentStrip() {
                 href="/contact"
                 className="inline-flex items-center gap-3 px-7 py-3.5 text-sm font-medium tracking-widest uppercase transition-opacity hover:opacity-80 group"
                 style={{
-                  backgroundColor: "var(--color-accent)",
+                  backgroundColor: "var(--color-cta)",
                   color: "var(--color-text-light)",
                 }}
               >
