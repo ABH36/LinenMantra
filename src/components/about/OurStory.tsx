@@ -1,3 +1,4 @@
+import Image from "next/image";
 import FadeInOnScroll from "@/components/shared/FadeInOnScroll";
 import SectionWrapper from "@/components/shared/SectionWrapper";
 import MillVideoCard from "./MillVideoCard";
@@ -129,6 +130,32 @@ export default function OurStory() {
                   Years of Expertise
                 </p>
               </div>
+            </div>
+            {/* Group company badge */}
+            <div
+              className="flex items-center gap-4 px-6 py-4"
+              style={{
+                backgroundColor: "var(--color-bg-secondary)",
+                borderLeft: "2px solid var(--color-accent)",
+              }}
+            >
+              <span
+                className="text-label shrink-0"
+                style={{ color: "var(--color-text-muted)" }}
+              >
+                Group Company
+              </span>
+              <div
+                className="w-px h-5 shrink-0"
+                style={{ backgroundColor: "var(--color-border)" }}
+              />
+              <Image
+                src="/images/about/footer/companylogo.png"
+                alt="Silverline Group"
+                width={1536}
+                height={1024}
+                style={{ height: "28px", width: "auto" }}
+              />
             </div>
           </div>
         </FadeInOnScroll>

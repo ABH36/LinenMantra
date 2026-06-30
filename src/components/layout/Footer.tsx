@@ -2,7 +2,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { Mail, Phone, MapPin } from "lucide-react";
 import { footerLinks } from "@/data/navigation";
-import Divider from "@/components/shared/Divider";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -12,15 +11,18 @@ export default function Footer() {
       className="w-full relative overflow-hidden"
       style={{ backgroundColor: "var(--color-bg-dark)" }}
     >
-      {/* Background image — very subtle */}
-      <Image
-        src="/images/about/footer/footer%20background.png"
-        alt=""
-        fill
-        sizes="100vw"
-        className="object-cover object-center pointer-events-none select-none"
-        style={{ opacity: 0.09, mixBlendMode: "luminosity" }}
+      {/* Background image — leaf positioned left, full visible */}
+      <div
+        className="absolute inset-0 pointer-events-none select-none"
         aria-hidden="true"
+        style={{
+          backgroundImage: "url('/images/about/footer/footer%20background.png')",
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "auto 150%",
+          backgroundPosition: "3% 50%",
+          opacity: 0.13,
+          mixBlendMode: "luminosity",
+        } as React.CSSProperties}
       />
 
       {/* Gradient top accent line */}
@@ -40,8 +42,8 @@ export default function Footer() {
           <div className="md:col-span-5">
             <Link href="/" className="inline-block mb-6 hover:opacity-75 transition-opacity">
               <Image
-                src="/images/logo/logo.png"
-                alt="Linen Mantra"
+                src="/images/about/footer/companylogo.png"
+                alt="Silverline"
                 width={1536}
                 height={1024}
                 style={{
