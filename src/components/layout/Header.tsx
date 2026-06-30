@@ -42,7 +42,7 @@ export default function Header() {
         className={`fixed top-0 left-0 right-0 z-30 transition-all duration-500 ${headerBg}`}
       >
         <div className="container-site">
-          <div className="flex items-center justify-between h-[90px] md:h-[104px]">
+          <div className="flex items-center justify-between h-[100px] md:h-[116px]">
 
             {/* Logo */}
             <Link
@@ -56,7 +56,7 @@ export default function Header() {
                 width={1536}
                 height={1024}
                 priority
-                className="h-[84px] md:h-[98px] w-auto transition-all duration-300"
+                className="h-[92px] md:h-[108px] w-auto transition-all duration-300"
                 style={{
                   filter: isSolid ? "none" : "invert(1) brightness(1.1)",
                 }}

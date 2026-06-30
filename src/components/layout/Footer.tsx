@@ -40,16 +40,16 @@ export default function Footer() {
 
           {/* Column 1 — Brand (wider) */}
           <div className="md:col-span-5">
-            <Link href="/" className="inline-block mb-6 hover:opacity-75 transition-opacity">
+            <Link href="/" className="inline-block mb-6 hover:opacity-80 transition-opacity">
               <Image
                 src="/images/about/footer/companylogo.png"
                 alt="Silverline"
                 width={1536}
                 height={1024}
                 style={{
-                  height: "44px",
+                  height: "72px",
                   width: "auto",
-                  filter: "brightness(0) invert(1)",
+                  filter: "brightness(2) saturate(0.3)",
                 }}
               />
             </Link>
