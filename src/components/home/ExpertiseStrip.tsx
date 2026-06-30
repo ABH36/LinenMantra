@@ -45,10 +45,21 @@ function AnimatedCounter({
 export default function ExpertiseStrip() {
   return (
     <section
-      className="w-full section-py"
+      className="w-full section-py relative overflow-hidden"
       style={{ backgroundColor: "var(--color-bg-dark)" }}
     >
-      <div className="container-site">
+      {/* Fabric texture overlay */}
+      <div
+        className="absolute inset-0 pointer-events-none select-none"
+        aria-hidden="true"
+        style={{
+          backgroundImage: "url('/images/about/footer/fabric.png')",
+          backgroundSize: "400px auto",
+          backgroundRepeat: "repeat",
+          opacity: 0.09,
+        }}
+      />
+      <div className="container-site relative">
 
         {/* Stats row */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-0">

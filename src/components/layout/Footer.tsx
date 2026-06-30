@@ -11,6 +11,18 @@ export default function Footer() {
       className="w-full relative overflow-hidden"
       style={{ backgroundColor: "var(--color-bg-dark)" }}
     >
+      {/* Fabric texture base */}
+      <div
+        className="absolute inset-0 pointer-events-none select-none"
+        aria-hidden="true"
+        style={{
+          backgroundImage: "url('/images/about/footer/fabric.png')",
+          backgroundSize: "400px auto",
+          backgroundRepeat: "repeat",
+          opacity: 0.07,
+        }}
+      />
+
       {/* Background image — leaf positioned left, full visible */}
       <div
         className="absolute inset-0 pointer-events-none select-none"

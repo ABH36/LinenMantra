@@ -29,6 +29,20 @@ export default function PageHero({ label, heading, subText, dark = false, image 
       className={`relative w-full pt-36 pb-20 md:pt-44 md:pb-24 overflow-hidden ${bg}`}
       style={hasImage ? { backgroundColor: "#111110" } : undefined}
     >
+      {/* Fabric texture — shown on dark no-image variant */}
+      {!hasImage && isDark && (
+        <div
+          className="absolute inset-0 pointer-events-none select-none"
+          aria-hidden="true"
+          style={{
+            backgroundImage: "url('/images/about/footer/fabric.png')",
+            backgroundSize: "400px auto",
+            backgroundRepeat: "repeat",
+            opacity: 0.09,
+          }}
+        />
+      )}
+
       {/* Background image + overlay */}
       {hasImage && (
         <>
