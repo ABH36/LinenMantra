@@ -19,7 +19,7 @@ export default function Footer() {
           backgroundImage: "url('/images/about/footer/footer%20background.png')",
           backgroundRepeat: "no-repeat",
           backgroundSize: "auto 150%",
-          backgroundPosition: "3% 50%",
+          backgroundPosition: "right center",
           opacity: 0.13,
           mixBlendMode: "luminosity",
         } as React.CSSProperties}
