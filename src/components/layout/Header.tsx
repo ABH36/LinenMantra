@@ -56,7 +56,7 @@ export default function Header() {
                 width={1536}
                 height={1024}
                 priority
-                className="h-[110px] md:h-[130px] w-auto transition-all duration-300"
+                className="h-[110px] md:h-[130px] w-auto transition-all duration-300 mt-5 md:mt-7"
                 style={{ filter: "none" }}
               />
             </Link>
