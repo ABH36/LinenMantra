@@ -113,7 +113,7 @@ const SLIDES: SlideData[] = [
 ];
 
 const TOTAL       = SLIDES.length;
-const INTERVAL_MS = 5500;
+const INTERVAL_MS = 5000;
 
 // ── Leaf flourish divider ────────────────────────────────────────────
 function Flourish({ color }: { color: string }) {
