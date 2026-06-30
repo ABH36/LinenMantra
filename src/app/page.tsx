@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import HeroBanner from "@/components/home/HeroBanner";
 import ExpertiseStrip from "@/components/home/ExpertiseStrip";
+import ArtAndScience from "@/components/home/ArtAndScience";
+import OurServices from "@/components/home/OurServices";
 import FeaturedQualities from "@/components/home/FeaturedQualities";
+import PremiumStrip from "@/components/home/PremiumStrip";
 import FlaxToFabric from "@/components/home/FlaxToFabric";
 import LinenSpecialists from "@/components/home/LinenSpecialists";
-import ExportTeaser from "@/components/home/ExportTeaser";
-import ContactCTABand from "@/components/shared/ContactCTABand";
+import NewsletterStrip from "@/components/home/NewsletterStrip";
 
 export const metadata: Metadata = {
   title: "Linen Mantra — Premium Linen Fabric Manufacturer",
@@ -18,11 +20,13 @@ export default function HomePage() {
     <>
       <HeroBanner />
       <ExpertiseStrip />
+      <ArtAndScience />
+      <OurServices />
       <FeaturedQualities />
+      <PremiumStrip />
       <FlaxToFabric />
       <LinenSpecialists />
-      <ExportTeaser />
-      <ContactCTABand />
+      <NewsletterStrip />
     </>
   );
 }
