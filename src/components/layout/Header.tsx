@@ -31,15 +31,15 @@ export default function Header() {
   // Inner pages / scrolled — solid cream header with dark text
   const headerBg = isSolid
     ? "bg-[var(--color-bg-primary)] border-b border-[var(--color-border)]"
-    : "bg-transparent";
+    : "bg-transparent border-b border-transparent";
 
-  const linkColor = isSolid ? "var(--color-text-secondary)" : "rgba(248,245,240,0.75)";
+  const linkColor = isSolid ? "var(--color-text-secondary)" : "rgba(248,245,240,0.88)";
   const linkActiveColor = isSolid ? "var(--color-text-primary)" : "rgba(248,245,240,1)";
 
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-30 transition-all duration-500 ${headerBg}`}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${headerBg}`}
       >
         <div className="container-site">
           <div className="flex items-center justify-between h-[72px] md:h-[80px]">
