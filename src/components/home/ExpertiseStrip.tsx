@@ -46,20 +46,18 @@ export default function ExpertiseStrip() {
   return (
     <section
       className="w-full section-py relative overflow-hidden"
-      style={{ backgroundColor: "var(--color-bg-dark)" }}
+      style={{
+        backgroundImage: "url('/images/about/footer/fabric.png')",
+        backgroundSize: "400px auto",
+        backgroundRepeat: "repeat",
+      }}
     >
-      {/* Fabric texture overlay */}
+      {/* Dark overlay — fabric shows through as warm texture */}
       <div
-        className="absolute inset-0 pointer-events-none select-none"
-        aria-hidden="true"
-        style={{
-          backgroundImage: "url('/images/about/footer/fabric.png')",
-          backgroundSize: "400px auto",
-          backgroundRepeat: "repeat",
-          opacity: 0.09,
-        }}
+        className="absolute inset-0 pointer-events-none"
+        style={{ backgroundColor: "rgba(8,7,6,0.82)" }}
       />
-      <div className="container-site relative">
+      <div className="container-site relative z-10">
 
         {/* Stats row */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-0">

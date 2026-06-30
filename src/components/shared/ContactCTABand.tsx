@@ -27,20 +27,21 @@ export default function ContactCTABand({
     : "var(--color-text-secondary)";
 
   return (
-    <section className={`w-full section-py ${bg} ${dark ? "relative overflow-hidden" : ""}`}>
+    <section
+      className={`w-full section-py ${dark ? "relative overflow-hidden" : bg}`}
+      style={dark ? {
+        backgroundImage: "url('/images/about/footer/fabric.png')",
+        backgroundSize: "400px auto",
+        backgroundRepeat: "repeat",
+      } : undefined}
+    >
       {dark && (
         <div
-          className="absolute inset-0 pointer-events-none select-none"
-          aria-hidden="true"
-          style={{
-            backgroundImage: "url('/images/about/footer/fabric.png')",
-            backgroundSize: "400px auto",
-            backgroundRepeat: "repeat",
-            opacity: 0.09,
-          }}
+          className="absolute inset-0 pointer-events-none"
+          style={{ backgroundColor: "rgba(8,7,6,0.82)" }}
         />
       )}
-      <div className={`container-site ${dark ? "relative" : ""}`}>
+      <div className={`container-site ${dark ? "relative z-10" : ""}`}>
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-10">
           <FadeInOnScroll direction="up" className="max-w-xl">
             <h2
