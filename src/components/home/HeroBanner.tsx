@@ -23,14 +23,6 @@ const TERRA  = "#B5442D";
 const GOLD   = "#C9A452";
 const CREAM  = "#F8F5F0";
 
-// ── Persistent stats card (top-right) ───────────────────────────────
-const STATS_CARD = [
-  { Icon: Globe,    value: "14+",    label: "COUNTRIES"    },
-  { Icon: Hash,     value: "25–150", label: "LEA RANGE"    },
-  { Icon: Calendar, value: "SINCE",  label: "1991"         },
-  { Icon: Factory,  value: "B2B",    label: "MANUFACTURER" },
-];
-
 // ── Persistent bottom strip ──────────────────────────────────────────
 const STRIP = [
   { Icon: Leaf,  bold: "PURE BY NATURE.",          light: "PERFECTED BY EXPERTISE."              },
@@ -283,50 +275,6 @@ export default function HeroBanner() {
         }}
       />
 
-      {/* ── Stats card (top-right, md+) ── */}
-      <div
-        className="absolute z-30 hidden md:block"
-        style={{
-          top:             "108px",
-          right:           "2.5rem",
-          backgroundColor: FOREST,
-          padding:         "1rem 1.2rem",
-          minWidth:        "155px",
-        }}
-      >
-        {STATS_CARD.map(({ Icon, value, label }, i) => (
-          <div
-            key={i}
-            className="flex items-center gap-3 py-2.5"
-            style={{
-              borderBottom:
-                i < STATS_CARD.length - 1
-                  ? "1px solid rgba(248,245,240,0.08)"
-                  : "none",
-            }}
-          >
-            <Icon size={15} color={GOLD} className="shrink-0" />
-            <div>
-              <p
-                className="font-semibold leading-none"
-                style={{ fontSize: "0.88rem", color: CREAM }}
-              >
-                {value}
-              </p>
-              <p
-                className="mt-0.5"
-                style={{
-                  fontSize:      "0.575rem",
-                  color:         "rgba(248,245,240,0.48)",
-                  letterSpacing: "0.08em",
-                }}
-              >
-                {label}
-              </p>
-            </div>
-          </div>
-        ))}
-      </div>
 
       {/* ── Slide content (left column) — fades per slide ── */}
       <div className="absolute inset-0 z-20 flex flex-col pt-[125px] md:pt-[160px] pb-16 md:pb-[60px]">
