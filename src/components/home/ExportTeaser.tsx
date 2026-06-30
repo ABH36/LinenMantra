@@ -16,7 +16,6 @@ export default function ExportTeaser() {
               label="Global Reach"
               heading="Trusted Across Continents"
               subText="From Mumbai to Milan, our premium linen fabrics reach brands and buyers across 14+ countries — backed by consistent quality and reliable supply."
-              light
               showLine
             />
           </FadeInOnScroll>
@@ -30,14 +29,14 @@ export default function ExportTeaser() {
                     className="font-display font-normal leading-none mb-2"
                     style={{
                       fontSize: "2rem",
-                      color: "var(--color-text-light)",
+                      color: "var(--color-text-primary)",
                     }}
                   >
                     {stat.value}
                   </p>
                   <p
                     className="text-label"
-                    style={{ color: "rgba(248,245,240,0.4)" }}
+                    style={{ color: "var(--color-text-secondary)" }}
                   >
                     {stat.label}
                   </p>
@@ -51,7 +50,7 @@ export default function ExportTeaser() {
             <Link
               href="/export"
               className="inline-flex items-center gap-3 mt-10 text-sm font-medium tracking-widest uppercase transition-opacity hover:opacity-70 group"
-              style={{ color: "var(--color-accent-light)" }}
+              style={{ color: "var(--color-cta)" }}
             >
               <span>Explore Export Capabilities</span>
               <span className="transition-transform duration-300 group-hover:translate-x-1">
@@ -66,7 +65,7 @@ export default function ExportTeaser() {
           <div>
             <p
               className="text-label mb-6"
-              style={{ color: "rgba(248,245,240,0.35)" }}
+              style={{ color: "var(--color-text-muted)" }}
             >
               Markets we serve
             </p>
@@ -76,9 +75,9 @@ export default function ExportTeaser() {
                   key={country.iso3}
                   className="flex items-center gap-3 py-3.5"
                   style={{
-                    borderBottom: "1px solid var(--color-border-dark)",
+                    borderBottom: "1px solid var(--color-border)",
                     borderRight:
-                      i % 2 === 0 ? "1px solid var(--color-border-dark)" : "none",
+                      i % 2 === 0 ? "1px solid var(--color-border)" : "none",
                     paddingLeft: i % 2 !== 0 ? "1.25rem" : "0",
                     paddingRight: i % 2 === 0 ? "1.25rem" : "0",
                   }}
@@ -89,7 +88,7 @@ export default function ExportTeaser() {
                   />
                   <span
                     className="text-sm"
-                    style={{ color: "rgba(248,245,240,0.55)" }}
+                    style={{ color: "var(--color-text-secondary)" }}
                   >
                     {country.name}
                   </span>

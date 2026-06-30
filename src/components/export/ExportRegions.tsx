@@ -23,7 +23,7 @@ export default function ExportRegions() {
       <FadeInOnScroll direction="up">
         <div
           className="grid grid-cols-2 md:grid-cols-4 gap-0 mb-16"
-          style={{ borderBottom: "1px solid var(--color-border-dark)" }}
+          style={{ borderBottom: "1px solid var(--color-border)" }}
         >
           {exportStats.map((stat, i) => (
             <div
@@ -32,7 +32,7 @@ export default function ExportRegions() {
               style={{
                 borderRight:
                   i < exportStats.length - 1
-                    ? "1px solid var(--color-border-dark)"
+                    ? "1px solid var(--color-border)"
                     : "none",
                 paddingLeft: i > 0 ? "2rem" : "0",
               }}
@@ -41,14 +41,14 @@ export default function ExportRegions() {
                 className="font-display font-normal leading-none mb-2"
                 style={{
                   fontSize: "clamp(2rem, 4vw, 3rem)",
-                  color: "var(--color-text-light)",
+                  color: "var(--color-text-primary)",
                 }}
               >
                 {stat.value}
               </p>
               <p
                 className="text-label"
-                style={{ color: "rgba(248,245,240,0.4)" }}
+                style={{ color: "var(--color-text-secondary)" }}
               >
                 {stat.label}
               </p>
@@ -69,7 +69,7 @@ export default function ExportRegions() {
           className="font-display font-normal leading-tight mb-12"
           style={{
             fontSize: "var(--text-h2)",
-            color: "var(--color-text-light)",
+            color: "var(--color-text-primary)",
           }}
         >
           A Global Footprint
@@ -82,7 +82,7 @@ export default function ExportRegions() {
           className="relative w-full rounded-none overflow-hidden mb-14"
           style={{
             background: "linear-gradient(180deg, #1A1A18 0%, #242220 100%)",
-            border: "1px solid var(--color-border-dark)",
+            border: "1px solid var(--color-border)",
             minHeight: "280px",
           }}
         >
@@ -151,7 +151,7 @@ export default function ExportRegions() {
               {/* Country label tooltip */}
               <span
                 className="absolute -top-6 left-1/2 -translate-x-1/2 text-label opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap pointer-events-none"
-                style={{ color: "var(--color-accent-light)" }}
+                style={{ color: "var(--color-accent)" }}
               >
                 {dot.name}
               </span>
@@ -200,7 +200,7 @@ export default function ExportRegions() {
                     />
                     <span
                       className="text-sm"
-                      style={{ color: "rgba(248,245,240,0.55)" }}
+                      style={{ color: "var(--color-text-secondary)" }}
                     >
                       {c.name}
                     </span>

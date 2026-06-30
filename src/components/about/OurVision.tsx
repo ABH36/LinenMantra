@@ -10,11 +10,6 @@ export default function OurVision() {
         backgroundRepeat: "repeat",
       }}
     >
-      {/* Dark overlay — fabric shows through as warm texture */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{ backgroundColor: "rgba(8,7,6,0.82)" }}
-      />
       <div className="container-site relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           <FadeInOnScroll direction="up">
@@ -45,7 +40,7 @@ export default function OurVision() {
               className="font-display font-normal leading-snug"
               style={{
                 fontSize: "clamp(1.5rem, 3vw, 2.25rem)",
-                color: "var(--color-text-light)",
+                color: "var(--color-text-primary)",
                 letterSpacing: "-0.01em",
               }}
             >
@@ -63,7 +58,7 @@ export default function OurVision() {
             />
             <p
               className="text-label"
-              style={{ color: "rgba(248,245,240,0.4)" }}
+              style={{ color: "var(--color-text-muted)" }}
             >
               Linen Mantra · Est. 1991 · Mumbai, India
             </p>
@@ -75,10 +70,10 @@ export default function OurVision() {
             aria-hidden="true"
           >
             <span
-              className="font-display font-normal opacity-[0.02] whitespace-nowrap"
+              className="font-display font-normal opacity-[0.05] whitespace-nowrap"
               style={{
                 fontSize: "clamp(6rem, 18vw, 16rem)",
-                color: "var(--color-text-light)",
+                color: "var(--color-text-primary)",
                 letterSpacing: "-0.03em",
               }}
             >

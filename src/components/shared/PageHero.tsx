@@ -18,11 +18,11 @@ export default function PageHero({ label, heading, subText, dark = false, image 
   const bg = hasImage
     ? ""
     : isDark
-    ? "bg-[var(--color-bg-dark)]"
+    ? ""
     : "bg-[var(--color-bg-secondary)]";
 
-  const headingColor = isDark ? "var(--color-text-light)" : "var(--color-text-primary)";
-  const subColor = isDark ? "rgba(248,245,240,0.6)" : "var(--color-text-secondary)";
+  const headingColor = hasImage ? "var(--color-text-light)" : "var(--color-text-primary)";
+  const subColor = hasImage ? "rgba(248,245,240,0.6)" : "var(--color-text-secondary)";
 
   return (
     <section
@@ -37,13 +37,6 @@ export default function PageHero({ label, heading, subText, dark = false, image 
           }
         : undefined}
     >
-      {/* Fabric texture + dark overlay — no-image dark variant */}
-      {!hasImage && isDark && (
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{ backgroundColor: "rgba(8,7,6,0.82)" }}
-        />
-      )}
 
       {/* Background image + overlay */}
       {hasImage && (

@@ -17,14 +17,10 @@ export default function ContactCTABand({
   dark = true,
 }: Props) {
   const bg = dark
-    ? "bg-[var(--color-bg-dark)]"
+    ? ""
     : "bg-[var(--color-bg-secondary)]";
-  const headingColor = dark
-    ? "var(--color-text-light)"
-    : "var(--color-text-primary)";
-  const subColor = dark
-    ? "rgba(248,245,240,0.55)"
-    : "var(--color-text-secondary)";
+  const headingColor = "var(--color-text-primary)";
+  const subColor = "var(--color-text-secondary)";
 
   return (
     <section
@@ -35,13 +31,7 @@ export default function ContactCTABand({
         backgroundRepeat: "repeat",
       } : undefined}
     >
-      {dark && (
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{ backgroundColor: "rgba(8,7,6,0.82)" }}
-        />
-      )}
-      <div className={`container-site ${dark ? "relative z-10" : ""}`}>
+      <div className="container-site">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-10">
           <FadeInOnScroll direction="up" className="max-w-xl">
             <h2

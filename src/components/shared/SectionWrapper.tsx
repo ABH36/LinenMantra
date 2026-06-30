@@ -31,13 +31,7 @@ export default function SectionWrapper({
         backgroundRepeat: "repeat",
       } : undefined}
     >
-      {dark && (
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{ backgroundColor: "rgba(8,7,6,0.82)" }}
-        />
-      )}
-      <div className={`container-site ${dark ? "relative z-10" : ""}`}>{children}</div>
+      <div className="container-site">{children}</div>
     </section>
   );
 }

@@ -15,13 +15,7 @@ export default function Footer() {
         backgroundRepeat: "repeat",
       }}
     >
-      {/* Dark overlay — fabric's warm texture shows through */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{ backgroundColor: "rgba(8,7,6,0.82)" }}
-      />
-
-      {/* Background image — leaf positioned left, full visible */}
+      {/* Background leaf — multiply blend shows leaf shape on light fabric */}
       <div
         className="absolute inset-0 pointer-events-none select-none"
         aria-hidden="true"
@@ -30,8 +24,8 @@ export default function Footer() {
           backgroundRepeat: "no-repeat",
           backgroundSize: "auto 150%",
           backgroundPosition: "right center",
-          opacity: 0.13,
-          mixBlendMode: "luminosity",
+          opacity: 0.07,
+          mixBlendMode: "multiply",
         } as React.CSSProperties}
       />
 
@@ -59,13 +53,12 @@ export default function Footer() {
                 style={{
                   height: "72px",
                   width: "auto",
-                  filter: "brightness(2) saturate(0.3)",
                 }}
               />
             </Link>
             <p
               className="text-sm leading-relaxed max-w-xs"
-              style={{ color: "var(--color-text-light)", opacity: 0.5 }}
+              style={{ color: "var(--color-text-secondary)" }}
             >
               India&apos;s leading manufacturer of premium linen and linen blend
               fabrics — trusted by brands, designers, and export markets
@@ -87,8 +80,8 @@ export default function Footer() {
               <a
                 href="#"
                 aria-label="Follow Linen Mantra on Instagram"
-                className="transition-opacity hover:opacity-80"
-                style={{ color: "var(--color-text-light)", opacity: 0.4 }}
+                className="transition-opacity hover:opacity-60"
+                style={{ color: "var(--color-text-primary)", opacity: 0.45 }}
               >
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                   <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
@@ -99,8 +92,8 @@ export default function Footer() {
               <a
                 href="#"
                 aria-label="Connect on LinkedIn"
-                className="transition-opacity hover:opacity-80"
-                style={{ color: "var(--color-text-light)", opacity: 0.4 }}
+                className="transition-opacity hover:opacity-60"
+                style={{ color: "var(--color-text-primary)", opacity: 0.45 }}
               >
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
@@ -111,8 +104,8 @@ export default function Footer() {
               <a
                 href="mailto:linenmantra@gmail.com"
                 aria-label="Email Linen Mantra"
-                className="transition-opacity hover:opacity-80"
-                style={{ color: "var(--color-text-light)", opacity: 0.4 }}
+                className="transition-opacity hover:opacity-60"
+                style={{ color: "var(--color-text-primary)", opacity: 0.45 }}
               >
                 <Mail size={18} />
               </a>
@@ -132,8 +125,8 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm transition-opacity hover:opacity-80 flex items-center gap-2 group"
-                    style={{ color: "var(--color-text-light)", opacity: 0.55 }}
+                    className="text-sm transition-opacity hover:opacity-60 flex items-center gap-2 group"
+                    style={{ color: "var(--color-text-secondary)" }}
                   >
                     <span
                       className="inline-block w-3 h-px group-hover:w-5 transition-all duration-300"
@@ -164,15 +157,15 @@ export default function Footer() {
                 <div className="flex flex-col gap-1">
                   <a
                     href="tel:+918975972300"
-                    className="text-sm transition-opacity hover:opacity-80"
-                    style={{ color: "var(--color-text-light)", opacity: 0.55 }}
+                    className="text-sm transition-opacity hover:opacity-60"
+                    style={{ color: "var(--color-text-secondary)" }}
                   >
                     +91 89759 72300
                   </a>
                   <a
                     href="tel:+919769422606"
-                    className="text-sm transition-opacity hover:opacity-80"
-                    style={{ color: "var(--color-text-light)", opacity: 0.55 }}
+                    className="text-sm transition-opacity hover:opacity-60"
+                    style={{ color: "var(--color-text-secondary)" }}
                   >
                     +91 97694 22606
                   </a>
@@ -187,15 +180,15 @@ export default function Footer() {
                 <div className="flex flex-col gap-1">
                   <a
                     href="mailto:linenmantra@gmail.com"
-                    className="text-sm transition-opacity hover:opacity-80 break-all"
-                    style={{ color: "var(--color-text-light)", opacity: 0.55 }}
+                    className="text-sm transition-opacity hover:opacity-60 break-all"
+                    style={{ color: "var(--color-text-secondary)" }}
                   >
                     linenmantra@gmail.com
                   </a>
                   <a
                     href="mailto:export@linenmantra.com"
-                    className="text-sm transition-opacity hover:opacity-80 break-all"
-                    style={{ color: "var(--color-text-light)", opacity: 0.55 }}
+                    className="text-sm transition-opacity hover:opacity-60 break-all"
+                    style={{ color: "var(--color-text-secondary)" }}
                   >
                     export@linenmantra.com
                   </a>
@@ -209,7 +202,7 @@ export default function Footer() {
                 />
                 <p
                   className="text-sm leading-relaxed"
-                  style={{ color: "var(--color-text-light)", opacity: 0.55 }}
+                  style={{ color: "var(--color-text-secondary)" }}
                 >
                   A-111 Kewal Industrial Estate,
                   <br />
@@ -226,19 +219,19 @@ export default function Footer() {
       {/* Bottom bar */}
       <div
         className="relative z-10"
-        style={{ borderTop: "1px solid rgba(248,245,240,0.07)" }}
+        style={{ borderTop: "1px solid var(--color-border)" }}
       >
         <div className="container-site py-5">
           <div className="flex flex-col md:flex-row items-center justify-between gap-3">
             <p
               className="text-xs tracking-wide"
-              style={{ color: "var(--color-text-light)", opacity: 0.3 }}
+              style={{ color: "var(--color-text-muted)" }}
             >
               &copy; {currentYear} Linen Mantra. All rights reserved.
             </p>
             <p
               className="text-xs"
-              style={{ color: "var(--color-text-light)", opacity: 0.22 }}
+              style={{ color: "var(--color-text-muted)" }}
             >
               Designed &amp; Developed by{" "}
               <a

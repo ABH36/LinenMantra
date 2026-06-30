@@ -52,12 +52,7 @@ export default function ExpertiseStrip() {
         backgroundRepeat: "repeat",
       }}
     >
-      {/* Dark overlay — fabric shows through as warm texture */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{ backgroundColor: "rgba(8,7,6,0.82)" }}
-      />
-      <div className="container-site relative z-10">
+      <div className="container-site">
 
         {/* Stats row */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-0">
@@ -72,10 +67,10 @@ export default function ExpertiseStrip() {
                 style={{
                   borderRight:
                     i < stats.length - 1
-                      ? "1px solid var(--color-border-dark)"
+                      ? "1px solid var(--color-border)"
                       : "none",
                   borderBottom:
-                    i < 2 ? "1px solid var(--color-border-dark)" : "none",
+                    i < 2 ? "1px solid var(--color-border)" : "none",
                   paddingLeft: i % 2 !== 0 ? "2rem" : "0",
                   paddingRight: i % 2 === 0 ? "2rem" : "0",
                 }}
@@ -84,14 +79,14 @@ export default function ExpertiseStrip() {
                   className="font-display font-normal leading-none mb-3"
                   style={{
                     fontSize: "clamp(2.5rem, 4vw, 3.5rem)",
-                    color: "var(--color-text-light)",
+                    color: "var(--color-text-primary)",
                   }}
                 >
                   <AnimatedCounter target={stat.value} suffix={stat.suffix} />
                 </p>
                 <p
                   className="text-sm font-medium leading-tight"
-                  style={{ color: "rgba(248,245,240,0.45)" }}
+                  style={{ color: "var(--color-text-secondary)" }}
                 >
                   {stat.label}
                 </p>
@@ -103,7 +98,7 @@ export default function ExpertiseStrip() {
         {/* Divider */}
         <div
           className="w-full h-px my-12"
-          style={{ backgroundColor: "var(--color-border-dark)" }}
+          style={{ backgroundColor: "var(--color-border)" }}
         />
 
         {/* Bottom — tagline + manufacturing note */}
@@ -113,12 +108,12 @@ export default function ExpertiseStrip() {
               className="font-display font-normal leading-snug"
               style={{
                 fontSize: "clamp(1.5rem, 2.5vw, 2rem)",
-                color: "var(--color-text-light)",
+                color: "var(--color-text-primary)",
               }}
             >
               Weaving Excellence
               <br />
-              <em style={{ color: "var(--color-accent-light)", fontStyle: "italic" }}>
+              <em style={{ color: "var(--color-accent)", fontStyle: "italic" }}>
                 for Over 25 Years
               </em>
             </p>
@@ -126,7 +121,7 @@ export default function ExpertiseStrip() {
           <FadeInOnScroll direction="up" delay={0.15} className="max-w-sm">
             <p
               className="text-sm leading-relaxed"
-              style={{ color: "rgba(248,245,240,0.45)" }}
+              style={{ color: "var(--color-text-secondary)" }}
             >
               Our manufacturing facility in Navsari, Gujarat, is equipped with
               modern European weaving and finishing technology — enabling us to
