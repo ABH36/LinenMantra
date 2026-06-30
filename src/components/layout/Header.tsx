@@ -42,7 +42,7 @@ export default function Header() {
         className={`fixed top-0 left-0 right-0 z-30 transition-all duration-500 ${headerBg}`}
       >
         <div className="container-site">
-          <div className="flex items-center justify-between h-[100px] md:h-[116px]">
+          <div className="flex items-center justify-between h-[72px] md:h-[80px]">
 
             {/* Logo */}
             <Link
@@ -56,10 +56,8 @@ export default function Header() {
                 width={1536}
                 height={1024}
                 priority
-                className="h-[92px] md:h-[108px] w-auto transition-all duration-300"
-                style={{
-                  filter: isSolid ? "none" : "invert(1) brightness(1.1)",
-                }}
+                className="h-[58px] md:h-[66px] w-auto transition-all duration-300"
+                style={{ filter: "none" }}
               />
             </Link>
 
@@ -71,10 +69,10 @@ export default function Header() {
                   <Link
                     key={link.href}
                     href={link.href}
-                    className="text-sm font-semibold tracking-wide transition-all duration-200 link-underline"
+                    className="text-sm tracking-wide transition-all duration-200 link-underline"
                     style={{
                       color: isActive ? linkActiveColor : linkColor,
-                      fontWeight: isActive ? 600 : 500,
+                      fontWeight: isActive ? 700 : 600,
                     }}
                   >
                     {link.label}
