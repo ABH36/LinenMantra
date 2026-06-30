@@ -30,11 +30,10 @@ export default function MillVideoCard() {
           width={1536}
           height={1024}
           priority
+          className="h-[140px] md:h-[200px] w-auto transition-all duration-300"
           style={{
-            width: "auto",
-            height: "52px",
             filter: "brightness(0) invert(1)",
-            opacity: 0.75,
+            opacity: 0.85,
           }}
         />
       </div>

@@ -221,7 +221,12 @@ img, video {
 
 /* Scroll padding so fixed header doesn't cover anchors */
 html {
-  scroll-padding-top: 5rem;
+  scroll-padding-top: 90px;
+}
+@media (min-width: 768px) {
+  html {
+    scroll-padding-top: 104px;
+  }
 }
 
 /* Skip to main content — screen reader + keyboard nav */

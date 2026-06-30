@@ -42,7 +42,7 @@ export default function Header() {
         className={`fixed top-0 left-0 right-0 z-30 transition-all duration-500 ${headerBg}`}
       >
         <div className="container-site">
-          <div className="flex items-center justify-between h-18 md:h-20">
+          <div className="flex items-center justify-between h-[90px] md:h-[104px]">
 
             {/* Logo */}
             <Link
@@ -56,7 +56,7 @@ export default function Header() {
                 width={1536}
                 height={1024}
                 priority
-                className="h-[56px] md:h-[68px] w-auto transition-all duration-300"
+                className="h-[84px] md:h-[98px] w-auto transition-all duration-300"
                 style={{
                   filter: isSolid ? "none" : "invert(1) brightness(1.1)",
                 }}
@@ -65,16 +65,16 @@ export default function Header() {
 
             {/* Desktop nav */}
             <nav className="hidden md:flex items-center gap-8" aria-label="Main navigation">
-              {navLinks.map((link) => {
+               {navLinks.map((link) => {
                 const isActive = pathname === link.href;
                 return (
                   <Link
                     key={link.href}
                     href={link.href}
-                    className="text-sm font-medium tracking-wide transition-all duration-200 link-underline"
+                    className="text-sm font-semibold tracking-wide transition-all duration-200 link-underline"
                     style={{
                       color: isActive ? linkActiveColor : linkColor,
-                      fontWeight: isActive ? 500 : 400,
+                      fontWeight: isActive ? 600 : 500,
                     }}
                   >
                     {link.label}
