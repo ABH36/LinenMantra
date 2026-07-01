@@ -4,13 +4,21 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { Leaf, Users, Award, Shirt } from "lucide-react";
+import { Leaf, Users, Award, Shirt, Globe, LayoutGrid, MapPin, Factory } from "lucide-react";
 
 // ── Hero-specific colour palette ─────────────────────────────────────
 const FOREST = "var(--color-forest)";
 const TERRA  = "#B5442D";
 const GOLD   = "#C9A452";
 const CREAM  = "#F8F5F0";
+
+// ── Right-side stats panel ────────────────────────────────────────────
+const STATS_PANEL = [
+  { Icon: Globe,       value: "1991",   label: "SINCE"        },
+  { Icon: LayoutGrid,  value: "25–150", label: "LEA RANGE"    },
+  { Icon: MapPin,      value: "14+",    label: "COUNTRIES"    },
+  { Icon: Factory,     value: "B2B",    label: "MANUFACTURER" },
+];
 
 // ── Persistent bottom strip ──────────────────────────────────────────
 const STRIP = [
@@ -22,23 +30,21 @@ const STRIP = [
 
 // ── Slide data ───────────────────────────────────────────────────────
 interface SlideData {
-  id:          number;
-  image:       string;
-  isDark:      boolean;
-  h1:          string;
-  h1Color:     string;
-  h2:          string;
-  h2Color:     string;
-  flourish?:   boolean;
-  body:        string;
-  cta:         { text: string; href: string; bg: string; fg: string };
+  id:        number;
+  image:     string;
+  h1:        string;
+  h1Color:   string;
+  h2:        string;
+  h2Color:   string;
+  flourish?: boolean;
+  body:      string;
+  cta:       { text: string; href: string; bg: string; fg: string };
 }
 
 const SLIDES: SlideData[] = [
   {
     id: 0,
     image:    "/images/hero/herobanner1.png",
-    isDark:   false,
     h1:       "The Fabric Behind",
     h1Color:  FOREST,
     h2:       "Great Brands",
@@ -50,7 +56,6 @@ const SLIDES: SlideData[] = [
   {
     id: 1,
     image:    "/images/hero/herobanner2.png",
-    isDark:   false,
     h1:       "From Flax to Fabric.",
     h1Color:  FOREST,
     h2:       "Crafted by Linen Mantra.",
@@ -62,14 +67,13 @@ const SLIDES: SlideData[] = [
   {
     id: 2,
     image:    "/images/hero/herobanner3.png",
-    isDark:   true,
     h1:       "India's Premium",
-    h1Color:  CREAM,
+    h1Color:  FOREST,
     h2:       "Linen Export House",
-    h2Color:  GOLD,
+    h2Color:  TERRA,
     flourish: true,
     body:     "Supplying premium linen and linen-blend fabrics to global brands across 14+ countries since 1991.",
-    cta:      { text: "Get Export Quote", href: "/contact", bg: GOLD, fg: FOREST },
+    cta:      { text: "Get Export Quote", href: "/contact", bg: FOREST, fg: CREAM },
   },
 ];
 
@@ -80,9 +84,9 @@ const INTERVAL_MS = 5000;
 function Flourish({ color }: { color: string }) {
   return (
     <div className="flex items-center gap-2.5 my-5">
-      <span className="block h-px w-12" style={{ backgroundColor: color, opacity: 0.38 }} />
-      <Leaf size={12} style={{ color, opacity: 0.6 }} />
-      <span className="block h-px w-6"  style={{ backgroundColor: color, opacity: 0.22 }} />
+      <span className="block h-px w-12" style={{ backgroundColor: color, opacity: 0.45 }} />
+      <Leaf size={12} style={{ color, opacity: 0.65 }} />
+      <span className="block h-px w-6"  style={{ backgroundColor: color, opacity: 0.28 }} />
     </div>
   );
 }
@@ -135,17 +139,28 @@ export default function HeroBanner() {
         ))}
       </div>
 
+      {/* ── Left content gradient — ensures dark text is readable on any image ── */}
+      <div
+        className="absolute inset-0 z-10 pointer-events-none"
+        style={{
+          background:
+            "linear-gradient(to right, rgba(248,245,240,0.72) 0%, rgba(248,245,240,0.42) 35%, rgba(248,245,240,0.08) 58%, transparent 72%)",
+        }}
+      />
+
       {/* ── Top gradient — ensures header nav is always readable ── */}
       <div
         className="absolute inset-x-0 top-0 z-10 pointer-events-none"
         style={{
           height:     "150px",
-          background: "linear-gradient(to bottom, rgba(0,0,0,0.28) 0%, rgba(0,0,0,0.08) 55%, transparent 100%)",
+          background: "linear-gradient(to bottom, rgba(0,0,0,0.18) 0%, rgba(0,0,0,0.04) 55%, transparent 100%)",
         }}
       />
 
       {/* ── Slide content (left column) — fades per slide ── */}
-      <div className="absolute inset-0 z-20 flex flex-col pt-[118px] md:pt-[140px] pb-[52px] md:pb-[48px]">
+      <div className="absolute inset-0 z-20 flex flex-col pt-[118px] md:pt-[140px] pb-[52px] md:pb-[48px]"
+        style={{ paddingRight: "clamp(160px, 14vw, 215px)" }}
+      >
         <div className="container-site flex-1 flex items-center">
           <div className="w-full max-w-[520px] md:max-w-[555px]">
             <AnimatePresence mode="wait">
@@ -160,15 +175,13 @@ export default function HeroBanner() {
                 <div className="flex items-center gap-2 mb-4">
                   <Leaf
                     size={11}
-                    style={{ color: slide.isDark ? GOLD : FOREST, opacity: 0.6 }}
+                    style={{ color: FOREST, opacity: 0.7 }}
                   />
                   <p
                     className="font-medium tracking-widest uppercase"
                     style={{
                       fontSize: "0.6rem",
-                      color: slide.isDark
-                        ? "rgba(201,164,82,0.75)"
-                        : "rgba(44,74,45,0.65)",
+                      color: "rgba(44,74,45,0.80)",
                     }}
                   >
                     Premium Linen Fabric Manufacturer
@@ -191,24 +204,15 @@ export default function HeroBanner() {
                   </span>
                 </h1>
 
-                {/* Flourish or thin divider */}
-                {slide.flourish ? (
-                  <Flourish color={slide.isDark ? GOLD : FOREST} />
-                ) : (
-                  <div
-                    className="h-px w-8 my-4"
-                    style={{ backgroundColor: FOREST, opacity: 0.35 }}
-                  />
-                )}
+                {/* Flourish */}
+                {slide.flourish && <Flourish color={FOREST} />}
 
                 {/* Body copy */}
                 <p
                   className="leading-relaxed mb-6"
                   style={{
                     fontSize: "0.9rem",
-                    color: slide.isDark
-                      ? "rgba(248,245,240,0.6)"
-                      : "rgba(44,74,45,0.62)",
+                    color: "rgba(44,74,45,0.82)",
                   }}
                 >
                   {slide.body}
@@ -231,10 +235,52 @@ export default function HeroBanner() {
         </div>
       </div>
 
-      {/* ── Slide navigation dots (right side, md+) ── */}
+      {/* ── Right stats panel ── */}
+      <div
+        className="absolute right-0 top-0 bottom-0 z-30 hidden lg:flex flex-col justify-center"
+        style={{
+          width:           "clamp(155px, 13.5vw, 210px)",
+          backgroundColor: "var(--color-forest)",
+          borderLeft:      "1px solid rgba(248,245,240,0.06)",
+        }}
+      >
+        {STATS_PANEL.map(({ Icon, value, label }, i) => (
+          <div
+            key={i}
+            className="flex items-center gap-4 px-6 py-6"
+            style={{
+              borderBottom:
+                i < STATS_PANEL.length - 1
+                  ? "1px solid rgba(248,245,240,0.07)"
+                  : "none",
+            }}
+          >
+            <Icon
+              size={24}
+              style={{ color: GOLD, opacity: 0.78, flexShrink: 0 }}
+            />
+            <div>
+              <p
+                className="font-display font-normal leading-tight"
+                style={{ color: CREAM, fontSize: "clamp(1.05rem, 1.6vw, 1.4rem)" }}
+              >
+                {value}
+              </p>
+              <p
+                className="font-medium tracking-widest uppercase mt-0.5"
+                style={{ fontSize: "0.52rem", color: GOLD, opacity: 0.72, letterSpacing: "0.14em" }}
+              >
+                {label}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* ── Slide navigation dots (left of stats panel, md+) ── */}
       <div
         className="absolute z-30 hidden md:flex flex-col gap-2 items-center"
-        style={{ bottom: "60px", right: "2.5rem" }}
+        style={{ bottom: "68px", right: "clamp(170px, 15vw, 228px)" }}
       >
         {SLIDES.map((_, i) => (
           <button
@@ -249,7 +295,7 @@ export default function HeroBanner() {
               style={{
                 width:           i === current ? "8px" : "5px",
                 height:          i === current ? "8px" : "5px",
-                backgroundColor: i === current ? GOLD : "rgba(201,164,82,0.28)",
+                backgroundColor: i === current ? GOLD : "rgba(44,74,45,0.35)",
               }}
             />
           </button>
@@ -259,9 +305,9 @@ export default function HeroBanner() {
       {/* ── Bottom feature strip (md+) ── */}
       <div
         className="absolute inset-x-0 bottom-0 z-30 hidden md:block"
-        style={{ backgroundColor: FOREST }}
+        style={{ backgroundColor: "var(--color-forest)" }}
       >
-        <div className="container-site">
+        <div className="container-site" style={{ paddingRight: "clamp(175px, 15vw, 230px)" }}>
           <div className="grid grid-cols-4">
             {STRIP.map(({ Icon, bold, light }, i) => (
               <div
@@ -278,9 +324,7 @@ export default function HeroBanner() {
               >
                 <Icon
                   size={15}
-                  color={GOLD}
-                  className="shrink-0"
-                  style={{ opacity: 0.8 }}
+                  style={{ color: GOLD, opacity: 0.8, flexShrink: 0 }}
                 />
                 <div>
                   <p
@@ -291,7 +335,7 @@ export default function HeroBanner() {
                   </p>
                   <p
                     className="leading-tight mt-0.5"
-                    style={{ fontSize: "0.575rem", color: "rgba(248,245,240,0.42)" }}
+                    style={{ fontSize: "0.575rem", color: "rgba(248,245,240,0.5)" }}
                   >
                     {light}
                   </p>
