@@ -235,46 +235,58 @@ export default function HeroBanner() {
         </div>
       </div>
 
-      {/* ── Right stats panel ── */}
+      {/* ── Right stats panel — vertically centered, animated ── */}
       <div
-        className="absolute right-0 top-0 bottom-0 z-30 hidden lg:flex flex-col justify-center"
-        style={{
-          width:           "clamp(155px, 13.5vw, 210px)",
-          backgroundColor: "var(--color-forest)",
-          borderLeft:      "1px solid rgba(248,245,240,0.06)",
-        }}
+        className="absolute right-0 z-30 hidden lg:block"
+        style={{ top: "50%", transform: "translateY(-50%)" }}
       >
-        {STATS_PANEL.map(({ Icon, value, label }, i) => (
-          <div
-            key={i}
-            className="flex items-center gap-4 px-6 py-6"
-            style={{
-              borderBottom:
-                i < STATS_PANEL.length - 1
-                  ? "1px solid rgba(248,245,240,0.07)"
-                  : "none",
-            }}
-          >
-            <Icon
-              size={24}
-              style={{ color: GOLD, opacity: 0.78, flexShrink: 0 }}
-            />
-            <div>
-              <p
-                className="font-display font-normal leading-tight"
-                style={{ color: CREAM, fontSize: "clamp(1.05rem, 1.6vw, 1.4rem)" }}
-              >
-                {value}
-              </p>
-              <p
-                className="font-medium tracking-widest uppercase mt-0.5"
-                style={{ fontSize: "0.52rem", color: GOLD, opacity: 0.72, letterSpacing: "0.14em" }}
-              >
-                {label}
-              </p>
-            </div>
-          </div>
-        ))}
+        <motion.div
+          initial={{ opacity: 0, x: 56 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1], delay: 0.4 }}
+          className="flex flex-col"
+          style={{
+            width:           "clamp(148px, 12.5vw, 200px)",
+            backgroundColor: "var(--color-forest)",
+            borderLeft:      "1px solid rgba(248,245,240,0.10)",
+            borderTop:       "1px solid rgba(248,245,240,0.06)",
+            borderBottom:    "1px solid rgba(248,245,240,0.06)",
+            borderRadius:    "6px 0 0 6px",
+            boxShadow:       "-6px 0 28px rgba(0,0,0,0.14)",
+          }}
+        >
+          {STATS_PANEL.map(({ Icon, value, label }, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, x: 22 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.55, ease: [0.25, 0.1, 0.25, 1], delay: 0.55 + i * 0.1 }}
+              className="flex items-center gap-3.5 px-5 py-5"
+              style={{
+                borderBottom:
+                  i < STATS_PANEL.length - 1
+                    ? "1px solid rgba(248,245,240,0.07)"
+                    : "none",
+              }}
+            >
+              <Icon size={22} style={{ color: GOLD, opacity: 0.80, flexShrink: 0 }} />
+              <div>
+                <p
+                  className="font-display font-normal leading-tight"
+                  style={{ color: CREAM, fontSize: "clamp(1rem, 1.5vw, 1.3rem)" }}
+                >
+                  {value}
+                </p>
+                <p
+                  className="font-medium tracking-widest uppercase mt-0.5"
+                  style={{ fontSize: "0.5rem", color: GOLD, opacity: 0.75, letterSpacing: "0.14em" }}
+                >
+                  {label}
+                </p>
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
       </div>
 
       {/* ── Slide navigation dots (left of stats panel, md+) ── */}
