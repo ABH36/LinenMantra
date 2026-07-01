@@ -3,6 +3,9 @@ import { Factory, Layers, BadgeCheck, Globe, Leaf } from "lucide-react";
 import FadeInOnScroll from "@/components/shared/FadeInOnScroll";
 
 const FOREST = "#2C4A2D";
+const FOREST_72 = "rgba(44,74,45,0.72)";
+const FOREST_55 = "rgba(44,74,45,0.55)";
+const FOREST_45 = "rgba(44,74,45,0.45)";
 
 const features = [
   {
@@ -30,15 +33,15 @@ const features = [
 export default function ArtAndScience() {
   return (
     <section
-      className="w-full section-py"
+      className="w-full py-10 lg:py-14"
       style={{ backgroundColor: "var(--color-bg-secondary)" }}
     >
       <div className="container-site">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-stretch">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-stretch">
 
-          {/* Left — two overlapping images, height matches right column */}
+          {/* Left — two overlapping images */}
           <FadeInOnScroll direction="up" className="h-full">
-            <div className="relative w-full h-full" style={{ minHeight: "520px" }}>
+            <div className="relative w-full h-full" style={{ minHeight: "440px" }}>
 
               {/* Primary image — top portion */}
               <div className="absolute top-0 left-0 right-0" style={{ height: "62%" }}>
@@ -84,17 +87,17 @@ export default function ArtAndScience() {
 
             {/* Tag */}
             <p
-              className="text-label mb-5"
-              style={{ color: "var(--color-text-muted)", letterSpacing: "0.12em" }}
+              className="text-label mb-4"
+              style={{ color: FOREST_45, letterSpacing: "0.12em" }}
             >
               CRAFTED WITH{" "}
               <span style={{ color: "var(--color-accent)" }}>HERITAGE.</span>
               {" "}MADE WITH{" "}
-              <span style={{ color: "var(--color-cta)" }}>PRECISION.</span>
+              <span style={{ color: FOREST }}>PRECISION.</span>
             </p>
 
             {/* Flourish — line + leaf */}
-            <div className="flex items-center gap-2.5 mb-7">
+            <div className="flex items-center gap-2.5 mb-5">
               <span
                 className="block h-px w-10"
                 style={{ backgroundColor: "var(--color-accent)", opacity: 0.55 }}
@@ -104,10 +107,10 @@ export default function ArtAndScience() {
 
             {/* Heading */}
             <h2
-              className="font-display font-normal leading-tight mb-6"
+              className="font-display font-normal leading-tight mb-5"
               style={{
-                fontSize: "clamp(1.9rem, 3.2vw, 3rem)",
-                color: "var(--color-text-primary)",
+                fontSize: "clamp(1.75rem, 3vw, 2.75rem)",
+                color: FOREST,
                 letterSpacing: "-0.01em",
                 textTransform: "uppercase",
               }}
@@ -119,9 +122,9 @@ export default function ArtAndScience() {
 
             {/* Description */}
             <p
-              className="leading-relaxed mb-9"
+              className="leading-relaxed mb-6"
               style={{
-                color: "var(--color-text-secondary)",
+                color: FOREST_72,
                 fontSize: "var(--text-body)",
               }}
             >
@@ -135,28 +138,28 @@ export default function ArtAndScience() {
               {features.map(({ Icon, title, body }, i) => (
                 <div
                   key={i}
-                  className="flex items-start gap-4 py-4"
+                  className="flex items-start gap-4 py-3"
                   style={{
-                    borderTop: i === 0 ? "1px solid var(--color-border)" : "none",
-                    borderBottom: "1px solid var(--color-border)",
+                    borderTop: i === 0 ? `1px solid ${FOREST_45}` : "none",
+                    borderBottom: `1px solid ${FOREST_45}`,
                   }}
                 >
                   <div
-                    className="shrink-0 w-10 h-10 flex items-center justify-center rounded-full mt-0.5"
+                    className="shrink-0 w-9 h-9 flex items-center justify-center rounded-full mt-0.5"
                     style={{ backgroundColor: FOREST }}
                   >
-                    <Icon size={16} color="var(--color-text-light)" />
+                    <Icon size={15} color="#F8F5F0" />
                   </div>
                   <div>
                     <h4
                       className="text-xs font-semibold tracking-widest uppercase mb-1"
-                      style={{ color: "var(--color-text-primary)" }}
+                      style={{ color: FOREST }}
                     >
                       {title}
                     </h4>
                     <p
                       className="text-sm leading-relaxed"
-                      style={{ color: "var(--color-text-secondary)" }}
+                      style={{ color: FOREST_55 }}
                     >
                       {body}
                     </p>
@@ -167,11 +170,11 @@ export default function ArtAndScience() {
 
             {/* Bottom italic quote */}
             <p
-              className="mt-7 font-display"
+              className="mt-5 font-display"
               style={{
                 fontStyle: "italic",
                 color: "var(--color-accent)",
-                fontSize: "1.05rem",
+                fontSize: "1rem",
               }}
             >
               Because great brands begin with exceptional fabric.
