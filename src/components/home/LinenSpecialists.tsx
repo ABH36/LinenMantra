@@ -12,7 +12,7 @@ export default function LinenSpecialists() {
   return (
     <section
       className="w-full py-10 lg:py-14"
-      style={{ backgroundColor: "var(--color-bg-primary)" }}
+      style={{ backgroundColor: "var(--color-bg-secondary)" }}
     >
     <div className="container-site">
       {/* Section title */}
@@ -108,10 +108,11 @@ export default function LinenSpecialists() {
         {/* Right — active content */}
         <FadeInOnScroll direction="up" delay={0.2} className="lg:col-span-3 flex flex-col justify-center">
           <div
-            className="relative p-8 md:p-12"
+            className="relative p-8 md:p-12 border border-[var(--color-border)]"
             style={{
-              backgroundColor: "var(--color-bg-secondary)",
+              backgroundColor: "var(--color-bg-primary)",
               minHeight: "280px",
+              boxShadow: "var(--shadow-card)",
             }}
           >
             {/* Decorative large number background */}

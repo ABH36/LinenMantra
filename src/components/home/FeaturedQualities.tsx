@@ -6,7 +6,7 @@ import { featuredProducts } from "@/data/products";
 
 export default function FeaturedQualities() {
   return (
-    <section className="w-full py-10 lg:py-14 bg-[var(--color-bg-primary)]">
+    <section className="w-full py-10 lg:py-14 bg-[var(--color-bg-secondary)]">
       <div className="container-site">
 
         {/* Header row */}
