@@ -234,7 +234,7 @@ export default function HeroBanner() {
   return (
     <section
       className="relative w-full overflow-hidden"
-      style={{ height: "100vh", minHeight: "620px" }}
+      style={{ height: "100vh", minHeight: "740px" }}
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
@@ -277,9 +277,9 @@ export default function HeroBanner() {
 
 
       {/* ── Slide content (left column) — fades per slide ── */}
-      <div className="absolute inset-0 z-20 flex flex-col pt-[118px] md:pt-[140px] pb-16 md:pb-[60px]">
-        <div className="container-site flex-1 flex items-center">
-          <div className="w-full max-w-[520px] md:max-w-[555px]">
+      <div className="absolute inset-0 z-20 flex flex-col pt-[118px] md:pt-[140px] pb-[52px] md:pb-[48px]">
+        <div className="container-site flex-1 flex items-start">
+          <div className="w-full max-w-[520px] md:max-w-[555px] pt-6 md:pt-10">
             <AnimatePresence mode="wait">
               {slide.showContent && (
                 <motion.div
