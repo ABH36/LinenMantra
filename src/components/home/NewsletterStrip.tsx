@@ -18,14 +18,7 @@ export default function NewsletterStrip() {
 
   return (
     <section
-      className="w-full relative overflow-hidden"
-      style={{
-        backgroundImage:  "url('/images/about/footer/fabric.png')",
-        backgroundSize:   "400px auto",
-        backgroundRepeat: "repeat",
-        borderTop:    "1px solid var(--color-border)",
-        borderBottom: "1px solid var(--color-border)",
-      }}
+      className="w-full relative overflow-hidden bg-[var(--color-cta)]"
     >
       {/* Subtle leaf watermarks — far left + far right */}
       <div
@@ -35,7 +28,7 @@ export default function NewsletterStrip() {
           backgroundRepeat:   "no-repeat",
           backgroundSize:     "auto 220%",
           backgroundPosition: "left center",
-          opacity:             0.1,
+          opacity:             0.07,
         }}
       />
       <div
@@ -45,7 +38,7 @@ export default function NewsletterStrip() {
           backgroundRepeat:   "no-repeat",
           backgroundSize:     "auto 220%",
           backgroundPosition: "right center",
-          opacity:             0.1,
+          opacity:             0.07,
           transform:           "scaleX(-1)",
         }}
       />
@@ -67,8 +60,8 @@ export default function NewsletterStrip() {
               style={{
                 width:  52,
                 height: 52,
-                borderColor: "var(--color-accent)",
-                color:       "var(--color-accent)",
+                borderColor: "rgba(248,245,240,0.45)",
+                color:       "var(--color-text-light)",
               }}
             >
               <Mail size={20} />
@@ -79,14 +72,14 @@ export default function NewsletterStrip() {
                 className="font-display font-normal leading-tight"
                 style={{
                   fontSize: "clamp(1.3rem, 2vw, 1.75rem)",
-                  color:    "var(--color-forest)",
+                  color:    "var(--color-text-light)",
                 }}
               >
                 Stay Inspired with Linen Mantra
               </h2>
               <p
                 className="mt-1.5 text-sm leading-relaxed max-w-sm"
-                style={{ color: "var(--color-text-muted)" }}
+                style={{ color: "rgba(248,245,240,0.65)" }}
               >
                 Subscribe to our newsletter and be the first to know about new
                 arrivals, collections and exclusive offers.
@@ -105,7 +98,7 @@ export default function NewsletterStrip() {
             {status === "success" ? (
               <p
                 className="text-sm font-medium"
-                style={{ color: "var(--color-forest)" }}
+                style={{ color: "var(--color-text-light)" }}
               >
                 Thank you! We&apos;ll be in touch soon.
               </p>
@@ -116,7 +109,7 @@ export default function NewsletterStrip() {
                   <Mail
                     size={15}
                     className="absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none"
-                    style={{ color: "var(--color-text-muted)" }}
+                    style={{ color: "rgba(248,245,240,0.55)" }}
                   />
                   <input
                     type="email"
@@ -126,10 +119,10 @@ export default function NewsletterStrip() {
                     required
                     className="w-full h-full pl-9 pr-4 text-sm outline-none"
                     style={{
-                      backgroundColor: "var(--color-bg-primary)",
-                      border:          "1px solid var(--color-border)",
+                      backgroundColor: "rgba(248,245,240,0.10)",
+                      border:          "1px solid rgba(248,245,240,0.28)",
                       borderRight:     "none",
-                      color:           "var(--color-text-primary)",
+                      color:           "var(--color-text-light)",
                       fontFamily:      "inherit",
                     }}
                   />
