@@ -30,7 +30,6 @@ interface SlideData {
   h2:          string;
   h2Color:     string;
   flourish?:   boolean;
-  sub?:        string;
   body:        string;
   cta:         { text: string; href: string; bg: string; fg: string };
 }
@@ -56,7 +55,7 @@ const SLIDES: SlideData[] = [
     h1Color:  FOREST,
     h2:       "Crafted by Linen Mantra.",
     h2Color:  TERRA,
-    sub:      "Natural by Origin. Refined by Expertise.",
+    flourish: true,
     body:     "Premium linen fabrics engineered for menswear brands, designers, and apparel manufacturers worldwide.",
     cta:      { text: "Request Fabric Samples", href: "/contact", bg: FOREST, fg: CREAM },
   },
@@ -69,8 +68,7 @@ const SLIDES: SlideData[] = [
     h2:       "Linen Export House",
     h2Color:  GOLD,
     flourish: true,
-    sub:      "Trusted Across 14+ Countries.",
-    body:     "Supplying premium linen and linen-blend fabrics to global brands since 1991.",
+    body:     "Supplying premium linen and linen-blend fabrics to global brands across 14+ countries since 1991.",
     cta:      { text: "Get Export Quote", href: "/contact", bg: GOLD, fg: FOREST },
   },
 ];
@@ -202,21 +200,6 @@ export default function HeroBanner() {
                     className="h-px w-8 my-4"
                     style={{ backgroundColor: FOREST, opacity: 0.35 }}
                   />
-                )}
-
-                {/* Sub-heading */}
-                {slide.sub && (
-                  <p
-                    className="font-medium mb-3"
-                    style={{
-                      fontSize: "0.875rem",
-                      color: slide.isDark
-                        ? "rgba(248,245,240,0.8)"
-                        : "rgba(44,74,45,0.72)",
-                    }}
-                  >
-                    {slide.sub}
-                  </p>
                 )}
 
                 {/* Body copy */}
