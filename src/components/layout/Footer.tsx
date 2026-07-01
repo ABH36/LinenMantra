@@ -92,7 +92,7 @@ export default function Footer() {
         className="absolute inset-0 pointer-events-none select-none"
         aria-hidden="true"
         style={{
-          backgroundImage:    "url('/images/about/footer/footer%20background.png')",
+          backgroundImage:    "url('/images/about/footer/footerbackground.png')",
           backgroundRepeat:   "no-repeat",
           backgroundSize:     "auto 118%",
           backgroundPosition: "55% center",

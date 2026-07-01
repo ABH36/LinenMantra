@@ -24,7 +24,7 @@ export default function NewsletterStrip() {
       <div
         className="absolute inset-y-0 left-0 w-40 pointer-events-none"
         style={{
-          backgroundImage:    "url('/images/about/footer/footer%20background.png')",
+          backgroundImage:    "url('/images/about/footer/footerbackground.png')",
           backgroundRepeat:   "no-repeat",
           backgroundSize:     "auto 220%",
           backgroundPosition: "left center",
@@ -34,7 +34,7 @@ export default function NewsletterStrip() {
       <div
         className="absolute inset-y-0 right-0 w-40 pointer-events-none"
         style={{
-          backgroundImage:    "url('/images/about/footer/footer%20background.png')",
+          backgroundImage:    "url('/images/about/footer/footerbackground.png')",
           backgroundRepeat:   "no-repeat",
           backgroundSize:     "auto 220%",
           backgroundPosition: "right center",
