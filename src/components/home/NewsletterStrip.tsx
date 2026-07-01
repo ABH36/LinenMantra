@@ -124,6 +124,7 @@ export default function NewsletterStrip() {
                       borderRight:     "none",
                       color:           "var(--color-text-light)",
                       fontFamily:      "inherit",
+                      outline:         "none",
                     }}
                   />
                 </div>
