@@ -33,8 +33,8 @@ export default function Header() {
     ? "bg-[var(--color-bg-primary)] border-b border-[var(--color-border)]"
     : "bg-transparent border-b border-transparent";
 
-  const linkColor = isSolid ? "var(--color-text-secondary)" : "rgba(248,245,240,0.88)";
-  const linkActiveColor = isSolid ? "var(--color-text-primary)" : "rgba(248,245,240,1)";
+  const linkColor = isSolid ? "var(--color-text-secondary)" : "var(--color-text-primary)";
+  const linkActiveColor = isSolid ? "var(--color-text-primary)" : "var(--color-text-primary)";
 
   return (
     <>

@@ -5,7 +5,7 @@ import { Factory, Layers, BadgeCheck, Globe, Leaf } from "lucide-react";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
-const FOREST    = "#2C4A2D";
+const FOREST    = "var(--color-forest)";
 const FOREST_72 = "rgba(44,74,45,0.72)";
 const FOREST_55 = "rgba(44,74,45,0.55)";
 const FOREST_45 = "rgba(44,74,45,0.45)";

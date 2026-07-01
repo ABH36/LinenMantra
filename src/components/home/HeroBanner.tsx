@@ -7,7 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Leaf, Users, Award, Shirt } from "lucide-react";
 
 // ── Hero-specific colour palette ─────────────────────────────────────
-const FOREST = "#2C4A2D";
+const FOREST = "var(--color-forest)";
 const TERRA  = "#B5442D";
 const GOLD   = "#C9A452";
 const CREAM  = "#F8F5F0";
@@ -81,7 +81,7 @@ function Flourish({ color }: { color: string }) {
   return (
     <div className="flex items-center gap-2.5 my-5">
       <span className="block h-px w-12" style={{ backgroundColor: color, opacity: 0.38 }} />
-      <Leaf size={12} color={color} style={{ opacity: 0.6 }} />
+      <Leaf size={12} style={{ color, opacity: 0.6 }} />
       <span className="block h-px w-6"  style={{ backgroundColor: color, opacity: 0.22 }} />
     </div>
   );
@@ -160,8 +160,7 @@ export default function HeroBanner() {
                 <div className="flex items-center gap-2 mb-4">
                   <Leaf
                     size={11}
-                    color={slide.isDark ? GOLD : FOREST}
-                    style={{ opacity: 0.6 }}
+                    style={{ color: slide.isDark ? GOLD : FOREST, opacity: 0.6 }}
                   />
                   <p
                     className="font-medium tracking-widest uppercase"

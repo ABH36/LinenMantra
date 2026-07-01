@@ -55,6 +55,12 @@ export default function Footer() {
                   width: "auto",
                 }}
               />
+              <p
+                className="text-xs tracking-widest uppercase mt-1.5"
+                style={{ color: "var(--color-text-primary)" }}
+              >
+                Silverline Pvt. Ltd.
+              </p>
             </Link>
             <p
               className="text-sm leading-relaxed max-w-xs"
