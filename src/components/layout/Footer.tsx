@@ -56,10 +56,10 @@ export default function Footer() {
                 }}
               />
               <p
-                className="text-xs tracking-widest uppercase mt-1.5"
+                className="text-xs tracking-widest uppercase mt-0.5"
                 style={{ color: "var(--color-text-primary)" }}
               >
-                Silverline Pvt. Ltd.
+                Silverline Fashion Fabrics Ltd.
               </p>
             </Link>
             <p
