@@ -132,8 +132,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className="min-h-screen flex flex-col antialiased"
-        style={{ backgroundColor: "var(--color-bg-primary)" }}
+        className="min-h-screen flex flex-col antialiased bg-[var(--color-bg-primary)]"
       >
         <a href="#main-content" className="skip-nav">Skip to main content</a>
         <Header />

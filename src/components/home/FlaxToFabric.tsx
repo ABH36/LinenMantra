@@ -57,7 +57,7 @@ export default function FlaxToFabric() {
   }, [paused]);
 
   return (
-    <section className="w-full" style={{ backgroundColor: "var(--color-bg-secondary)" }}>
+    <section className="w-full bg-[var(--color-bg-secondary)]">
 
       {/* Section heading */}
       <div className="container-site pt-14 pb-8 md:pt-16 md:pb-10">

@@ -38,8 +38,7 @@ export default function SectionTitle({
         <span className={`text-label ${labelColor} block mb-4`}>{label}</span>
       )}
       <h2
-        className={`font-display font-normal ${headingColor} leading-tight`}
-        style={{ fontSize: "var(--text-h2)" }}
+        className={`font-display font-normal ${headingColor} leading-tight text-[var(--text-h2)]`}
       >
         {heading}
       </h2>
@@ -50,8 +49,7 @@ export default function SectionTitle({
       )}
       {subText && (
         <p
-          className={`mt-6 max-w-xl leading-relaxed ${subColor} ${isCenter ? "mx-auto" : ""}`}
-          style={{ fontSize: "var(--text-body)" }}
+          className={`mt-6 max-w-xl leading-relaxed text-base ${subColor} ${isCenter ? "mx-auto" : ""}`}
         >
           {subText}
         </p>

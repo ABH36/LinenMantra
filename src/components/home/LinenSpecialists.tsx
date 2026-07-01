@@ -11,8 +11,7 @@ export default function LinenSpecialists() {
 
   return (
     <section
-      className="w-full py-10 lg:py-14"
-      style={{ backgroundColor: "var(--color-bg-secondary)" }}
+      className="w-full py-10 lg:py-14 bg-[var(--color-bg-secondary)]"
     >
     <div className="container-site">
       {/* Section title */}

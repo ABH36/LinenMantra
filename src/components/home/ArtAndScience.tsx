@@ -44,8 +44,7 @@ export default function ArtAndScience() {
   return (
     <section
       ref={ref}
-      className="w-full py-10 lg:py-14"
-      style={{ backgroundColor: "var(--color-bg-secondary)" }}
+      className="w-full py-10 lg:py-14 bg-[var(--color-bg-secondary)]"
     >
       <div className="container-site">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-stretch">
@@ -109,21 +108,17 @@ export default function ArtAndScience() {
             {/* Tag */}
             <motion.p
               className="text-label mb-4"
-              style={{ color: "var(--color-text-muted)", letterSpacing: "0.12em" }}
               {...fadeUp(0.15)}
             >
               CRAFTED WITH{" "}
-              <span style={{ color: "var(--color-accent)" }}>HERITAGE.</span>
+              <span className="text-[var(--color-accent)]">HERITAGE.</span>
               {" "}MADE WITH{" "}
-              <span style={{ color: "var(--color-text-primary)" }}>PRECISION.</span>
+              <span className="text-[var(--color-text-primary)]">PRECISION.</span>
             </motion.p>
 
             {/* Flourish — line + leaf */}
             <motion.div className="flex items-center gap-2.5 mb-5" {...fadeUp(0.22)}>
-              <span
-                className="block h-px w-10"
-                style={{ backgroundColor: "var(--color-accent)", opacity: 0.55 }}
-              />
+              <span className="block h-px w-10 bg-[var(--color-accent)] opacity-55" />
               <Leaf size={13} color="var(--color-accent)" style={{ opacity: 0.7 }} />
             </motion.div>
 
@@ -145,8 +140,7 @@ export default function ArtAndScience() {
 
             {/* Description */}
             <motion.p
-              className="leading-relaxed mb-6"
-              style={{ color: "var(--color-text-secondary)", fontSize: "var(--text-body)" }}
+              className="leading-relaxed mb-6 text-[var(--color-text-secondary)] text-base"
               {...fadeUp(0.34)}
             >
               At Linen Mantra, every fabric is a result of thoughtful craftsmanship
@@ -166,20 +160,14 @@ export default function ArtAndScience() {
                   }}
                   {...fadeUp(0.38 + i * 0.09)}
                 >
-                  <div
-                    className="shrink-0 w-9 h-9 flex items-center justify-center rounded-full mt-0.5"
-                    style={{ backgroundColor: "var(--color-accent)" }}
-                  >
+                  <div className="shrink-0 w-9 h-9 flex items-center justify-center rounded-full mt-0.5 bg-[var(--color-accent)]">
                     <Icon size={15} color="var(--color-text-light)" />
                   </div>
                   <div>
-                    <h4
-                      className="text-xs font-semibold tracking-widest uppercase mb-1"
-                      style={{ color: "var(--color-text-primary)" }}
-                    >
+                    <h4 className="text-xs font-semibold tracking-widest uppercase mb-1 text-[var(--color-text-primary)]">
                       {title}
                     </h4>
-                    <p className="text-sm leading-relaxed" style={{ color: "var(--color-text-secondary)" }}>
+                    <p className="text-sm leading-relaxed text-[var(--color-text-secondary)]">
                       {body}
                     </p>
                   </div>
@@ -189,8 +177,7 @@ export default function ArtAndScience() {
 
             {/* Bottom italic quote */}
             <motion.p
-              className="mt-5 font-display"
-              style={{ fontStyle: "italic", color: "var(--color-accent)", fontSize: "1rem" }}
+              className="mt-5 font-display italic text-base text-[var(--color-accent)]"
               {...fadeUp(0.72)}
             >
               Because great brands begin with exceptional fabric.
