@@ -39,7 +39,7 @@ export default function Footer() {
       />
 
       {/* Main footer content */}
-      <div className="relative z-10 container-site py-10 md:py-12">
+      <div className="relative z-10 container-site py-8 md:py-10">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8">
 
           {/* Column 1 — Brand (wider) */}
