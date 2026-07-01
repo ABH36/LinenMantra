@@ -4,7 +4,7 @@ import { footerLinks, productCategoryLinks } from "@/data/navigation";
 
 // ── Gold accent line under every heading ──────────────────────────────
 function HeadingLine() {
-  return <div className="mt-3 mb-7 h-px w-8 bg-[var(--color-accent)]" />;
+  return <div className="mt-2.5 mb-4 h-px w-8 bg-[var(--color-accent)]" />;
 }
 
 // ── Circular icon wrapper — social + contact ──────────────────────────
@@ -113,7 +113,7 @@ export default function Footer() {
       {/* ════════════════════════════════
            MAIN GRID
           ════════════════════════════════ */}
-      <div className="relative z-10 container-site py-14 md:py-16">
+      <div className="relative z-10 container-site py-8 md:py-10">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-y-12 md:gap-x-8">
 
           {/* ── Column 1: Brand (3 cols) ── */}
@@ -131,22 +131,22 @@ export default function Footer() {
             </Link>
 
             {/* Company name */}
-            <p className="mt-4 text-[11px] font-bold tracking-[0.18em] uppercase text-[var(--color-text-primary)]">
+            <p className="mt-3 text-[11px] font-bold tracking-[0.18em] uppercase text-[var(--color-text-primary)]">
               Silverline Fashion Fabrics Ltd.
             </p>
 
             {/* Thin gold rule */}
-            <div className="mt-2.5 mb-5 h-px bg-[var(--color-accent)] opacity-50" />
+            <div className="mt-2 mb-3 h-px bg-[var(--color-accent)] opacity-50" />
 
             {/* Description */}
-            <p className="text-[13px] leading-[1.85] text-justify text-[var(--color-text-secondary)]">
+            <p className="text-[13px] leading-[1.75] text-justify text-[var(--color-text-secondary)]">
               India&apos;s leading manufacturer of premium linen and linen blend
               fabrics — trusted by brands, designers, and export markets
               worldwide since 1991.
             </p>
 
             {/* Social icons with flanking lines */}
-            <div className="flex items-center gap-3 mt-9">
+            <div className="flex items-center gap-3 mt-5">
               <span className="flex-1 h-px bg-[var(--color-accent)] opacity-30" />
               <div className="flex items-center gap-3">
                 <a href="#" aria-label="Follow on Instagram" className="hover:opacity-70 transition-opacity">
@@ -169,7 +169,7 @@ export default function Footer() {
               Quick Links
             </h3>
             <HeadingLine />
-            <ul className="flex flex-col gap-[18px]">
+            <ul className="flex flex-col gap-3">
               {footerLinks.map((link) => (
                 <li key={link.href} className="flex items-center gap-2.5">
                   <span className="text-[var(--color-accent)] leading-none" style={{ fontSize: "0.75rem" }}>›</span>
@@ -190,7 +190,7 @@ export default function Footer() {
               Product Categories
             </h3>
             <HeadingLine />
-            <ul className="flex flex-col gap-[18px]">
+            <ul className="flex flex-col gap-3">
               {productCategoryLinks.map((link) => (
                 <li key={link.href} className="flex items-center gap-2.5">
                   <span className="text-[var(--color-accent)] leading-none" style={{ fontSize: "0.75rem" }}>›</span>
@@ -211,7 +211,7 @@ export default function Footer() {
               Get in Touch
             </h3>
             <HeadingLine />
-            <ul className="flex flex-col gap-7">
+            <ul className="flex flex-col gap-4">
 
               {/* Phone */}
               <li className="flex items-start gap-4">
