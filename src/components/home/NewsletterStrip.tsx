@@ -1,111 +1,76 @@
 "use client";
 
 import { useState, FormEvent } from "react";
-import { Send } from "lucide-react";
 import FadeInOnScroll from "@/components/shared/FadeInOnScroll";
-
-const CREAM    = "var(--color-text-light)";
-const CREAM_60 = "rgba(248,245,240,0.60)";
-const CREAM_55 = "rgba(248,245,240,0.55)";
 
 export default function NewsletterStrip() {
   const [email,  setEmail]  = useState("");
-  const [agreed, setAgreed] = useState(false);
   const [status, setStatus] = useState<"idle" | "success">("idle");
 
   function handleSubmit(e: FormEvent) {
     e.preventDefault();
-    if (!email.trim() || !agreed) return;
+    if (!email.trim()) return;
     setStatus("success");
     setEmail("");
-    setAgreed(false);
     setTimeout(() => setStatus("idle"), 5000);
   }
 
   return (
-    <section
-      className="w-full py-14 md:py-16"
-      style={{ backgroundColor: "var(--color-cta)" }}
-    >
+    <section className="w-full py-10 md:py-12 bg-[var(--color-cta)]">
       <div className="container-site">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8">
 
-          {/* Left — heading */}
+          {/* Left — heading + subtitle */}
           <FadeInOnScroll direction="up">
             <h2
-              className="font-display font-normal leading-tight"
-              style={{
-                fontSize: "clamp(1.75rem, 3vw, 2.75rem)",
-                color: CREAM,
-              }}
+              className="font-display font-normal leading-tight text-[var(--color-text-light)]"
+              style={{ fontSize: "clamp(1.4rem,2.2vw,1.9rem)" }}
             >
-              Subscribe for the
-              <br />
-              exclusive updates!
+              Subscribe to Newsletter
             </h2>
+            <p
+              className="mt-1.5 text-sm leading-relaxed"
+              style={{ color: "rgba(248,245,240,0.65)" }}
+            >
+              Get the latest fabric updates directly to your inbox.
+            </p>
           </FadeInOnScroll>
 
-          {/* Right — form */}
-          <FadeInOnScroll direction="up" delay={0.12} className="shrink-0">
+          {/* Right — inline input + button */}
+          <FadeInOnScroll direction="up" delay={0.12} className="w-full md:w-auto md:min-w-[420px] shrink-0">
             {status === "success" ? (
-              <p
-                className="text-sm font-medium tracking-wide"
-                style={{ color: CREAM }}
-              >
-                Thank you for subscribing. We&apos;ll be in touch!
+              <p className="text-sm font-medium text-[var(--color-text-light)]">
+                Thank you! We&apos;ll be in touch soon.
               </p>
             ) : (
-              <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-
-                {/* Email + button row */}
-                <div className="flex items-end gap-5">
-                  <input
-                    type="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="Enter Your Email Address"
-                    required
-                    className="flex-1 bg-transparent text-sm pb-3 outline-none"
-                    style={{
-                      borderBottom: `1px solid ${CREAM_55}`,
-                      color:        CREAM,
-                      fontFamily:   "inherit",
-                      minWidth:     "220px",
-                    }}
-                  />
-                  <button
-                    type="submit"
-                    className="inline-flex items-center gap-2.5 px-6 py-3 text-xs font-medium tracking-widest uppercase transition-all duration-300 hover:bg-white/10 shrink-0 cursor-pointer"
-                    style={{
-                      border:     `1px solid ${CREAM_55}`,
-                      color:      CREAM,
-                      background: "none",
-                      fontFamily: "inherit",
-                    }}
-                  >
-                    <Send size={12} />
-                    Subscribe
-                  </button>
-                </div>
-
-                {/* Privacy checkbox */}
-                <label className="flex items-center gap-3 cursor-pointer">
-                  <input
-                    type="checkbox"
-                    checked={agreed}
-                    onChange={(e) => setAgreed(e.target.checked)}
-                    className="w-3.5 h-3.5 cursor-pointer"
-                    style={{ accentColor: CREAM }}
-                  />
-                  <span className="text-xs" style={{ color: CREAM_60 }}>
-                    I agree to the{" "}
-                    <span className="underline" style={{ color: CREAM }}>
-                      Privacy Policy
-                    </span>
-                    .
-                  </span>
-                </label>
-
+              <form onSubmit={handleSubmit} className="flex items-stretch h-12">
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Enter your email address"
+                  required
+                  className="flex-1 min-w-0 px-4 text-sm outline-none"
+                  style={{
+                    backgroundColor: "rgba(248,245,240,0.12)",
+                    border:          "1px solid rgba(248,245,240,0.28)",
+                    borderRight:     "none",
+                    color:           "var(--color-text-light)",
+                    fontFamily:      "inherit",
+                  }}
+                />
+                <button
+                  type="submit"
+                  className="px-7 text-xs font-semibold tracking-widest uppercase shrink-0 cursor-pointer transition-opacity hover:opacity-85"
+                  style={{
+                    backgroundColor: "var(--color-text-light)",
+                    color:           "var(--color-cta)",
+                    border:          "none",
+                    fontFamily:      "inherit",
+                  }}
+                >
+                  Subscribe
+                </button>
               </form>
             )}
           </FadeInOnScroll>
