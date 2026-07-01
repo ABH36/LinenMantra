@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import HeroBanner from "@/components/home/HeroBanner";
-import ExpertiseStrip from "@/components/home/ExpertiseStrip";
 import ArtAndScience from "@/components/home/ArtAndScience";
 import FeaturedQualities from "@/components/home/FeaturedQualities";
 import PremiumStrip from "@/components/home/PremiumStrip";
@@ -18,7 +17,6 @@ export default function HomePage() {
   return (
     <>
       <HeroBanner />
-      <ExpertiseStrip />
       <ArtAndScience />
       <FeaturedQualities />
       <PremiumStrip />
