@@ -16,15 +16,15 @@ export default function NewsletterStrip() {
   }
 
   return (
-    <section className="w-full py-10 md:py-12 bg-[var(--color-cta)]">
+    <section className="w-full py-6 md:py-8 bg-[var(--color-cta)]">
       <div className="container-site">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8">
 
           {/* Left — heading + subtitle */}
           <FadeInOnScroll direction="up">
             <h2
-              className="font-display font-normal leading-tight text-[var(--color-text-light)]"
-              style={{ fontSize: "clamp(1.4rem,2.2vw,1.9rem)" }}
+              className="font-display font-normal leading-tight"
+              style={{ fontSize: "clamp(1.4rem,2.2vw,1.9rem)", color: "var(--color-text-light)" }}
             >
               Subscribe to Newsletter
             </h2>
