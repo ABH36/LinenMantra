@@ -5,8 +5,6 @@ import { Factory, Layers, BadgeCheck, Globe, Leaf } from "lucide-react";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
-const FOREST = "var(--color-forest)";
-
 const features = [
   {
     Icon: Factory,

@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import SectionWrapper from "@/components/shared/SectionWrapper";
 import FadeInOnScroll from "@/components/shared/FadeInOnScroll";
 import { specialists } from "@/data/specialists";
 
@@ -11,7 +10,11 @@ export default function LinenSpecialists() {
   const activeItem = specialists.find((s) => s.id === activeId)!;
 
   return (
-    <SectionWrapper>
+    <section
+      className="w-full py-10 lg:py-14"
+      style={{ backgroundColor: "var(--color-bg-primary)" }}
+    >
+    <div className="container-site">
       {/* Section title */}
       <FadeInOnScroll direction="up" className="mb-14">
         <span className="text-label block mb-4" style={{ color: "var(--color-accent)" }}>
@@ -163,6 +166,7 @@ export default function LinenSpecialists() {
           </div>
         </FadeInOnScroll>
       </div>
-    </SectionWrapper>
+    </div>
+    </section>
   );
 }
