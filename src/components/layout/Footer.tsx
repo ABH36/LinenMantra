@@ -165,7 +165,7 @@ export default function Footer() {
 
           {/* ── Column 2: Quick Links (2 cols) ── */}
           <div className="md:col-span-2">
-            <h3 className="text-sm font-bold tracking-[0.14em] uppercase text-[var(--color-accent)]">
+            <h3 className="text-[15px] font-extrabold tracking-[0.12em] uppercase text-[var(--color-forest)]">
               Quick Links
             </h3>
             <HeadingLine />
@@ -186,7 +186,7 @@ export default function Footer() {
 
           {/* ── Column 3: Product Categories (3 cols) ── */}
           <div className="md:col-span-3">
-            <h3 className="text-sm font-bold tracking-[0.14em] uppercase text-[var(--color-accent)]">
+            <h3 className="text-[15px] font-extrabold tracking-[0.12em] uppercase text-[var(--color-forest)]">
               Product Categories
             </h3>
             <HeadingLine />
@@ -207,7 +207,7 @@ export default function Footer() {
 
           {/* ── Column 4: Get in Touch (4 cols) ── */}
           <div className="md:col-span-4">
-            <h3 className="text-sm font-bold tracking-[0.14em] uppercase text-[var(--color-accent)]">
+            <h3 className="text-[15px] font-extrabold tracking-[0.12em] uppercase text-[var(--color-forest)]">
               Get in Touch
             </h3>
             <HeadingLine />
