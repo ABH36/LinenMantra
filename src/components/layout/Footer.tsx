@@ -87,19 +87,6 @@ export default function Footer() {
         backgroundRepeat: "repeat",
       }}
     >
-      {/* ── Leaf watermark ── */}
-      <div
-        className="absolute inset-0 pointer-events-none select-none"
-        aria-hidden="true"
-        style={{
-          backgroundImage:    "url('/images/about/footer/footerbackground.png')",
-          backgroundRepeat:   "no-repeat",
-          backgroundSize:     "auto 118%",
-          backgroundPosition: "55% center",
-          opacity:             0.12,
-          mixBlendMode:        "multiply",
-        } as React.CSSProperties}
-      />
 
       {/* ── Gold accent top line ── */}
       <div
