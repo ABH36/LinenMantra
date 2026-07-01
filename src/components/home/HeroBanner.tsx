@@ -261,7 +261,7 @@ export default function HeroBanner() {
               initial={{ opacity: 0, x: 22 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.55, ease: [0.25, 0.1, 0.25, 1], delay: 0.55 + i * 0.1 }}
-              className="flex items-center gap-3.5 px-5 py-5"
+              className="flex items-center gap-3.5 px-5 py-3.5"
               style={{
                 borderBottom:
                   i < STATS_PANEL.length - 1
