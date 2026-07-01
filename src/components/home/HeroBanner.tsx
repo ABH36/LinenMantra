@@ -62,7 +62,7 @@ const SLIDES: SlideData[] = [
     h2Color:  TERRA,
     flourish: true,
     body:     "Premium linen fabrics engineered for menswear brands, designers, and apparel manufacturers worldwide.",
-    cta:      { text: "Request Fabric Samples", href: "/contact", bg: FOREST, fg: CREAM },
+    cta:      { text: "Contact Us", href: "/contact", bg: FOREST, fg: CREAM },
   },
   {
     id: 2,
