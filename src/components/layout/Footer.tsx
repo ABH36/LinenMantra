@@ -86,8 +86,8 @@ export default function Footer() {
               <a
                 href="#"
                 aria-label="Follow Linen Mantra on Instagram"
-                className="transition-opacity hover:opacity-60"
-                style={{ color: "var(--color-text-primary)", opacity: 0.45 }}
+                className="transition-opacity hover:opacity-70"
+                style={{ color: "#E1306C" }}
               >
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                   <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
@@ -98,8 +98,8 @@ export default function Footer() {
               <a
                 href="#"
                 aria-label="Connect on LinkedIn"
-                className="transition-opacity hover:opacity-60"
-                style={{ color: "var(--color-text-primary)", opacity: 0.45 }}
+                className="transition-opacity hover:opacity-70"
+                style={{ color: "#0077B5" }}
               >
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
@@ -110,8 +110,8 @@ export default function Footer() {
               <a
                 href="mailto:linenmantra@gmail.com"
                 aria-label="Email Linen Mantra"
-                className="transition-opacity hover:opacity-60"
-                style={{ color: "var(--color-text-primary)", opacity: 0.45 }}
+                className="transition-opacity hover:opacity-70"
+                style={{ color: "#EA4335" }}
               >
                 <Mail size={18} />
               </a>
