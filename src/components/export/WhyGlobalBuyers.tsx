@@ -62,7 +62,7 @@ export default function WhyGlobalBuyers() {
           </p>
           <Link
             href="/contact"
-            className="inline-flex items-center gap-3 px-7 py-3.5 text-sm font-medium tracking-widest uppercase transition-opacity hover:opacity-80 group"
+            className="inline-flex items-center gap-3 px-7 py-3.5 text-sm font-medium tracking-widest uppercase rounded transition-opacity hover:opacity-80 group"
             style={{
               backgroundColor: "var(--color-cta)",
               color: "var(--color-text-light)",

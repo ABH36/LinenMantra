@@ -270,7 +270,7 @@ export default function EnquiryForm() {
             <button
               type="submit"
               disabled={status === "sending"}
-              className="inline-flex items-center justify-center gap-3 px-8 py-3.5 text-sm font-medium tracking-widest uppercase transition-opacity group"
+              className="inline-flex items-center justify-center gap-3 px-8 py-3.5 text-sm font-medium tracking-widest uppercase rounded transition-opacity group"
               style={{
                 backgroundColor:
                   status === "sending"

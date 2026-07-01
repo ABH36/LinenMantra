@@ -58,7 +58,7 @@ export default function ContactCTABand({
           <FadeInOnScroll direction="up" delay={0.15} className="shrink-0">
             <Link
               href={ctaHref}
-              className="inline-flex items-center gap-3 px-8 py-4 text-sm font-medium tracking-widest uppercase transition-opacity hover:opacity-80"
+              className="inline-flex items-center gap-3 px-8 py-4 text-sm font-medium tracking-widest uppercase rounded transition-opacity hover:opacity-80"
               style={{
                 backgroundColor: "var(--color-cta)",
                 color: "var(--color-text-light)",

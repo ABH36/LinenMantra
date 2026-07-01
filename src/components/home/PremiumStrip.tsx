@@ -19,7 +19,7 @@ export default function PremiumStrip() {
           <FadeInOnScroll direction="up" delay={0.12} className="shrink-0">
             <Link
               href="/products"
-              className="inline-flex items-center gap-3 px-8 py-4 text-sm font-medium tracking-widest uppercase text-[var(--color-text-light)] border border-[rgba(248,245,240,0.55)] transition-all duration-300 hover:bg-white/10"
+              className="inline-flex items-center gap-3 px-8 py-4 text-sm font-medium tracking-widest uppercase rounded text-[var(--color-text-light)] border border-[rgba(248,245,240,0.55)] transition-all duration-300 hover:bg-white/10"
             >
               Our Collections
             </Link>

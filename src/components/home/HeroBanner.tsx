@@ -221,7 +221,7 @@ export default function HeroBanner() {
                 {/* CTA */}
                 <Link
                   href={slide.cta.href}
-                  className="inline-flex items-center gap-3 px-7 py-3.5 text-xs font-semibold tracking-widest uppercase transition-opacity hover:opacity-80 group"
+                  className="inline-flex items-center gap-3 px-7 py-3.5 text-xs font-semibold tracking-widest uppercase rounded transition-opacity hover:opacity-80 group"
                   style={{ backgroundColor: slide.cta.bg, color: slide.cta.fg }}
                 >
                   <span>{slide.cta.text}</span>

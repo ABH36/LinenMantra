@@ -131,7 +131,7 @@ export default function NewsletterStrip() {
                 {/* Gold subscribe button */}
                 <button
                   type="submit"
-                  className="px-7 text-[11px] font-bold tracking-widest uppercase shrink-0 cursor-pointer transition-opacity hover:opacity-85 flex items-center gap-2.5"
+                  className="px-7 text-[11px] font-bold tracking-widest uppercase rounded-r shrink-0 cursor-pointer transition-opacity hover:opacity-85 flex items-center gap-2.5"
                   style={{
                     backgroundColor: "var(--color-gold)",
                     color:           "var(--color-text-light)",

@@ -24,7 +24,7 @@ export default function PrimaryButton({
   className = "",
 }: Props) {
   const base =
-    "inline-flex items-center gap-3 px-7 py-3.5 text-sm font-medium tracking-widest uppercase transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed";
+    "inline-flex items-center gap-3 px-7 py-3.5 text-sm font-medium tracking-widest uppercase rounded transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed";
 
   const style = {
     backgroundColor: "var(--color-cta)",

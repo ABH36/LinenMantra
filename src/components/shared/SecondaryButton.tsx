@@ -21,7 +21,7 @@ export default function SecondaryButton({
   className = "",
 }: Props) {
   const base =
-    "inline-flex items-center gap-3 px-7 py-3.5 text-sm font-medium tracking-widest uppercase border transition-all duration-300 group";
+    "inline-flex items-center gap-3 px-7 py-3.5 text-sm font-medium tracking-widest uppercase rounded border transition-all duration-300 group";
 
   const colorStyle: React.CSSProperties = light
     ? {
