@@ -1,7 +1,8 @@
 import Image from "next/image";
-import { Factory, Layers, BadgeCheck, Globe } from "lucide-react";
-import SectionWrapper from "@/components/shared/SectionWrapper";
+import { Factory, Layers, BadgeCheck, Globe, Leaf } from "lucide-react";
 import FadeInOnScroll from "@/components/shared/FadeInOnScroll";
+
+const FOREST = "#2C4A2D";
 
 const features = [
   {
@@ -33,13 +34,14 @@ export default function ArtAndScience() {
       style={{ backgroundColor: "var(--color-bg-secondary)" }}
     >
       <div className="container-site">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-stretch">
 
-          {/* Left — two overlapping images */}
-          <FadeInOnScroll direction="up">
-            <div className="relative w-full" style={{ aspectRatio: "4/5" }}>
+          {/* Left — two overlapping images, height matches right column */}
+          <FadeInOnScroll direction="up" className="h-full">
+            <div className="relative w-full h-full" style={{ minHeight: "520px" }}>
+
               {/* Primary image — top portion */}
-              <div className="absolute top-0 left-0 right-0" style={{ height: "63%" }}>
+              <div className="absolute top-0 left-0 right-0" style={{ height: "62%" }}>
                 <Image
                   src="/images/about/mill1.png"
                   alt="Linen weaving mill"
@@ -49,21 +51,20 @@ export default function ArtAndScience() {
                 />
               </div>
 
-              {/* Accent block — bottom left */}
+              {/* Accent block — bottom left, solid forest green */}
               <div
                 className="absolute bottom-0 left-0"
                 style={{
-                  width: "35%",
-                  height: "44%",
-                  backgroundColor: "var(--color-cta)",
-                  opacity: 0.18,
+                  width: "34%",
+                  height: "45%",
+                  backgroundColor: FOREST,
                 }}
               />
 
               {/* Secondary image — bottom right, overlapping */}
               <div
                 className="absolute bottom-0 right-0"
-                style={{ width: "73%", height: "47%" }}
+                style={{ width: "74%", height: "48%" }}
               >
                 <Image
                   src="/images/about/mill3.png"
@@ -71,14 +72,16 @@ export default function ArtAndScience() {
                   fill
                   sizes="(max-width: 1024px) 80vw, 40vw"
                   className="object-cover"
-                  style={{ outline: "6px solid var(--color-bg-secondary)" }}
+                  style={{ outline: "7px solid var(--color-bg-secondary)" }}
                 />
               </div>
+
             </div>
           </FadeInOnScroll>
 
           {/* Right — content */}
           <FadeInOnScroll direction="up" delay={0.15}>
+
             {/* Tag */}
             <p
               className="text-label mb-5"
@@ -90,11 +93,14 @@ export default function ArtAndScience() {
               <span style={{ color: "var(--color-cta)" }}>PRECISION.</span>
             </p>
 
-            {/* Accent line */}
-            <span
-              className="block h-px w-10 mb-7"
-              style={{ backgroundColor: "var(--color-accent)" }}
-            />
+            {/* Flourish — line + leaf */}
+            <div className="flex items-center gap-2.5 mb-7">
+              <span
+                className="block h-px w-10"
+                style={{ backgroundColor: "var(--color-accent)", opacity: 0.55 }}
+              />
+              <Leaf size={13} color="var(--color-accent)" style={{ opacity: 0.7 }} />
+            </div>
 
             {/* Heading */}
             <h2
@@ -136,10 +142,10 @@ export default function ArtAndScience() {
                   }}
                 >
                   <div
-                    className="shrink-0 w-9 h-9 flex items-center justify-center rounded-full mt-0.5"
-                    style={{ backgroundColor: "var(--color-bg-dark)" }}
+                    className="shrink-0 w-10 h-10 flex items-center justify-center rounded-full mt-0.5"
+                    style={{ backgroundColor: FOREST }}
                   >
-                    <Icon size={15} color="var(--color-text-light)" />
+                    <Icon size={16} color="var(--color-text-light)" />
                   </div>
                   <div>
                     <h4
@@ -170,6 +176,7 @@ export default function ArtAndScience() {
             >
               Because great brands begin with exceptional fabric.
             </p>
+
           </FadeInOnScroll>
         </div>
       </div>
