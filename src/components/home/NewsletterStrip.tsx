@@ -117,7 +117,7 @@ export default function NewsletterStrip() {
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="Enter your email address"
                     required
-                    className="w-full h-full pl-9 pr-4 text-sm outline-none"
+                    className="w-full h-full pl-9 pr-4 text-sm outline-none focus:ring-0 focus:border-transparent"
                     style={{
                       backgroundColor: "rgba(248,245,240,0.10)",
                       border:          "1px solid rgba(248,245,240,0.28)",
