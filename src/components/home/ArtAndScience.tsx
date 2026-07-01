@@ -5,10 +5,7 @@ import { Factory, Layers, BadgeCheck, Globe, Leaf } from "lucide-react";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
-const FOREST    = "var(--color-forest)";
-const FOREST_72 = "rgba(44,74,45,0.88)";
-const FOREST_55 = "rgba(44,74,45,0.78)";
-const FOREST_45 = "rgba(44,74,45,0.65)";
+const FOREST = "var(--color-forest)";
 
 const features = [
   {
@@ -114,13 +111,13 @@ export default function ArtAndScience() {
             {/* Tag */}
             <motion.p
               className="text-label mb-4"
-              style={{ color: FOREST_45, letterSpacing: "0.12em" }}
+              style={{ color: "var(--color-text-muted)", letterSpacing: "0.12em" }}
               {...fadeUp(0.15)}
             >
               CRAFTED WITH{" "}
               <span style={{ color: "var(--color-accent)" }}>HERITAGE.</span>
               {" "}MADE WITH{" "}
-              <span style={{ color: FOREST }}>PRECISION.</span>
+              <span style={{ color: "var(--color-text-primary)" }}>PRECISION.</span>
             </motion.p>
 
             {/* Flourish — line + leaf */}
@@ -137,7 +134,7 @@ export default function ArtAndScience() {
               className="font-display font-normal leading-tight mb-5"
               style={{
                 fontSize: "clamp(1.75rem, 3vw, 2.75rem)",
-                color: FOREST,
+                color: "var(--color-text-primary)",
                 letterSpacing: "-0.01em",
                 textTransform: "uppercase",
               }}
@@ -151,7 +148,7 @@ export default function ArtAndScience() {
             {/* Description */}
             <motion.p
               className="leading-relaxed mb-6"
-              style={{ color: FOREST_72, fontSize: "var(--text-body)" }}
+              style={{ color: "var(--color-text-secondary)", fontSize: "var(--text-body)" }}
               {...fadeUp(0.34)}
             >
               At Linen Mantra, every fabric is a result of thoughtful craftsmanship
@@ -166,25 +163,25 @@ export default function ArtAndScience() {
                   key={i}
                   className="flex items-start gap-4 py-3"
                   style={{
-                    borderTop:    i === 0 ? `1px solid ${FOREST_45}` : "none",
-                    borderBottom: `1px solid ${FOREST_45}`,
+                    borderTop:    i === 0 ? "1px solid var(--color-border)" : "none",
+                    borderBottom: "1px solid var(--color-border)",
                   }}
                   {...fadeUp(0.38 + i * 0.09)}
                 >
                   <div
                     className="shrink-0 w-9 h-9 flex items-center justify-center rounded-full mt-0.5"
-                    style={{ backgroundColor: FOREST }}
+                    style={{ backgroundColor: "var(--color-accent)" }}
                   >
                     <Icon size={15} color="#F8F5F0" />
                   </div>
                   <div>
                     <h4
                       className="text-xs font-semibold tracking-widest uppercase mb-1"
-                      style={{ color: FOREST }}
+                      style={{ color: "var(--color-text-primary)" }}
                     >
                       {title}
                     </h4>
-                    <p className="text-sm leading-relaxed" style={{ color: FOREST_55 }}>
+                    <p className="text-sm leading-relaxed" style={{ color: "var(--color-text-secondary)" }}>
                       {body}
                     </p>
                   </div>
