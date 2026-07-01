@@ -6,9 +6,9 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
 const FOREST    = "var(--color-forest)";
-const FOREST_72 = "rgba(44,74,45,0.72)";
-const FOREST_55 = "rgba(44,74,45,0.55)";
-const FOREST_45 = "rgba(44,74,45,0.45)";
+const FOREST_72 = "rgba(44,74,45,0.88)";
+const FOREST_55 = "rgba(44,74,45,0.78)";
+const FOREST_45 = "rgba(44,74,45,0.65)";
 
 const features = [
   {

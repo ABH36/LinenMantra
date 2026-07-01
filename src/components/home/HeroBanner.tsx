@@ -347,7 +347,7 @@ export default function HeroBanner() {
                   </p>
                   <p
                     className="leading-tight mt-0.5"
-                    style={{ fontSize: "0.575rem", color: "rgba(248,245,240,0.5)" }}
+                    style={{ fontSize: "0.575rem", color: "rgba(248,245,240,0.70)" }}
                   >
                     {light}
                   </p>
