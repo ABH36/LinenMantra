@@ -170,7 +170,7 @@ export default function ArtAndScience() {
                     className="shrink-0 w-9 h-9 flex items-center justify-center rounded-full mt-0.5"
                     style={{ backgroundColor: "var(--color-accent)" }}
                   >
-                    <Icon size={15} color="#F8F5F0" />
+                    <Icon size={15} color="var(--color-text-light)" />
                   </div>
                   <div>
                     <h4

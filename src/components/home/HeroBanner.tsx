@@ -8,9 +8,9 @@ import { Leaf, Users, Award, Shirt, Globe, LayoutGrid, MapPin, Factory } from "l
 
 // ── Hero-specific colour palette ─────────────────────────────────────
 const FOREST = "var(--color-forest)";
-const TERRA  = "#B5442D";
-const GOLD   = "#C9A452";
-const CREAM  = "#F8F5F0";
+const TERRA  = "var(--color-terra)";
+const GOLD   = "var(--color-gold)";
+const CREAM  = "var(--color-text-light)";
 
 // ── Right-side stats panel ────────────────────────────────────────────
 const STATS_PANEL = [
