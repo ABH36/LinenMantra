@@ -158,7 +158,7 @@ export default function HeroBanner() {
       />
 
       {/* ── Slide content (left column) — fades per slide ── */}
-      <div className="absolute inset-0 z-20 flex flex-col pt-[118px] md:pt-[140px] pb-[52px] md:pb-[48px]"
+      <div className="absolute inset-0 z-20 flex flex-col pt-[130px] md:pt-[150px] pb-[52px] md:pb-[48px]"
         style={{ paddingRight: "clamp(0px, 14vw, 215px)" }}
       >
         <div className="container-site flex-1 flex items-center">

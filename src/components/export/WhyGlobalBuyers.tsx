@@ -31,7 +31,7 @@ export default function WhyGlobalBuyers() {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
 
         {/* Left — heading + CTA */}
-        <FadeInOnScroll direction="up" className="lg:sticky lg:top-32">
+        <FadeInOnScroll direction="up" className="lg:sticky lg:top-[158px]">
           <span className="text-label block mb-5 text-[var(--color-accent)]">
             Why Source With Us
           </span>
