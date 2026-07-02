@@ -8,7 +8,7 @@ const stats = [
   { value: 25, suffix: "+", label: "Years of Textile Expertise" },
   { value: 150, suffix: " LEA", label: "Finest Linen Count" },
   { value: 14, suffix: "+", label: "Export Countries" },
-  { value: 1991, suffix: "", label: "Year Established" },
+  { value: 2010, suffix: "", label: "Year Established" },
 ];
 
 function AnimatedCounter({
