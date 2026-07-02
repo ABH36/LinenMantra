@@ -7,12 +7,12 @@ function HeadingLine() {
   return <div className="mt-2.5 mb-4 h-px w-8 bg-[var(--color-accent)]" />;
 }
 
-// ── Circular icon wrapper — social + contact ──────────────────────────
-function CircleIcon({ children, size = 40 }: { children: React.ReactNode; size?: number }) {
+// ── Brand-colored filled circle — all icons ──────────────────────────
+function SocialCircle({ children, bg, size = 40 }: { children: React.ReactNode; bg: string; size?: number }) {
   return (
     <div
-      className="flex items-center justify-center shrink-0 rounded-full border border-[var(--color-accent)] text-[var(--color-accent)]"
-      style={{ width: size, height: size }}
+      className="flex items-center justify-center shrink-0 rounded-full text-white"
+      style={{ width: size, height: size, background: bg }}
     >
       {children}
     </div>
@@ -67,7 +67,14 @@ const LinkedInSvg = () => (
   </svg>
 );
 
-// ── Mail SVG (reused in 2 places) ────────────────────────────────────
+// ── Facebook SVG ─────────────────────────────────────────────────────
+const FacebookSvg = () => (
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+  </svg>
+);
+
+// ── Mail SVG (contact column) ─────────────────────────────────────────
 const MailSvg = ({ size = 16 }: { size?: number }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
     <rect width="20" height="16" x="2" y="4" rx="2"/>
@@ -136,14 +143,20 @@ export default function Footer() {
             <div className="flex items-center gap-3 mt-5">
               <span className="flex-1 h-px bg-[var(--color-accent)] opacity-30" />
               <div className="flex items-center gap-3">
-                <a href="#" aria-label="Follow on Instagram" className="hover:opacity-70 transition-opacity">
-                  <CircleIcon size={40}><InstagramSvg /></CircleIcon>
+                <a href="#" aria-label="Follow on Instagram" className="hover:opacity-85 transition-opacity">
+                  <SocialCircle size={40} bg="linear-gradient(135deg, #833ab4 0%, #fd1d1d 50%, #fcb045 100%)">
+                    <InstagramSvg />
+                  </SocialCircle>
                 </a>
-                <a href="#" aria-label="Connect on LinkedIn" className="hover:opacity-70 transition-opacity">
-                  <CircleIcon size={40}><LinkedInSvg /></CircleIcon>
+                <a href="#" aria-label="Connect on LinkedIn" className="hover:opacity-85 transition-opacity">
+                  <SocialCircle size={40} bg="#0A66C2">
+                    <LinkedInSvg />
+                  </SocialCircle>
                 </a>
-                <a href="mailto:linenmantra@gmail.com" aria-label="Send Email" className="hover:opacity-70 transition-opacity">
-                  <CircleIcon size={40}><MailSvg size={16} /></CircleIcon>
+                <a href="#" aria-label="Follow on Facebook" className="hover:opacity-85 transition-opacity">
+                  <SocialCircle size={40} bg="#1877F2">
+                    <FacebookSvg />
+                  </SocialCircle>
                 </a>
               </div>
               <span className="flex-1 h-px bg-[var(--color-accent)] opacity-30" />
@@ -202,11 +215,11 @@ export default function Footer() {
 
               {/* Phone */}
               <li className="flex items-start gap-4">
-                <CircleIcon size={38}>
+                <SocialCircle size={38} bg="#25D366">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.61 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 5.72 5.72l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
                   </svg>
-                </CircleIcon>
+                </SocialCircle>
                 <div className="flex flex-col gap-1 pt-1.5">
                   <a href="tel:+918975972300" className="text-[13px] hover:opacity-60 transition-opacity text-[var(--color-text-secondary)]">
                     +91 89759 72300
@@ -219,9 +232,9 @@ export default function Footer() {
 
               {/* Email */}
               <li className="flex items-start gap-4">
-                <CircleIcon size={38}>
+                <SocialCircle size={38} bg="#EA4335">
                   <MailSvg size={14} />
-                </CircleIcon>
+                </SocialCircle>
                 <div className="flex flex-col gap-1 pt-1.5">
                   <a href="mailto:linenmantra@gmail.com" className="text-[13px] hover:opacity-60 transition-opacity break-all text-[var(--color-text-secondary)]">
                     linenmantra@gmail.com
@@ -234,12 +247,12 @@ export default function Footer() {
 
               {/* Address */}
               <li className="flex items-start gap-4">
-                <CircleIcon size={38}>
+                <SocialCircle size={38} bg="#DB4437">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
                     <circle cx="12" cy="10" r="3"/>
                   </svg>
-                </CircleIcon>
+                </SocialCircle>
                 <p className="text-[13px] leading-[1.75] pt-1.5 text-[var(--color-text-secondary)]">
                   A-111 Kewal Industrial Estate,<br />
                   Lower Parel (West),<br />
