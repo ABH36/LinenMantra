@@ -1,34 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import { Factory, Layers, BadgeCheck, Globe, Leaf } from "lucide-react";
+import { Leaf } from "lucide-react";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
-const features = [
-  {
-    Icon: Factory,
-    title: "State-of-the-Art Manufacturing",
-    body: "Advanced looms and modern infrastructure ensure consistent quality and smooth production.",
-  },
-  {
-    Icon: Layers,
-    title: "Premium Linen Fabrics",
-    body: "Wide range of 25–150 LEA linen and linen-blend fabrics for shirting and suiting.",
-  },
-  {
-    Icon: BadgeCheck,
-    title: "Quality at Every Step",
-    body: "Rigorous quality checks and skilled hands ensure flawless fabrics.",
-  },
-  {
-    Icon: Globe,
-    title: "Trusted by Global Brands",
-    body: "Proudly supplying premium fabrics to 14+ countries across the world.",
-  },
-];
-
-// Shared ease curve used across the whole site
 const EASE = [0.25, 0.1, 0.25, 1] as const;
 
 export default function ArtAndScience() {
@@ -49,74 +25,35 @@ export default function ArtAndScience() {
       <div className="container-site">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-stretch">
 
-          {/* ── Left — staggered image composition ── */}
-          <div className="relative w-full h-full" style={{ minHeight: "440px" }}>
-
-            {/* Primary image — slides in from left */}
-            <motion.div
-              className="absolute top-0 left-0 right-0 overflow-hidden"
-              style={{ height: "62%" }}
-              initial={{ opacity: 0, x: -40 }}
-              animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -40 }}
-              transition={{ duration: 0.85, delay: 0.05, ease: EASE }}
-            >
-              <Image
-                src="/images/expert/expert1.png"
-                alt="Linen weaving mill"
-                fill
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover"
-              />
-            </motion.div>
-
-            {/* Spacer block — same as section background (no color) */}
-            <motion.div
-              className="absolute bottom-0 left-0"
-              style={{
-                width: "34%",
-                height: "45%",
-                backgroundColor: "var(--color-bg-secondary)",
-              }}
-              initial={{ opacity: 0 }}
-              animate={inView ? { opacity: 1 } : { opacity: 0 }}
-              transition={{ duration: 0.4, delay: 0.2 }}
+          {/* ── Left — full-height primary image ── */}
+          <motion.div
+            className="relative w-full overflow-hidden"
+            style={{ minHeight: "440px" }}
+            initial={{ opacity: 0, x: -40 }}
+            animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -40 }}
+            transition={{ duration: 0.85, delay: 0.05, ease: EASE }}
+          >
+            <Image
+              src="/images/expert/expert1.png"
+              alt="Linen weaving mill"
+              fill
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              className="object-cover"
             />
+          </motion.div>
 
-            {/* Secondary image — slides in from right with delay */}
-            <motion.div
-              className="absolute bottom-0 right-0 overflow-hidden"
-              style={{ width: "74%", height: "48%" }}
-              initial={{ opacity: 0, x: 40, y: 20 }}
-              animate={inView ? { opacity: 1, x: 0, y: 0 } : { opacity: 0, x: 40, y: 20 }}
-              transition={{ duration: 0.85, delay: 0.28, ease: EASE }}
-            >
-              <Image
-                src="/images/expert/expert2.png"
-                alt="Premium linen fabric samples"
-                fill
-                sizes="(max-width: 1024px) 80vw, 40vw"
-                className="object-cover"
-                style={{ outline: "7px solid var(--color-bg-secondary)" }}
-              />
-            </motion.div>
-
-          </div>
-
-          {/* ── Right — sequentially staggered content ── */}
-          <div>
+          {/* ── Right — content ── */}
+          <div className="flex flex-col justify-center">
 
             {/* Tag */}
-            <motion.p
-              className="text-label mb-4"
-              {...fadeUp(0.15)}
-            >
+            <motion.p className="text-label mb-4" {...fadeUp(0.15)}>
               CRAFTED WITH{" "}
               <span className="text-[var(--color-accent)]">HERITAGE.</span>
               {" "}MADE WITH{" "}
               <span className="text-[var(--color-text-primary)]">PRECISION.</span>
             </motion.p>
 
-            {/* Flourish — line + leaf */}
+            {/* Flourish */}
             <motion.div className="flex items-center gap-2.5 mb-5" {...fadeUp(0.22)}>
               <span className="block h-px w-10 bg-[var(--color-accent)] opacity-55" />
               <Leaf size={13} color="var(--color-accent)" style={{ opacity: 0.7 }} />
@@ -124,63 +61,23 @@ export default function ArtAndScience() {
 
             {/* Heading */}
             <motion.h2
-              className="font-display font-normal leading-tight mb-5"
-              style={{
-                fontSize: "clamp(1.75rem, 3vw, 2.75rem)",
-                color: "var(--color-text-primary)",
-                letterSpacing: "-0.01em",
-                textTransform: "uppercase",
-              }}
+              className="font-display font-normal leading-tight mb-6 uppercase text-[var(--color-text-primary)]"
+              style={{ fontSize: "clamp(1.75rem, 3vw, 2.75rem)", letterSpacing: "-0.01em" }}
               {...fadeUp(0.28)}
             >
-              The Art &amp; Science
+              25+ Years of
               <br />
-              Behind Every Fabric
+              Textile Expertise
             </motion.h2>
 
             {/* Description */}
             <motion.p
-              className="leading-relaxed mb-6 text-[var(--color-text-secondary)] text-base"
+              className="leading-relaxed text-[var(--color-text-secondary)] text-base"
               {...fadeUp(0.34)}
             >
               At Linen Mantra, every fabric is a result of thoughtful craftsmanship
               and modern technology. From the finest flax to the final finish,
               we ensure perfection in every detail.
-            </motion.p>
-
-            {/* Features — each row staggers in */}
-            <div className="flex flex-col gap-0">
-              {features.map(({ Icon, title, body }, i) => (
-                <motion.div
-                  key={i}
-                  className="flex items-start gap-4 py-3"
-                  style={{
-                    borderTop:    i === 0 ? "1px solid var(--color-border)" : "none",
-                    borderBottom: "1px solid var(--color-border)",
-                  }}
-                  {...fadeUp(0.38 + i * 0.09)}
-                >
-                  <div className="shrink-0 w-9 h-9 flex items-center justify-center rounded-full mt-0.5 bg-[var(--color-accent)]">
-                    <Icon size={15} color="var(--color-text-light)" />
-                  </div>
-                  <div>
-                    <h4 className="text-xs font-semibold tracking-widest uppercase mb-1 text-[var(--color-text-primary)]">
-                      {title}
-                    </h4>
-                    <p className="text-sm leading-relaxed text-[var(--color-text-secondary)]">
-                      {body}
-                    </p>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-
-            {/* Bottom italic quote */}
-            <motion.p
-              className="mt-5 font-display italic text-base text-[var(--color-accent)]"
-              {...fadeUp(0.72)}
-            >
-              Because great brands begin with exceptional fabric.
             </motion.p>
 
           </div>
