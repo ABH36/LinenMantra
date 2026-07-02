@@ -64,7 +64,7 @@ export default function FeaturedQualities() {
                 {/* Card body */}
                 <div className="flex flex-col flex-1 p-5">
                   <h3
-                    className="font-display font-normal mb-1.5 text-[var(--text-h3)] text-[var(--color-text-primary)]"
+                    className="font-display font-normal mb-1.5 text-2xl md:text-3xl text-[var(--color-text-primary)]"
                   >
                     {product.name}
                   </h3>

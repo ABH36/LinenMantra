@@ -14,7 +14,7 @@ const CREAM  = "var(--color-text-light)";
 
 // ── Right-side stats panel ────────────────────────────────────────────
 const STATS_PANEL = [
-  { Icon: Globe,       value: "1991",   label: "SINCE"        },
+  { Icon: Globe,       value: "2010",   label: "SINCE"        },
   { Icon: LayoutGrid,  value: "25–150", label: "LEA RANGE"    },
   { Icon: MapPin,      value: "14+",    label: "COUNTRIES"    },
   { Icon: Factory,     value: "B2B",    label: "MANUFACTURER" },
