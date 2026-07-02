@@ -318,8 +318,7 @@ export default function HeroBanner() {
 
       {/* ── Bottom feature strip (md+) ── */}
       <div
-        className="absolute inset-x-0 bottom-0 z-30 hidden md:block"
-        style={{ backgroundColor: "var(--color-forest)" }}
+        className="absolute inset-x-0 bottom-0 z-30 hidden md:block bg-[var(--color-forest)]"
       >
         <div className="container-site">
           <div className="grid grid-cols-4">

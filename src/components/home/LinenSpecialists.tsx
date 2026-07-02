@@ -16,26 +16,19 @@ export default function LinenSpecialists() {
     <div className="container-site">
       {/* Section title */}
       <FadeInOnScroll direction="up" className="mb-14">
-        <span className="text-label block mb-4" style={{ color: "var(--color-accent)" }}>
+        <span className="text-label block mb-4 text-[var(--color-accent)]">
           Why Linen Mantra
         </span>
         <h2
-          className="font-display font-normal leading-tight max-w-lg"
-          style={{
-            fontSize: "var(--text-h2)",
-            color: "var(--color-text-primary)",
-          }}
+          className="font-display font-normal leading-tight max-w-lg text-[var(--text-h2)] text-[var(--color-text-primary)]"
         >
           Linen Specialists,
           <br />
-          <em style={{ fontStyle: "italic", color: "var(--color-accent)" }}>
+          <em className="italic text-[var(--color-accent)]">
             Since 2010
           </em>
         </h2>
-        <span
-          className="block h-px w-10 mt-5"
-          style={{ backgroundColor: "var(--color-accent)" }}
-        />
+        <span className="block h-px w-10 mt-5 bg-[var(--color-accent)]" />
       </FadeInOnScroll>
 
       {/* Split layout */}
@@ -51,11 +44,10 @@ export default function LinenSpecialists() {
                   <li key={item.id}>
                     <button
                       onClick={() => setActiveId(item.id)}
-                      className="w-full flex items-center gap-5 py-5 text-left cursor-pointer transition-all duration-300 group"
+                      className="w-full flex items-center gap-5 py-5 text-left cursor-pointer transition-all duration-300 group border-b border-[var(--color-border)]"
                       style={{
                         borderTop:
                           i === 0 ? "1px solid var(--color-border)" : "none",
-                        borderBottom: "1px solid var(--color-border)",
                       }}
                       aria-pressed={isActive}
                     >
@@ -87,9 +79,8 @@ export default function LinenSpecialists() {
 
                       {/* Active arrow */}
                       <span
-                        className="ml-auto shrink-0 transition-all duration-300"
+                        className="ml-auto shrink-0 transition-all duration-300 text-[var(--color-accent)]"
                         style={{
-                          color: "var(--color-accent)",
                           opacity: isActive ? 1 : 0,
                           transform: isActive ? "translateX(0)" : "translateX(-6px)",
                         }}
@@ -107,20 +98,14 @@ export default function LinenSpecialists() {
         {/* Right — active content */}
         <FadeInOnScroll direction="up" delay={0.2} className="lg:col-span-3 flex flex-col justify-center">
           <div
-            className="relative p-8 md:p-12 border border-[var(--color-border)]"
-            style={{
-              backgroundColor: "var(--color-bg-primary)",
-              minHeight: "280px",
-              boxShadow: "var(--shadow-card)",
-            }}
+            className="relative p-8 md:p-12 border border-[var(--color-border)] bg-[var(--color-bg-primary)] min-h-[280px] shadow-[var(--shadow-card)]"
           >
             {/* Decorative large number background */}
             <span
-              className="absolute top-4 right-6 font-display font-normal select-none pointer-events-none"
+              className="absolute top-4 right-6 font-display font-normal select-none pointer-events-none text-[var(--color-border)]"
               style={{
                 fontSize: "8rem",
                 lineHeight: 1,
-                color: "var(--color-border)",
                 opacity: 0.5,
               }}
             >
@@ -137,28 +122,15 @@ export default function LinenSpecialists() {
                 transition={{ duration: 0.35, ease: [0.25, 0.1, 0.25, 1] }}
                 className="relative z-10"
               >
-                <span
-                  className="text-label block mb-5"
-                  style={{ color: "var(--color-accent)" }}
-                >
+                <span className="text-label block mb-5 text-[var(--color-accent)]">
                   {activeItem.number} / {String(specialists.length).padStart(2, "0")}
                 </span>
                 <h3
-                  className="font-display font-normal leading-tight mb-6"
-                  style={{
-                    fontSize: "var(--text-h3)",
-                    color: "var(--color-text-primary)",
-                  }}
+                  className="font-display font-normal leading-tight mb-6 text-[var(--text-h3)] text-[var(--color-text-primary)]"
                 >
                   {activeItem.title}
                 </h3>
-                <p
-                  className="leading-relaxed"
-                  style={{
-                    color: "var(--color-text-secondary)",
-                    fontSize: "var(--text-body)",
-                  }}
-                >
+                <p className="leading-relaxed text-[var(--color-text-secondary)] text-[var(--text-body)]">
                   {activeItem.description}
                 </p>
               </motion.div>

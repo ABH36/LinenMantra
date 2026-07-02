@@ -46,8 +46,7 @@ export default function OurServices() {
         <FadeInOnScroll direction="up" delay={0.1} className="shrink-0">
           <Link
             href="/products"
-            className="inline-flex items-center gap-2 text-sm font-medium tracking-widest uppercase transition-opacity hover:opacity-60 group"
-            style={{ color: "var(--color-text-secondary)" }}
+            className="inline-flex items-center gap-2 text-sm font-medium tracking-widest uppercase transition-opacity hover:opacity-60 group text-[var(--color-text-secondary)]"
           >
             <span>View All</span>
             <span className="transition-transform duration-300 group-hover:translate-x-1">
@@ -99,11 +98,7 @@ export default function OurServices() {
               {/* Content — bottom */}
               <div className="absolute bottom-0 left-0 right-0 p-5">
                 <h3
-                  className="font-display font-normal leading-tight mb-1.5"
-                  style={{
-                    fontSize: "var(--text-h3)",
-                    color: "var(--color-text-light)",
-                  }}
+                  className="font-display font-normal leading-tight mb-1.5 text-[var(--text-h3)] text-[var(--color-text-light)]"
                 >
                   {service.title}
                 </h3>
@@ -116,8 +111,7 @@ export default function OurServices() {
 
                 {/* Green accent line on hover */}
                 <div
-                  className="h-px w-0 group-hover:w-full mt-3 transition-all duration-500"
-                  style={{ backgroundColor: "var(--color-cta)" }}
+                  className="h-px w-0 group-hover:w-full mt-3 transition-all duration-500 bg-[var(--color-cta)]"
                 />
               </div>
             </Link>

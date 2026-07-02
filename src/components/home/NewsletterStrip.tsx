@@ -99,10 +99,7 @@ export default function NewsletterStrip() {
             className="w-full md:w-auto md:min-w-[420px] shrink-0"
           >
             {status === "success" ? (
-              <p
-                className="text-sm font-medium"
-                style={{ color: "var(--color-text-light)" }}
-              >
+              <p className="text-sm font-medium text-[var(--color-text-light)]">
                 Thank you! We&apos;ll be in touch soon.
               </p>
             ) : (

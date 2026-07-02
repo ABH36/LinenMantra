@@ -61,15 +61,12 @@ export default function FlaxToFabric() {
       <div className="container-site pt-14 pb-8 md:pt-16 md:pb-10">
         <FadeInOnScroll direction="up">
           <div className="flex items-center gap-4">
-            <span className="text-label" style={{ color: "var(--color-accent)" }}>
+            <span className="text-label text-[var(--color-accent)]">
               Our Process
             </span>
-            <span className="flex-1 h-px" style={{ backgroundColor: "var(--color-border)" }} />
+            <span className="flex-1 h-px bg-[var(--color-border)]" />
           </div>
-          <h2
-            className="font-display font-normal mt-4"
-            style={{ fontSize: "var(--text-h2)", color: "var(--color-text-primary)" }}
-          >
+          <h2 className="font-display font-normal mt-4 text-[var(--text-h2)] text-[var(--color-text-primary)]">
             Flax to Fabric
           </h2>
         </FadeInOnScroll>
@@ -116,10 +113,9 @@ export default function FlaxToFabric() {
 
               {/* Accent bottom bar */}
               <div
-                className="absolute bottom-0 left-0 right-0 pointer-events-none"
+                className="absolute bottom-0 left-0 right-0 pointer-events-none bg-[var(--color-accent)]"
                 style={{
                   height:          "3px",
-                  backgroundColor: "var(--color-accent)",
                   transform:       isActive ? "scaleX(1)" : "scaleX(0)",
                   transformOrigin: "left",
                   transition:      "transform 0.55s cubic-bezier(0.25, 0.1, 0.25, 1)",
@@ -190,10 +186,7 @@ export default function FlaxToFabric() {
       </div>
 
       {/* Progress dots */}
-      <div
-        className="flex justify-center gap-2 py-4"
-        style={{ borderTop: "1px solid var(--color-border)" }}
-      >
+      <div className="flex justify-center gap-2 py-4 border-t border-[var(--color-border)]">
         {steps.map((step, i) => (
           <button
             key={step.id}

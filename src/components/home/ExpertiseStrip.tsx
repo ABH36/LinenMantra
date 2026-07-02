@@ -76,18 +76,12 @@ export default function ExpertiseStrip() {
                 }}
               >
                 <p
-                  className="font-display font-normal leading-none mb-3"
-                  style={{
-                    fontSize: "clamp(2.5rem, 4vw, 3.5rem)",
-                    color: "var(--color-text-primary)",
-                  }}
+                  className="font-display font-normal leading-none mb-3 text-[var(--color-text-primary)]"
+                  style={{ fontSize: "clamp(2.5rem, 4vw, 3.5rem)" }}
                 >
                   <AnimatedCounter target={stat.value} suffix={stat.suffix} />
                 </p>
-                <p
-                  className="text-sm font-medium leading-tight"
-                  style={{ color: "var(--color-text-secondary)" }}
-                >
+                <p className="text-sm font-medium leading-tight text-[var(--color-text-secondary)]">
                   {stat.label}
                 </p>
               </div>
@@ -96,33 +90,24 @@ export default function ExpertiseStrip() {
         </div>
 
         {/* Divider */}
-        <div
-          className="w-full h-px my-12"
-          style={{ backgroundColor: "var(--color-border)" }}
-        />
+        <div className="w-full h-px my-12 bg-[var(--color-border)]" />
 
         {/* Bottom — tagline + manufacturing note */}
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8">
           <FadeInOnScroll direction="up" className="max-w-xl">
             <p
-              className="font-display font-normal leading-snug"
-              style={{
-                fontSize: "clamp(1.5rem, 2.5vw, 2rem)",
-                color: "var(--color-text-primary)",
-              }}
+              className="font-display font-normal leading-snug text-[var(--color-text-primary)]"
+              style={{ fontSize: "clamp(1.5rem, 2.5vw, 2rem)" }}
             >
               Weaving Excellence
               <br />
-              <em style={{ color: "var(--color-accent)", fontStyle: "italic" }}>
+              <em className="italic text-[var(--color-accent)]">
                 for Over 25 Years
               </em>
             </p>
           </FadeInOnScroll>
           <FadeInOnScroll direction="up" delay={0.15} className="max-w-sm">
-            <p
-              className="text-sm leading-relaxed"
-              style={{ color: "var(--color-text-secondary)" }}
-            >
+            <p className="text-sm leading-relaxed text-[var(--color-text-secondary)]">
               Our manufacturing facility in Navsari, Gujarat, is equipped with
               modern European weaving and finishing technology — enabling us to
               create premium fabrics across a wide range of constructions,

@@ -26,18 +26,12 @@ export default function ExportTeaser() {
               {exportStats.map((stat) => (
                 <div key={stat.label}>
                   <p
-                    className="font-display font-normal leading-none mb-2"
-                    style={{
-                      fontSize: "2rem",
-                      color: "var(--color-text-primary)",
-                    }}
+                    className="font-display font-normal leading-none mb-2 text-[var(--color-text-primary)]"
+                    style={{ fontSize: "2rem" }}
                   >
                     {stat.value}
                   </p>
-                  <p
-                    className="text-label"
-                    style={{ color: "var(--color-text-secondary)" }}
-                  >
+                  <p className="text-label text-[var(--color-text-secondary)]">
                     {stat.label}
                   </p>
                 </div>
@@ -49,8 +43,7 @@ export default function ExportTeaser() {
           <FadeInOnScroll direction="up" delay={0.25}>
             <Link
               href="/export"
-              className="inline-flex items-center gap-3 mt-10 text-sm font-medium tracking-widest uppercase transition-opacity hover:opacity-70 group"
-              style={{ color: "var(--color-cta)" }}
+              className="inline-flex items-center gap-3 mt-10 text-sm font-medium tracking-widest uppercase transition-opacity hover:opacity-70 group text-[var(--color-cta)]"
             >
               <span>Explore Export Capabilities</span>
               <span className="transition-transform duration-300 group-hover:translate-x-1">
@@ -63,10 +56,7 @@ export default function ExportTeaser() {
         {/* Right — country grid */}
         <FadeInOnScroll direction="left" delay={0.1}>
           <div>
-            <p
-              className="text-label mb-6"
-              style={{ color: "var(--color-text-muted)" }}
-            >
+            <p className="text-label mb-6 text-[var(--color-text-muted)]">
               Markets we serve
             </p>
             <div className="grid grid-cols-2 gap-0">
@@ -82,14 +72,8 @@ export default function ExportTeaser() {
                     paddingRight: i % 2 === 0 ? "1.25rem" : "0",
                   }}
                 >
-                  <span
-                    className="w-1 h-1 rounded-full shrink-0"
-                    style={{ backgroundColor: "var(--color-accent)", opacity: 0.7 }}
-                  />
-                  <span
-                    className="text-sm"
-                    style={{ color: "var(--color-text-secondary)" }}
-                  >
+                  <span className="w-1 h-1 rounded-full shrink-0 bg-[var(--color-accent)] opacity-70" />
+                  <span className="text-sm text-[var(--color-text-secondary)]">
                     {country.name}
                   </span>
                 </div>

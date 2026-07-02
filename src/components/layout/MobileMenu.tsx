@@ -47,8 +47,7 @@ export default function MobileMenu({ isOpen, onClose, currentPath }: Props) {
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
-            className="fixed top-0 right-0 bottom-0 z-50 w-4/5 max-w-sm flex flex-col"
-            style={{ backgroundColor: "var(--color-bg-dark)" }}
+            className="fixed top-0 right-0 bottom-0 z-50 w-4/5 max-w-sm flex flex-col bg-[var(--color-bg-dark)]"
           >
             {/* Top bar — logo + close */}
             <div className="flex items-center justify-between px-8 py-5">
@@ -108,22 +107,15 @@ export default function MobileMenu({ isOpen, onClose, currentPath }: Props) {
               transition={{ delay: 0.45, duration: 0.35 }}
               className="px-10 pb-12"
             >
-              <div
-                className="h-px w-full mb-8"
-                style={{ backgroundColor: "var(--color-border-dark)" }}
-              />
+              <div className="h-px w-full mb-8 bg-[var(--color-border-dark)]" />
               <Link
                 href="/contact"
                 onClick={onClose}
-                className="inline-flex items-center gap-3 text-sm font-medium tracking-widest uppercase transition-opacity hover:opacity-70"
-                style={{ color: "var(--color-accent)" }}
+                className="inline-flex items-center gap-3 text-sm font-medium tracking-widest uppercase transition-opacity hover:opacity-70 text-[var(--color-accent)]"
               >
                 Get a Quote
               </Link>
-              <p
-                className="mt-6 text-sm leading-relaxed opacity-40"
-                style={{ color: "var(--color-text-light)" }}
-              >
+              <p className="mt-6 text-sm leading-relaxed opacity-40 text-[var(--color-text-light)]">
                 linenmantra@gmail.com
               </p>
             </motion.div>
