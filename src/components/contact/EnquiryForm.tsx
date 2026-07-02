@@ -16,6 +16,7 @@ const productOptions = [
   "General Enquiry",
 ];
 
+// outline: "none" must stay inline — globals.css :focus-visible overrides Tailwind outline-none
 const inputBase: React.CSSProperties = {
   width: "100%",
   padding: "0.875rem 1rem",
@@ -27,6 +28,8 @@ const inputBase: React.CSSProperties = {
   fontFamily: "inherit",
   transition: "border-color 0.2s",
 };
+
+const labelClass = "block text-[0.7rem] tracking-[0.1em] uppercase mb-2 text-[var(--color-text-muted)]";
 
 export default function EnquiryForm() {
   const formRef = useRef<HTMLFormElement>(null);
@@ -74,15 +77,7 @@ export default function EnquiryForm() {
     }
   }
 
-  const labelStyle: React.CSSProperties = {
-    display: "block",
-    fontSize: "0.7rem",
-    letterSpacing: "0.1em",
-    textTransform: "uppercase",
-    marginBottom: "0.5rem",
-    color: "var(--color-text-muted)",
-  };
-
+  // Dynamic border color: accent on focus, red on error, default otherwise
   const focusStyle = (field: string): React.CSSProperties => ({
     ...inputBase,
     borderColor:
@@ -96,31 +91,16 @@ export default function EnquiryForm() {
   if (status === "success") {
     return (
       <FadeInOnScroll direction="up">
-        <div
-          className="flex flex-col items-center justify-center text-center py-20 px-8"
-          style={{
-            border: "1px solid var(--color-border)",
-            backgroundColor: "var(--color-bg-secondary)",
-          }}
-        >
-          <div
-            className="w-14 h-14 flex items-center justify-center mb-6"
-            style={{ backgroundColor: "var(--color-cta)" }}
-          >
+        <div className="flex flex-col items-center justify-center text-center py-20 px-8 border border-[var(--color-border)] bg-[var(--color-bg-secondary)]">
+          <div className="w-14 h-14 flex items-center justify-center mb-6 bg-[var(--color-cta)]">
             <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
               <path d="M4 11L9 16L18 7" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </div>
-          <h3
-            className="font-display font-normal mb-3"
-            style={{
-              fontSize: "var(--text-h3)",
-              color: "var(--color-text-primary)",
-            }}
-          >
+          <h3 className="font-display font-normal mb-3 text-[var(--text-h3)] text-[var(--color-text-primary)]">
             Enquiry Sent
           </h3>
-          <p className="text-sm max-w-xs" style={{ color: "var(--color-text-secondary)" }}>
+          <p className="text-sm max-w-xs text-[var(--color-text-secondary)]">
             Thank you for reaching out. Our team will review your enquiry and respond within 1–2 business days.
           </p>
         </div>
@@ -130,32 +110,20 @@ export default function EnquiryForm() {
 
   return (
     <FadeInOnScroll direction="up" delay={0.1}>
-      <div
-        className="p-8 md:p-10"
-        style={{
-          border: "1px solid var(--color-border)",
-          backgroundColor: "var(--color-bg-primary)",
-        }}
-      >
-        <h3
-          className="font-display font-normal mb-1"
-          style={{
-            fontSize: "var(--text-h3)",
-            color: "var(--color-text-primary)",
-          }}
-        >
+      <div className="p-8 md:p-10 border border-[var(--color-border)] bg-[var(--color-bg-primary)]">
+        <h3 className="font-display font-normal mb-1 text-[var(--text-h3)] text-[var(--color-text-primary)]">
           Send an Enquiry
         </h3>
-        <p className="text-sm mb-8" style={{ color: "var(--color-text-muted)" }}>
-          Fields marked with <span style={{ color: "var(--color-accent)" }}>*</span> are required.
+        <p className="text-sm mb-8 text-[var(--color-text-muted)]">
+          Fields marked with <span className="text-[var(--color-accent)]">*</span> are required.
         </p>
 
         <form ref={formRef} onSubmit={handleSubmit} noValidate className="flex flex-col gap-5">
           {/* Name + Email */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             <div>
-              <label htmlFor="name" style={labelStyle}>
-                Name <span style={{ color: "var(--color-accent)" }}>*</span>
+              <label htmlFor="name" className={labelClass}>
+                Name <span className="text-[var(--color-accent)]">*</span>
               </label>
               <input
                 id="name"
@@ -171,8 +139,8 @@ export default function EnquiryForm() {
               )}
             </div>
             <div>
-              <label htmlFor="email" style={labelStyle}>
-                Email <span style={{ color: "var(--color-accent)" }}>*</span>
+              <label htmlFor="email" className={labelClass}>
+                Email <span className="text-[var(--color-accent)]">*</span>
               </label>
               <input
                 id="email"
@@ -192,7 +160,7 @@ export default function EnquiryForm() {
           {/* Phone + Company */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             <div>
-              <label htmlFor="phone" style={labelStyle}>Phone</label>
+              <label htmlFor="phone" className={labelClass}>Phone</label>
               <input
                 id="phone"
                 name="phone"
@@ -204,7 +172,7 @@ export default function EnquiryForm() {
               />
             </div>
             <div>
-              <label htmlFor="company" style={labelStyle}>Company / Brand</label>
+              <label htmlFor="company" className={labelClass}>Company / Brand</label>
               <input
                 id="company"
                 name="company"
@@ -219,7 +187,7 @@ export default function EnquiryForm() {
 
           {/* Interest / category */}
           <div>
-            <label htmlFor="interest" style={labelStyle}>I&apos;m Interested In</label>
+            <label htmlFor="interest" className={labelClass}>I&apos;m Interested In</label>
             <select
               id="interest"
               name="interest"
@@ -244,8 +212,8 @@ export default function EnquiryForm() {
 
           {/* Message */}
           <div>
-            <label htmlFor="message" style={labelStyle}>
-              Message <span style={{ color: "var(--color-accent)" }}>*</span>
+            <label htmlFor="message" className={labelClass}>
+              Message <span className="text-[var(--color-accent)]">*</span>
             </label>
             <textarea
               id="message"
@@ -287,7 +255,7 @@ export default function EnquiryForm() {
                 <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
               )}
             </button>
-            <p className="text-xs" style={{ color: "var(--color-text-muted)" }}>
+            <p className="text-xs text-[var(--color-text-muted)]">
               We respond within 1–2 business days.
             </p>
           </div>
