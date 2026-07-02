@@ -15,7 +15,6 @@ export default function FeaturedQualities() {
             <SectionTitle
               label="Our Collections"
               heading="Featured Fabric Qualities"
-              subText="A selection of our signature linen fabrics — crafted for precision, designed for distinction."
             />
           </FadeInOnScroll>
           <FadeInOnScroll direction="up" delay={0.1} className="shrink-0">
@@ -73,9 +72,6 @@ export default function FeaturedQualities() {
                   <p className="text-label mb-3 text-[var(--color-accent)]">
                     {product.composition}
                     {product.leaRange ? ` · ${product.leaRange}` : ""}
-                  </p>
-                  <p className="text-sm leading-relaxed flex-1 mb-4 text-[var(--color-text-secondary)]">
-                    {product.description}
                   </p>
                   <Link
                     href="/contact"
