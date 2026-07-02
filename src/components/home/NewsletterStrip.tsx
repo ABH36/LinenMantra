@@ -16,6 +16,9 @@ export default function NewsletterStrip() {
     setTimeout(() => setStatus("idle"), 5000);
   }
 
+  // Section hidden — client will provide updated content
+  return null;
+
   return (
     <section
       className="w-full relative overflow-hidden bg-[var(--color-cta)]"
