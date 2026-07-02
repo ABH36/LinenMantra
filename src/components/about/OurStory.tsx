@@ -92,17 +92,17 @@ export default function OurStory() {
             </div>
 
             {/* Group company badge */}
-            <div className="flex items-center gap-4 px-6 py-4 bg-[var(--color-bg-secondary)] border-l-2 border-[var(--color-accent)]">
+            <div className="flex items-center gap-4 px-6 py-2 bg-[var(--color-bg-secondary)] border-l-2 border-[var(--color-accent)]">
               <span className="text-label shrink-0 text-[var(--color-text-muted)]">
                 Group Company
               </span>
-              <div className="w-px h-5 shrink-0 bg-[var(--color-border)]" />
+              <div className="w-px h-9 shrink-0 bg-[var(--color-border)]" />
               <Image
                 src="/images/about/footer/companylogo.png"
                 alt="Silverline Group"
                 width={1536}
                 height={1024}
-                className="h-7 w-auto"
+                className="h-11 w-auto"
               />
             </div>
           </div>
