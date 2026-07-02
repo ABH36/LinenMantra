@@ -321,7 +321,7 @@ export default function HeroBanner() {
         className="absolute inset-x-0 bottom-0 z-30 hidden md:block"
         style={{ backgroundColor: "var(--color-forest)" }}
       >
-        <div className="container-site" style={{ paddingRight: "clamp(175px, 15vw, 230px)" }}>
+        <div className="container-site">
           <div className="grid grid-cols-4">
             {STRIP.map(({ Icon, bold, light }, i) => (
               <div
