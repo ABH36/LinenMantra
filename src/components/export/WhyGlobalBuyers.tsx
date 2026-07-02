@@ -29,44 +29,26 @@ export default function WhyGlobalBuyers() {
   return (
     <SectionWrapper>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
+
         {/* Left — heading + CTA */}
         <FadeInOnScroll direction="up" className="lg:sticky lg:top-32">
-          <span
-            className="text-label block mb-5"
-            style={{ color: "var(--color-accent)" }}
-          >
+          <span className="text-label block mb-5 text-[var(--color-accent)]">
             Why Source With Us
           </span>
-          <h2
-            className="font-display font-normal leading-tight mb-6"
-            style={{
-              fontSize: "var(--text-h2)",
-              color: "var(--color-text-primary)",
-            }}
-          >
+          <h2 className="font-display font-normal leading-tight mb-6 text-[var(--text-h2)] text-[var(--color-text-primary)]">
             What Global Buyers
             <br />
             Value Most
           </h2>
-          <span
-            className="block h-px w-10 mb-8"
-            style={{ backgroundColor: "var(--color-accent)" }}
-          />
-          <p
-            className="leading-relaxed mb-10 max-w-sm"
-            style={{ color: "var(--color-text-secondary)" }}
-          >
+          <span className="block h-px w-10 mb-8 bg-[var(--color-accent)]" />
+          <p className="leading-relaxed mb-10 max-w-sm text-[var(--color-text-secondary)]">
             From independent designers to established retail brands, global buyers
             choose Linen Mantra for one reason: we deliver exactly what we promise,
             every time.
           </p>
           <Link
             href="/contact"
-            className="inline-flex items-center gap-3 px-7 py-3.5 text-sm font-medium tracking-widest uppercase rounded transition-opacity hover:opacity-80 group"
-            style={{
-              backgroundColor: "var(--color-cta)",
-              color: "var(--color-text-light)",
-            }}
+            className="inline-flex items-center gap-3 px-7 py-3.5 text-sm font-medium tracking-widest uppercase rounded transition-opacity hover:opacity-80 group bg-[var(--color-cta)] text-[var(--color-text-light)]"
           >
             <span>Start a Conversation</span>
             <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
@@ -89,29 +71,16 @@ export default function WhyGlobalBuyers() {
               >
                 <div className="flex gap-6 items-start">
                   <span
-                    className="font-display font-normal shrink-0 leading-none pt-1"
-                    style={{
-                      fontSize: "1.1rem",
-                      color: "var(--color-accent)",
-                      opacity: 0.5,
-                    }}
+                    className="font-display font-normal shrink-0 leading-none pt-1 text-[var(--color-accent)] opacity-50"
+                    style={{ fontSize: "1.1rem" }}
                   >
                     {item.number}
                   </span>
                   <div>
-                    <h3
-                      className="font-display font-normal leading-tight mb-3"
-                      style={{
-                        fontSize: "var(--text-h3)",
-                        color: "var(--color-text-primary)",
-                      }}
-                    >
+                    <h3 className="font-display font-normal leading-tight mb-3 text-[var(--text-h3)] text-[var(--color-text-primary)]">
                       {item.title}
                     </h3>
-                    <p
-                      className="text-sm leading-relaxed"
-                      style={{ color: "var(--color-text-secondary)" }}
-                    >
+                    <p className="text-sm leading-relaxed text-[var(--color-text-secondary)]">
                       {item.body}
                     </p>
                   </div>

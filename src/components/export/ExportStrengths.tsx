@@ -44,70 +44,30 @@ export default function ExportStrengths() {
   return (
     <SectionWrapper cream>
       <FadeInOnScroll direction="up" className="mb-14">
-        <span
-          className="text-label block mb-5"
-          style={{ color: "var(--color-accent)" }}
-        >
+        <span className="text-label block mb-5 text-[var(--color-accent)]">
           Why Partner With Us
         </span>
-        <h2
-          className="font-display font-normal leading-tight"
-          style={{
-            fontSize: "var(--text-h2)",
-            color: "var(--color-text-primary)",
-          }}
-        >
+        <h2 className="font-display font-normal leading-tight text-[var(--text-h2)] text-[var(--color-text-primary)]">
           Built for Global Trade
         </h2>
-        <span
-          className="block h-px w-10 mt-5"
-          style={{ backgroundColor: "var(--color-accent)" }}
-        />
+        <span className="block h-px w-10 mt-5 bg-[var(--color-accent)]" />
       </FadeInOnScroll>
 
-      <div
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0"
-        style={{
-          borderTop: "1px solid var(--color-border)",
-          borderLeft: "1px solid var(--color-border)",
-        }}
-      >
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0 border-t border-l border-[var(--color-border)]">
         {strengths.map((item, i) => (
           <FadeInOnScroll key={item.number} direction="up" delay={i * 0.07}>
-            <div
-              className="p-8 h-full group transition-colors duration-300 hover:bg-[var(--color-bg-primary)]"
-              style={{
-                borderRight: "1px solid var(--color-border)",
-                borderBottom: "1px solid var(--color-border)",
-              }}
-            >
+            <div className="p-8 h-full group transition-colors duration-300 hover:bg-[var(--color-bg-primary)] border-r border-b border-[var(--color-border)]">
               <span
-                className="font-display font-normal block mb-5"
-                style={{
-                  fontSize: "2rem",
-                  lineHeight: 1,
-                  color: "var(--color-border)",
-                }}
+                className="font-display font-normal block mb-5 leading-none text-[var(--color-border)]"
+                style={{ fontSize: "2rem" }}
               >
                 {item.number}
               </span>
-              <h3
-                className="font-display font-normal leading-tight mb-3"
-                style={{
-                  fontSize: "var(--text-h4)",
-                  color: "var(--color-text-primary)",
-                }}
-              >
+              <h3 className="font-display font-normal leading-tight mb-3 text-[var(--text-h4)] text-[var(--color-text-primary)]">
                 {item.title}
               </h3>
-              <span
-                className="block h-px w-6 mb-4 transition-all duration-300 group-hover:w-10"
-                style={{ backgroundColor: "var(--color-accent)" }}
-              />
-              <p
-                className="text-sm leading-relaxed"
-                style={{ color: "var(--color-text-secondary)" }}
-              >
+              <span className="block h-px w-6 mb-4 transition-all duration-300 group-hover:w-10 bg-[var(--color-accent)]" />
+              <p className="text-sm leading-relaxed text-[var(--color-text-secondary)]">
                 {item.description}
               </p>
             </div>
