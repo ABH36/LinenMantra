@@ -37,8 +37,8 @@ interface SlideData {
   h2:        string;
   h2Color:   string;
   flourish?: boolean;
-  body:      string;
-  cta:       { text: string; href: string; bg: string; fg: string };
+  body?:     string;
+  cta?:      { text: string; href: string; bg: string; fg: string };
 }
 
 const SLIDES: SlideData[] = [
@@ -61,8 +61,6 @@ const SLIDES: SlideData[] = [
     h2:       "Crafted by Linen Mantra.",
     h2Color:  TERRA,
     flourish: true,
-    body:     "Premium linen fabrics engineered for menswear brands, designers, and apparel manufacturers worldwide.",
-    cta:      { text: "Contact Us", href: "/contact", bg: FOREST, fg: CREAM },
   },
   {
     id: 2,
@@ -208,27 +206,31 @@ export default function HeroBanner() {
                 {slide.flourish && <Flourish color={FOREST} />}
 
                 {/* Body copy */}
-                <p
-                  className="leading-relaxed mb-6"
-                  style={{
-                    fontSize: "0.9rem",
-                    color: "rgba(44,74,45,0.82)",
-                  }}
-                >
-                  {slide.body}
-                </p>
+                {slide.body && (
+                  <p
+                    className="leading-relaxed mb-6"
+                    style={{
+                      fontSize: "0.9rem",
+                      color: "rgba(44,74,45,0.82)",
+                    }}
+                  >
+                    {slide.body}
+                  </p>
+                )}
 
                 {/* CTA */}
-                <Link
-                  href={slide.cta.href}
-                  className="inline-flex items-center gap-3 px-7 py-3.5 text-xs font-semibold tracking-widest uppercase rounded transition-opacity hover:opacity-80 group"
-                  style={{ backgroundColor: slide.cta.bg, color: slide.cta.fg }}
-                >
-                  <span>{slide.cta.text}</span>
-                  <span className="transition-transform duration-300 group-hover:translate-x-1">
-                    →
-                  </span>
-                </Link>
+                {slide.cta && (
+                  <Link
+                    href={slide.cta.href}
+                    className="inline-flex items-center gap-3 px-7 py-3.5 text-xs font-semibold tracking-widest uppercase rounded transition-opacity hover:opacity-80 group"
+                    style={{ backgroundColor: slide.cta.bg, color: slide.cta.fg }}
+                  >
+                    <span>{slide.cta.text}</span>
+                    <span className="transition-transform duration-300 group-hover:translate-x-1">
+                      →
+                    </span>
+                  </Link>
+                )}
               </motion.div>
             </AnimatePresence>
           </div>
