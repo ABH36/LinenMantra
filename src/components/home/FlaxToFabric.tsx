@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import { motion, AnimatePresence } from "framer-motion";
 import FadeInOnScroll from "@/components/shared/FadeInOnScroll";
 
 const steps = [
@@ -44,7 +43,6 @@ const steps = [
 ];
 
 const DURATION = 2800;
-const EASE = [0.25, 0.1, 0.25, 1] as const;
 
 export default function FlaxToFabric() {
   const [active, setActive] = useState(0);
@@ -191,46 +189,6 @@ export default function FlaxToFabric() {
         })}
       </div>
 
-      {/* Active step detail — fades smoothly with each step change */}
-      <div
-        className="container-site py-7"
-        style={{ borderTop: "1px solid var(--color-border)" }}
-      >
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={active}
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -8 }}
-            transition={{ duration: 0.42, ease: EASE }}
-            className="flex items-start gap-6 md:gap-10"
-          >
-            {/* Large step number accent */}
-            <span
-              className="font-display font-normal shrink-0 hidden md:block leading-none select-none"
-              style={{ fontSize: "3.5rem", color: "var(--color-accent)", opacity: 0.22 }}
-            >
-              0{active + 1}
-            </span>
-
-            <div>
-              <h3
-                className="font-display font-normal mb-2"
-                style={{ fontSize: "var(--text-h3)", color: "var(--color-text-primary)" }}
-              >
-                {steps[active].label}
-              </h3>
-              <p
-                className="text-sm leading-relaxed max-w-2xl"
-                style={{ color: "var(--color-text-secondary)" }}
-              >
-                {steps[active].body}
-              </p>
-            </div>
-          </motion.div>
-        </AnimatePresence>
-      </div>
-
       {/* Progress dots */}
       <div
         className="flex justify-center gap-2 py-4"
@@ -256,12 +214,6 @@ export default function FlaxToFabric() {
         ))}
       </div>
 
-      {/* Tagline */}
-      <div className="w-full pb-5 text-center">
-        <p className="text-label tracking-[0.22em]" style={{ color: "var(--color-text-muted)" }}>
-          Natural by Origin&nbsp;&nbsp;·&nbsp;&nbsp;Refined by Expertise&nbsp;&nbsp;·&nbsp;&nbsp;Made for Life
-        </p>
-      </div>
 
     </section>
   );
