@@ -28,47 +28,29 @@ const leadership = [
 
 export default function OurStory() {
   return (
-    <SectionWrapper>
+    <SectionWrapper id="story">
       <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-20 items-start">
 
         {/* Left — text content (3/5 width) */}
         <div className="lg:col-span-3">
           <FadeInOnScroll direction="up">
-            <span
-              className="text-label block mb-5"
-              style={{ color: "var(--color-accent)" }}
-            >
+            <span className="text-label block mb-5 text-[var(--color-accent)]">
               Who We Are
             </span>
-            <h2
-              className="font-display font-normal leading-tight mb-8"
-              style={{
-                fontSize: "var(--text-h2)",
-                color: "var(--color-text-primary)",
-              }}
-            >
+            <h2 className="font-display font-normal leading-tight mb-8 text-[var(--text-h2)] text-[var(--color-text-primary)]">
               Built on Craft.
               <br />
-              <em style={{ fontStyle: "italic", color: "var(--color-accent)" }}>
+              <em className="italic text-[var(--color-accent)]">
                 Driven by Quality.
               </em>
             </h2>
-            <span
-              className="block h-px w-10 mb-10"
-              style={{ backgroundColor: "var(--color-accent)" }}
-            />
+            <span className="block h-px w-10 mb-10 bg-[var(--color-accent)]" />
           </FadeInOnScroll>
 
           <div className="flex flex-col gap-6">
             {paragraphs.map((para, i) => (
               <FadeInOnScroll key={i} direction="up" delay={i * 0.08}>
-                <p
-                  className="leading-relaxed"
-                  style={{
-                    color: "var(--color-text-secondary)",
-                    fontSize: "var(--text-body)",
-                  }}
-                >
+                <p className="leading-relaxed text-[var(--color-text-secondary)] text-[var(--text-body)]">
                   {para}
                 </p>
               </FadeInOnScroll>
@@ -76,85 +58,51 @@ export default function OurStory() {
           </div>
         </div>
 
-        {/* Right — image placeholder (2/5 width) */}
+        {/* Right — image / stat cards (2/5 width) */}
         <FadeInOnScroll direction="left" delay={0.2} className="lg:col-span-2">
           <div className="sticky top-28 flex flex-col gap-4">
             {/* Mill video card — logo 2s → video */}
             <MillVideoCard />
 
             {/* Small caption stat */}
-            <div
-              className="flex items-center gap-6 px-6 py-5"
-              style={{
-                backgroundColor: "var(--color-bg-secondary)",
-                borderLeft: "2px solid var(--color-accent)",
-              }}
-            >
+            <div className="flex items-center gap-6 px-6 py-5 bg-[var(--color-bg-secondary)] border-l-2 border-[var(--color-accent)]">
               <div>
                 <p
-                  className="font-display font-normal"
-                  style={{
-                    fontSize: "2rem",
-                    color: "var(--color-text-primary)",
-                    lineHeight: 1,
-                  }}
+                  className="font-display font-normal text-[var(--color-text-primary)] leading-none"
+                  style={{ fontSize: "2rem" }}
                 >
                   1991
                 </p>
-                <p
-                  className="text-label mt-1"
-                  style={{ color: "var(--color-text-muted)" }}
-                >
+                <p className="text-label mt-1 text-[var(--color-text-muted)]">
                   Year Founded
                 </p>
               </div>
-              <div
-                className="w-px self-stretch"
-                style={{ backgroundColor: "var(--color-border)" }}
-              />
+              <div className="w-px self-stretch bg-[var(--color-border)]" />
               <div>
                 <p
-                  className="font-display font-normal"
-                  style={{
-                    fontSize: "2rem",
-                    color: "var(--color-text-primary)",
-                    lineHeight: 1,
-                  }}
+                  className="font-display font-normal text-[var(--color-text-primary)] leading-none"
+                  style={{ fontSize: "2rem" }}
                 >
                   25+
                 </p>
-                <p
-                  className="text-label mt-1"
-                  style={{ color: "var(--color-text-muted)" }}
-                >
+                <p className="text-label mt-1 text-[var(--color-text-muted)]">
                   Years of Expertise
                 </p>
               </div>
             </div>
+
             {/* Group company badge */}
-            <div
-              className="flex items-center gap-4 px-6 py-4"
-              style={{
-                backgroundColor: "var(--color-bg-secondary)",
-                borderLeft: "2px solid var(--color-accent)",
-              }}
-            >
-              <span
-                className="text-label shrink-0"
-                style={{ color: "var(--color-text-muted)" }}
-              >
+            <div className="flex items-center gap-4 px-6 py-4 bg-[var(--color-bg-secondary)] border-l-2 border-[var(--color-accent)]">
+              <span className="text-label shrink-0 text-[var(--color-text-muted)]">
                 Group Company
               </span>
-              <div
-                className="w-px h-5 shrink-0"
-                style={{ backgroundColor: "var(--color-border)" }}
-              />
+              <div className="w-px h-5 shrink-0 bg-[var(--color-border)]" />
               <Image
                 src="/images/about/footer/companylogo.png"
                 alt="Silverline Group"
                 width={1536}
                 height={1024}
-                style={{ height: "28px", width: "auto" }}
+                className="h-7 w-auto"
               />
             </div>
           </div>
@@ -164,14 +112,8 @@ export default function OurStory() {
       {/* Leadership section */}
       <div className="mt-24">
         <FadeInOnScroll direction="up">
-          <div
-            className="w-full h-px mb-14"
-            style={{ backgroundColor: "var(--color-border)" }}
-          />
-          <span
-            className="text-label block mb-8"
-            style={{ color: "var(--color-accent)" }}
-          >
+          <div className="w-full h-px mb-14 bg-[var(--color-border)]" />
+          <span className="text-label block mb-8 text-[var(--color-accent)]">
             Leadership
           </span>
         </FadeInOnScroll>
@@ -179,32 +121,14 @@ export default function OurStory() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {leadership.map((person, i) => (
             <FadeInOnScroll key={person.name} direction="up" delay={i * 0.12}>
-              <div
-                className="p-8 h-full"
-                style={{
-                  backgroundColor: "var(--color-bg-secondary)",
-                  borderLeft: "2px solid var(--color-accent)",
-                }}
-              >
-                <h3
-                  className="font-display font-normal mb-1"
-                  style={{
-                    fontSize: "var(--text-h3)",
-                    color: "var(--color-text-primary)",
-                  }}
-                >
+              <div className="p-8 h-full bg-[var(--color-bg-secondary)] border-l-2 border-[var(--color-accent)]">
+                <h3 className="font-display font-normal mb-1 text-[var(--text-h3)] text-[var(--color-text-primary)]">
                   {person.name}
                 </h3>
-                <p
-                  className="text-label mb-5"
-                  style={{ color: "var(--color-accent)" }}
-                >
+                <p className="text-label mb-5 text-[var(--color-accent)]">
                   {person.role}
                 </p>
-                <p
-                  className="text-sm leading-relaxed"
-                  style={{ color: "var(--color-text-secondary)" }}
-                >
+                <p className="text-sm leading-relaxed text-[var(--color-text-secondary)]">
                   {person.description}
                 </p>
               </div>

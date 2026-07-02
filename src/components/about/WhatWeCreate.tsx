@@ -52,35 +52,17 @@ export default function WhatWeCreate() {
       {/* Section header */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 mb-16">
         <FadeInOnScroll direction="up">
-          <span
-            className="text-label block mb-5"
-            style={{ color: "var(--color-accent)" }}
-          >
+          <span className="text-label block mb-5 text-[var(--color-accent)]">
             Our Specialisation
           </span>
-          <h2
-            className="font-display font-normal leading-tight"
-            style={{
-              fontSize: "var(--text-h2)",
-              color: "var(--color-text-primary)",
-            }}
-          >
+          <h2 className="font-display font-normal leading-tight text-[var(--text-h2)] text-[var(--color-text-primary)]">
             What We Create
           </h2>
-          <span
-            className="block h-px w-10 mt-5"
-            style={{ backgroundColor: "var(--color-accent)" }}
-          />
+          <span className="block h-px w-10 mt-5 bg-[var(--color-accent)]" />
         </FadeInOnScroll>
 
         <FadeInOnScroll direction="up" delay={0.1} className="flex flex-col justify-end">
-          <p
-            className="leading-relaxed"
-            style={{
-              color: "var(--color-text-secondary)",
-              fontSize: "var(--text-body)",
-            }}
-          >
+          <p className="leading-relaxed text-[var(--color-text-secondary)] text-[var(--text-body)]">
             At Linen Mantra, we specialise in developing premium linen fabrics
             designed for contemporary fashion and lifestyle applications. We
             manufacture across a full linen count range — from 25 LEA to 150
@@ -91,53 +73,28 @@ export default function WhatWeCreate() {
       </div>
 
       {/* Product type grid */}
-      <div
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0"
-        style={{ borderTop: "1px solid var(--color-border)", borderLeft: "1px solid var(--color-border)" }}
-      >
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0 border-t border-l border-[var(--color-border)]">
         {productTypes.map((type, i) => (
           <FadeInOnScroll key={type.number} direction="up" delay={i * 0.07}>
-            <div
-              className="p-8 h-full group transition-colors duration-300 hover:bg-[var(--color-bg-secondary)]"
-              style={{
-                borderRight: "1px solid var(--color-border)",
-                borderBottom: "1px solid var(--color-border)",
-              }}
-            >
+            <div className="p-8 h-full group transition-colors duration-300 hover:bg-[var(--color-bg-secondary)] border-r border-b border-[var(--color-border)]">
               {/* Number */}
               <span
-                className="font-display font-normal block mb-5 transition-colors duration-300"
-                style={{
-                  fontSize: "2.5rem",
-                  lineHeight: 1,
-                  color: "var(--color-border)",
-                }}
+                className="font-display font-normal block mb-5 transition-colors duration-300 leading-none text-[var(--color-border)]"
+                style={{ fontSize: "2.5rem" }}
               >
                 {type.number}
               </span>
 
               {/* Name */}
-              <h3
-                className="font-display font-normal leading-tight mb-4"
-                style={{
-                  fontSize: "var(--text-h4)",
-                  color: "var(--color-text-primary)",
-                }}
-              >
+              <h3 className="font-display font-normal leading-tight mb-4 text-[var(--text-h4)] text-[var(--color-text-primary)]">
                 {type.name}
               </h3>
 
               {/* Accent line */}
-              <span
-                className="block h-px w-6 mb-4 transition-all duration-300 group-hover:w-10"
-                style={{ backgroundColor: "var(--color-accent)" }}
-              />
+              <span className="block h-px w-6 mb-4 transition-all duration-300 group-hover:w-10 bg-[var(--color-accent)]" />
 
               {/* Description */}
-              <p
-                className="text-sm leading-relaxed"
-                style={{ color: "var(--color-text-secondary)" }}
-              >
+              <p className="text-sm leading-relaxed text-[var(--color-text-secondary)]">
                 {type.description}
               </p>
             </div>
@@ -146,35 +103,19 @@ export default function WhatWeCreate() {
 
         {/* 8th cell — count range highlight */}
         <FadeInOnScroll direction="up" delay={0.49}>
-          <div
-            className="p-8 h-full flex flex-col justify-between"
-            style={{
-              backgroundColor: "var(--color-bg-dark)",
-              borderRight: "1px solid var(--color-border-dark)",
-              borderBottom: "1px solid var(--color-border-dark)",
-            }}
-          >
+          <div className="p-8 h-full flex flex-col justify-between bg-[var(--color-bg-dark)] border-r border-b border-[var(--color-border-dark)]">
             <div>
               <span
-                className="font-display font-normal block leading-none"
-                style={{
-                  fontSize: "clamp(2.5rem, 4vw, 3.5rem)",
-                  color: "var(--color-accent-light)",
-                }}
+                className="font-display font-normal block leading-none text-[var(--color-accent-light)]"
+                style={{ fontSize: "clamp(2.5rem, 4vw, 3.5rem)" }}
               >
                 25–150
               </span>
-              <p
-                className="text-label mt-2"
-                style={{ color: "rgba(248,245,240,0.45)" }}
-              >
+              <p className="text-label mt-2" style={{ color: "rgba(248,245,240,0.45)" }}>
                 LEA Count Range
               </p>
             </div>
-            <p
-              className="text-sm leading-relaxed mt-6"
-              style={{ color: "rgba(248,245,240,0.4)" }}
-            >
+            <p className="text-sm leading-relaxed mt-6" style={{ color: "rgba(248,245,240,0.4)" }}>
               The full spectrum of linen — from heavy structured weaves to
               ultra-fine luxury fabrics.
             </p>

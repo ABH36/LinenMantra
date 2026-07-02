@@ -66,27 +66,21 @@ export default function PageHero({ label, heading, subText, dark = false, image 
           transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
         >
           {label && (
-            <span
-              className="text-label block mb-4"
-              style={{ color: "var(--color-accent)" }}
-            >
+            <span className="text-label block mb-4 text-[var(--color-accent)]">
               {label}
             </span>
           )}
           <h1
-            className="font-display font-normal leading-tight max-w-3xl"
-            style={{ fontSize: "var(--text-display)", color: headingColor }}
+            className="font-display font-normal leading-tight max-w-3xl text-[var(--text-display)]"
+            style={{ color: headingColor }}
           >
             {heading}
           </h1>
-          <span
-            className="block h-px w-10 mt-6"
-            style={{ backgroundColor: "var(--color-accent)" }}
-          />
+          <span className="block h-px w-10 mt-6 bg-[var(--color-accent)]" />
           {subText && (
             <p
-              className="mt-6 max-w-xl leading-relaxed"
-              style={{ color: subColor, fontSize: "var(--text-body)" }}
+              className="mt-6 max-w-xl leading-relaxed text-[var(--text-body)]"
+              style={{ color: subColor }}
             >
               {subText}
             </p>
