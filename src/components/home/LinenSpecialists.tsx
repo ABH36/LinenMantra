@@ -20,7 +20,8 @@ export default function LinenSpecialists() {
           Why Linen Mantra
         </span>
         <h2
-          className="font-display font-normal leading-tight max-w-lg text-[var(--text-h2)] text-[var(--color-text-primary)]"
+          className="font-display font-normal leading-tight max-w-lg text-[var(--color-text-primary)]"
+          style={{ fontSize: "clamp(2.2rem, 4.5vw, 3.5rem)" }}
         >
           Linen Specialists,
           <br />
@@ -55,7 +56,7 @@ export default function LinenSpecialists() {
                       <span
                         className="font-display font-normal shrink-0 transition-all duration-300"
                         style={{
-                          fontSize: "1.5rem",
+                          fontSize: "2rem",
                           color: isActive
                             ? "var(--color-accent)"
                             : "var(--color-border)",
@@ -67,7 +68,7 @@ export default function LinenSpecialists() {
 
                       {/* Title */}
                       <span
-                        className="text-sm font-medium leading-tight transition-all duration-300"
+                        className="text-base font-medium leading-tight transition-all duration-300"
                         style={{
                           color: isActive
                             ? "var(--color-text-primary)"
@@ -126,7 +127,7 @@ export default function LinenSpecialists() {
                   {activeItem.number} / {String(specialists.length).padStart(2, "0")}
                 </span>
                 <h3
-                  className="font-display font-normal leading-tight mb-6 text-[var(--text-h3)] text-[var(--color-text-primary)]"
+                  className="font-display font-normal leading-tight mb-6 text-2xl md:text-3xl text-[var(--color-text-primary)]"
                 >
                   {activeItem.title}
                 </h3>
