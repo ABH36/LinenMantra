@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { Leaf, Users, Award, Shirt, Globe, LayoutGrid, MapPin, Factory } from "lucide-react";
+import { Leaf, Shirt, Globe, LayoutGrid, MapPin, Factory } from "lucide-react";
 
 // ── Hero-specific colour palette ─────────────────────────────────────
 const FOREST = "var(--color-forest)";
@@ -22,10 +22,10 @@ const STATS_PANEL = [
 
 // ── Persistent bottom strip ──────────────────────────────────────────
 const STRIP = [
-  { Icon: Leaf,  bold: "PURE BY NATURE.",          light: "PERFECTED BY EXPERTISE."              },
-  { Icon: Users, bold: "B2B MANUFACTURER",         light: "For Brands. For Business."            },
-  { Icon: Shirt, bold: "MEN'S SHIRTING & SUITING", light: "Crafted for Comfort. Designed for Style." },
-  { Icon: Award, bold: "GLOBAL QUALITY.",          light: "TIMELESS STYLE."                      },
+  { Icon: Leaf,       bold: "PURE BY NATURE",          light: "Perfected by Expertise."   },
+  { Icon: Factory,    bold: "B2B MANUFACTURING",       light: "For Brands. For Business." },
+  { Icon: LayoutGrid, bold: "READY STOCK COLLECTION",  light: "Extensive Inventory."      },
+  { Icon: Shirt,      bold: "SHIRTING & SUITING",      light: "25 to 150 LEA."            },
 ];
 
 // ── Slide data ───────────────────────────────────────────────────────
