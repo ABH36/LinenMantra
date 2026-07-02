@@ -29,7 +29,7 @@ export default function LinenSpecialists() {
           Linen Specialists,
           <br />
           <em style={{ fontStyle: "italic", color: "var(--color-accent)" }}>
-            Since 1991
+            Since 2010
           </em>
         </h2>
         <span
