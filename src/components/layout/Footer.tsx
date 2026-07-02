@@ -184,8 +184,8 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* ── Column 3: Product Categories (3 cols) ── */}
-          <div className="md:col-span-3">
+          {/* ── Column 3: Product Categories (2 cols) ── */}
+          <div className="md:col-span-2">
             <h3 className="text-base font-black tracking-[0.1em] uppercase text-[var(--color-forest)]">
               Product Categories
             </h3>
@@ -205,58 +205,93 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* ── Column 4: Get in Touch (4 cols) ── */}
-          <div className="md:col-span-4">
+          {/* ── Column 4: Head Office (2 cols) ── */}
+          <div className="md:col-span-2">
             <h3 className="text-base font-black tracking-[0.1em] uppercase text-[var(--color-forest)]">
-              Get in Touch
+              Head Office
             </h3>
             <HeadingLine />
             <ul className="flex flex-col gap-4">
 
-              {/* Phone */}
-              <li className="flex items-start gap-4">
-                <SocialCircle size={38} bg="#25D366">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              <li className="flex items-start gap-3">
+                <SocialCircle size={32} bg="#25D366">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.61 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 5.72 5.72l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
                   </svg>
                 </SocialCircle>
-                <div className="flex flex-col gap-1 pt-1.5">
-                  <a href="tel:+918975972300" className="text-[13px] hover:opacity-60 transition-opacity text-[var(--color-text-secondary)]">
-                    +91 89759 72300
-                  </a>
-                  <a href="tel:+919769422606" className="text-[13px] hover:opacity-60 transition-opacity text-[var(--color-text-secondary)]">
-                    +91 97694 22606
-                  </a>
+                <div className="flex flex-col gap-1 pt-1">
+                  <a href="tel:+918975972300" className="text-[12px] hover:opacity-60 transition-opacity text-[var(--color-text-secondary)]">+91 89759 72300</a>
+                  <a href="tel:+919769422606" className="text-[12px] hover:opacity-60 transition-opacity text-[var(--color-text-secondary)]">+91 97694 22606</a>
                 </div>
               </li>
 
-              {/* Email */}
-              <li className="flex items-start gap-4">
-                <SocialCircle size={38} bg="#EA4335">
-                  <MailSvg size={14} />
+              <li className="flex items-start gap-3">
+                <SocialCircle size={32} bg="#EA4335">
+                  <MailSvg size={13} />
                 </SocialCircle>
-                <div className="flex flex-col gap-1 pt-1.5">
-                  <a href="mailto:linenmantra@gmail.com" className="text-[13px] hover:opacity-60 transition-opacity break-all text-[var(--color-text-secondary)]">
-                    linenmantra@gmail.com
-                  </a>
-                  <a href="mailto:export@linenmantra.com" className="text-[13px] hover:opacity-60 transition-opacity break-all text-[var(--color-text-secondary)]">
-                    export@linenmantra.com
-                  </a>
+                <div className="flex flex-col gap-1 pt-1">
+                  <a href="mailto:linenmantra@gmail.com" className="text-[12px] hover:opacity-60 transition-opacity break-all text-[var(--color-text-secondary)]">linenmantra@gmail.com</a>
+                  <a href="mailto:export@linenmantra.com" className="text-[12px] hover:opacity-60 transition-opacity break-all text-[var(--color-text-secondary)]">export@linenmantra.com</a>
                 </div>
               </li>
 
-              {/* Address */}
-              <li className="flex items-start gap-4">
-                <SocialCircle size={38} bg="#DB4437">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              <li className="flex items-start gap-3">
+                <SocialCircle size={32} bg="#DB4437">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
                     <circle cx="12" cy="10" r="3"/>
                   </svg>
                 </SocialCircle>
-                <p className="text-[13px] leading-[1.75] pt-1.5 text-[var(--color-text-secondary)]">
+                <p className="text-[12px] leading-[1.75] pt-1 text-[var(--color-text-secondary)]">
                   A-111 Kewal Industrial Estate,<br />
                   Lower Parel (West),<br />
                   Mumbai — 400013
+                </p>
+              </li>
+
+            </ul>
+          </div>
+
+          {/* ── Column 5: Branch Office (3 cols) ── */}
+          <div className="md:col-span-3">
+            <h3 className="text-base font-black tracking-[0.1em] uppercase text-[var(--color-forest)]">
+              Branch Office
+            </h3>
+            <HeadingLine />
+            <ul className="flex flex-col gap-4">
+
+              <li className="flex items-start gap-3">
+                <SocialCircle size={32} bg="#25D366">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.61 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 5.72 5.72l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+                  </svg>
+                </SocialCircle>
+                <div className="flex flex-col gap-1 pt-1">
+                  <a href="tel:+912637123456" className="text-[12px] hover:opacity-60 transition-opacity text-[var(--color-text-secondary)]">+91 26371 23456</a>
+                  <a href="tel:+919876543210" className="text-[12px] hover:opacity-60 transition-opacity text-[var(--color-text-secondary)]">+91 98765 43210</a>
+                </div>
+              </li>
+
+              <li className="flex items-start gap-3">
+                <SocialCircle size={32} bg="#EA4335">
+                  <MailSvg size={13} />
+                </SocialCircle>
+                <div className="flex flex-col gap-1 pt-1">
+                  <a href="mailto:gujarat@linenmantra.com" className="text-[12px] hover:opacity-60 transition-opacity break-all text-[var(--color-text-secondary)]">gujarat@linenmantra.com</a>
+                  <a href="mailto:mill@linenmantra.com" className="text-[12px] hover:opacity-60 transition-opacity break-all text-[var(--color-text-secondary)]">mill@linenmantra.com</a>
+                </div>
+              </li>
+
+              <li className="flex items-start gap-3">
+                <SocialCircle size={32} bg="#DB4437">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+                    <circle cx="12" cy="10" r="3"/>
+                  </svg>
+                </SocialCircle>
+                <p className="text-[12px] leading-[1.75] pt-1 text-[var(--color-text-secondary)]">
+                  Survey No. 42, GIDC Estate,<br />
+                  Navsari, Gujarat — 396445
                 </p>
               </li>
 
