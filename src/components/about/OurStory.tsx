@@ -60,7 +60,7 @@ export default function OurStory() {
 
         {/* Right — image / stat cards (2/5 width) */}
         <FadeInOnScroll direction="left" delay={0.2} className="lg:col-span-2">
-          <div className="sticky top-28 flex flex-col gap-4">
+          <div className="sticky top-[138px] flex flex-col gap-4">
             {/* Mill video card — logo 2s → video */}
             <MillVideoCard />
 

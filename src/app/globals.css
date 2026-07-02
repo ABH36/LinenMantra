@@ -229,13 +229,13 @@ body {
   outline: none;
 }
 
-/* Scroll padding so fixed header doesn't cover anchors */
+/* Scroll padding so fixed header doesn't cover anchors — must match header height */
 html {
-  scroll-padding-top: 90px;
+  scroll-padding-top: 110px;
 }
 @media (min-width: 768px) {
   html {
-    scroll-padding-top: 104px;
+    scroll-padding-top: 130px;
   }
 }
 
