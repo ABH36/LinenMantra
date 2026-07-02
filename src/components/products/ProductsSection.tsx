@@ -24,27 +24,21 @@ export default function ProductsSection() {
       <ProductFilter active={activeCategory} onChange={setActiveCategory} />
 
       {/* ── Product grid ───────────────────────────────── */}
-      <section
-        className="w-full section-py"
-        style={{ backgroundColor: "var(--color-bg-primary)" }}
-      >
+      <section className="w-full section-py bg-[var(--color-bg-primary)]">
         <div className="container-site">
 
           {/* Result count */}
           <FadeInOnScroll direction="up">
-            <p
-              className="text-sm mb-10"
-              style={{ color: "var(--color-text-muted)" }}
-            >
+            <p className="text-sm mb-10 text-[var(--color-text-muted)]">
               Showing{" "}
-              <span style={{ color: "var(--color-text-primary)", fontWeight: 500 }}>
+              <span className="text-[var(--color-text-primary)] font-medium">
                 {filtered.length}
               </span>{" "}
               {filtered.length === 1 ? "quality" : "qualities"}
               {activeCategory !== "all" && (
                 <>
                   {" "}in{" "}
-                  <span style={{ color: "var(--color-accent)", fontWeight: 500 }}>
+                  <span className="text-[var(--color-accent)] font-medium">
                     {activeCategory}
                   </span>
                 </>
@@ -64,24 +58,17 @@ export default function ProductsSection() {
             </AnimatePresence>
           </motion.div>
 
-          {/* Empty state (shouldn't happen with current data but safe fallback) */}
+          {/* Empty state */}
           {filtered.length === 0 && (
             <div className="text-center py-24">
-              <p
-                className="font-display font-normal text-3xl mb-4"
-                style={{ color: "var(--color-text-secondary)" }}
-              >
+              <p className="font-display font-normal text-3xl mb-4 text-[var(--color-text-secondary)]">
                 No fabrics found
               </p>
-              <p
-                className="text-sm"
-                style={{ color: "var(--color-text-muted)" }}
-              >
+              <p className="text-sm text-[var(--color-text-muted)]">
                 Try a different category or{" "}
                 <button
                   onClick={() => setActiveCategory("all")}
-                  className="underline cursor-pointer"
-                  style={{ color: "var(--color-accent)" }}
+                  className="underline cursor-pointer text-[var(--color-accent)]"
                 >
                   view all collections
                 </button>

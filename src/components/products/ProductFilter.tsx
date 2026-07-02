@@ -8,13 +8,7 @@ type Props = {
 
 export default function ProductFilter({ active, onChange }: Props) {
   return (
-    <div
-      className="w-full sticky top-20 z-20"
-      style={{
-        backgroundColor: "var(--color-bg-primary)",
-        borderBottom: "1px solid var(--color-border)",
-      }}
-    >
+    <div className="w-full sticky top-20 z-20 bg-[var(--color-bg-primary)] border-b border-[var(--color-border)]">
       <div className="container-site">
         <div className="flex items-center gap-0 overflow-x-auto no-scrollbar">
           {productCategories.map((cat) => {

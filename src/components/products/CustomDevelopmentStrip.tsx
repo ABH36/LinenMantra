@@ -3,43 +3,22 @@ import FadeInOnScroll from "@/components/shared/FadeInOnScroll";
 
 export default function CustomDevelopmentStrip() {
   return (
-    <section
-      className="w-full section-py"
-      style={{ backgroundColor: "var(--color-bg-secondary)" }}
-    >
+    <section className="w-full section-py bg-[var(--color-bg-secondary)]">
       <div className="container-site">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
           {/* Left text */}
           <FadeInOnScroll direction="up">
-            <span
-              className="text-label block mb-5"
-              style={{ color: "var(--color-accent)" }}
-            >
+            <span className="text-label block mb-5 text-[var(--color-accent)]">
               Custom Development
             </span>
-            <h2
-              className="font-display font-normal leading-tight mb-4"
-              style={{
-                fontSize: "var(--text-h2)",
-                color: "var(--color-text-primary)",
-              }}
-            >
+            <h2 className="font-display font-normal leading-tight mb-4 text-[var(--text-h2)] text-[var(--color-text-primary)]">
               Can&apos;t Find
               <br />
               What You Need?
             </h2>
-            <span
-              className="block h-px w-10 mb-6"
-              style={{ backgroundColor: "var(--color-accent)" }}
-            />
-            <p
-              className="leading-relaxed max-w-md"
-              style={{
-                color: "var(--color-text-secondary)",
-                fontSize: "var(--text-body)",
-              }}
-            >
+            <span className="block h-px w-10 mb-6 bg-[var(--color-accent)]" />
+            <p className="leading-relaxed max-w-md text-[var(--color-text-secondary)] text-[var(--text-body)]">
               We specialise in end-to-end custom fabric development — from
               construction specification and yarn selection to sampling and
               production. Tell us your brief and we&apos;ll build the perfect
@@ -49,13 +28,7 @@ export default function CustomDevelopmentStrip() {
 
           {/* Right — feature points + CTA */}
           <FadeInOnScroll direction="up" delay={0.15}>
-            <div
-              className="p-8 md:p-10"
-              style={{
-                backgroundColor: "var(--color-bg-primary)",
-                border: "1px solid var(--color-border)",
-              }}
-            >
+            <div className="p-8 md:p-10 bg-[var(--color-bg-primary)] border border-[var(--color-border)]">
               <ul className="flex flex-col gap-0 mb-8">
                 {[
                   "Bespoke linen blends & compositions",
@@ -74,14 +47,8 @@ export default function CustomDevelopmentStrip() {
                           : "none",
                     }}
                   >
-                    <span
-                      className="mt-1.5 w-1.5 h-1.5 rounded-full shrink-0"
-                      style={{ backgroundColor: "var(--color-accent)" }}
-                    />
-                    <span
-                      className="text-sm leading-relaxed"
-                      style={{ color: "var(--color-text-secondary)" }}
-                    >
+                    <span className="mt-1.5 w-1.5 h-1.5 rounded-full shrink-0 bg-[var(--color-accent)]" />
+                    <span className="text-sm leading-relaxed text-[var(--color-text-secondary)]">
                       {point}
                     </span>
                   </li>
@@ -90,11 +57,7 @@ export default function CustomDevelopmentStrip() {
 
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-3 px-7 py-3.5 text-sm font-medium tracking-widest uppercase rounded transition-opacity hover:opacity-80 group"
-                style={{
-                  backgroundColor: "var(--color-cta)",
-                  color: "var(--color-text-light)",
-                }}
+                className="inline-flex items-center gap-3 px-7 py-3.5 text-sm font-medium tracking-widest uppercase rounded transition-opacity hover:opacity-80 group bg-[var(--color-cta)] text-[var(--color-text-light)]"
               >
                 <span>Discuss Your Brief</span>
                 <span className="transition-transform duration-300 group-hover:translate-x-1">

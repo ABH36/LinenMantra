@@ -13,14 +13,10 @@ export default function ProductCard({ product }: Props) {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: 10 }}
       transition={{ duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
-      className="group flex flex-col h-full"
-      style={{
-        backgroundColor: "var(--color-bg-primary)",
-        border: "1px solid var(--color-border)",
-      }}
+      className="group flex flex-col h-full bg-[var(--color-bg-primary)] border border-[var(--color-border)]"
     >
       {/* ── Product image ─────────────────────────── */}
-      <div className="relative overflow-hidden" style={{ aspectRatio: "4/3" }}>
+      <div className="relative overflow-hidden aspect-[4/3]">
         <Image
           src={product.image}
           alt={product.name}
@@ -67,37 +63,24 @@ export default function ProductCard({ product }: Props) {
       {/* ── Card body ─────────────────────────────── */}
       <div className="flex flex-col flex-1 p-6">
         {/* Quality name */}
-        <h3
-          className="font-display font-normal leading-tight mb-2"
-          style={{
-            fontSize: "var(--text-h3)",
-            color: "var(--color-text-primary)",
-          }}
-        >
+        <h3 className="font-display font-normal leading-tight mb-2 text-[var(--text-h3)] text-[var(--color-text-primary)]">
           {product.name}
         </h3>
 
         {/* Composition label */}
-        <p
-          className="text-label mb-5"
-          style={{ color: "var(--color-accent)" }}
-        >
+        <p className="text-label mb-5 text-[var(--color-accent)]">
           {product.composition}
         </p>
 
         {/* Description */}
-        <p
-          className="text-sm leading-relaxed flex-1 mb-6"
-          style={{ color: "var(--color-text-secondary)" }}
-        >
+        <p className="text-sm leading-relaxed flex-1 mb-6 text-[var(--color-text-secondary)]">
           {product.description}
         </p>
 
         {/* CTA */}
         <Link
           href="/contact"
-          className="inline-flex items-center gap-2 text-sm font-medium tracking-widest uppercase transition-opacity hover:opacity-60 group/link"
-          style={{ color: "var(--color-text-primary)" }}
+          className="inline-flex items-center gap-2 text-sm font-medium tracking-widest uppercase transition-opacity hover:opacity-60 group/link text-[var(--color-text-primary)]"
         >
           <span>Get a Quote</span>
           <span className="transition-transform duration-300 group-hover/link:translate-x-1">
@@ -107,10 +90,7 @@ export default function ProductCard({ product }: Props) {
       </div>
 
       {/* Accent bottom line — slides in on hover */}
-      <div
-        className="h-px w-0 group-hover:w-full transition-all duration-500"
-        style={{ backgroundColor: "var(--color-accent)" }}
-      />
+      <div className="h-px w-0 group-hover:w-full transition-all duration-500 bg-[var(--color-accent)]" />
     </motion.article>
   );
 }
