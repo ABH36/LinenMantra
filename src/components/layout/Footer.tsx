@@ -155,8 +155,11 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* ── Column 4: Head Office (2 cols) ── */}
-          <div className="md:col-span-2">
+          {/* ── Columns 4+5: Offices wrapper (5 cols, internal 2-col grid) ── */}
+          <div className="md:col-span-5 grid grid-cols-1 sm:grid-cols-2 gap-y-10 gap-x-6">
+
+          {/* Head Office */}
+          <div>
             <h3 className="text-base font-black tracking-[0.1em] uppercase text-[var(--color-forest)]">
               Head Office
             </h3>
@@ -164,24 +167,24 @@ export default function Footer() {
             <ul className="flex flex-col gap-4">
 
               <li className="flex items-start gap-3">
-                <Image src="/images/SocialMediaicon/phone-call.png" alt="Phone" width={32} height={32} className="shrink-0" />
-                <div className="flex flex-col gap-1 pt-1">
+                <Image src="/images/SocialMediaicon/phone-call.png" alt="Phone" width={24} height={24} className="shrink-0 mt-1" />
+                <div className="flex flex-col gap-1">
                   <a href="tel:+918975972300" className="text-[12px] hover:opacity-60 transition-opacity text-[var(--color-text-secondary)]">+91 89759 72300</a>
                   <a href="tel:+919769422606" className="text-[12px] hover:opacity-60 transition-opacity text-[var(--color-text-secondary)]">+91 97694 22606</a>
                 </div>
               </li>
 
               <li className="flex items-start gap-3">
-                <Image src="/images/SocialMediaicon/gmail.png" alt="Email" width={32} height={32} className="shrink-0" />
-                <div className="flex flex-col gap-1 pt-1">
-                  <a href="mailto:linenmantra@gmail.com" className="text-[12px] hover:opacity-60 transition-opacity break-all text-[var(--color-text-secondary)]">linenmantra@gmail.com</a>
-                  <a href="mailto:export@linenmantra.com" className="text-[12px] hover:opacity-60 transition-opacity break-all text-[var(--color-text-secondary)]">export@linenmantra.com</a>
+                <Image src="/images/SocialMediaicon/gmail.png" alt="Email" width={24} height={24} className="shrink-0 mt-1" />
+                <div className="flex flex-col gap-1">
+                  <a href="mailto:linenmantra@gmail.com" className="text-[12px] hover:opacity-60 transition-opacity text-[var(--color-text-secondary)]">linenmantra@gmail.com</a>
+                  <a href="mailto:export@linenmantra.com" className="text-[12px] hover:opacity-60 transition-opacity text-[var(--color-text-secondary)]">export@linenmantra.com</a>
                 </div>
               </li>
 
               <li className="flex items-start gap-3">
-                <Image src="/images/SocialMediaicon/google-maps.png" alt="Location" width={32} height={32} className="shrink-0" />
-                <p className="text-[12px] leading-[1.75] pt-1 text-[var(--color-text-secondary)]">
+                <Image src="/images/SocialMediaicon/google-maps.png" alt="Location" width={24} height={24} className="shrink-0 mt-1" />
+                <p className="text-[12px] leading-[1.75] mt-1 text-[var(--color-text-secondary)]">
                   A-111 Kewal Industrial Estate,<br />
                   Lower Parel (West),<br />
                   Mumbai — 400013
@@ -191,8 +194,8 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* ── Column 5: Branch Office (3 cols) ── */}
-          <div className="md:col-span-3">
+          {/* Branch Office */}
+          <div>
             <h3 className="text-base font-black tracking-[0.1em] uppercase text-[var(--color-forest)]">
               Branch Office
             </h3>
@@ -200,24 +203,24 @@ export default function Footer() {
             <ul className="flex flex-col gap-4">
 
               <li className="flex items-start gap-3">
-                <Image src="/images/SocialMediaicon/phone-call.png" alt="Phone" width={32} height={32} className="shrink-0" />
-                <div className="flex flex-col gap-1 pt-1">
+                <Image src="/images/SocialMediaicon/phone-call.png" alt="Phone" width={24} height={24} className="shrink-0 mt-1" />
+                <div className="flex flex-col gap-1">
                   <a href="tel:+912637123456" className="text-[12px] hover:opacity-60 transition-opacity text-[var(--color-text-secondary)]">+91 26371 23456</a>
                   <a href="tel:+919876543210" className="text-[12px] hover:opacity-60 transition-opacity text-[var(--color-text-secondary)]">+91 98765 43210</a>
                 </div>
               </li>
 
               <li className="flex items-start gap-3">
-                <Image src="/images/SocialMediaicon/gmail.png" alt="Email" width={32} height={32} className="shrink-0" />
-                <div className="flex flex-col gap-1 pt-1">
-                  <a href="mailto:gujarat@linenmantra.com" className="text-[12px] hover:opacity-60 transition-opacity break-all text-[var(--color-text-secondary)]">gujarat@linenmantra.com</a>
-                  <a href="mailto:mill@linenmantra.com" className="text-[12px] hover:opacity-60 transition-opacity break-all text-[var(--color-text-secondary)]">mill@linenmantra.com</a>
+                <Image src="/images/SocialMediaicon/gmail.png" alt="Email" width={24} height={24} className="shrink-0 mt-1" />
+                <div className="flex flex-col gap-1">
+                  <a href="mailto:gujarat@linenmantra.com" className="text-[12px] hover:opacity-60 transition-opacity text-[var(--color-text-secondary)]">gujarat@linenmantra.com</a>
+                  <a href="mailto:mill@linenmantra.com" className="text-[12px] hover:opacity-60 transition-opacity text-[var(--color-text-secondary)]">mill@linenmantra.com</a>
                 </div>
               </li>
 
               <li className="flex items-start gap-3">
-                <Image src="/images/SocialMediaicon/google-maps.png" alt="Location" width={32} height={32} className="shrink-0" />
-                <p className="text-[12px] leading-[1.75] pt-1 text-[var(--color-text-secondary)]">
+                <Image src="/images/SocialMediaicon/google-maps.png" alt="Location" width={24} height={24} className="shrink-0 mt-1" />
+                <p className="text-[12px] leading-[1.75] mt-1 text-[var(--color-text-secondary)]">
                   Survey No. 42, GIDC Estate,<br />
                   Navsari, Gujarat — 396445
                 </p>
@@ -225,6 +228,8 @@ export default function Footer() {
 
             </ul>
           </div>
+
+          </div>{/* end offices wrapper */}
 
         </div>
       </div>
