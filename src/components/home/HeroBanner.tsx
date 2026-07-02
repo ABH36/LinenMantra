@@ -45,9 +45,9 @@ const SLIDES: SlideData[] = [
   {
     id: 0,
     image:    "/images/hero/herobanner1.png",
-    h1:       "The Fabric Behind",
+    h1:       "Linen",
     h1Color:  FOREST,
-    h2:       "Great Brands",
+    h2:       "Reimagined.",
     h2Color:  TERRA,
     flourish: true,
     body:     "From flax fields to premium collections, we craft linen fabrics trusted by designers, manufacturers, and brands worldwide.",
