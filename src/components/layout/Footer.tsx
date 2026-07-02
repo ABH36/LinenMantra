@@ -102,7 +102,7 @@ export default function Footer() {
                 <a href="#" aria-label="Follow on Instagram" className="hover:opacity-80 transition-opacity">
                   <Image src="/images/SocialMediaicon/instagram.png" alt="Instagram" width={40} height={40} />
                 </a>
-                <a href="#" aria-label="Connect on LinkedIn" className="hover:opacity-80 transition-opacity">
+                <a href="https://www.linkedin.com/company/linen-mantra/" target="_blank" rel="noopener noreferrer" aria-label="Connect on LinkedIn" className="hover:opacity-80 transition-opacity">
                   <Image src="/images/SocialMediaicon/linkedin.png" alt="LinkedIn" width={40} height={40} />
                 </a>
                 <a href="#" aria-label="Follow on Facebook" className="hover:opacity-80 transition-opacity">
