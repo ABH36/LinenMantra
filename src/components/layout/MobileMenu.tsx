@@ -67,7 +67,7 @@ export default function MobileMenu({ isOpen, onClose, currentPath }: Props) {
                 className="p-2 transition-opacity hover:opacity-60 cursor-pointer"
                 aria-label="Close menu"
               >
-                <X size={22} color="var(--color-text-light)" />
+                <X size={22} className="text-[var(--color-text-light)]" />
               </button>
             </div>
 

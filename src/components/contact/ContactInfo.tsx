@@ -54,7 +54,7 @@ export default function ContactInfo() {
               <div className="p-6 border border-[var(--color-border)] bg-[var(--color-bg-primary)]">
                 <div className="flex items-start gap-4">
                   <div className="w-9 h-9 flex items-center justify-center shrink-0 bg-[var(--color-bg-secondary)]">
-                    <Icon size={16} color="var(--color-accent)" />
+                    <Icon size={16} className="text-[var(--color-accent)]" />
                   </div>
                   <div>
                     <p className="text-label mb-2 text-[var(--color-text-muted)]">

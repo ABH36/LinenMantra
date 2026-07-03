@@ -56,7 +56,7 @@ export default function ArtAndScience() {
             {/* Flourish */}
             <motion.div className="flex items-center gap-2.5 mb-5" {...fadeUp(0.22)}>
               <span className="block h-px w-10 bg-[var(--color-accent)] opacity-55" />
-              <Leaf size={13} color="var(--color-accent)" style={{ opacity: 0.7 }} />
+              <Leaf size={13} className="text-[var(--color-accent)] opacity-70" />
             </motion.div>
 
             {/* Heading */}
