@@ -61,46 +61,46 @@ export default function ExportRegions() {
       {/* World map visual */}
       <FadeInOnScroll direction="up" delay={0.1}>
         <div
-          className="relative w-full overflow-hidden mb-14 min-h-[280px] border border-[var(--color-border)]"
+          className="relative w-full overflow-hidden mb-14 aspect-[2/1] border border-[var(--color-border)]"
           style={{
             background: "linear-gradient(180deg, #1A1A18 0%, #242220 100%)",
           }}
         >
-          {/* Globe map image */}
+          {/* Globe map image — full 2:1 map, no crop */}
           <Image
             src="/images/Export/globlemap.png"
             alt="Global export map"
             fill
             sizes="100vw"
-            className="object-cover object-center opacity-[0.22]"
+            className="object-contain object-center opacity-50"
           />
 
-          {/* Stylised world map grid */}
+          {/* Subtle grid overlay */}
           <div
-            className="absolute inset-0 opacity-10"
+            className="absolute inset-0 opacity-[0.06]"
             style={{
               backgroundImage:
                 "repeating-linear-gradient(0deg,transparent,transparent 24px,rgba(160,140,114,0.4) 24px,rgba(160,140,114,0.4) 25px),repeating-linear-gradient(90deg,transparent,transparent 24px,rgba(160,140,114,0.4) 24px,rgba(160,140,114,0.4) 25px)",
             }}
           />
 
-          {/* Country dot indicators */}
+          {/* Country dots — equirectangular: x=(lng+180)/360, y=(90-lat)/180 */}
           {[
-            { name: "UK",  x: "44%", y: "28%" },
-            { name: "DE",  x: "48%", y: "30%" },
-            { name: "FR",  x: "46%", y: "33%" },
-            { name: "IT",  x: "49%", y: "35%" },
-            { name: "ES",  x: "44%", y: "36%" },
-            { name: "NL",  x: "47%", y: "28%" },
-            { name: "US",  x: "22%", y: "35%" },
-            { name: "CA",  x: "20%", y: "28%" },
-            { name: "UAE", x: "58%", y: "42%" },
-            { name: "SA",  x: "56%", y: "46%" },
-            { name: "JP",  x: "80%", y: "33%" },
-            { name: "AU",  x: "78%", y: "62%" },
-            { name: "SG",  x: "76%", y: "52%" },
-            { name: "ZA",  x: "52%", y: "65%" },
-          ].map((dot) => (
+            { name: "UK",  x: "50.0%", y: "21.4%" }, // London  51.5°N  0.1°W
+            { name: "DE",  x: "53.7%", y: "20.8%" }, // Berlin  52.5°N 13.4°E
+            { name: "FR",  x: "50.6%", y: "22.8%" }, // Paris   48.9°N  2.3°E
+            { name: "IT",  x: "53.5%", y: "26.7%" }, // Rome    41.9°N 12.5°E
+            { name: "ES",  x: "49.0%", y: "27.6%" }, // Madrid  40.4°N  3.7°W
+            { name: "NL",  x: "51.4%", y: "20.9%" }, // Amsterdam 52.4°N 4.9°E
+            { name: "US",  x: "29.4%", y: "27.4%" }, // New York 40.7°N 74.0°W
+            { name: "CA",  x: "29.0%", y: "24.8%" }, // Ottawa  45.4°N 75.7°W
+            { name: "UAE", x: "65.4%", y: "35.4%" }, // Dubai   25.2°N 55.3°E
+            { name: "SA",  x: "63.0%", y: "36.3%" }, // Riyadh  24.7°N 46.7°E
+            { name: "JP",  x: "88.8%", y: "30.2%" }, // Tokyo   35.7°N 139.7°E
+            { name: "AU",  x: "92.0%", y: "68.8%" }, // Sydney  33.9°S 151.2°E
+            { name: "SG",  x: "78.8%", y: "49.2%" }, // Singapore 1.4°N 103.8°E
+            { name: "ZA",  x: "57.8%", y: "64.6%" }, // Johannesburg 26.2°S 28.0°E
+          ].map((dot, i) => (
             <div
               key={dot.name}
               className="absolute group"
@@ -108,36 +108,27 @@ export default function ExportRegions() {
             >
               {/* Pulse ring */}
               <span
-                className="absolute inset-0 rounded-full animate-ping opacity-30"
+                className="absolute rounded-full animate-ping opacity-40 bg-[var(--color-accent)]"
                 style={{
-                  backgroundColor: "var(--color-accent)",
-                  width: "16px",
-                  height: "16px",
+                  width: "14px",
+                  height: "14px",
+                  top: "-3px",
+                  left: "-3px",
                   animationDuration: "2.5s",
-                  animationDelay: `${Math.random() * 2}s`,
+                  animationDelay: `${(i * 0.3) % 2}s`,
                 }}
               />
               {/* Dot */}
               <span
                 className="relative block w-2 h-2 rounded-full bg-[var(--color-accent)]"
-                style={{ boxShadow: "0 0 8px rgba(160,140,114,0.6)" }}
+                style={{ boxShadow: "0 0 6px rgba(160,140,114,0.7)" }}
               />
-              {/* Country label tooltip */}
+              {/* Label on hover */}
               <span className="absolute -top-6 left-1/2 -translate-x-1/2 text-label opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap pointer-events-none text-[var(--color-accent)]">
                 {dot.name}
               </span>
             </div>
           ))}
-
-          {/* Center label */}
-          <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-            <p
-              className="font-display font-normal opacity-[0.04] select-none text-[var(--color-text-light)] tracking-[0.1em]"
-              style={{ fontSize: "clamp(4rem, 10vw, 8rem)" }}
-            >
-              GLOBAL
-            </p>
-          </div>
         </div>
       </FadeInOnScroll>
 
