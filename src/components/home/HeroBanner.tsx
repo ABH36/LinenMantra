@@ -30,9 +30,10 @@ const STRIP = [
 
 // ── Slide data ───────────────────────────────────────────────────────
 interface SlideData {
-  id:        number;
-  image:     string;
-  h1:        string;
+  id:          number;
+  image:       string;
+  mobileImage: string;
+  h1:          string;
   h1Color:   string;
   h2:        string;
   h2Color:   string;
@@ -44,7 +45,8 @@ interface SlideData {
 const SLIDES: SlideData[] = [
   {
     id: 0,
-    image:    "/images/hero/herobanner1.png",
+    image:       "/images/hero/herobanner1.png",
+    mobileImage: "/images/hero/herobanner1-mobile.jpg",
     h1:       "Linen",
     h1Color:  FOREST,
     h2:       "Reimagined.",
@@ -55,7 +57,8 @@ const SLIDES: SlideData[] = [
   },
   {
     id: 1,
-    image:    "/images/hero/herobanner2.png",
+    image:       "/images/hero/herobanner2.png",
+    mobileImage: "/images/hero/herobanner2-mobile.jpg",
     h1:       "From Flax to Fabric.",
     h1Color:  FOREST,
     h2:       "Crafted by Linen Mantra.",
@@ -64,7 +67,8 @@ const SLIDES: SlideData[] = [
   },
   {
     id: 2,
-    image:    "/images/hero/herobanner3.png",
+    image:       "/images/hero/herobanner3.png",
+    mobileImage: "/images/hero/herobanner3-mobile.jpg",
     h1:       "India's Premium",
     h1Color:  FOREST,
     h2:       "Linen Export House",
@@ -125,12 +129,22 @@ export default function HeroBanner() {
             className="relative h-full flex-shrink-0"
             style={{ width: `${100 / TOTAL}%` }}
           >
+            {/* Mobile image */}
+            <Image
+              src={s.mobileImage}
+              alt="Linen Mantra"
+              fill
+              sizes="100vw"
+              className="object-cover object-center block md:hidden"
+              priority={s.id === 0}
+            />
+            {/* Desktop image */}
             <Image
               src={s.image}
               alt="Linen Mantra"
               fill
               sizes="100vw"
-              className="object-cover object-center"
+              className="object-cover object-center hidden md:block"
               priority={s.id === 0}
             />
           </div>
