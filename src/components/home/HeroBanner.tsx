@@ -104,8 +104,7 @@ export default function HeroBanner() {
 
   return (
     <section
-      className="relative w-full overflow-hidden"
-      style={{ height: "100vh", minHeight: "680px" }}
+      className="relative w-full overflow-hidden h-[58vh] min-h-[380px] md:h-screen md:min-h-[680px]"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
