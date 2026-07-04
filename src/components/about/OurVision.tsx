@@ -42,7 +42,7 @@ export default function OurVision() {
           <FadeInOnScroll direction="up" delay={0.2}>
             <span className="block h-px w-10 mx-auto mt-10 mb-8 bg-[var(--color-accent)]" />
             <p className="text-label text-[var(--color-text-muted)]">
-              Linen Mantra · Est. 1991 · Mumbai, India
+              Linen Mantra · Est. 2010 · Mumbai, India
             </p>
           </FadeInOnScroll>
 

@@ -66,7 +66,7 @@ const SLIDES: SlideData[] = [
     h2:       "Linen Export House",
     h2Color:  TERRA,
     flourish: true,
-    body:     "Supplying premium linen and linen-blend fabrics to global brands across 14+ countries since 1991.",
+    body:     "Supplying premium linen and linen-blend fabrics to global brands across 14+ countries since 2010.",
     cta:      { text: "Get Export Quote", href: "/contact", bg: FOREST, fg: CREAM },
   },
 ];

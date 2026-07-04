@@ -92,7 +92,7 @@ export default function Footer() {
             <p className="text-[13px] leading-[1.75] text-justify text-[var(--color-text-secondary)]">
               India&apos;s leading manufacturer of premium linen and linen blend
               fabrics — trusted by brands, designers, and export markets
-              worldwide since 1991.
+              worldwide since 2010.
             </p>
 
             {/* Social icons with flanking lines */}

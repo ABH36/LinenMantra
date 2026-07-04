@@ -10,8 +10,8 @@ const reasons = [
   },
   {
     number: "02",
-    title: "25+ Years of Linen Mastery",
-    body: "Founded in 1991, we have developed deep expertise across the full linen count spectrum — from everyday shirting to luxury designer fabrics. That knowledge translates into consistent, reliable supply.",
+    title: "16+ Years of Linen Mastery",
+    body: "Founded in 2010, we have developed deep expertise across the full linen count spectrum — from everyday shirting to luxury designer fabrics. That knowledge translates into consistent, reliable supply.",
   },
   {
     number: "03",

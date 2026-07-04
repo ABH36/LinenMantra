@@ -5,7 +5,7 @@ import MillVideoCard from "./MillVideoCard";
 
 const paragraphs = [
   "Linen Mantra is one of India's leading manufacturers of premium linen and linen blend fabrics, serving fashion brands, garment manufacturers, designers, retailers, and export markets across the globe.",
-  "Backed by over 25 years of textile expertise, we combine advanced manufacturing, innovative product development, and a deep understanding of evolving fashion trends to create fabrics that meet the highest standards of quality, performance, and design.",
+  "Backed by over 16 years of textile expertise, we combine advanced manufacturing, innovative product development, and a deep understanding of evolving fashion trends to create fabrics that meet the highest standards of quality, performance, and design.",
   "Founded under the leadership of Vipul Raichura, Linen Mantra was established with a vision to bring world-class linen fabrics to the Indian and international fashion industry. What began as a textile trading venture has grown into a trusted manufacturing company known for its commitment to quality, consistency, and innovation.",
   "Today, alongside the experience and leadership of its founder, the company is strengthened by the involvement of the next generation. Shrey Raichura brings a fresh perspective to product development, branding, and global market expansion, while continuing to build on the values and expertise that have shaped Linen Mantra over the years.",
   "Together, this blend of experience and forward-thinking vision enables us to serve the evolving needs of modern brands while remaining committed to the craftsmanship, quality, and reliability that define our business.",
@@ -16,7 +16,7 @@ const leadership = [
     name: "Vipul Raichura",
     role: "Founder & Director",
     description:
-      "With over 25 years in the textile industry, Vipul has built Linen Mantra into a trusted name for premium linen manufacturing — known for unwavering quality and deep technical knowledge.",
+      "With over 16 years in the textile industry, Vipul has built Linen Mantra into a trusted name for premium linen manufacturing — known for unwavering quality and deep technical knowledge.",
   },
   {
     name: "Shrey Raichura",
@@ -71,7 +71,7 @@ export default function OurStory() {
                   className="font-display font-normal text-[var(--color-text-primary)] leading-none"
                   style={{ fontSize: "2rem" }}
                 >
-                  1991
+                  2010
                 </p>
                 <p className="text-label mt-1 text-[var(--color-text-muted)]">
                   Year Founded
@@ -83,7 +83,7 @@ export default function OurStory() {
                   className="font-display font-normal text-[var(--color-text-primary)] leading-none"
                   style={{ fontSize: "2rem" }}
                 >
-                  25+
+                  16+
                 </p>
                 <p className="text-label mt-1 text-[var(--color-text-muted)]">
                   Years of Expertise

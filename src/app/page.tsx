@@ -10,7 +10,7 @@ import NewsletterStrip from "@/components/home/NewsletterStrip";
 export const metadata: Metadata = {
   title: "Linen Mantra — Premium Linen Fabric Manufacturer",
   description:
-    "India's leading manufacturer of premium linen and linen blend fabrics. 25+ years of textile expertise. Serving fashion brands, designers, garment manufacturers, and export markets worldwide.",
+    "India's leading manufacturer of premium linen and linen blend fabrics. 16+ years of textile expertise. Serving fashion brands, designers, garment manufacturers, and export markets worldwide.",
 };
 
 export default function HomePage() {

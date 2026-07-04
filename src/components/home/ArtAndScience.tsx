@@ -65,7 +65,7 @@ export default function ArtAndScience() {
               style={{ fontSize: "clamp(1.75rem, 3vw, 2.75rem)", letterSpacing: "-0.01em" }}
               {...fadeUp(0.28)}
             >
-              25+ Years of
+              16+ Years of
               <br />
               Textile Expertise
             </motion.h2>

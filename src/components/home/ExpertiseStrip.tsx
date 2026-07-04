@@ -5,7 +5,7 @@ import { useInView, animate } from "framer-motion";
 import FadeInOnScroll from "@/components/shared/FadeInOnScroll";
 
 const stats = [
-  { value: 25, suffix: "+", label: "Years of Textile Expertise" },
+  { value: 16, suffix: "+", label: "Years of Textile Expertise" },
   { value: 150, suffix: " LEA", label: "Finest Linen Count" },
   { value: 14, suffix: "+", label: "Export Countries" },
   { value: 2010, suffix: "", label: "Year Established" },
@@ -102,7 +102,7 @@ export default function ExpertiseStrip() {
               Weaving Excellence
               <br />
               <em className="italic text-[var(--color-accent)]">
-                for Over 25 Years
+                for Over 16 Years
               </em>
             </p>
           </FadeInOnScroll>

@@ -27,7 +27,7 @@ export default function WeavingExcellence() {
                 className="font-display font-normal leading-none mb-2 text-[var(--color-accent-light)]"
                 style={{ fontSize: "2.5rem" }}
               >
-                25+
+                16+
               </p>
               <p className="text-label" style={{ color: "rgba(248,245,240,0.5)" }}>
                 Years of Weaving Excellence
@@ -47,7 +47,7 @@ export default function WeavingExcellence() {
               <br />
               for Over{" "}
               <em className="italic text-[var(--color-accent)]">
-                25 Years
+                16 Years
               </em>
             </h2>
             <span className="block h-px w-10 mb-8 bg-[var(--color-accent)]" />
@@ -55,7 +55,7 @@ export default function WeavingExcellence() {
 
           <FadeInOnScroll direction="up" delay={0.1}>
             <p className="leading-relaxed mb-6 text-[var(--color-text-secondary)] text-[var(--text-body)]">
-              With over 25 years of experience in textiles, Linen Mantra has
+              With over 16 years of experience in textiles, Linen Mantra has
               built its reputation as a linen specialist, combining deep
               technical expertise with an unwavering commitment to quality.
             </p>

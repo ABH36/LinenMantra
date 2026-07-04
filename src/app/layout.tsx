@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     template: "%s | Linen Mantra",
   },
   description:
-    "India's leading manufacturer of premium linen and linen blend fabrics. Serving fashion brands, garment manufacturers, designers, and export markets worldwide. 25+ years of textile expertise.",
+    "India's leading manufacturer of premium linen and linen blend fabrics. Serving fashion brands, garment manufacturers, designers, and export markets worldwide. 16+ years of textile expertise.",
   keywords: [
     "linen fabric manufacturer",
     "premium linen",
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     siteName: "Linen Mantra",
     title: "Linen Mantra — Premium Linen Fabric Manufacturer",
     description:
-      "25+ years of linen manufacturing expertise. Serving global brands, designers, and garment manufacturers.",
+      "16+ years of linen manufacturing expertise. Serving global brands, designers, and garment manufacturers.",
     images: [
       {
         url: "/og-image.jpg",
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Linen Mantra — Premium Linen Fabric Manufacturer",
     description:
-      "25+ years of linen manufacturing. Premium shirting, suiting & blends for global brands.",
+      "16+ years of linen manufacturing. Premium shirting, suiting & blends for global brands.",
     images: ["/og-image.jpg"],
   },
   robots: {
@@ -86,8 +86,8 @@ const jsonLd = {
         url: "https://linenmantra.com/logo.png",
       },
       description:
-        "Premium linen and linen blend fabric manufacturer based in India. Serving global fashion brands, garment manufacturers, and designers since 1991.",
-      foundingDate: "1991",
+        "Premium linen and linen blend fabric manufacturer based in India. Serving global fashion brands, garment manufacturers, and designers since 2010.",
+      foundingDate: "2010",
       address: {
         "@type": "PostalAddress",
         addressCountry: "IN",
