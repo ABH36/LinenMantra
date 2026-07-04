@@ -61,14 +61,14 @@ export default function ExportRegions() {
       {/* World map visual */}
       <FadeInOnScroll direction="up" delay={0.1}>
         <div
-          className="relative w-full overflow-hidden mb-14 aspect-[2/1] border border-[var(--color-border)]"
+          className="relative w-full overflow-hidden mb-14 aspect-[3/2] border border-[var(--color-border)]"
           style={{
             background: "linear-gradient(180deg, #1A1A18 0%, #242220 100%)",
           }}
         >
           {/* Globe map image with points already embedded */}
           <Image
-            src="/images/Export/globelmap.png"
+            src="/images/Export/globlemap.png"
             alt="Global export map"
             fill
             sizes="100vw"
