@@ -4,21 +4,13 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { Leaf, Shirt, Globe, LayoutGrid, MapPin, Factory } from "lucide-react";
+import { Leaf, Shirt, LayoutGrid, Factory } from "lucide-react";
 
 // ── Hero-specific colour palette ─────────────────────────────────────
 const FOREST = "var(--color-forest)";
 const TERRA  = "var(--color-terra)";
 const GOLD   = "var(--color-gold)";
 const CREAM  = "var(--color-text-light)";
-
-// ── Right-side stats panel ────────────────────────────────────────────
-const STATS_PANEL = [
-  { Icon: Globe,       value: "2010",   label: "SINCE"        },
-  { Icon: LayoutGrid,  value: "25–150", label: "LEA RANGE"    },
-  { Icon: MapPin,      value: "14+",    label: "COUNTRIES"    },
-  { Icon: Factory,     value: "B2B",    label: "MANUFACTURER" },
-];
 
 // ── Persistent bottom strip ──────────────────────────────────────────
 const STRIP = [
@@ -251,64 +243,10 @@ export default function HeroBanner() {
         </div>
       </div>
 
-      {/* ── Right stats panel — vertically centered, animated ── */}
-      <div
-        className="absolute right-0 z-30 hidden lg:block"
-        style={{ top: "50%", transform: "translateY(-50%)" }}
-      >
-        <motion.div
-          initial={{ opacity: 0, x: 56 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1], delay: 0.4 }}
-          className="flex flex-col"
-          style={{
-            width:           "clamp(148px, 12.5vw, 200px)",
-            backgroundColor: "var(--color-forest)",
-            borderLeft:      "1px solid rgba(248,245,240,0.10)",
-            borderTop:       "1px solid rgba(248,245,240,0.06)",
-            borderBottom:    "1px solid rgba(248,245,240,0.06)",
-            borderRadius:    "6px 0 0 6px",
-            boxShadow:       "-6px 0 28px rgba(0,0,0,0.14)",
-          }}
-        >
-          {STATS_PANEL.map(({ Icon, value, label }, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, x: 22 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.55, ease: [0.25, 0.1, 0.25, 1], delay: 0.55 + i * 0.1 }}
-              className="flex items-center gap-3.5 px-5 py-3.5"
-              style={{
-                borderBottom:
-                  i < STATS_PANEL.length - 1
-                    ? "1px solid rgba(248,245,240,0.07)"
-                    : "none",
-              }}
-            >
-              <Icon size={22} style={{ color: GOLD, opacity: 0.80, flexShrink: 0 }} />
-              <div>
-                <p
-                  className="font-display font-normal leading-tight"
-                  style={{ color: CREAM, fontSize: "clamp(1rem, 1.5vw, 1.3rem)" }}
-                >
-                  {value}
-                </p>
-                <p
-                  className="font-medium tracking-widest uppercase mt-0.5"
-                  style={{ fontSize: "0.5rem", color: GOLD, opacity: 0.75, letterSpacing: "0.14em" }}
-                >
-                  {label}
-                </p>
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
-      </div>
-
-      {/* ── Slide navigation dots (left of stats panel, md+) ── */}
+      {/* ── Slide navigation dots ── */}
       <div
         className="absolute z-30 hidden md:flex flex-col gap-2 items-center"
-        style={{ bottom: "68px", right: "clamp(170px, 15vw, 228px)" }}
+        style={{ bottom: "68px", right: "2rem" }}
       >
         {SLIDES.map((_, i) => (
           <button
