@@ -95,21 +95,26 @@ export default function Footer() {
               worldwide since 2010.
             </p>
 
-            {/* Social icons with flanking lines */}
-            <div className="flex items-center gap-3 mt-5">
-              <span className="flex-1 h-px bg-[var(--color-accent)] opacity-30" />
+            {/* Follow Us + social icons */}
+            <div className="mt-5">
+              <p className="text-[10px] font-semibold tracking-[0.18em] uppercase text-center text-[var(--color-text-muted)] mb-3">
+                Follow Us
+              </p>
               <div className="flex items-center gap-3">
-                <a href="#" aria-label="Follow on Instagram" className="hover:opacity-80 transition-opacity">
-                  <Image src="/images/SocialMediaicon/instagram.png" alt="Instagram" width={40} height={40} />
-                </a>
-                <a href="https://www.linkedin.com/company/linen-mantra/" target="_blank" rel="noopener noreferrer" aria-label="Connect on LinkedIn" className="hover:opacity-80 transition-opacity">
-                  <Image src="/images/SocialMediaicon/linkedin.png" alt="LinkedIn" width={40} height={40} />
-                </a>
-                <a href="#" aria-label="Follow on Facebook" className="hover:opacity-80 transition-opacity">
-                  <Image src="/images/SocialMediaicon/facebook.png" alt="Facebook" width={40} height={40} />
-                </a>
+                <span className="flex-1 h-px bg-[var(--color-accent)] opacity-30" />
+                <div className="flex items-center gap-3">
+                  <a href="#" aria-label="Follow on Instagram" className="hover:opacity-80 transition-opacity">
+                    <Image src="/images/SocialMediaicon/instagram.png" alt="Instagram" width={32} height={32} style={{ width: 32, height: 32 }} />
+                  </a>
+                  <a href="https://www.linkedin.com/company/linen-mantra/" target="_blank" rel="noopener noreferrer" aria-label="Connect on LinkedIn" className="hover:opacity-80 transition-opacity">
+                    <Image src="/images/SocialMediaicon/linkedin.png" alt="LinkedIn" width={32} height={32} style={{ width: 32, height: 32 }} />
+                  </a>
+                  <a href="#" aria-label="Follow on Facebook" className="hover:opacity-80 transition-opacity">
+                    <Image src="/images/SocialMediaicon/facebook.png" alt="Facebook" width={32} height={32} style={{ width: 32, height: 32 }} />
+                  </a>
+                </div>
+                <span className="flex-1 h-px bg-[var(--color-accent)] opacity-30" />
               </div>
-              <span className="flex-1 h-px bg-[var(--color-accent)] opacity-30" />
             </div>
           </div>
 
@@ -134,10 +139,10 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* ── Column 3: Product Categories (2 cols) ── */}
+          {/* ── Column 3: Categories (2 cols) ── */}
           <div className="md:col-span-2">
             <h3 className="text-base font-black tracking-[0.1em] uppercase text-[var(--color-forest)]">
-              Product Categories
+              Categories
             </h3>
             <HeadingLine />
             <ul className="flex flex-col gap-3">
@@ -221,8 +226,10 @@ export default function Footer() {
               <li className="flex items-start gap-3">
                 <Image src="/images/SocialMediaicon/google-maps.png" alt="Location" width={24} height={24} className="shrink-0 mt-1" />
                 <p className="text-[12px] leading-[1.75] mt-1 text-[var(--color-text-secondary)]">
-                  Survey No. 42, GIDC Estate,<br />
-                  Navsari, Gujarat — 396445
+                  #384-M Building, Shop No. 1,<br />
+                  Ground Floor, Dabholkar Wadi,<br />
+                  Kalbadevi Road,<br />
+                  Mumbai — 400002
                 </p>
               </li>
 

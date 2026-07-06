@@ -69,6 +69,18 @@ const SLIDES: SlideData[] = [
     body:     "Supplying premium linen and linen-blend fabrics to global brands across 14+ countries since 2010.",
     cta:      { text: "Get Export Quote", href: "/contact", bg: FOREST, fg: CREAM },
   },
+  {
+    id: 3,
+    image:       "/images/hero/herobanner4.png",
+    mobileImage: "/images/hero/herobanner4.png",
+    h1:       "Fabric.",
+    h1Color:  FOREST,
+    h2:       "Elevated.",
+    h2Color:  TERRA,
+    flourish: true,
+    body:     "Every metre we weave — from fine shirting to rich suiting blends — carries our promise of consistency, craftsmanship, and care that global brands depend on.",
+    cta:      { text: "Discover Our Range", href: "/products", bg: FOREST, fg: CREAM },
+  },
 ];
 
 const TOTAL       = SLIDES.length;
