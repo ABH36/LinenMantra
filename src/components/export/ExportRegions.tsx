@@ -41,7 +41,7 @@ export default function ExportRegions() {
           {[...FEATURES, ...FEATURES].map((feat, i) => (
             <div key={i} className="flex items-center shrink-0">
               <span
-                className="font-display font-normal text-[var(--color-text-primary)] whitespace-nowrap"
+                className="font-display font-semibold text-[var(--color-text-primary)] whitespace-nowrap"
                 style={{ fontSize: "clamp(1rem, 1.6vw, 1.35rem)" }}
               >
                 {feat}
@@ -76,7 +76,7 @@ export default function ExportRegions() {
             alt="Global export map"
             fill
             sizes="100vw"
-            className="object-contain object-center"
+            className="object-cover object-center"
           />
         </div>
       </FadeInOnScroll>
