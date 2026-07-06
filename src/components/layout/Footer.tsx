@@ -103,7 +103,7 @@ export default function Footer() {
               <div className="flex items-center gap-3">
                 <span className="flex-1 h-px bg-[var(--color-accent)] opacity-30" />
                 <div className="flex items-center gap-3">
-                  <a href="#" aria-label="Follow on Instagram" className="hover:opacity-80 transition-opacity">
+                  <a href="https://www.instagram.com/linen_mantra?igsh=OHExNWpubWozczdl" target="_blank" rel="noopener noreferrer" aria-label="Follow on Instagram" className="hover:opacity-80 transition-opacity">
                     <Image src="/images/SocialMediaicon/instagram.png" alt="Instagram" width={32} height={32} style={{ width: 32, height: 32 }} />
                   </a>
                   <a href="https://www.linkedin.com/company/linen-mantra/" target="_blank" rel="noopener noreferrer" aria-label="Connect on LinkedIn" className="hover:opacity-80 transition-opacity">
