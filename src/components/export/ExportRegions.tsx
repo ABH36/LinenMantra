@@ -1,7 +1,17 @@
 import Image from "next/image";
 import FadeInOnScroll from "@/components/shared/FadeInOnScroll";
 import SectionWrapper from "@/components/shared/SectionWrapper";
-import { exportCountries, exportStats } from "@/data/exportCountries";
+import { exportCountries } from "@/data/exportCountries";
+
+const FEATURES = [
+  "14+ Countries Served",
+  "Custom Fabric Development",
+  "Ready Stock Collection",
+  "Fast Worldwide Delivery",
+  "Flexible MOQ",
+  "Dedicated Export Support",
+  "Consistent Quality",
+];
 
 // Group countries by region
 const regionOrder = ["Europe", "Americas", "Middle East", "Asia Pacific", "Africa"];
@@ -19,34 +29,28 @@ export default function ExportRegions() {
 
   return (
     <SectionWrapper dark>
-      {/* Stats strip */}
-      <FadeInOnScroll direction="up">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-0 mb-16 border-b border-[var(--color-border)]">
-          {exportStats.map((stat, i) => (
-            <div
-              key={stat.label}
-              className="pb-10 pr-8"
-              style={{
-                borderRight:
-                  i < exportStats.length - 1
-                    ? "1px solid var(--color-border)"
-                    : "none",
-                paddingLeft: i > 0 ? "2rem" : "0",
-              }}
-            >
-              <p
-                className="font-display font-normal leading-none mb-2 text-[var(--color-text-primary)]"
-                style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}
+      {/* Feature marquee strip */}
+      <div className="mb-16 pb-10 border-b border-[var(--color-border)] overflow-hidden">
+        {/* eslint-disable-next-line react/no-unknown-property */}
+        <style>{`
+          @keyframes lm-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+          .lm-marquee { animation: lm-marquee 28s linear infinite; }
+          .lm-marquee:hover { animation-play-state: paused; }
+        `}</style>
+        <div className="lm-marquee flex w-max">
+          {[...FEATURES, ...FEATURES].map((feat, i) => (
+            <div key={i} className="flex items-center shrink-0">
+              <span
+                className="font-display font-normal text-[var(--color-text-primary)] whitespace-nowrap"
+                style={{ fontSize: "clamp(1rem, 1.6vw, 1.35rem)" }}
               >
-                {stat.value}
-              </p>
-              <p className="text-label text-[var(--color-text-secondary)]">
-                {stat.label}
-              </p>
+                {feat}
+              </span>
+              <span className="mx-8 text-[var(--color-accent)] opacity-40 select-none">✦</span>
             </div>
           ))}
         </div>
-      </FadeInOnScroll>
+      </div>
 
       {/* Section heading */}
       <FadeInOnScroll direction="up">
@@ -61,7 +65,7 @@ export default function ExportRegions() {
       {/* World map visual */}
       <FadeInOnScroll direction="up" delay={0.1}>
         <div
-          className="relative w-full overflow-hidden mb-14 aspect-[3/2] border border-[var(--color-border)]"
+          className="relative w-full overflow-hidden mb-14 aspect-[3/2] max-h-[320px] border border-[var(--color-border)]"
           style={{
             background: "linear-gradient(180deg, #1A1A18 0%, #242220 100%)",
           }}
