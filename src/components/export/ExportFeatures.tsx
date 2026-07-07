@@ -44,14 +44,14 @@ function FeatureCard({ Icon, title, body }: (typeof FEATURES)[number]) {
   return (
     <div className="group relative flex flex-col h-full p-8 bg-[var(--color-bg-primary)] border border-[var(--color-border)]">
       {/* Icon box */}
-      <div className="w-11 h-11 flex items-center justify-center mb-6 bg-[var(--color-bg-secondary)] shrink-0">
+      <div className="w-11 h-11 flex items-center justify-center mb-6 shrink-0 bg-[var(--color-bg-secondary)]">
         <Icon size={18} className="text-[var(--color-accent)]" />
       </div>
 
       {/* Title */}
       <h3
         className="font-display font-normal leading-tight mb-3 text-[var(--color-text-primary)]"
-        style={{ fontSize: "clamp(1.1rem, 1.4vw, 1.3rem)" }}
+        style={{ fontSize: "clamp(1.05rem, 1.4vw, 1.25rem)" }}
       >
         {title}
       </h3>
@@ -61,7 +61,7 @@ function FeatureCard({ Icon, title, body }: (typeof FEATURES)[number]) {
         {body}
       </p>
 
-      {/* Accent bottom rule — slides in on hover */}
+      {/* Gold accent bottom rule on hover */}
       <div className="absolute bottom-0 left-0 h-px w-0 group-hover:w-full transition-all duration-500 bg-[var(--color-accent)]" />
     </div>
   );
@@ -69,7 +69,15 @@ function FeatureCard({ Icon, title, body }: (typeof FEATURES)[number]) {
 
 export default function ExportFeatures() {
   return (
-    <section className="w-full section-py bg-[var(--color-bg-secondary)]">
+    <section
+      className="w-full section-py relative overflow-hidden"
+      style={{
+        backgroundColor: "var(--color-bg-dark)",
+        backgroundImage: "url('/images/about/footer/fabric.png')",
+        backgroundSize: "400px auto",
+        backgroundRepeat: "repeat",
+      }}
+    >
       <div className="container-site">
 
         {/* Section heading */}
@@ -85,7 +93,7 @@ export default function ExportFeatures() {
           </h2>
         </FadeInOnScroll>
 
-        {/* Row 1 + Row 2 — 3 × 2 grid */}
+        {/* Rows 1 & 2 — 3 × 2 grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-5">
           {FEATURES.slice(0, 6).map((item, i) => (
             <FadeInOnScroll key={item.title} direction="up" delay={i * 0.07}>
