@@ -165,7 +165,7 @@ export default function EnquiryForm() {
                 id="phone"
                 name="phone"
                 type="tel"
-                placeholder="+1 000 000 0000"
+                placeholder="+91 98765 43210"
                 style={focusStyle("phone")}
                 onFocus={() => setFocused("phone")}
                 onBlur={() => setFocused(null)}

@@ -29,17 +29,15 @@ export default function ContactPage() {
           {/* Head Office */}
           <FadeInOnScroll direction="up">
             <div className="h-full p-8 border border-[var(--color-border)] bg-[var(--color-bg-secondary)]">
-              <span className="text-label block mb-4 text-[var(--color-accent)]">Head Office</span>
+              <span className="text-label block mb-4 text-center font-bold text-[var(--color-accent)]">Head Office</span>
               <h3 className="font-display font-semibold text-center mb-6 text-[var(--text-h3)] text-[var(--color-text-primary)]">
                 Mumbai — Lower Parel
               </h3>
               <ul className="flex flex-col gap-4">
                 <li className="flex items-start gap-3">
                   <MapPin size={15} className="shrink-0 mt-0.5 text-[var(--color-accent)]" />
-                  <span className="text-sm leading-relaxed text-[var(--color-text-secondary)]">
-                    A-111, Kewal Industrial Estate,<br />
-                    Lower Parel (West),<br />
-                    Mumbai — 400013
+                  <span className="flex-1 text-sm leading-relaxed text-[var(--color-text-secondary)]">
+                    A-111, Kewal Industrial Estate, Lower Parel (West), Mumbai — 400013
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
@@ -58,18 +56,15 @@ export default function ContactPage() {
           {/* Branch Office */}
           <FadeInOnScroll direction="up" delay={0.1}>
             <div className="h-full p-8 border border-[var(--color-border)] bg-[var(--color-bg-secondary)]">
-              <span className="text-label block mb-4 text-[var(--color-accent)]">Branch Office</span>
+              <span className="text-label block mb-4 text-center font-bold text-[var(--color-accent)]">Branch Office</span>
               <h3 className="font-display font-semibold text-center mb-6 text-[var(--text-h3)] text-[var(--color-text-primary)]">
                 Mumbai — Kalbadevi
               </h3>
               <ul className="flex flex-col gap-4">
                 <li className="flex items-start gap-3">
                   <MapPin size={15} className="shrink-0 mt-0.5 text-[var(--color-accent)]" />
-                  <span className="text-sm leading-relaxed text-[var(--color-text-secondary)]">
-                    #384-M Building, Shop No. 1,<br />
-                    Ground Floor, Dabholkar Wadi,<br />
-                    Kalbadevi Road,<br />
-                    Mumbai — 400002
+                  <span className="flex-1 text-sm leading-relaxed text-[var(--color-text-secondary)]">
+                    #384-M Building, Shop No. 1, Ground Floor, Dabholkar Wadi, Kalbadevi Road, Mumbai — 400002
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
