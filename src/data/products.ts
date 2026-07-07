@@ -1,10 +1,7 @@
 export type ProductCategory =
   | "all"
   | "shirting"
-  | "suiting"
-  | "blends"
-  | "designer"
-  | "custom";
+  | "suiting";
 
 export type Product = {
   id: string;
@@ -41,85 +38,35 @@ export const products: Product[] = [
     featured: true,
   },
   {
-    id: "bricklane",
-    name: "Bricklane",
+    id: "la-seta-linen",
+    name: "La Seta Linen",
     category: "shirting",
-    composition: "100% Pure Linen",
-    leaRange: "40 LEA",
+    composition: "Linen-Silk Blend",
+    leaRange: "70 LEA",
     description:
-      "A refined linen shirting fabric with a clean, structured finish — ideal for premium menswear collections.",
-    image: "/images/products/Coastal.png",
+      "An exquisite linen fabric with a silken hand-feel — crafted for designers who seek fabric that bridges heritage and luxury.",
+    image: "/images/products/La%20Seta%20Linen.jpg",
     featured: true,
   },
   {
-    id: "aurora",
-    name: "Aurora",
-    category: "blends",
-    composition: "Linen-Cotton Blend",
-    leaRange: "44 LEA",
-    description:
-      "A soft linen-cotton blend offering versatility and comfort — suited for summer collections and casual wear.",
-    image: "/images/products/Aurora.png",
-  },
-  {
-    id: "veldt",
-    name: "Veldt",
+    id: "rare-lea",
+    name: "Rare Lea",
     category: "suiting",
     composition: "100% Pure Linen",
     leaRange: "100 LEA",
     description:
-      "A finely woven, high-count linen suiting for premium tailoring — smooth hand-feel with exceptional breathability.",
-    image: "/images/products/Veldt.png",
+      "A premium high-count linen suiting with unmatched finesse — delivering rare construction and superior drape for bespoke tailoring.",
+    image: "/images/products/Rare%20Lea.PNG",
   },
   {
-    id: "nordic",
-    name: "Nordic",
-    category: "designer",
-    composition: "Linen-Art Silk Blend",
-    leaRange: "70 LEA",
-    description:
-      "A luxurious linen-art silk blend with a natural sheen — designed for ceremonial and fashion-forward collections.",
-    image: "/images/products/Nordic.png",
-  },
-  {
-    id: "tierra",
-    name: "Tierra",
+    id: "ireland",
+    name: "Ireland",
     category: "shirting",
     composition: "100% Pure Linen",
-    leaRange: "25 LEA",
+    leaRange: "40 LEA",
     description:
-      "A heavier-weight pure linen with a rich, earthy texture — ideal for outerwear and structured garment pieces.",
-    image: "/images/products/Tierra.png",
-  },
-  {
-    id: "ivory-plain",
-    name: "Ivory Plain",
-    category: "shirting",
-    composition: "100% Pure Linen",
-    leaRange: "60 LEA",
-    description:
-      "Classic optical white linen shirting with a clean, minimal finish — the essential base fabric for any collection.",
-    image: "/images/products/Ivory%20Plain.png",
-  },
-  {
-    id: "dunes",
-    name: "Dunes",
-    category: "blends",
-    composition: "Linen-Cotton Dobby",
-    leaRange: "44 LEA",
-    description:
-      "A textured dobby weave linen-cotton blend — adds visual depth and tactile interest to casual and semi-formal ranges.",
-    image: "/images/products/Dunes.png",
-  },
-  {
-    id: "meridian",
-    name: "Meridian",
-    category: "custom",
-    composition: "Custom Linen Blend",
-    leaRange: "Upon Request",
-    description:
-      "Fully custom-developed fabric specifications — built to your design brief, count, composition, and finish requirements.",
-    image: "/images/products/Meridian.png",
+      "Inspired by the finest Irish linen tradition — a pure linen shirting with crisp texture and superior breathability for discerning menswear.",
+    image: "/images/products/ireland.png",
   },
 ];
 
@@ -127,9 +74,6 @@ export const productCategories: { value: ProductCategory; label: string }[] = [
   { value: "all", label: "All Collections" },
   { value: "shirting", label: "Shirting" },
   { value: "suiting", label: "Suiting" },
-  { value: "blends", label: "Blends" },
-  { value: "designer", label: "Designer" },
-  { value: "custom", label: "Custom" },
 ];
 
 export const featuredProducts = products.filter((p) => p.featured);

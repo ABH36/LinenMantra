@@ -19,10 +19,6 @@ export const footerLinks: NavLink[] = [
 ];
 
 export const productCategoryLinks: NavLink[] = [
-  { label: "Pure Linen",       href: "/products#pure-linen" },
-  { label: "Linen Blends",     href: "/products#linen-blends" },
-  { label: "Shirting Fabrics", href: "/products#shirting" },
-  { label: "Suiting Fabrics",  href: "/products#suiting" },
-  { label: "New Arrivals",     href: "/products#new-arrivals" },
-  { label: "Export",           href: "/export" },
+  { label: "Shirting Fabrics", href: "/products" },
+  { label: "Suiting Fabrics",  href: "/products" },
 ];
