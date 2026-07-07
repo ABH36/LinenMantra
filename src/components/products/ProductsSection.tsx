@@ -4,11 +4,13 @@ import { useState, useMemo } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import ProductFilter from "./ProductFilter";
 import ProductCard from "./ProductCard";
+import ProductLightbox from "./ProductLightbox";
 import FadeInOnScroll from "@/components/shared/FadeInOnScroll";
 import { products, type ProductCategory } from "@/data/products";
 
 export default function ProductsSection() {
   const [activeCategory, setActiveCategory] = useState<ProductCategory>("all");
+  const [lightboxIdx, setLightboxIdx]       = useState<number | null>(null);
 
   const filtered = useMemo(
     () =>
@@ -52,8 +54,12 @@ export default function ProductsSection() {
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
           >
             <AnimatePresence mode="popLayout">
-              {filtered.map((product) => (
-                <ProductCard key={product.id} product={product} />
+              {filtered.map((product, i) => (
+                <ProductCard
+                  key={product.id}
+                  product={product}
+                  onImageClick={() => setLightboxIdx(i)}
+                />
               ))}
             </AnimatePresence>
           </motion.div>
@@ -77,6 +83,17 @@ export default function ProductsSection() {
           )}
         </div>
       </section>
+
+      {/* ── Lightbox ───────────────────────────────────── */}
+      <AnimatePresence>
+        {lightboxIdx !== null && (
+          <ProductLightbox
+            products={filtered}
+            startIndex={lightboxIdx}
+            onClose={() => setLightboxIdx(null)}
+          />
+        )}
+      </AnimatePresence>
     </>
   );
 }

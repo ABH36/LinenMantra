@@ -1,11 +1,15 @@
 import Link from "next/link";
 import Image from "next/image";
+import { ZoomIn } from "lucide-react";
 import { motion } from "framer-motion";
 import type { Product } from "@/data/products";
 
-type Props = { product: Product };
+type Props = {
+  product: Product;
+  onImageClick?: () => void;
+};
 
-export default function ProductCard({ product }: Props) {
+export default function ProductCard({ product, onImageClick }: Props) {
   return (
     <motion.article
       layout
@@ -16,7 +20,10 @@ export default function ProductCard({ product }: Props) {
       className="group flex flex-col h-full bg-[var(--color-bg-primary)] border border-[var(--color-border)]"
     >
       {/* ── Product image ─────────────────────────── */}
-      <div className="relative overflow-hidden aspect-[4/3]">
+      <div
+        className="relative overflow-hidden aspect-[4/3] cursor-pointer"
+        onClick={onImageClick}
+      >
         <Image
           src={product.image}
           alt={product.name}
@@ -58,6 +65,22 @@ export default function ProductCard({ product }: Props) {
             {product.leaRange}
           </span>
         )}
+
+        {/* Zoom overlay on hover */}
+        <div
+          className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+          style={{ backgroundColor: "rgba(0,0,0,0.22)" }}
+        >
+          <div
+            className="flex items-center gap-2 px-4 py-2.5"
+            style={{ backgroundColor: "rgba(10,10,8,0.60)", backdropFilter: "blur(6px)" }}
+          >
+            <ZoomIn size={15} style={{ color: "rgba(248,245,240,0.9)" }} />
+            <span className="text-label" style={{ color: "rgba(248,245,240,0.9)", letterSpacing: "0.1em" }}>
+              View
+            </span>
+          </div>
+        </div>
       </div>
 
       {/* ── Card body ─────────────────────────────── */}
@@ -83,9 +106,7 @@ export default function ProductCard({ product }: Props) {
           className="inline-flex items-center gap-2 text-sm font-medium tracking-widest uppercase transition-opacity hover:opacity-60 group/link text-[var(--color-text-primary)]"
         >
           <span>Get a Quote</span>
-          <span className="transition-transform duration-300 group-hover/link:translate-x-1">
-            →
-          </span>
+          <span className="transition-transform duration-300 group-hover/link:translate-x-1">→</span>
         </Link>
       </div>
 

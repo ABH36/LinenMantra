@@ -29,7 +29,7 @@ export const products: Product[] = [
   {
     id: "alpino",
     name: "Alpino",
-    category: "suiting",
+    category: "shirting",
     composition: "100% Pure Linen",
     leaRange: "80 LEA",
     description:
@@ -51,7 +51,7 @@ export const products: Product[] = [
   {
     id: "rare-lea",
     name: "Rare Lea",
-    category: "suiting",
+    category: "shirting",
     composition: "100% Pure Linen",
     leaRange: "100 LEA",
     description:
@@ -73,7 +73,6 @@ export const products: Product[] = [
 export const productCategories: { value: ProductCategory; label: string }[] = [
   { value: "all", label: "All Collections" },
   { value: "shirting", label: "Shirting" },
-  { value: "suiting", label: "Suiting" },
 ];
 
 export const featuredProducts = products.filter((p) => p.featured);
