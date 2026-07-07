@@ -45,7 +45,7 @@ export const products: Product[] = [
     leaRange: "70 LEA",
     description:
       "An exquisite linen fabric with a silken hand-feel — crafted for designers who seek fabric that bridges heritage and luxury.",
-    image: "/images/products/La%20Seta%20Linen.jpg",
+    image: "/images/products/la-seta-linen.jpg",
     featured: true,
   },
   {
@@ -56,7 +56,7 @@ export const products: Product[] = [
     leaRange: "100 LEA",
     description:
       "A premium high-count linen suiting with unmatched finesse — delivering rare construction and superior drape for bespoke tailoring.",
-    image: "/images/products/Rare%20Lea.PNG",
+    image: "/images/products/rare-lea.png",
   },
   {
     id: "ireland",
