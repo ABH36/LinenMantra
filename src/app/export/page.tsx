@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import PageHero from "@/components/shared/PageHero";
 import ExportRegions from "@/components/export/ExportRegions";
-import ExportStrengths from "@/components/export/ExportStrengths";
-import WhyGlobalBuyers from "@/components/export/WhyGlobalBuyers";
+import ExportFeatures from "@/components/export/ExportFeatures";
 import ContactCTABand from "@/components/shared/ContactCTABand";
 
 export const metadata: Metadata = {
@@ -24,11 +23,8 @@ export default function ExportPage() {
       {/* Stats + world map + country listing */}
       <ExportRegions />
 
-      {/* 6-strength capability grid */}
-      <ExportStrengths />
-
-      {/* Why global buyers choose us */}
-      <WhyGlobalBuyers />
+      {/* 7 export feature cards — 3-3-1 layout */}
+      <ExportFeatures />
 
       {/* Contact band */}
       <ContactCTABand
