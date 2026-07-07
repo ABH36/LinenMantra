@@ -50,14 +50,14 @@ function FeatureCard({ Icon, title, body }: (typeof FEATURES)[number]) {
 
       {/* Title */}
       <h3
-        className="font-display font-normal leading-tight mb-3 text-[var(--color-text-primary)]"
+        className="font-display font-semibold leading-tight mb-3 text-[var(--color-text-primary)]"
         style={{ fontSize: "clamp(1.05rem, 1.4vw, 1.25rem)" }}
       >
         {title}
       </h3>
 
       {/* Body */}
-      <p className="text-sm leading-relaxed text-[var(--color-text-secondary)]">
+      <p className="text-sm font-medium leading-relaxed text-[var(--color-text-secondary)]">
         {body}
       </p>
 
