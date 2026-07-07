@@ -87,8 +87,7 @@ export default function ContactPage() {
           <div className="grid grid-cols-1 sm:grid-cols-3 mb-16 border border-[var(--color-border)] bg-[var(--color-bg-secondary)]">
 
             {/* Shrey Raichura */}
-            <div className="flex items-center justify-center gap-2 px-6 py-5 border-b sm:border-b-0 sm:border-r border-[var(--color-border)]">
-              <span className="text-sm font-bold text-[var(--color-text-primary)]">Contact:</span>
+            <div className="flex items-center justify-center px-6 py-5 border-b sm:border-b-0 sm:border-r border-[var(--color-border)]">
               <span className="text-sm text-[var(--color-text-secondary)]">
                 Shrey Raichura —{" "}
                 <a href="tel:+919769422606" className="hover:opacity-70 transition-opacity">
@@ -109,8 +108,7 @@ export default function ContactPage() {
             </div>
 
             {/* Vipul Raichura */}
-            <div className="flex items-center justify-center gap-2 px-6 py-5">
-              <span className="text-sm font-bold text-[var(--color-text-primary)]">Contact:</span>
+            <div className="flex items-center justify-center px-6 py-5">
               <span className="text-sm text-[var(--color-text-secondary)]">
                 Vipul Raichura —{" "}
                 <a href="tel:+919820286875" className="hover:opacity-70 transition-opacity">
