@@ -23,8 +23,8 @@ export default function ContactPage() {
 
       <SectionWrapper>
 
-        {/* ── Office address cards ── */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+        {/* ── 3-column: Head Office | Email | Branch Office ── */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
 
           {/* Head Office */}
           <FadeInOnScroll direction="up">
@@ -53,8 +53,21 @@ export default function ContactPage() {
             </div>
           </FadeInOnScroll>
 
-          {/* Branch Office */}
+          {/* Email (center) */}
           <FadeInOnScroll direction="up" delay={0.1}>
+            <div className="h-full p-8 border border-[var(--color-border)] bg-[var(--color-bg-secondary)] flex flex-col items-center justify-center text-center">
+              <span className="text-label block mb-4 font-bold text-[var(--color-accent)]">Email Us</span>
+              <a
+                href="mailto:linenmantra@gmail.com"
+                className="font-display font-semibold text-[var(--text-h3)] text-[var(--color-text-primary)] hover:opacity-70 transition-opacity break-all"
+              >
+                linenmantra@gmail.com
+              </a>
+            </div>
+          </FadeInOnScroll>
+
+          {/* Branch Office */}
+          <FadeInOnScroll direction="up" delay={0.2}>
             <div className="h-full p-8 border border-[var(--color-border)] bg-[var(--color-bg-secondary)]">
               <span className="text-label block mb-4 text-center font-bold text-[var(--color-accent)]">Branch Office</span>
               <h3 className="font-display font-semibold text-center mb-6 text-[var(--text-h3)] text-[var(--color-text-primary)]">
@@ -81,43 +94,6 @@ export default function ContactPage() {
           </FadeInOnScroll>
 
         </div>
-
-        {/* ── Contact persons strip ── */}
-        <FadeInOnScroll direction="up">
-          <div className="grid grid-cols-1 sm:grid-cols-2 mb-8 border border-[var(--color-border)] bg-[var(--color-bg-secondary)]">
-            <div className="flex items-center justify-center gap-2 px-6 py-4 border-b sm:border-b-0 sm:border-r border-[var(--color-border)]">
-              <span className="text-sm font-bold text-[var(--color-text-primary)]">Contact:</span>
-              <span className="text-sm text-[var(--color-text-secondary)]">
-                Shrey Raichura —{" "}
-                <a href="tel:+919769422606" className="hover:opacity-70 transition-opacity">
-                  +91 97694 22606
-                </a>
-              </span>
-            </div>
-            <div className="flex items-center justify-center gap-2 px-6 py-4">
-              <span className="text-sm font-bold text-[var(--color-text-primary)]">Contact:</span>
-              <span className="text-sm text-[var(--color-text-secondary)]">
-                Vipul Raichura —{" "}
-                <a href="tel:+919820286875" className="hover:opacity-70 transition-opacity">
-                  +91 98202 86875
-                </a>
-              </span>
-            </div>
-          </div>
-        </FadeInOnScroll>
-
-        {/* ── Email section ── */}
-        <FadeInOnScroll direction="up">
-          <div className="mb-16 py-7 text-center border border-[var(--color-border)] bg-[var(--color-bg-secondary)]">
-            <span className="text-label block mb-3 text-[var(--color-accent)]">Email Us</span>
-            <a
-              href="mailto:linenmantra@gmail.com"
-              className="font-display font-normal text-2xl md:text-3xl text-[var(--color-text-primary)] hover:opacity-70 transition-opacity"
-            >
-              linenmantra@gmail.com
-            </a>
-          </div>
-        </FadeInOnScroll>
 
         {/* ── Google Map (left) + Enquiry Form (right) ── */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-start">
