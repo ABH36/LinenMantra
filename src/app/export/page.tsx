@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import PageHero from "@/components/shared/PageHero";
 import ExportFeatures from "@/components/export/ExportFeatures";
-import ContactCTABand from "@/components/shared/ContactCTABand";
 
 export const metadata: Metadata = {
   title: "Export",
@@ -22,14 +21,6 @@ export default function ExportPage() {
       {/* 7 export feature cards — 3-3-1 layout */}
       <ExportFeatures />
 
-      {/* Contact band */}
-      <ContactCTABand
-        heading="Ready to Source Premium Linen?"
-        subText="Whether you're placing your first order or scaling an existing line, our team is ready to discuss specifications, sampling, and pricing."
-        ctaLabel="Send Export Enquiry"
-        ctaHref="/contact"
-        dark
-      />
     </>
   );
 }
