@@ -68,6 +68,46 @@ export const products: Product[] = [
       "Inspired by the finest Irish linen tradition — a pure linen shirting with crisp texture and superior breathability for discerning menswear.",
     image: "/images/products/ireland.png",
   },
+  {
+    id: "euro-style",
+    name: "Euro Style",
+    category: "suiting",
+    composition: "100% Pure Linen",
+    leaRange: "80 LEA",
+    description:
+      "A classic European-inspired linen suiting with refined structure and a clean hand-feel — ideal for formal and semi-formal tailoring.",
+    image: "/images/products/suiting/euro-style.png",
+  },
+  {
+    id: "foglia",
+    name: "Foglia",
+    category: "suiting",
+    composition: "100% Pure Linen",
+    leaRange: "90 LEA",
+    description:
+      "A lightweight linen suiting with natural texture and elegant drape — where Italian design sensibility meets premium linen craft.",
+    image: "/images/products/suiting/foglia.png",
+  },
+  {
+    id: "leonard",
+    name: "Leonard",
+    category: "suiting",
+    composition: "100% Pure Linen",
+    leaRange: "100 LEA",
+    description:
+      "A premium high-count linen suiting delivering weight, structure, and versatility — built for brands that demand the finest.",
+    image: "/images/products/suiting/leonard.jpg",
+  },
+  {
+    id: "on-star",
+    name: "On Star",
+    category: "suiting",
+    composition: "100% Pure Linen",
+    leaRange: "80 LEA",
+    description:
+      "A distinguished linen suiting with standout character — crafted for fashion-forward brands seeking fabrics that make a statement.",
+    image: "/images/products/suiting/on-star.png",
+  },
 ];
 
 export const productCategories: { value: ProductCategory; label: string }[] = [

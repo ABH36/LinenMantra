@@ -1,12 +1,7 @@
 import FadeInOnScroll from "@/components/shared/FadeInOnScroll";
-import { Phone, Mail, MapPin, Clock } from "lucide-react";
+import { Phone, Mail, Clock } from "lucide-react";
 
 const contactDetails = [
-  {
-    icon: MapPin,
-    label: "Our Office",
-    lines: ["A-111 Kewal Industrial Estate,", "Lower Parel (West), Mumbai — 400013"],
-  },
   {
     icon: Phone,
     label: "Call Us",
@@ -46,7 +41,7 @@ export default function ContactInfo() {
       </FadeInOnScroll>
 
       {/* Contact detail cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <div className="flex flex-col gap-4">
         {contactDetails.map((item, i) => {
           const Icon = item.icon;
           return (

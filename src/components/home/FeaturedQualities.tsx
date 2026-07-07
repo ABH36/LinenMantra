@@ -1,10 +1,18 @@
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { ZoomIn } from "lucide-react";
+import { AnimatePresence } from "framer-motion";
 import SectionTitle from "@/components/shared/SectionTitle";
 import FadeInOnScroll from "@/components/shared/FadeInOnScroll";
+import ProductLightbox from "@/components/products/ProductLightbox";
 import { featuredProducts } from "@/data/products";
 
 export default function FeaturedQualities() {
+  const [lightboxIdx, setLightboxIdx] = useState<number | null>(null);
+
   return (
     <section className="w-full py-10 lg:py-14 bg-[var(--color-bg-secondary)]">
       <div className="container-site">
@@ -32,10 +40,13 @@ export default function FeaturedQualities() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
           {featuredProducts.map((product, i) => (
             <FadeInOnScroll key={product.id} direction="up" delay={i * 0.12}>
-              <article className="group flex flex-col h-full cursor-pointer bg-white border border-[var(--color-border)]">
+              <article className="group flex flex-col h-full bg-white border border-[var(--color-border)]">
 
-                {/* Product image */}
-                <div className="relative w-full overflow-hidden aspect-[3/2]">
+                {/* Clickable image */}
+                <div
+                  className="relative w-full overflow-hidden aspect-[3/2] cursor-pointer"
+                  onClick={() => setLightboxIdx(i)}
+                >
                   <Image
                     src={product.image}
                     alt={product.name}
@@ -48,9 +59,9 @@ export default function FeaturedQualities() {
                     className="absolute inset-x-0 top-0 h-16 pointer-events-none"
                     style={{ background: "linear-gradient(to bottom, rgba(0,0,0,0.38) 0%, transparent 100%)" }}
                   />
-                  {/* Category badge — complex backdrop-filter, inline unavoidable */}
+                  {/* Category badge */}
                   <span
-                    className="absolute top-3.5 left-3.5 text-label px-2.5 py-1"
+                    className="absolute top-3.5 left-3.5 text-label px-2.5 py-1 capitalize"
                     style={{
                       backgroundColor: "rgba(28,28,26,0.52)",
                       color: "rgba(248,245,240,0.92)",
@@ -59,13 +70,26 @@ export default function FeaturedQualities() {
                   >
                     {product.category}
                   </span>
+                  {/* Zoom overlay */}
+                  <div
+                    className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+                    style={{ backgroundColor: "rgba(0,0,0,0.20)" }}
+                  >
+                    <div
+                      className="flex items-center gap-2 px-4 py-2.5"
+                      style={{ backgroundColor: "rgba(10,10,8,0.58)", backdropFilter: "blur(6px)" }}
+                    >
+                      <ZoomIn size={14} style={{ color: "rgba(248,245,240,0.9)" }} />
+                      <span className="text-label" style={{ color: "rgba(248,245,240,0.9)", letterSpacing: "0.1em" }}>
+                        View
+                      </span>
+                    </div>
+                  </div>
                 </div>
 
                 {/* Card body */}
                 <div className="flex flex-col flex-1 p-5">
-                  <h3
-                    className="font-display font-normal mb-1.5 text-2xl md:text-3xl text-[var(--color-text-primary)]"
-                  >
+                  <h3 className="font-display font-normal mb-1.5 text-2xl md:text-3xl text-[var(--color-text-primary)]">
                     {product.name}
                   </h3>
                   <p className="text-label mb-3 text-[var(--color-accent)]">
@@ -83,13 +107,22 @@ export default function FeaturedQualities() {
 
                 {/* Bottom accent line on hover */}
                 <div className="h-px w-0 group-hover:w-full transition-all duration-500 bg-[var(--color-accent)]" />
-
               </article>
             </FadeInOnScroll>
           ))}
         </div>
-
       </div>
+
+      {/* Lightbox */}
+      <AnimatePresence>
+        {lightboxIdx !== null && (
+          <ProductLightbox
+            products={featuredProducts}
+            startIndex={lightboxIdx}
+            onClose={() => setLightboxIdx(null)}
+          />
+        )}
+      </AnimatePresence>
     </section>
   );
 }

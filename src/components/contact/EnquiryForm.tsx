@@ -8,11 +8,11 @@ import FadeInOnScroll from "@/components/shared/FadeInOnScroll";
 type FieldStatus = "idle" | "sending" | "success" | "error";
 
 const productOptions = [
-  "Pure Linen Shirting",
-  "Pure Linen Suiting",
-  "Linen Blends",
-  "Designer / Luxury Fabric",
-  "Custom Development",
+  "Linen Shirting Fabrics",
+  "Linen Suiting Fabrics",
+  "Custom Fabric Development",
+  "Export Enquiry",
+  "Sampling Request",
   "General Enquiry",
 ];
 

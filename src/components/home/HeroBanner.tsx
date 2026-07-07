@@ -37,6 +37,16 @@ interface SlideData {
 const SLIDES: SlideData[] = [
   {
     id: 0,
+    image:       "/images/hero/herobanner2.png",
+    mobileImage: "/images/hero/herobanner2-mobile.jpg",
+    h1:       "From Flax to Fabric.",
+    h1Color:  FOREST,
+    h2:       "Crafted by Linen Mantra.",
+    h2Color:  TERRA,
+    flourish: true,
+  },
+  {
+    id: 1,
     image:       "/images/hero/herobanner1.png",
     mobileImage: "/images/hero/herobanner1-mobile.jpg",
     h1:       "Linen",
@@ -46,16 +56,6 @@ const SLIDES: SlideData[] = [
     flourish: true,
     body:     "From flax fields to premium collections, we craft linen fabrics trusted by designers, manufacturers, and brands worldwide.",
     cta:      { text: "Explore Collections", href: "/products", bg: FOREST, fg: CREAM },
-  },
-  {
-    id: 1,
-    image:       "/images/hero/herobanner2.png",
-    mobileImage: "/images/hero/herobanner2-mobile.jpg",
-    h1:       "From Flax to Fabric.",
-    h1Color:  FOREST,
-    h2:       "Crafted by Linen Mantra.",
-    h2Color:  TERRA,
-    flourish: true,
   },
   {
     id: 2,
