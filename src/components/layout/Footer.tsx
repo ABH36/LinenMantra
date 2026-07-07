@@ -172,28 +172,42 @@ export default function Footer() {
             <ul className="flex flex-col gap-4">
 
               <li className="flex items-start gap-3">
-                <Image src="/images/SocialMediaicon/phone-call.png" alt="Phone" width={24} height={24} className="shrink-0 mt-1" />
-                <div className="flex flex-col gap-1">
-                  <a href="tel:+918975972300" className="text-[12px] hover:opacity-60 transition-opacity text-[var(--color-text-secondary)]">+91 89759 72300</a>
-                  <a href="tel:+919769422606" className="text-[12px] hover:opacity-60 transition-opacity text-[var(--color-text-secondary)]">+91 97694 22606</a>
-                </div>
+                <a href="tel:+912245005662" className="shrink-0 mt-1 hover:opacity-60 transition-opacity">
+                  <Image src="/images/SocialMediaicon/phone-call.png" alt="Phone" width={24} height={24} />
+                </a>
+                <a href="tel:+912245005662" className="text-[12px] hover:opacity-60 transition-opacity text-[var(--color-text-secondary)]">
+                  +91 22 4500 5662
+                </a>
               </li>
 
               <li className="flex items-start gap-3">
-                <Image src="/images/SocialMediaicon/gmail.png" alt="Email" width={24} height={24} className="shrink-0 mt-1" />
-                <div className="flex flex-col gap-1">
-                  <a href="mailto:linenmantra@gmail.com" className="text-[12px] hover:opacity-60 transition-opacity text-[var(--color-text-secondary)]">linenmantra@gmail.com</a>
-                  <a href="mailto:export@linenmantra.com" className="text-[12px] hover:opacity-60 transition-opacity text-[var(--color-text-secondary)]">export@linenmantra.com</a>
-                </div>
+                <a href="mailto:linenmantra@gmail.com" className="shrink-0 mt-1 hover:opacity-60 transition-opacity">
+                  <Image src="/images/SocialMediaicon/gmail.png" alt="Email" width={24} height={24} />
+                </a>
+                <a href="mailto:linenmantra@gmail.com" className="text-[12px] hover:opacity-60 transition-opacity text-[var(--color-text-secondary)]">
+                  linenmantra@gmail.com
+                </a>
               </li>
 
               <li className="flex items-start gap-3">
-                <Image src="/images/SocialMediaicon/google-maps.png" alt="Location" width={24} height={24} className="shrink-0 mt-1" />
-                <p className="text-[12px] leading-[1.75] mt-1 text-[var(--color-text-secondary)]">
+                <a
+                  href="https://maps.google.com/maps?q=18.9971884,72.8267863"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="shrink-0 mt-1 hover:opacity-60 transition-opacity"
+                >
+                  <Image src="/images/SocialMediaicon/google-maps.png" alt="Location" width={24} height={24} />
+                </a>
+                <a
+                  href="https://maps.google.com/maps?q=18.9971884,72.8267863"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[12px] leading-[1.75] mt-1 hover:opacity-60 transition-opacity text-[var(--color-text-secondary)]"
+                >
                   A-111 Kewal Industrial Estate,<br />
                   Lower Parel (West),<br />
                   Mumbai — 400013
-                </p>
+                </a>
               </li>
 
             </ul>
@@ -208,29 +222,43 @@ export default function Footer() {
             <ul className="flex flex-col gap-4">
 
               <li className="flex items-start gap-3">
-                <Image src="/images/SocialMediaicon/phone-call.png" alt="Phone" width={24} height={24} className="shrink-0 mt-1" />
-                <div className="flex flex-col gap-1">
-                  <a href="tel:+912637123456" className="text-[12px] hover:opacity-60 transition-opacity text-[var(--color-text-secondary)]">+91 26371 23456</a>
-                  <a href="tel:+919876543210" className="text-[12px] hover:opacity-60 transition-opacity text-[var(--color-text-secondary)]">+91 98765 43210</a>
-                </div>
+                <a href="tel:+912245687288" className="shrink-0 mt-1 hover:opacity-60 transition-opacity">
+                  <Image src="/images/SocialMediaicon/phone-call.png" alt="Phone" width={24} height={24} />
+                </a>
+                <a href="tel:+912245687288" className="text-[12px] hover:opacity-60 transition-opacity text-[var(--color-text-secondary)]">
+                  +91 22 4568 7288
+                </a>
               </li>
 
               <li className="flex items-start gap-3">
-                <Image src="/images/SocialMediaicon/gmail.png" alt="Email" width={24} height={24} className="shrink-0 mt-1" />
-                <div className="flex flex-col gap-1">
-                  <a href="mailto:gujarat@linenmantra.com" className="text-[12px] hover:opacity-60 transition-opacity text-[var(--color-text-secondary)]">gujarat@linenmantra.com</a>
-                  <a href="mailto:mill@linenmantra.com" className="text-[12px] hover:opacity-60 transition-opacity text-[var(--color-text-secondary)]">mill@linenmantra.com</a>
-                </div>
+                <a href="mailto:linenmantra@gmail.com" className="shrink-0 mt-1 hover:opacity-60 transition-opacity">
+                  <Image src="/images/SocialMediaicon/gmail.png" alt="Email" width={24} height={24} />
+                </a>
+                <a href="mailto:linenmantra@gmail.com" className="text-[12px] hover:opacity-60 transition-opacity text-[var(--color-text-secondary)]">
+                  linenmantra@gmail.com
+                </a>
               </li>
 
               <li className="flex items-start gap-3">
-                <Image src="/images/SocialMediaicon/google-maps.png" alt="Location" width={24} height={24} className="shrink-0 mt-1" />
-                <p className="text-[12px] leading-[1.75] mt-1 text-[var(--color-text-secondary)]">
+                <a
+                  href="https://maps.google.com/maps?q=384-M+Dabholkar+Wadi+Kalbadevi+Road+Mumbai+400002"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="shrink-0 mt-1 hover:opacity-60 transition-opacity"
+                >
+                  <Image src="/images/SocialMediaicon/google-maps.png" alt="Location" width={24} height={24} />
+                </a>
+                <a
+                  href="https://maps.google.com/maps?q=384-M+Dabholkar+Wadi+Kalbadevi+Road+Mumbai+400002"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[12px] leading-[1.75] mt-1 hover:opacity-60 transition-opacity text-[var(--color-text-secondary)]"
+                >
                   #384-M Building, Shop No. 1,<br />
                   Ground Floor, Dabholkar Wadi,<br />
                   Kalbadevi Road,<br />
                   Mumbai — 400002
-                </p>
+                </a>
               </li>
 
             </ul>

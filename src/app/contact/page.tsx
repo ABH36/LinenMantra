@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
 import PageHero from "@/components/shared/PageHero";
 import SectionWrapper from "@/components/shared/SectionWrapper";
-import ContactInfo from "@/components/contact/ContactInfo";
 import EnquiryForm from "@/components/contact/EnquiryForm";
 import FadeInOnScroll from "@/components/shared/FadeInOnScroll";
-import { MapPin, Phone, Mail } from "lucide-react";
+import { MapPin, Phone } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Contact Us",
@@ -24,14 +23,14 @@ export default function ContactPage() {
 
       <SectionWrapper>
 
-        {/* ── Office addresses — Head Office (left) | Branch Office (right) ── */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
+        {/* ── Office address cards ── */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
 
           {/* Head Office */}
           <FadeInOnScroll direction="up">
             <div className="h-full p-8 border border-[var(--color-border)] bg-[var(--color-bg-secondary)]">
               <span className="text-label block mb-4 text-[var(--color-accent)]">Head Office</span>
-              <h3 className="font-display font-normal mb-6 text-[var(--text-h3)] text-[var(--color-text-primary)]">
+              <h3 className="font-display font-semibold text-center mb-6 text-[var(--text-h3)] text-[var(--color-text-primary)]">
                 Mumbai — Lower Parel
               </h3>
               <ul className="flex flex-col gap-4">
@@ -45,17 +44,12 @@ export default function ContactPage() {
                 </li>
                 <li className="flex items-start gap-3">
                   <Phone size={15} className="shrink-0 mt-0.5 text-[var(--color-accent)]" />
-                  <div className="flex flex-col gap-0.5 text-sm text-[var(--color-text-secondary)]">
-                    <a href="tel:+918975972300" className="hover:opacity-70 transition-opacity">+91 89759 72300</a>
-                    <a href="tel:+919769422606" className="hover:opacity-70 transition-opacity">+91 97694 22606</a>
-                  </div>
-                </li>
-                <li className="flex items-start gap-3">
-                  <Mail size={15} className="shrink-0 mt-0.5 text-[var(--color-accent)]" />
-                  <div className="flex flex-col gap-0.5 text-sm text-[var(--color-text-secondary)]">
-                    <a href="mailto:linenmantra@gmail.com" className="hover:opacity-70 transition-opacity">linenmantra@gmail.com</a>
-                    <a href="mailto:export@linenmantra.com" className="hover:opacity-70 transition-opacity">export@linenmantra.com</a>
-                  </div>
+                  <a
+                    href="tel:+912245005662"
+                    className="text-sm text-[var(--color-text-secondary)] hover:opacity-70 transition-opacity"
+                  >
+                    +91 22 4500 5662
+                  </a>
                 </li>
               </ul>
             </div>
@@ -65,7 +59,7 @@ export default function ContactPage() {
           <FadeInOnScroll direction="up" delay={0.1}>
             <div className="h-full p-8 border border-[var(--color-border)] bg-[var(--color-bg-secondary)]">
               <span className="text-label block mb-4 text-[var(--color-accent)]">Branch Office</span>
-              <h3 className="font-display font-normal mb-6 text-[var(--text-h3)] text-[var(--color-text-primary)]">
+              <h3 className="font-display font-semibold text-center mb-6 text-[var(--text-h3)] text-[var(--color-text-primary)]">
                 Mumbai — Kalbadevi
               </h3>
               <ul className="flex flex-col gap-4">
@@ -78,16 +72,87 @@ export default function ContactPage() {
                     Mumbai — 400002
                   </span>
                 </li>
+                <li className="flex items-start gap-3">
+                  <Phone size={15} className="shrink-0 mt-0.5 text-[var(--color-accent)]" />
+                  <a
+                    href="tel:+912245687288"
+                    className="text-sm text-[var(--color-text-secondary)] hover:opacity-70 transition-opacity"
+                  >
+                    +91 22 4568 7288
+                  </a>
+                </li>
               </ul>
             </div>
           </FadeInOnScroll>
 
         </div>
 
-        {/* ── Contact details (left) + Enquiry form (right) ── */}
+        {/* ── Contact persons strip ── */}
+        <FadeInOnScroll direction="up">
+          <div className="grid grid-cols-1 sm:grid-cols-2 mb-8 border border-[var(--color-border)] bg-[var(--color-bg-secondary)]">
+            <div className="flex items-center justify-center gap-2 px-6 py-4 border-b sm:border-b-0 sm:border-r border-[var(--color-border)]">
+              <span className="text-sm font-bold text-[var(--color-text-primary)]">Contact:</span>
+              <span className="text-sm text-[var(--color-text-secondary)]">
+                Shrey Raichura —{" "}
+                <a href="tel:+919769422606" className="hover:opacity-70 transition-opacity">
+                  +91 97694 22606
+                </a>
+              </span>
+            </div>
+            <div className="flex items-center justify-center gap-2 px-6 py-4">
+              <span className="text-sm font-bold text-[var(--color-text-primary)]">Contact:</span>
+              <span className="text-sm text-[var(--color-text-secondary)]">
+                Vipul Raichura —{" "}
+                <a href="tel:+919820286875" className="hover:opacity-70 transition-opacity">
+                  +91 98202 86875
+                </a>
+              </span>
+            </div>
+          </div>
+        </FadeInOnScroll>
+
+        {/* ── Email section ── */}
+        <FadeInOnScroll direction="up">
+          <div className="mb-16 py-7 text-center border border-[var(--color-border)] bg-[var(--color-bg-secondary)]">
+            <span className="text-label block mb-3 text-[var(--color-accent)]">Email Us</span>
+            <a
+              href="mailto:linenmantra@gmail.com"
+              className="font-display font-normal text-2xl md:text-3xl text-[var(--color-text-primary)] hover:opacity-70 transition-opacity"
+            >
+              linenmantra@gmail.com
+            </a>
+          </div>
+        </FadeInOnScroll>
+
+        {/* ── Google Map (left) + Enquiry Form (right) ── */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-start">
-          <ContactInfo />
+
+          {/* Google Map */}
+          <FadeInOnScroll direction="up">
+            <div className="flex flex-col">
+              <span className="text-label block mb-4 text-[var(--color-accent)]">Find Us</span>
+              <div
+                className="relative w-full border border-[var(--color-border)] overflow-hidden"
+                style={{ paddingBottom: "75%" }}
+              >
+                <iframe
+                  src="https://maps.google.com/maps?q=18.9971884,72.8267863&hl=en&z=17&output=embed"
+                  className="absolute inset-0 w-full h-full"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Linen Mantra Head Office — Kewal Industrial Estate"
+                />
+              </div>
+              <p className="mt-3 text-sm leading-relaxed text-[var(--color-text-muted)]">
+                A-111, Kewal Industrial Estate, Lower Parel (West), Mumbai — 400013
+              </p>
+            </div>
+          </FadeInOnScroll>
+
           <EnquiryForm />
+
         </div>
 
       </SectionWrapper>
