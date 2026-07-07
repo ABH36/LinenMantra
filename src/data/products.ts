@@ -73,6 +73,7 @@ export const products: Product[] = [
 export const productCategories: { value: ProductCategory; label: string }[] = [
   { value: "all", label: "All Collections" },
   { value: "shirting", label: "Shirting" },
+  { value: "suiting", label: "Suiting" },
 ];
 
 export const featuredProducts = products.filter((p) => p.featured);
