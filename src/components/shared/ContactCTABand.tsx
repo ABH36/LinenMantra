@@ -17,7 +17,7 @@ export default function ContactCTABand({
   dark = true,
 }: Props) {
   return (
-    <section className={`w-full py-12 md:py-14 ${dark ? "bg-[var(--color-cta)]" : "bg-[var(--color-bg-secondary)]"}`}>
+    <section className={`w-full py-8 md:py-10 ${dark ? "bg-[var(--color-cta)]" : "bg-[var(--color-bg-secondary)]"}`}>
       <div className="container-site">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8">
 
@@ -29,7 +29,7 @@ export default function ContactCTABand({
               {heading}
             </h2>
             <span className="block h-px w-10 mt-4 mb-5 bg-[var(--color-accent)]" />
-            <p className={`leading-relaxed text-[var(--text-body)] ${dark ? "text-[var(--color-text-light)] opacity-75" : "text-[var(--color-text-secondary)]"}`}>
+            <p className={`leading-relaxed text-[var(--text-body)] ${dark ? "text-[var(--color-text-light)]" : "text-[var(--color-text-secondary)]"}`} style={dark ? { opacity: 0.92 } : undefined}>
               {subText}
             </p>
           </FadeInOnScroll>
