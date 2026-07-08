@@ -20,15 +20,14 @@ export default function ArtAndScience() {
   return (
     <section
       ref={ref}
-      className="w-full py-10 lg:py-14 bg-[var(--color-bg-secondary)]"
+      className="w-full py-8 lg:py-12 bg-[var(--color-bg-secondary)]"
     >
       <div className="container-site">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-stretch">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-14 items-center">
 
-          {/* ── Left — full-height primary image ── */}
+          {/* ── Left — image at content height ── */}
           <motion.div
-            className="relative w-full overflow-hidden"
-            style={{ minHeight: "440px" }}
+            className="relative w-full aspect-[4/3] overflow-hidden"
             initial={{ opacity: 0, x: -40 }}
             animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -40 }}
             transition={{ duration: 0.85, delay: 0.05, ease: EASE }}
