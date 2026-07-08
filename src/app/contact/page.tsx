@@ -27,7 +27,7 @@ export default async function ContactPage() {
         className="w-full py-12 lg:py-16 relative overflow-hidden"
         style={{
           backgroundColor: "var(--color-bg-dark)",
-          backgroundImage: "url('/images/about/footer/fabric.png')",
+          backgroundImage: "url('/images/about/footer/fabric.webp')",
           backgroundSize: "400px auto",
           backgroundRepeat: "repeat",
         }}

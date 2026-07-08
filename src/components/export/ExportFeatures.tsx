@@ -73,7 +73,7 @@ export default function ExportFeatures() {
       className="w-full py-10 lg:py-12 relative overflow-hidden"
       style={{
         backgroundColor: "var(--color-bg-dark)",
-        backgroundImage: "url('/images/about/footer/fabric.png')",
+        backgroundImage: "url('/images/about/footer/fabric.webp')",
         backgroundSize: "400px auto",
         backgroundRepeat: "repeat",
       }}

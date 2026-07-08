@@ -45,7 +45,7 @@ export default function Footer() {
     <footer
       className="w-full relative overflow-hidden"
       style={{
-        backgroundImage:  "url('/images/about/footer/fabric.png')",
+        backgroundImage:  "url('/images/about/footer/fabric.webp')",
         backgroundSize:   "400px auto",
         backgroundRepeat: "repeat",
       }}

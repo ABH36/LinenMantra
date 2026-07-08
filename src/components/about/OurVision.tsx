@@ -5,7 +5,7 @@ export default function OurVision() {
     <section
       className="w-full py-10 lg:py-12 relative overflow-hidden bg-[var(--color-bg-primary)]"
       style={{
-        backgroundImage: "url('/images/about/footer/fabric.png')",
+        backgroundImage: "url('/images/about/footer/fabric.webp')",
         backgroundSize: "400px auto",
         backgroundRepeat: "repeat",
       }}

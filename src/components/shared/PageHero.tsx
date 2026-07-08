@@ -31,7 +31,7 @@ export default function PageHero({ label, heading, subText, dark = false, image 
         ? { backgroundColor: "#111110" }
         : (!hasImage && isDark)
         ? {
-            backgroundImage: "url('/images/about/footer/fabric.png')",
+            backgroundImage: "url('/images/about/footer/fabric.webp')",
             backgroundSize: "400px auto",
             backgroundRepeat: "repeat",
           }

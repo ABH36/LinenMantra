@@ -26,7 +26,7 @@ export default function SectionWrapper({
       id={id}
       className={`w-full ${dark ? "" : bg} ${noPadding ? "" : "section-py"} ${dark ? "relative overflow-hidden" : ""} ${className}`}
       style={dark ? {
-        backgroundImage: "url('/images/about/footer/fabric.png')",
+        backgroundImage: "url('/images/about/footer/fabric.webp')",
         backgroundSize: "400px auto",
         backgroundRepeat: "repeat",
       } : undefined}

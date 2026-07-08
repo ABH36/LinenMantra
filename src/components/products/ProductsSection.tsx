@@ -29,7 +29,7 @@ export default function ProductsSection({ initialCategory = "all" }: { initialCa
       <section
         className="w-full py-8 lg:py-10 relative overflow-hidden"
         style={{
-          backgroundImage: "url('/images/about/footer/fabric.png')",
+          backgroundImage: "url('/images/about/footer/fabric.webp')",
           backgroundSize: "400px auto",
           backgroundRepeat: "repeat",
           backgroundColor: "var(--color-bg-secondary)",

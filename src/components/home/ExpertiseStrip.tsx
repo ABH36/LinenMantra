@@ -47,7 +47,7 @@ export default function ExpertiseStrip() {
     <section
       className="w-full py-10 lg:py-12 relative overflow-hidden"
       style={{
-        backgroundImage: "url('/images/about/footer/fabric.png')",
+        backgroundImage: "url('/images/about/footer/fabric.webp')",
         backgroundSize: "400px auto",
         backgroundRepeat: "repeat",
       }}

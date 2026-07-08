@@ -36,7 +36,7 @@ export default function ArtAndScience() {
               src="/images/expert/expert1.png"
               alt="Linen weaving mill"
               fill
-              sizes="(max-width: 1024px) 100vw, 50vw"
+              sizes="(max-width: 1024px) 100vw, 560px"
               className="object-cover"
             />
           </motion.div>
