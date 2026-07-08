@@ -214,7 +214,7 @@ export default async function ContactPage() {
           ════════════════════════════════════════════ */}
       <section className="w-full py-10 lg:py-14 bg-[var(--color-bg-primary)]">
         <div className="container-site">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 lg:items-stretch">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 lg:items-stretch">
 
             {/* Map */}
             <FadeInOnScroll direction="up" className="flex flex-col">
