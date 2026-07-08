@@ -158,7 +158,7 @@ export default async function ContactPage({
               <div className="mb-3 h-px w-8 bg-[var(--color-accent)] opacity-50" />
               <a
                 href="tel:+919769422606"
-                className="text-2xl font-medium tracking-wide text-[var(--color-text-primary)] hover:opacity-70 transition-opacity duration-200"
+                className="text-base font-normal tracking-wide text-[var(--color-text-primary)] hover:opacity-70 transition-opacity duration-200"
               >
                 +91 97694 22606
               </a>
@@ -175,7 +175,7 @@ export default async function ContactPage({
               <div className="mb-3 h-px w-8 bg-[var(--color-accent)] opacity-50" />
               <a
                 href="mailto:linenmantra@gmail.com"
-                className="text-xl font-medium tracking-wide text-[var(--color-text-primary)] hover:opacity-70 transition-opacity duration-200 break-all"
+                className="text-base font-normal tracking-wide text-[var(--color-text-primary)] hover:opacity-70 transition-opacity duration-200 break-all"
               >
                 linenmantra@gmail.com
               </a>
