@@ -11,17 +11,17 @@ export default function LinenSpecialists() {
 
   return (
     <section
-      className="w-full py-10 lg:py-14 bg-[var(--color-bg-secondary)]"
+      className="w-full py-8 lg:py-12 bg-[var(--color-bg-secondary)]"
     >
     <div className="container-site">
       {/* Section title */}
-      <FadeInOnScroll direction="up" className="mb-14">
+      <FadeInOnScroll direction="up" className="mb-10">
         <span className="text-label block mb-4 text-[var(--color-accent)]">
           Why Linen Mantra
         </span>
         <h2
           className="font-display font-normal leading-tight max-w-lg text-[var(--color-text-primary)]"
-          style={{ fontSize: "clamp(2.2rem, 4.5vw, 3.5rem)" }}
+          style={{ fontSize: "clamp(1.75rem, 3vw, 2.75rem)" }}
         >
           Linen Specialists,
           <br />

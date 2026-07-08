@@ -58,17 +58,18 @@ export default function FlaxToFabric() {
     <section className="w-full bg-[var(--color-bg-secondary)]">
 
       {/* Section heading */}
-      <div className="container-site pt-14 pb-8 md:pt-16 md:pb-10">
+      <div className="container-site pt-10 pb-6 md:pt-12 md:pb-8">
         <FadeInOnScroll direction="up">
-          <div className="flex items-center gap-4">
-            <span className="text-label text-[var(--color-accent)]">
-              Our Process
-            </span>
-            <span className="flex-1 h-px bg-[var(--color-border)]" />
-          </div>
-          <h2 className="font-display font-normal mt-4 text-[var(--text-h2)] text-[var(--color-text-primary)]">
+          <span className="text-label block mb-4 text-[var(--color-accent)]">
+            Our Process
+          </span>
+          <h2
+            className="font-display font-normal leading-tight text-[var(--color-text-primary)]"
+            style={{ fontSize: "clamp(1.75rem, 3vw, 2.75rem)" }}
+          >
             Flax to Fabric
           </h2>
+          <span className="block h-px w-10 mt-5 bg-[var(--color-accent)]" />
         </FadeInOnScroll>
       </div>
 
@@ -206,8 +207,6 @@ export default function FlaxToFabric() {
           </button>
         ))}
       </div>
-
-
     </section>
   );
 }

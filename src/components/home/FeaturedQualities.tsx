@@ -13,11 +13,11 @@ export default function FeaturedQualities() {
   const [lightboxIdx, setLightboxIdx] = useState<number | null>(null);
 
   return (
-    <section className="w-full py-10 lg:py-14 bg-[var(--color-bg-secondary)]">
+    <section className="w-full py-8 lg:py-12 bg-[var(--color-bg-secondary)]">
       <div className="container-site">
 
         {/* Header row */}
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-5 mb-10">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-5 mb-8">
           <FadeInOnScroll direction="up">
             <div>
               <span className="text-label block mb-4 text-[var(--color-accent)]">
@@ -25,7 +25,7 @@ export default function FeaturedQualities() {
               </span>
               <h2
                 className="font-display font-normal leading-tight text-[var(--color-text-primary)]"
-                style={{ fontSize: "clamp(2rem, 3.5vw, 3.25rem)" }}
+                style={{ fontSize: "clamp(1.75rem, 3vw, 2.75rem)" }}
               >
                 Featured Fabric Qualities
               </h2>
