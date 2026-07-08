@@ -1,5 +1,4 @@
 import FadeInOnScroll from "@/components/shared/FadeInOnScroll";
-import SectionWrapper from "@/components/shared/SectionWrapper";
 
 const productTypes = [
   {
@@ -48,9 +47,10 @@ const productTypes = [
 
 export default function WhatWeCreate() {
   return (
-    <SectionWrapper>
+    <section className="w-full py-10 lg:py-12 bg-[var(--color-bg-primary)]">
+      <div className="container-site">
       {/* Section header */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 mb-12">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 mb-10">
         <FadeInOnScroll direction="up">
           <span className="text-label block mb-4 text-[var(--color-accent)]">
             Our Specialisation
@@ -79,7 +79,7 @@ export default function WhatWeCreate() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0 border-t border-l border-[var(--color-border)]">
         {productTypes.map((type, i) => (
           <FadeInOnScroll key={type.number} direction="up" delay={i * 0.07}>
-            <div className="p-8 h-full group transition-colors duration-300 hover:bg-[var(--color-bg-secondary)] border-r border-b border-[var(--color-border)]">
+            <div className="p-6 h-full group transition-colors duration-300 hover:bg-[var(--color-bg-secondary)] border-r border-b border-[var(--color-border)]">
               {/* Number */}
               <span
                 className="font-display font-normal block mb-5 transition-colors duration-300 leading-none text-[var(--color-border)]"
@@ -106,7 +106,7 @@ export default function WhatWeCreate() {
 
         {/* 8th cell — count range highlight */}
         <FadeInOnScroll direction="up" delay={0.49}>
-          <div className="p-8 h-full flex flex-col justify-between bg-[var(--color-bg-dark)] border-r border-b border-[var(--color-border-dark)]">
+          <div className="p-6 h-full flex flex-col justify-between bg-[var(--color-bg-dark)] border-r border-b border-[var(--color-border-dark)]">
             <div>
               <span
                 className="font-display font-normal block leading-none text-[var(--color-accent-light)]"
@@ -125,6 +125,7 @@ export default function WhatWeCreate() {
           </div>
         </FadeInOnScroll>
       </div>
-    </SectionWrapper>
+      </div>
+    </section>
   );
 }

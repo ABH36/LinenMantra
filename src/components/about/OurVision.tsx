@@ -3,7 +3,7 @@ import FadeInOnScroll from "@/components/shared/FadeInOnScroll";
 export default function OurVision() {
   return (
     <section
-      className="w-full section-py relative overflow-hidden bg-[var(--color-bg-primary)]"
+      className="w-full py-10 lg:py-12 relative overflow-hidden bg-[var(--color-bg-primary)]"
       style={{
         backgroundImage: "url('/images/about/footer/fabric.png')",
         backgroundSize: "400px auto",
@@ -13,7 +13,7 @@ export default function OurVision() {
       <div className="container-site relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           <FadeInOnScroll direction="up">
-            <span className="text-label block mb-8 text-[var(--color-accent)]">
+            <span className="text-label block mb-4 text-[var(--color-accent)]">
               Our Vision
             </span>
           </FadeInOnScroll>
@@ -40,7 +40,7 @@ export default function OurVision() {
           </FadeInOnScroll>
 
           <FadeInOnScroll direction="up" delay={0.2}>
-            <span className="block h-px w-10 mx-auto mt-10 mb-8 bg-[var(--color-accent)]" />
+            <span className="block h-px w-10 mx-auto mt-6 mb-5 bg-[var(--color-accent)]" />
             <p className="text-label text-[var(--color-text-muted)]">
               Linen Mantra · Est. 2010 · Mumbai, India
             </p>

@@ -1,5 +1,4 @@
 import FadeInOnScroll from "@/components/shared/FadeInOnScroll";
-import SectionWrapper from "@/components/shared/SectionWrapper";
 import MillImageSlider from "./MillImageSlider";
 
 const capabilities = [
@@ -13,8 +12,9 @@ const capabilities = [
 
 export default function WeavingExcellence() {
   return (
-    <SectionWrapper cream id="infrastructure">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+    <section className="w-full py-10 lg:py-12 bg-[var(--color-bg-secondary)]" id="infrastructure">
+      <div className="container-site">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center">
 
         {/* Left — mill image slider */}
         <FadeInOnScroll direction="right" delay={0.1} className="order-2 lg:order-1">
@@ -39,10 +39,13 @@ export default function WeavingExcellence() {
         {/* Right — text content */}
         <div className="order-1 lg:order-2">
           <FadeInOnScroll direction="up">
-            <span className="text-label block mb-5 text-[var(--color-accent)]">
+            <span className="text-label block mb-4 text-[var(--color-accent)]">
               Manufacturing Excellence
             </span>
-            <h2 className="font-display font-normal leading-tight mb-6 text-[var(--text-h2)] text-[var(--color-text-primary)]">
+            <h2
+              className="font-display font-normal leading-tight mb-5 text-[var(--color-text-primary)]"
+              style={{ fontSize: "clamp(1.75rem, 3vw, 2.75rem)" }}
+            >
               Weaving Excellence
               <br />
               for Over{" "}
@@ -50,7 +53,7 @@ export default function WeavingExcellence() {
                 16 Years
               </em>
             </h2>
-            <span className="block h-px w-10 mb-8 bg-[var(--color-accent)]" />
+            <span className="block h-px w-10 mb-6 bg-[var(--color-accent)]" />
           </FadeInOnScroll>
 
           <FadeInOnScroll direction="up" delay={0.1}>
@@ -72,7 +75,7 @@ export default function WeavingExcellence() {
 
           {/* Capability specs */}
           <FadeInOnScroll direction="up" delay={0.15}>
-            <div className="mt-10 grid grid-cols-1 gap-0 border-t border-[var(--color-border)]">
+            <div className="mt-7 grid grid-cols-1 gap-0 border-t border-[var(--color-border)]">
               {capabilities.map((cap) => (
                 <div
                   key={cap.label}
@@ -90,6 +93,7 @@ export default function WeavingExcellence() {
           </FadeInOnScroll>
         </div>
       </div>
-    </SectionWrapper>
+      </div>
+    </section>
   );
 }

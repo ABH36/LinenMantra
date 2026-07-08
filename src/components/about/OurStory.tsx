@@ -1,6 +1,5 @@
 import Image from "next/image";
 import FadeInOnScroll from "@/components/shared/FadeInOnScroll";
-import SectionWrapper from "@/components/shared/SectionWrapper";
 import MillVideoCard from "./MillVideoCard";
 
 const paragraphs = [
@@ -28,8 +27,9 @@ const leadership = [
 
 export default function OurStory() {
   return (
-    <SectionWrapper id="story">
-      <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-20 items-start">
+    <section className="w-full py-10 lg:py-12 bg-[var(--color-bg-primary)]" id="story">
+      <div className="container-site">
+      <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-14 items-start">
 
         {/* Left — text content (3/5 width) */}
         <div className="lg:col-span-3">
@@ -116,7 +116,7 @@ export default function OurStory() {
       <div className="mt-16">
         <FadeInOnScroll direction="up">
           <div className="w-full h-px mb-10 bg-[var(--color-border)]" />
-          <span className="text-label block mb-8 text-[var(--color-accent)]">
+          <span className="text-label block mb-4 text-[var(--color-accent)]">
             Leadership
           </span>
         </FadeInOnScroll>
@@ -124,8 +124,8 @@ export default function OurStory() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {leadership.map((person, i) => (
             <FadeInOnScroll key={person.name} direction="up" delay={i * 0.12}>
-              <div className="p-8 h-full bg-[var(--color-bg-secondary)] border-l-2 border-[var(--color-accent)]">
-                <h3 className="font-display font-normal mb-1 text-[var(--text-h3)] text-[var(--color-text-primary)]">
+              <div className="p-6 h-full bg-[var(--color-bg-secondary)] border-l-2 border-[var(--color-accent)] shadow-sm">
+                <h3 className="font-display font-semibold mb-1 text-xl text-[var(--color-text-primary)]">
                   {person.name}
                 </h3>
                 <p className="text-label mb-5 text-[var(--color-accent)]">
@@ -139,6 +139,7 @@ export default function OurStory() {
           ))}
         </div>
       </div>
-    </SectionWrapper>
+      </div>
+    </section>
   );
 }
