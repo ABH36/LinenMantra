@@ -70,7 +70,7 @@ function FeatureCard({ Icon, title, body }: (typeof FEATURES)[number]) {
 export default function ExportFeatures() {
   return (
     <section
-      className="w-full section-py relative overflow-hidden"
+      className="w-full py-10 lg:py-12 relative overflow-hidden"
       style={{
         backgroundColor: "var(--color-bg-dark)",
         backgroundImage: "url('/images/about/footer/fabric.png')",
@@ -86,7 +86,7 @@ export default function ExportFeatures() {
             Why Export With Us
           </span>
           <h2
-            className="font-display font-normal leading-tight mb-12 text-[var(--color-text-primary)]"
+            className="font-display font-normal leading-tight mb-8 text-[var(--color-text-primary)]"
             style={{ fontSize: "clamp(1.75rem, 3vw, 2.75rem)" }}
           >
             Built for Global Business
