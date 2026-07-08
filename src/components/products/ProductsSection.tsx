@@ -27,21 +27,21 @@ export default function ProductsSection({ initialCategory = "all" }: { initialCa
 
       {/* ── Product grid ───────────────────────────────── */}
       <section
-        className="w-full py-10 lg:py-12 relative overflow-hidden"
+        className="w-full py-8 lg:py-10 relative overflow-hidden"
         style={{
-          backgroundColor: "var(--color-bg-dark)",
           backgroundImage: "url('/images/about/footer/fabric.png')",
           backgroundSize: "400px auto",
           backgroundRepeat: "repeat",
+          backgroundColor: "var(--color-bg-secondary)",
         }}
       >
         <div className="container-site">
 
           {/* Result count */}
           <FadeInOnScroll direction="up">
-            <p className="text-sm mb-6 text-[var(--color-text-light)] opacity-70">
+            <p className="text-sm mb-5 text-[var(--color-text-muted)]">
               Showing{" "}
-              <span className="opacity-100 font-medium text-[var(--color-text-light)]">
+              <span className="font-medium text-[var(--color-text-primary)]">
                 {filtered.length}
               </span>{" "}
               {filtered.length === 1 ? "quality" : "qualities"}
@@ -74,11 +74,11 @@ export default function ProductsSection({ initialCategory = "all" }: { initialCa
 
           {/* Empty state */}
           {filtered.length === 0 && (
-            <div className="text-center py-20">
-              <p className="font-display font-normal text-3xl mb-4 text-[var(--color-text-light)]">
+            <div className="text-center py-16">
+              <p className="font-display font-normal text-3xl mb-4 text-[var(--color-text-secondary)]">
                 No fabrics found
               </p>
-              <p className="text-sm text-[var(--color-text-light)] opacity-50">
+              <p className="text-sm text-[var(--color-text-muted)]">
                 Try a different category or{" "}
                 <button
                   onClick={() => setActiveCategory("all")}
