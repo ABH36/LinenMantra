@@ -3,7 +3,7 @@ import PageHero from "@/components/shared/PageHero";
 import SectionWrapper from "@/components/shared/SectionWrapper";
 import EnquiryForm from "@/components/contact/EnquiryForm";
 import FadeInOnScroll from "@/components/shared/FadeInOnScroll";
-import { MapPin, Phone } from "lucide-react";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Contact Us",
@@ -65,7 +65,7 @@ export default async function ContactPage() {
 
                   <div className="flex flex-col items-center text-center mb-4">
                     <div className="w-8 h-8 flex items-center justify-center border border-[var(--color-border)] bg-[var(--color-bg-secondary)] mb-2">
-                      <MapPin size={12} className="text-[var(--color-accent)]" />
+                      <Image src="/images/SocialMediaicon/google-maps.png" alt="Address" width={18} height={18} />
                     </div>
                     <p className="text-[10px] font-semibold tracking-[0.14em] uppercase mb-1 text-[var(--color-text-muted)]">
                       Address
@@ -77,7 +77,7 @@ export default async function ContactPage() {
 
                   <div className="flex flex-col items-center text-center">
                     <div className="w-8 h-8 flex items-center justify-center border border-[var(--color-border)] bg-[var(--color-bg-secondary)] mb-2">
-                      <Phone size={12} className="text-[var(--color-accent)]" />
+                      <Image src="/images/SocialMediaicon/phone-call.png" alt="Phone" width={18} height={18} />
                     </div>
                     <p className="text-[10px] font-semibold tracking-[0.14em] uppercase mb-1 text-[var(--color-text-muted)]">
                       Phone
@@ -113,7 +113,7 @@ export default async function ContactPage() {
 
                   <div className="flex flex-col items-center text-center mb-4">
                     <div className="w-8 h-8 flex items-center justify-center border border-[var(--color-border)] bg-[var(--color-bg-secondary)] mb-2">
-                      <MapPin size={12} className="text-[var(--color-accent)]" />
+                      <Image src="/images/SocialMediaicon/google-maps.png" alt="Address" width={18} height={18} />
                     </div>
                     <p className="text-[10px] font-semibold tracking-[0.14em] uppercase mb-1 text-[var(--color-text-muted)]">
                       Address
@@ -125,7 +125,7 @@ export default async function ContactPage() {
 
                   <div className="flex flex-col items-center text-center">
                     <div className="w-8 h-8 flex items-center justify-center border border-[var(--color-border)] bg-[var(--color-bg-secondary)] mb-2">
-                      <Phone size={12} className="text-[var(--color-accent)]" />
+                      <Image src="/images/SocialMediaicon/phone-call.png" alt="Phone" width={18} height={18} />
                     </div>
                     <p className="text-[10px] font-semibold tracking-[0.14em] uppercase mb-1 text-[var(--color-text-muted)]">
                       Phone
