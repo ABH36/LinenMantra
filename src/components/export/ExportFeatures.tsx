@@ -42,9 +42,9 @@ const FEATURES: { Icon: LucideIcon; title: string; body: string }[] = [
 
 function FeatureCard({ Icon, title, body }: (typeof FEATURES)[number]) {
   return (
-    <div className="group relative flex flex-col h-full p-8 bg-[var(--color-bg-primary)] border border-[var(--color-border)]">
+    <div className="group relative flex flex-col items-center text-center h-full p-8 bg-[var(--color-bg-primary)] border border-[var(--color-border)]">
       {/* Icon box */}
-      <div className="w-11 h-11 flex items-center justify-center mb-6 shrink-0 bg-[var(--color-bg-secondary)]">
+      <div className="w-11 h-11 flex items-center justify-center mb-5 shrink-0 bg-[var(--color-bg-secondary)]">
         <Icon size={18} className="text-[var(--color-accent)]" />
       </div>
 
