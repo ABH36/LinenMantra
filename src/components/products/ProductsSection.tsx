@@ -26,21 +26,29 @@ export default function ProductsSection({ initialCategory = "all" }: { initialCa
       <ProductFilter active={activeCategory} onChange={setActiveCategory} />
 
       {/* ── Product grid ───────────────────────────────── */}
-      <section className="w-full section-py bg-[var(--color-bg-primary)]">
+      <section
+        className="w-full section-py relative overflow-hidden"
+        style={{
+          backgroundColor: "var(--color-bg-dark)",
+          backgroundImage: "url('/images/about/footer/fabric.png')",
+          backgroundSize: "400px auto",
+          backgroundRepeat: "repeat",
+        }}
+      >
         <div className="container-site">
 
           {/* Result count */}
           <FadeInOnScroll direction="up">
-            <p className="text-sm mb-10 text-[var(--color-text-muted)]">
+            <p className="text-sm mb-8 text-[var(--color-text-light)] opacity-55">
               Showing{" "}
-              <span className="text-[var(--color-text-primary)] font-medium">
+              <span className="opacity-100 font-medium text-[var(--color-text-light)]">
                 {filtered.length}
               </span>{" "}
               {filtered.length === 1 ? "quality" : "qualities"}
               {activeCategory !== "all" && (
                 <>
                   {" "}in{" "}
-                  <span className="text-[var(--color-accent)] font-medium">
+                  <span className="font-medium text-[var(--color-accent)]">
                     {activeCategory}
                   </span>
                 </>
@@ -51,7 +59,7 @@ export default function ProductsSection({ initialCategory = "all" }: { initialCa
           {/* Animated grid */}
           <motion.div
             layout
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5"
           >
             <AnimatePresence mode="popLayout">
               {filtered.map((product, i) => (
@@ -66,11 +74,11 @@ export default function ProductsSection({ initialCategory = "all" }: { initialCa
 
           {/* Empty state */}
           {filtered.length === 0 && (
-            <div className="text-center py-24">
-              <p className="font-display font-normal text-3xl mb-4 text-[var(--color-text-secondary)]">
+            <div className="text-center py-20">
+              <p className="font-display font-normal text-3xl mb-4 text-[var(--color-text-light)]">
                 No fabrics found
               </p>
-              <p className="text-sm text-[var(--color-text-muted)]">
+              <p className="text-sm text-[var(--color-text-light)] opacity-50">
                 Try a different category or{" "}
                 <button
                   onClick={() => setActiveCategory("all")}

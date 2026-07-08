@@ -17,11 +17,11 @@ export default function ProductCard({ product, onImageClick }: Props) {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: 10 }}
       transition={{ duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
-      className="group flex flex-col h-full bg-[var(--color-bg-primary)] border border-[var(--color-border)]"
+      className="group flex flex-col h-full bg-[var(--color-bg-primary)] border border-[var(--color-border)] shadow-sm hover:shadow-xl transition-shadow duration-500"
     >
       {/* ── Product image ─────────────────────────── */}
       <div
-        className="relative overflow-hidden aspect-[4/3] cursor-pointer"
+        className="relative overflow-hidden aspect-[5/3] cursor-pointer"
         onClick={onImageClick}
       >
         <Image
@@ -84,19 +84,19 @@ export default function ProductCard({ product, onImageClick }: Props) {
       </div>
 
       {/* ── Card body ─────────────────────────────── */}
-      <div className="flex flex-col flex-1 p-6">
+      <div className="flex flex-col flex-1 p-5">
         {/* Quality name */}
-        <h3 className="font-display font-normal leading-tight mb-2 text-[var(--text-h3)] text-[var(--color-text-primary)]">
+        <h3 className="font-display font-normal leading-tight mb-2 text-xl text-[var(--color-text-primary)]">
           {product.name}
         </h3>
 
         {/* Composition label */}
-        <p className="text-label mb-5 text-[var(--color-accent)]">
+        <p className="text-label mb-3 text-[var(--color-accent)]">
           {product.composition}
         </p>
 
         {/* Description */}
-        <p className="text-sm leading-relaxed flex-1 mb-6 text-[var(--color-text-secondary)]">
+        <p className="text-sm leading-relaxed flex-1 mb-4 text-[var(--color-text-secondary)]">
           {product.description}
         </p>
 
