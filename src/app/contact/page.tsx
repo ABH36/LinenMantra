@@ -63,35 +63,31 @@ export default async function ContactPage() {
 
                   <div className="mb-4 h-px bg-[var(--color-border)]" />
 
-                  <div className="flex items-start gap-3 mb-3">
-                    <div className="shrink-0 w-8 h-8 flex items-center justify-center border border-[var(--color-border)] bg-[var(--color-bg-secondary)]">
+                  <div className="flex flex-col items-center text-center mb-4">
+                    <div className="w-8 h-8 flex items-center justify-center border border-[var(--color-border)] bg-[var(--color-bg-secondary)] mb-2">
                       <MapPin size={12} className="text-[var(--color-accent)]" />
                     </div>
-                    <div>
-                      <p className="text-[10px] font-semibold tracking-[0.14em] uppercase mb-1 text-[var(--color-text-muted)]">
-                        Address
-                      </p>
-                      <span className="text-sm leading-relaxed text-[var(--color-text-secondary)]">
-                        A-111, Kewal Industrial Estate, Lower Parel (West), Mumbai — 400013
-                      </span>
-                    </div>
+                    <p className="text-[10px] font-semibold tracking-[0.14em] uppercase mb-1 text-[var(--color-text-muted)]">
+                      Address
+                    </p>
+                    <span className="text-sm leading-relaxed text-[var(--color-text-secondary)]">
+                      A-111, Kewal Industrial Estate, Lower Parel (West), Mumbai — 400013
+                    </span>
                   </div>
 
-                  <div className="flex items-center gap-3">
-                    <div className="shrink-0 w-8 h-8 flex items-center justify-center border border-[var(--color-border)] bg-[var(--color-bg-secondary)]">
+                  <div className="flex flex-col items-center text-center">
+                    <div className="w-8 h-8 flex items-center justify-center border border-[var(--color-border)] bg-[var(--color-bg-secondary)] mb-2">
                       <Phone size={12} className="text-[var(--color-accent)]" />
                     </div>
-                    <div>
-                      <p className="text-[10px] font-semibold tracking-[0.14em] uppercase mb-1 text-[var(--color-text-muted)]">
-                        Phone
-                      </p>
-                      <a
-                        href="tel:+912245005662"
-                        className="text-sm text-[var(--color-text-secondary)] hover:opacity-70 transition-opacity duration-200"
-                      >
-                        +91 22 4500 5662
-                      </a>
-                    </div>
+                    <p className="text-[10px] font-semibold tracking-[0.14em] uppercase mb-1 text-[var(--color-text-muted)]">
+                      Phone
+                    </p>
+                    <a
+                      href="tel:+912245005662"
+                      className="text-sm text-[var(--color-text-secondary)] hover:opacity-70 transition-opacity duration-200"
+                    >
+                      +91 22 4500 5662
+                    </a>
                   </div>
                 </div>
 
@@ -115,35 +111,31 @@ export default async function ContactPage() {
 
                   <div className="mb-4 h-px bg-[var(--color-border)]" />
 
-                  <div className="flex items-start gap-3 mb-3">
-                    <div className="shrink-0 w-8 h-8 flex items-center justify-center border border-[var(--color-border)] bg-[var(--color-bg-secondary)]">
+                  <div className="flex flex-col items-center text-center mb-4">
+                    <div className="w-8 h-8 flex items-center justify-center border border-[var(--color-border)] bg-[var(--color-bg-secondary)] mb-2">
                       <MapPin size={12} className="text-[var(--color-accent)]" />
                     </div>
-                    <div>
-                      <p className="text-[10px] font-semibold tracking-[0.14em] uppercase mb-1 text-[var(--color-text-muted)]">
-                        Address
-                      </p>
-                      <span className="text-sm leading-relaxed text-[var(--color-text-secondary)]">
-                        #384-M Building, Shop No. 1, Ground Floor, Dabholkar Wadi, Kalbadevi Road, Mumbai — 400002
-                      </span>
-                    </div>
+                    <p className="text-[10px] font-semibold tracking-[0.14em] uppercase mb-1 text-[var(--color-text-muted)]">
+                      Address
+                    </p>
+                    <span className="text-sm leading-relaxed text-[var(--color-text-secondary)]">
+                      #384-M Building, Shop No. 1, Ground Floor, Dabholkar Wadi, Kalbadevi Road, Mumbai — 400002
+                    </span>
                   </div>
 
-                  <div className="flex items-center gap-3">
-                    <div className="shrink-0 w-8 h-8 flex items-center justify-center border border-[var(--color-border)] bg-[var(--color-bg-secondary)]">
+                  <div className="flex flex-col items-center text-center">
+                    <div className="w-8 h-8 flex items-center justify-center border border-[var(--color-border)] bg-[var(--color-bg-secondary)] mb-2">
                       <Phone size={12} className="text-[var(--color-accent)]" />
                     </div>
-                    <div>
-                      <p className="text-[10px] font-semibold tracking-[0.14em] uppercase mb-1 text-[var(--color-text-muted)]">
-                        Phone
-                      </p>
-                      <a
-                        href="tel:+912245687288"
-                        className="text-sm text-[var(--color-text-secondary)] hover:opacity-70 transition-opacity duration-200"
-                      >
-                        +91 22 4568 7288
-                      </a>
-                    </div>
+                    <p className="text-[10px] font-semibold tracking-[0.14em] uppercase mb-1 text-[var(--color-text-muted)]">
+                      Phone
+                    </p>
+                    <a
+                      href="tel:+912245687288"
+                      className="text-sm text-[var(--color-text-secondary)] hover:opacity-70 transition-opacity duration-200"
+                    >
+                      +91 22 4568 7288
+                    </a>
                   </div>
                 </div>
 
