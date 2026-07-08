@@ -27,6 +27,7 @@ export default async function ContactPage() {
       <section
         className="w-full py-12 lg:py-16 relative overflow-hidden"
         style={{
+          backgroundColor: "var(--color-bg-dark)",
           backgroundImage: "url('/images/about/footer/fabric.png')",
           backgroundSize: "400px auto",
           backgroundRepeat: "repeat",
@@ -48,7 +49,7 @@ export default async function ContactPage() {
 
             {/* Head Office */}
             <FadeInOnScroll direction="right">
-              <div className="group relative h-full overflow-hidden border border-[var(--color-border)] bg-[var(--color-bg-secondary)] transition-colors duration-500 hover:border-[var(--color-accent)]">
+              <div className="group relative h-full overflow-hidden border border-[var(--color-border)] bg-[var(--color-bg-primary)] transition-colors duration-500 hover:border-[var(--color-accent)]">
                 <div className="absolute inset-x-0 top-0 h-px bg-[var(--color-accent)]" />
 
                 <div className="p-6 pt-7">
@@ -63,7 +64,7 @@ export default async function ContactPage() {
                   <div className="mb-4 h-px bg-[var(--color-border)]" />
 
                   <div className="flex items-start gap-3 mb-3">
-                    <div className="shrink-0 w-8 h-8 flex items-center justify-center border border-[var(--color-border)] bg-[var(--color-bg-primary)]">
+                    <div className="shrink-0 w-8 h-8 flex items-center justify-center border border-[var(--color-border)] bg-[var(--color-bg-secondary)]">
                       <MapPin size={12} className="text-[var(--color-accent)]" />
                     </div>
                     <div>
@@ -77,7 +78,7 @@ export default async function ContactPage() {
                   </div>
 
                   <div className="flex items-center gap-3">
-                    <div className="shrink-0 w-8 h-8 flex items-center justify-center border border-[var(--color-border)] bg-[var(--color-bg-primary)]">
+                    <div className="shrink-0 w-8 h-8 flex items-center justify-center border border-[var(--color-border)] bg-[var(--color-bg-secondary)]">
                       <Phone size={12} className="text-[var(--color-accent)]" />
                     </div>
                     <div>
@@ -100,7 +101,7 @@ export default async function ContactPage() {
 
             {/* Branch Office */}
             <FadeInOnScroll direction="left" delay={0.1}>
-              <div className="group relative h-full overflow-hidden border border-[var(--color-border)] bg-[var(--color-bg-secondary)] transition-colors duration-500 hover:border-[var(--color-accent)]">
+              <div className="group relative h-full overflow-hidden border border-[var(--color-border)] bg-[var(--color-bg-primary)] transition-colors duration-500 hover:border-[var(--color-accent)]">
                 <div className="absolute inset-x-0 top-0 h-px bg-[var(--color-accent)]" />
 
                 <div className="p-6 pt-7">
@@ -115,7 +116,7 @@ export default async function ContactPage() {
                   <div className="mb-4 h-px bg-[var(--color-border)]" />
 
                   <div className="flex items-start gap-3 mb-3">
-                    <div className="shrink-0 w-8 h-8 flex items-center justify-center border border-[var(--color-border)] bg-[var(--color-bg-primary)]">
+                    <div className="shrink-0 w-8 h-8 flex items-center justify-center border border-[var(--color-border)] bg-[var(--color-bg-secondary)]">
                       <MapPin size={12} className="text-[var(--color-accent)]" />
                     </div>
                     <div>
@@ -129,7 +130,7 @@ export default async function ContactPage() {
                   </div>
 
                   <div className="flex items-center gap-3">
-                    <div className="shrink-0 w-8 h-8 flex items-center justify-center border border-[var(--color-border)] bg-[var(--color-bg-primary)]">
+                    <div className="shrink-0 w-8 h-8 flex items-center justify-center border border-[var(--color-border)] bg-[var(--color-bg-secondary)]">
                       <Phone size={12} className="text-[var(--color-accent)]" />
                     </div>
                     <div>
@@ -156,7 +157,7 @@ export default async function ContactPage() {
           <div className="grid grid-cols-1 sm:grid-cols-3 border border-[var(--color-border)] overflow-hidden">
 
             <FadeInOnScroll direction="right" delay={0.15} className="h-full">
-              <div className="group relative h-full flex flex-col items-center justify-center px-8 py-5 bg-[var(--color-bg-secondary)] border-b sm:border-b-0 sm:border-r border-[var(--color-border)] text-center">
+              <div className="group relative h-full flex flex-col items-center justify-center px-8 py-5 bg-[var(--color-bg-primary)] border-b sm:border-b-0 sm:border-r border-[var(--color-border)] text-center">
                 <p className="text-[10px] font-black tracking-[0.18em] uppercase mb-2.5 text-[var(--color-accent)]">
                   Shrey Raichura
                 </p>
@@ -188,7 +189,7 @@ export default async function ContactPage() {
             </FadeInOnScroll>
 
             <FadeInOnScroll direction="left" delay={0.15} className="h-full">
-              <div className="group relative h-full flex flex-col items-center justify-center px-8 py-5 bg-[var(--color-bg-secondary)] text-center">
+              <div className="group relative h-full flex flex-col items-center justify-center px-8 py-5 bg-[var(--color-bg-primary)] text-center">
                 <p className="text-[10px] font-black tracking-[0.18em] uppercase mb-2.5 text-[var(--color-accent)]">
                   Vipul Raichura
                 </p>
