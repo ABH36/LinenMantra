@@ -41,11 +41,7 @@ export default function OurStory() {
               className="font-display font-normal leading-tight mb-6 text-[var(--color-text-primary)]"
               style={{ fontSize: "clamp(1.75rem, 3vw, 2.75rem)" }}
             >
-              Built on Craft.
-              <br />
-              <em className="italic text-[var(--color-accent)]">
-                Driven by Quality.
-              </em>
+              Built on Craft. <em className="italic text-[var(--color-accent)]">Driven by Quality.</em>
             </h2>
             <span className="block h-px w-10 mb-8 bg-[var(--color-accent)]" />
           </FadeInOnScroll>
