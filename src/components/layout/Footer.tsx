@@ -172,6 +172,15 @@ export default function Footer() {
             <ul className="flex flex-col gap-4">
 
               <li className="flex items-center gap-3">
+                <a href="https://wa.me/919769422606" target="_blank" rel="noopener noreferrer" className="shrink-0 flex items-center leading-none hover:opacity-60 transition-opacity">
+                  <Image src="/images/SocialMediaicon/whatsapp.png" alt="WhatsApp" width={24} height={24} />
+                </a>
+                <a href="https://wa.me/919769422606" target="_blank" rel="noopener noreferrer" className="text-[12px] hover:opacity-60 transition-opacity text-[var(--color-text-secondary)]">
+                  +91 97694 22606
+                </a>
+              </li>
+
+              <li className="flex items-center gap-3">
                 <a href="tel:+912245005662" className="shrink-0 flex items-center leading-none hover:opacity-60 transition-opacity">
                   <Image src="/images/SocialMediaicon/phone-call.png" alt="Phone" width={24} height={24} />
                 </a>
@@ -220,6 +229,15 @@ export default function Footer() {
             </h3>
             <HeadingLine />
             <ul className="flex flex-col gap-4">
+
+              <li className="flex items-center gap-3">
+                <a href="https://wa.me/919769422606" target="_blank" rel="noopener noreferrer" className="shrink-0 flex items-center leading-none hover:opacity-60 transition-opacity">
+                  <Image src="/images/SocialMediaicon/whatsapp.png" alt="WhatsApp" width={24} height={24} />
+                </a>
+                <a href="https://wa.me/919769422606" target="_blank" rel="noopener noreferrer" className="text-[12px] hover:opacity-60 transition-opacity text-[var(--color-text-secondary)]">
+                  +91 97694 22606
+                </a>
+              </li>
 
               <li className="flex items-center gap-3">
                 <a href="tel:+912245687288" className="shrink-0 flex items-center leading-none hover:opacity-60 transition-opacity">
