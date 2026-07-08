@@ -192,7 +192,7 @@ export default async function ContactPage({
               <div className="mb-3 h-px w-8 bg-[var(--color-accent)] opacity-50" />
               <a
                 href="tel:+919820286875"
-                className="text-2xl font-medium tracking-wide text-[var(--color-text-primary)] hover:opacity-70 transition-opacity duration-200"
+                className="text-base font-normal tracking-wide text-[var(--color-text-primary)] hover:opacity-70 transition-opacity duration-200"
               >
                 +91 98202 86875
               </a>
