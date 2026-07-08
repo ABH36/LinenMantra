@@ -71,8 +71,8 @@ export default function PageHero({ label, heading, subText, dark = false, image 
             </span>
           )}
           <h1
-            className="font-display font-normal leading-tight max-w-3xl text-[var(--text-display)]"
-            style={{ color: headingColor }}
+            className="font-display font-normal leading-tight max-w-3xl"
+            style={{ color: headingColor, fontSize: "clamp(1.75rem, 3vw, 2.75rem)" }}
           >
             {heading}
           </h1>
