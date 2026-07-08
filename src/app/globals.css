@@ -231,7 +231,7 @@ body {
 
 /* Scroll padding so fixed header doesn't cover anchors — must match header height */
 html {
-  scroll-padding-top: 72px;
+  scroll-padding-top: 92px;
 }
 @media (min-width: 768px) {
   html {

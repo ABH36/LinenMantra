@@ -26,7 +26,7 @@ export default function PageHero({ label, heading, subText, dark = false, image 
 
   return (
     <section
-      className={`relative w-full pt-24 pb-12 md:pt-44 md:pb-24 overflow-hidden ${hasImage ? "" : bg}`}
+      className={`relative w-full pt-28 pb-12 md:pt-44 md:pb-24 overflow-hidden ${hasImage ? "" : bg}`}
       style={hasImage
         ? { backgroundColor: "#111110" }
         : (!hasImage && isDark)
