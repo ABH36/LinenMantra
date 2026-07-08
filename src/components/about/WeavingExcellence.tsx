@@ -16,28 +16,8 @@ export default function WeavingExcellence() {
       <div className="container-site">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center">
 
-        {/* Left — mill image slider */}
-        <FadeInOnScroll direction="right" delay={0.1} className="order-2 lg:order-1">
-          <div className="relative">
-            <MillImageSlider />
-
-            {/* Floating accent card */}
-            <div className="absolute -bottom-6 -right-6 p-6 hidden md:block bg-[var(--color-bg-dark)] w-[200px] z-10">
-              <p
-                className="font-display font-normal leading-none mb-2 text-[var(--color-accent-light)]"
-                style={{ fontSize: "2.5rem" }}
-              >
-                16+
-              </p>
-              <p className="text-label" style={{ color: "rgba(248,245,240,0.5)" }}>
-                Years of Weaving Excellence
-              </p>
-            </div>
-          </div>
-        </FadeInOnScroll>
-
-        {/* Right — text content */}
-        <div className="order-1 lg:order-2">
+        {/* Left — text content */}
+        <div className="order-1">
           <FadeInOnScroll direction="up">
             <span className="text-label block mb-4 text-[var(--color-accent)]">
               Manufacturing Excellence
@@ -92,6 +72,26 @@ export default function WeavingExcellence() {
             </div>
           </FadeInOnScroll>
         </div>
+
+        {/* Right — mill image slider */}
+        <FadeInOnScroll direction="left" delay={0.1} className="order-2">
+          <div className="relative">
+            <MillImageSlider />
+
+            {/* Floating accent card */}
+            <div className="absolute -bottom-6 -right-6 p-6 hidden md:block bg-[var(--color-bg-dark)] w-[200px] z-10">
+              <p
+                className="font-display font-normal leading-none mb-2 text-[var(--color-accent-light)]"
+                style={{ fontSize: "2.5rem" }}
+              >
+                16+
+              </p>
+              <p className="text-label" style={{ color: "rgba(248,245,240,0.5)" }}>
+                Years of Weaving Excellence
+              </p>
+            </div>
+          </div>
+        </FadeInOnScroll>
       </div>
       </div>
     </section>
