@@ -109,8 +109,8 @@ export default function EnquiryForm() {
   }
 
   return (
-    <FadeInOnScroll direction="up" delay={0.1}>
-      <div className="p-8 md:p-10 border border-[var(--color-border)] bg-[var(--color-bg-primary)]">
+    <FadeInOnScroll direction="up" delay={0.1} className="h-full">
+      <div className="h-full p-8 md:p-10 border border-[var(--color-border)] bg-[var(--color-bg-primary)]">
         <h3 className="font-display font-normal mb-1 text-[var(--text-h3)] text-[var(--color-text-primary)]">
           Send an Enquiry
         </h3>

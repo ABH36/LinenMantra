@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import PageHero from "@/components/shared/PageHero";
-import SectionWrapper from "@/components/shared/SectionWrapper";
 import EnquiryForm from "@/components/contact/EnquiryForm";
 import FadeInOnScroll from "@/components/shared/FadeInOnScroll";
 import Image from "next/image";
@@ -213,16 +212,14 @@ export default async function ContactPage() {
       {/* ════════════════════════════════════════════
            MAP + ENQUIRY FORM
           ════════════════════════════════════════════ */}
-      <SectionWrapper>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-start">
+      <section className="w-full py-10 lg:py-14 bg-[var(--color-bg-primary)]">
+        <div className="container-site">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 lg:items-stretch">
 
-          <FadeInOnScroll direction="up">
-            <div className="flex flex-col">
+            {/* Map */}
+            <FadeInOnScroll direction="up" className="flex flex-col">
               <span className="text-label block mb-4 text-[var(--color-accent)]">Find Us</span>
-              <div
-                className="relative w-full border border-[var(--color-border)] overflow-hidden"
-                style={{ paddingBottom: "75%" }}
-              >
+              <div className="relative flex-1 min-h-[360px] border border-[var(--color-border)] overflow-hidden">
                 <iframe
                   src="https://maps.google.com/maps?q=18.9971884,72.8267863&hl=en&z=17&output=embed"
                   className="absolute inset-0 w-full h-full"
@@ -236,13 +233,14 @@ export default async function ContactPage() {
               <p className="mt-3 text-sm leading-relaxed text-[var(--color-text-muted)]">
                 A-111, Kewal Industrial Estate, Lower Parel (West), Mumbai — 400013
               </p>
-            </div>
-          </FadeInOnScroll>
+            </FadeInOnScroll>
 
-          <EnquiryForm />
+            {/* Enquiry form */}
+            <EnquiryForm />
 
+          </div>
         </div>
-      </SectionWrapper>
+      </section>
     </>
   );
 }
