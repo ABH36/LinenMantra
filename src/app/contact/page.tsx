@@ -11,13 +11,7 @@ export const metadata: Metadata = {
     "Reach out to Linen Mantra for fabric sourcing enquiries, custom development, export pricing, or sampling requests. We respond within 1–2 business days.",
 };
 
-export default async function ContactPage({
-  searchParams,
-}: {
-  searchParams: Promise<{ category?: string }>;
-}) {
-  void searchParams;
-
+export default async function ContactPage() {
   return (
     <>
       <PageHero
@@ -27,182 +21,206 @@ export default async function ContactPage({
         image="/images/contactus/contactupherobanner.png"
       />
 
+      {/* ════════════════════════════════════════════
+           OFFICES — fabric texture bg (like footer)
+          ════════════════════════════════════════════ */}
+      <section
+        className="w-full py-12 lg:py-16 relative overflow-hidden"
+        style={{
+          backgroundImage: "url('/images/about/footer/fabric.png')",
+          backgroundSize: "400px auto",
+          backgroundRepeat: "repeat",
+        }}
+      >
+        {/* Gold accent top line */}
+        <div
+          className="absolute inset-x-0 top-0 h-px"
+          style={{
+            background:
+              "linear-gradient(90deg, transparent 0%, var(--color-accent) 30%, rgba(201,164,82,0.2) 100%)",
+          }}
+        />
+
+        <div className="container-site">
+
+          {/* ── Office cards ── */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+
+            {/* Head Office */}
+            <FadeInOnScroll direction="right">
+              <div className="group relative h-full overflow-hidden border border-[var(--color-border)] bg-[var(--color-bg-secondary)] transition-colors duration-500 hover:border-[var(--color-accent)]">
+                <div className="absolute inset-x-0 top-0 h-px bg-[var(--color-accent)]" />
+
+                <div className="p-6 pt-7">
+                  <p className="text-[10px] font-black tracking-[0.22em] uppercase text-center mb-2 text-[var(--color-accent)]">
+                    Head Office
+                  </p>
+                  <div className="mx-auto mb-4 h-px w-10 bg-[var(--color-accent)] opacity-50" />
+                  <h3 className="font-display font-semibold text-center mb-5 text-[var(--text-h3)] text-[var(--color-text-primary)]">
+                    Mumbai — Lower Parel
+                  </h3>
+
+                  <div className="mb-4 h-px bg-[var(--color-border)]" />
+
+                  <div className="flex items-start gap-3 mb-3">
+                    <div className="shrink-0 w-8 h-8 flex items-center justify-center border border-[var(--color-border)] bg-[var(--color-bg-primary)]">
+                      <MapPin size={12} className="text-[var(--color-accent)]" />
+                    </div>
+                    <div>
+                      <p className="text-[10px] font-semibold tracking-[0.14em] uppercase mb-1 text-[var(--color-text-muted)]">
+                        Address
+                      </p>
+                      <span className="text-sm leading-relaxed text-[var(--color-text-secondary)]">
+                        A-111, Kewal Industrial Estate, Lower Parel (West), Mumbai — 400013
+                      </span>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center gap-3">
+                    <div className="shrink-0 w-8 h-8 flex items-center justify-center border border-[var(--color-border)] bg-[var(--color-bg-primary)]">
+                      <Phone size={12} className="text-[var(--color-accent)]" />
+                    </div>
+                    <div>
+                      <p className="text-[10px] font-semibold tracking-[0.14em] uppercase mb-1 text-[var(--color-text-muted)]">
+                        Phone
+                      </p>
+                      <a
+                        href="tel:+912245005662"
+                        className="text-sm text-[var(--color-text-secondary)] hover:opacity-70 transition-opacity duration-200"
+                      >
+                        +91 22 4500 5662
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="absolute inset-x-0 bottom-0 h-px w-0 group-hover:w-full bg-[var(--color-accent)] transition-all duration-500" />
+              </div>
+            </FadeInOnScroll>
+
+            {/* Branch Office */}
+            <FadeInOnScroll direction="left" delay={0.1}>
+              <div className="group relative h-full overflow-hidden border border-[var(--color-border)] bg-[var(--color-bg-secondary)] transition-colors duration-500 hover:border-[var(--color-accent)]">
+                <div className="absolute inset-x-0 top-0 h-px bg-[var(--color-accent)]" />
+
+                <div className="p-6 pt-7">
+                  <p className="text-[10px] font-black tracking-[0.22em] uppercase text-center mb-2 text-[var(--color-accent)]">
+                    Branch Office
+                  </p>
+                  <div className="mx-auto mb-4 h-px w-10 bg-[var(--color-accent)] opacity-50" />
+                  <h3 className="font-display font-semibold text-center mb-5 text-[var(--text-h3)] text-[var(--color-text-primary)]">
+                    Mumbai — Kalbadevi
+                  </h3>
+
+                  <div className="mb-4 h-px bg-[var(--color-border)]" />
+
+                  <div className="flex items-start gap-3 mb-3">
+                    <div className="shrink-0 w-8 h-8 flex items-center justify-center border border-[var(--color-border)] bg-[var(--color-bg-primary)]">
+                      <MapPin size={12} className="text-[var(--color-accent)]" />
+                    </div>
+                    <div>
+                      <p className="text-[10px] font-semibold tracking-[0.14em] uppercase mb-1 text-[var(--color-text-muted)]">
+                        Address
+                      </p>
+                      <span className="text-sm leading-relaxed text-[var(--color-text-secondary)]">
+                        #384-M Building, Shop No. 1, Ground Floor, Dabholkar Wadi, Kalbadevi Road, Mumbai — 400002
+                      </span>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center gap-3">
+                    <div className="shrink-0 w-8 h-8 flex items-center justify-center border border-[var(--color-border)] bg-[var(--color-bg-primary)]">
+                      <Phone size={12} className="text-[var(--color-accent)]" />
+                    </div>
+                    <div>
+                      <p className="text-[10px] font-semibold tracking-[0.14em] uppercase mb-1 text-[var(--color-text-muted)]">
+                        Phone
+                      </p>
+                      <a
+                        href="tel:+912245687288"
+                        className="text-sm text-[var(--color-text-secondary)] hover:opacity-70 transition-opacity duration-200"
+                      >
+                        +91 22 4568 7288
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="absolute inset-x-0 bottom-0 h-px w-0 group-hover:w-full bg-[var(--color-accent)] transition-all duration-500" />
+              </div>
+            </FadeInOnScroll>
+
+          </div>
+
+          {/* ── Contact strip: Shrey | Email | Vipul ── */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 border border-[var(--color-border)] overflow-hidden">
+
+            <FadeInOnScroll direction="right" delay={0.15} className="h-full">
+              <div className="group relative h-full flex flex-col items-center justify-center px-8 py-5 bg-[var(--color-bg-secondary)] border-b sm:border-b-0 sm:border-r border-[var(--color-border)] text-center">
+                <p className="text-[10px] font-black tracking-[0.18em] uppercase mb-2.5 text-[var(--color-accent)]">
+                  Shrey Raichura
+                </p>
+                <div className="mb-3 h-px w-8 bg-[var(--color-accent)] opacity-50" />
+                <a
+                  href="tel:+919769422606"
+                  className="text-base font-normal tracking-wide text-[var(--color-text-primary)] hover:opacity-70 transition-opacity duration-200"
+                >
+                  +91 97694 22606
+                </a>
+                <div className="absolute inset-x-0 bottom-0 h-px w-0 group-hover:w-full bg-[var(--color-accent)] transition-all duration-500" />
+              </div>
+            </FadeInOnScroll>
+
+            <FadeInOnScroll direction="up" delay={0.22} className="h-full">
+              <div className="group relative h-full flex flex-col items-center justify-center px-8 py-5 bg-[var(--color-bg-primary)] border-b sm:border-b-0 sm:border-r border-[var(--color-border)] text-center">
+                <p className="text-[10px] font-black tracking-[0.18em] uppercase mb-2.5 text-[var(--color-accent)]">
+                  Email Us
+                </p>
+                <div className="mb-3 h-px w-8 bg-[var(--color-accent)] opacity-50" />
+                <a
+                  href="mailto:linenmantra@gmail.com"
+                  className="text-base font-normal tracking-wide text-[var(--color-text-primary)] hover:opacity-70 transition-opacity duration-200 break-all"
+                >
+                  linenmantra@gmail.com
+                </a>
+                <div className="absolute inset-x-0 bottom-0 h-px w-0 group-hover:w-full bg-[var(--color-accent)] transition-all duration-500" />
+              </div>
+            </FadeInOnScroll>
+
+            <FadeInOnScroll direction="left" delay={0.15} className="h-full">
+              <div className="group relative h-full flex flex-col items-center justify-center px-8 py-5 bg-[var(--color-bg-secondary)] text-center">
+                <p className="text-[10px] font-black tracking-[0.18em] uppercase mb-2.5 text-[var(--color-accent)]">
+                  Vipul Raichura
+                </p>
+                <div className="mb-3 h-px w-8 bg-[var(--color-accent)] opacity-50" />
+                <a
+                  href="tel:+919820286875"
+                  className="text-base font-normal tracking-wide text-[var(--color-text-primary)] hover:opacity-70 transition-opacity duration-200"
+                >
+                  +91 98202 86875
+                </a>
+                <div className="absolute inset-x-0 bottom-0 h-px w-0 group-hover:w-full bg-[var(--color-accent)] transition-all duration-500" />
+              </div>
+            </FadeInOnScroll>
+
+          </div>
+
+        </div>
+
+        {/* Gold accent bottom line */}
+        <div
+          className="absolute inset-x-0 bottom-0 h-px"
+          style={{
+            background:
+              "linear-gradient(90deg, transparent 0%, var(--color-accent) 30%, rgba(201,164,82,0.2) 100%)",
+          }}
+        />
+      </section>
+
+      {/* ════════════════════════════════════════════
+           MAP + ENQUIRY FORM
+          ════════════════════════════════════════════ */}
       <SectionWrapper>
-
-        {/* ── Office cards ── */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-
-          {/* Head Office */}
-          <FadeInOnScroll direction="right">
-            <div className="group relative h-full overflow-hidden border border-[var(--color-border)] bg-[var(--color-bg-secondary)] transition-colors duration-500 hover:border-[var(--color-accent)]">
-              {/* Gold top accent */}
-              <div className="absolute inset-x-0 top-0 h-px bg-[var(--color-accent)]" />
-
-              <div className="p-6 pt-7">
-                {/* Label */}
-                <p className="text-[10px] font-black tracking-[0.22em] uppercase text-center mb-2 text-[var(--color-accent)]">
-                  Head Office
-                </p>
-                {/* Gold rule */}
-                <div className="mx-auto mb-4 h-px w-10 bg-[var(--color-accent)] opacity-50" />
-                {/* City heading */}
-                <h3 className="font-display font-semibold text-center mb-5 text-[var(--text-h3)] text-[var(--color-text-primary)]">
-                  Mumbai — Lower Parel
-                </h3>
-
-                {/* Thin divider */}
-                <div className="mb-4 h-px bg-[var(--color-border)]" />
-
-                {/* Address row */}
-                <div className="flex items-start gap-3 mb-3">
-                  <div className="shrink-0 w-8 h-8 flex items-center justify-center border border-[var(--color-border)] bg-[var(--color-bg-primary)]">
-                    <MapPin size={12} className="text-[var(--color-accent)]" />
-                  </div>
-                  <div>
-                    <p className="text-[10px] font-semibold tracking-[0.14em] uppercase mb-1 text-[var(--color-text-muted)]">
-                      Address
-                    </p>
-                    <span className="text-sm leading-relaxed text-[var(--color-text-secondary)]">
-                      A-111, Kewal Industrial Estate, Lower Parel (West), Mumbai — 400013
-                    </span>
-                  </div>
-                </div>
-
-                {/* Phone row */}
-                <div className="flex items-center gap-3">
-                  <div className="shrink-0 w-8 h-8 flex items-center justify-center border border-[var(--color-border)] bg-[var(--color-bg-primary)]">
-                    <Phone size={12} className="text-[var(--color-accent)]" />
-                  </div>
-                  <div>
-                    <p className="text-[10px] font-semibold tracking-[0.14em] uppercase mb-1 text-[var(--color-text-muted)]">
-                      Phone
-                    </p>
-                    <a
-                      href="tel:+912245005662"
-                      className="text-sm text-[var(--color-text-secondary)] hover:opacity-70 transition-opacity duration-200"
-                    >
-                      +91 22 4500 5662
-                    </a>
-                  </div>
-                </div>
-              </div>
-
-              {/* Gold bottom hover bar */}
-              <div className="absolute inset-x-0 bottom-0 h-px w-0 group-hover:w-full bg-[var(--color-accent)] transition-all duration-500" />
-            </div>
-          </FadeInOnScroll>
-
-          {/* Branch Office */}
-          <FadeInOnScroll direction="left" delay={0.1}>
-            <div className="group relative h-full overflow-hidden border border-[var(--color-border)] bg-[var(--color-bg-secondary)] transition-colors duration-500 hover:border-[var(--color-accent)]">
-              <div className="absolute inset-x-0 top-0 h-px bg-[var(--color-accent)]" />
-
-              <div className="p-6 pt-7">
-                <p className="text-[10px] font-black tracking-[0.22em] uppercase text-center mb-2 text-[var(--color-accent)]">
-                  Branch Office
-                </p>
-                <div className="mx-auto mb-4 h-px w-10 bg-[var(--color-accent)] opacity-50" />
-                <h3 className="font-display font-semibold text-center mb-5 text-[var(--text-h3)] text-[var(--color-text-primary)]">
-                  Mumbai — Kalbadevi
-                </h3>
-
-                <div className="mb-4 h-px bg-[var(--color-border)]" />
-
-                <div className="flex items-start gap-3 mb-3">
-                  <div className="shrink-0 w-8 h-8 flex items-center justify-center border border-[var(--color-border)] bg-[var(--color-bg-primary)]">
-                    <MapPin size={12} className="text-[var(--color-accent)]" />
-                  </div>
-                  <div>
-                    <p className="text-[10px] font-semibold tracking-[0.14em] uppercase mb-1 text-[var(--color-text-muted)]">
-                      Address
-                    </p>
-                    <span className="text-sm leading-relaxed text-[var(--color-text-secondary)]">
-                      #384-M Building, Shop No. 1, Ground Floor, Dabholkar Wadi, Kalbadevi Road, Mumbai — 400002
-                    </span>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-3">
-                  <div className="shrink-0 w-8 h-8 flex items-center justify-center border border-[var(--color-border)] bg-[var(--color-bg-primary)]">
-                    <Phone size={12} className="text-[var(--color-accent)]" />
-                  </div>
-                  <div>
-                    <p className="text-[10px] font-semibold tracking-[0.14em] uppercase mb-1 text-[var(--color-text-muted)]">
-                      Phone
-                    </p>
-                    <a
-                      href="tel:+912245687288"
-                      className="text-sm text-[var(--color-text-secondary)] hover:opacity-70 transition-opacity duration-200"
-                    >
-                      +91 22 4568 7288
-                    </a>
-                  </div>
-                </div>
-              </div>
-
-              <div className="absolute inset-x-0 bottom-0 h-px w-0 group-hover:w-full bg-[var(--color-accent)] transition-all duration-500" />
-            </div>
-          </FadeInOnScroll>
-
-        </div>
-
-        {/* ── Contact strip: Shrey | Email | Vipul ── */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 mb-16 border border-[var(--color-border)] overflow-hidden">
-
-          {/* Shrey */}
-          <FadeInOnScroll direction="right" delay={0.15} className="h-full">
-            <div className="group relative h-full flex flex-col items-center justify-center px-8 py-5 bg-[var(--color-bg-secondary)] border-b sm:border-b-0 sm:border-r border-[var(--color-border)] text-center">
-              <p className="text-[10px] font-black tracking-[0.18em] uppercase mb-2.5 text-[var(--color-accent)]">
-                Shrey Raichura
-              </p>
-              <div className="mb-3 h-px w-8 bg-[var(--color-accent)] opacity-50" />
-              <a
-                href="tel:+919769422606"
-                className="text-base font-normal tracking-wide text-[var(--color-text-primary)] hover:opacity-70 transition-opacity duration-200"
-              >
-                +91 97694 22606
-              </a>
-              <div className="absolute inset-x-0 bottom-0 h-px w-0 group-hover:w-full bg-[var(--color-accent)] transition-all duration-500" />
-            </div>
-          </FadeInOnScroll>
-
-          {/* Email */}
-          <FadeInOnScroll direction="up" delay={0.22} className="h-full">
-            <div className="group relative h-full flex flex-col items-center justify-center px-8 py-5 bg-[var(--color-bg-primary)] border-b sm:border-b-0 sm:border-r border-[var(--color-border)] text-center">
-              <p className="text-[10px] font-black tracking-[0.18em] uppercase mb-2.5 text-[var(--color-accent)]">
-                Email Us
-              </p>
-              <div className="mb-3 h-px w-8 bg-[var(--color-accent)] opacity-50" />
-              <a
-                href="mailto:linenmantra@gmail.com"
-                className="text-base font-normal tracking-wide text-[var(--color-text-primary)] hover:opacity-70 transition-opacity duration-200 break-all"
-              >
-                linenmantra@gmail.com
-              </a>
-              <div className="absolute inset-x-0 bottom-0 h-px w-0 group-hover:w-full bg-[var(--color-accent)] transition-all duration-500" />
-            </div>
-          </FadeInOnScroll>
-
-          {/* Vipul */}
-          <FadeInOnScroll direction="left" delay={0.15} className="h-full">
-            <div className="group relative h-full flex flex-col items-center justify-center px-8 py-5 bg-[var(--color-bg-secondary)] text-center">
-              <p className="text-[10px] font-black tracking-[0.18em] uppercase mb-2.5 text-[var(--color-accent)]">
-                Vipul Raichura
-              </p>
-              <div className="mb-3 h-px w-8 bg-[var(--color-accent)] opacity-50" />
-              <a
-                href="tel:+919820286875"
-                className="text-base font-normal tracking-wide text-[var(--color-text-primary)] hover:opacity-70 transition-opacity duration-200"
-              >
-                +91 98202 86875
-              </a>
-              <div className="absolute inset-x-0 bottom-0 h-px w-0 group-hover:w-full bg-[var(--color-accent)] transition-all duration-500" />
-            </div>
-          </FadeInOnScroll>
-
-        </div>
-
-        {/* ── Google Map (left) + Enquiry Form (right) ── */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-start">
 
           <FadeInOnScroll direction="up">
@@ -231,7 +249,6 @@ export default async function ContactPage({
           <EnquiryForm />
 
         </div>
-
       </SectionWrapper>
     </>
   );
