@@ -16,9 +16,7 @@ export default function CustomDevelopmentStrip() {
               className="font-display font-normal leading-tight mb-4 text-[var(--color-text-primary)]"
               style={{ fontSize: "clamp(1.75rem, 3vw, 2.75rem)" }}
             >
-              Can&apos;t Find
-              <br />
-              What You Need?
+              Can&apos;t Find What You Need?
             </h2>
             <span className="block h-px w-10 mb-6 bg-[var(--color-accent)]" />
             <p className="leading-relaxed max-w-md text-[var(--color-text-secondary)] text-[var(--text-body)]">
