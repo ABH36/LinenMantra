@@ -45,7 +45,7 @@ function AnimatedCounter({
 export default function ExpertiseStrip() {
   return (
     <section
-      className="w-full section-py relative overflow-hidden"
+      className="w-full py-10 lg:py-12 relative overflow-hidden"
       style={{
         backgroundImage: "url('/images/about/footer/fabric.png')",
         backgroundSize: "400px auto",
@@ -90,7 +90,7 @@ export default function ExpertiseStrip() {
         </div>
 
         {/* Divider */}
-        <div className="w-full h-px my-12 bg-[var(--color-border)]" />
+        <div className="w-full h-px my-8 bg-[var(--color-border)]" />
 
         {/* Bottom — tagline + manufacturing note */}
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8">
@@ -99,8 +99,7 @@ export default function ExpertiseStrip() {
               className="font-display font-normal leading-snug text-[var(--color-text-primary)]"
               style={{ fontSize: "clamp(1.5rem, 2.5vw, 2rem)" }}
             >
-              Weaving Excellence
-              <br />
+              Weaving Excellence{" "}
               <em className="italic text-[var(--color-accent)]">
                 for Over 16 Years
               </em>

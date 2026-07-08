@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import SectionWrapper from "@/components/shared/SectionWrapper";
 import SectionTitle from "@/components/shared/SectionTitle";
 import FadeInOnScroll from "@/components/shared/FadeInOnScroll";
 
@@ -37,9 +36,10 @@ const services = [
 
 export default function OurServices() {
   return (
-    <SectionWrapper>
+    <section className="w-full py-10 lg:py-12 bg-[var(--color-bg-primary)]">
+      <div className="container-site">
       {/* Header */}
-      <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
+      <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-8">
         <FadeInOnScroll direction="up">
           <SectionTitle label="What We Offer" heading="Our Services" />
         </FadeInOnScroll>
@@ -118,6 +118,7 @@ export default function OurServices() {
           </FadeInOnScroll>
         ))}
       </div>
-    </SectionWrapper>
+      </div>
+    </section>
   );
 }

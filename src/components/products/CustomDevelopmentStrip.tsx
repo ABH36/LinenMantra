@@ -3,9 +3,9 @@ import FadeInOnScroll from "@/components/shared/FadeInOnScroll";
 
 export default function CustomDevelopmentStrip() {
   return (
-    <section className="w-full section-py bg-[var(--color-bg-secondary)]">
+    <section className="w-full py-10 lg:py-12 bg-[var(--color-bg-secondary)]">
       <div className="container-site">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center">
 
           {/* Left text */}
           <FadeInOnScroll direction="up">

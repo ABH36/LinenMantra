@@ -91,7 +91,7 @@ export default function EnquiryForm() {
   if (status === "success") {
     return (
       <FadeInOnScroll direction="up">
-        <div className="flex flex-col items-center justify-center text-center py-20 px-8 border border-[var(--color-border)] bg-[var(--color-bg-secondary)]">
+        <div className="flex flex-col items-center justify-center text-center py-12 px-8 border border-[var(--color-border)] bg-[var(--color-bg-secondary)]">
           <div className="w-14 h-14 flex items-center justify-center mb-6 bg-[var(--color-cta)]">
             <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
               <path d="M4 11L9 16L18 7" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />

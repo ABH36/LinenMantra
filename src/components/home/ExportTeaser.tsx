@@ -1,13 +1,20 @@
 import Link from "next/link";
-import SectionWrapper from "@/components/shared/SectionWrapper";
 import SectionTitle from "@/components/shared/SectionTitle";
 import FadeInOnScroll from "@/components/shared/FadeInOnScroll";
 import { exportCountries, exportStats } from "@/data/exportCountries";
 
 export default function ExportTeaser() {
   return (
-    <SectionWrapper dark>
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+    <section
+      className="w-full py-10 lg:py-12 relative overflow-hidden"
+      style={{
+        backgroundImage: "url('/images/about/footer/fabric.png')",
+        backgroundSize: "400px auto",
+        backgroundRepeat: "repeat",
+      }}
+    >
+      <div className="container-site">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center">
 
         {/* Left — heading + stats */}
         <div>
@@ -22,7 +29,7 @@ export default function ExportTeaser() {
 
           {/* Stats row */}
           <FadeInOnScroll direction="up" delay={0.15}>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 mt-12">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 mt-8">
               {exportStats.map((stat) => (
                 <div key={stat.label}>
                   <p
@@ -43,7 +50,7 @@ export default function ExportTeaser() {
           <FadeInOnScroll direction="up" delay={0.25}>
             <Link
               href="/export"
-              className="inline-flex items-center gap-3 mt-10 text-sm font-medium tracking-widest uppercase transition-opacity hover:opacity-70 group text-[var(--color-cta)]"
+              className="inline-flex items-center gap-3 mt-8 text-sm font-medium tracking-widest uppercase transition-opacity hover:opacity-70 group text-[var(--color-cta)]"
             >
               <span>Explore Export Capabilities</span>
               <span className="transition-transform duration-300 group-hover:translate-x-1">
@@ -82,6 +89,7 @@ export default function ExportTeaser() {
           </div>
         </FadeInOnScroll>
       </div>
-    </SectionWrapper>
+      </div>
+    </section>
   );
 }

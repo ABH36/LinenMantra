@@ -1,5 +1,4 @@
 import FadeInOnScroll from "@/components/shared/FadeInOnScroll";
-import SectionWrapper from "@/components/shared/SectionWrapper";
 
 const strengths = [
   {
@@ -42,12 +41,16 @@ const strengths = [
 
 export default function ExportStrengths() {
   return (
-    <SectionWrapper cream>
-      <FadeInOnScroll direction="up" className="mb-14">
-        <span className="text-label block mb-5 text-[var(--color-accent)]">
+    <section className="w-full py-10 lg:py-12 bg-[var(--color-bg-secondary)]">
+      <div className="container-site">
+      <FadeInOnScroll direction="up" className="mb-8">
+        <span className="text-label block mb-4 text-[var(--color-accent)]">
           Why Partner With Us
         </span>
-        <h2 className="font-display font-normal leading-tight text-[var(--text-h2)] text-[var(--color-text-primary)]">
+        <h2
+          className="font-display font-normal leading-tight text-[var(--color-text-primary)]"
+          style={{ fontSize: "clamp(1.75rem, 3vw, 2.75rem)" }}
+        >
           Built for Global Trade
         </h2>
         <span className="block h-px w-10 mt-5 bg-[var(--color-accent)]" />
@@ -74,6 +77,7 @@ export default function ExportStrengths() {
           </FadeInOnScroll>
         ))}
       </div>
-    </SectionWrapper>
+      </div>
+    </section>
   );
 }

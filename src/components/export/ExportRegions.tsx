@@ -1,6 +1,5 @@
 import Image from "next/image";
 import FadeInOnScroll from "@/components/shared/FadeInOnScroll";
-import SectionWrapper from "@/components/shared/SectionWrapper";
 import { exportCountries } from "@/data/exportCountries";
 
 const FEATURES = [
@@ -28,9 +27,17 @@ export default function ExportRegions() {
   const grouped = groupByRegion(exportCountries);
 
   return (
-    <SectionWrapper dark>
+    <section
+      className="w-full py-10 lg:py-12 relative overflow-hidden"
+      style={{
+        backgroundImage: "url('/images/about/footer/fabric.png')",
+        backgroundSize: "400px auto",
+        backgroundRepeat: "repeat",
+      }}
+    >
+      <div className="container-site">
       {/* Feature marquee strip */}
-      <div className="mb-16 pb-10 border-b border-[var(--color-border)] overflow-hidden">
+      <div className="mb-10 pb-8 border-b border-[var(--color-border)] overflow-hidden">
         {/* eslint-disable-next-line react/no-unknown-property */}
         <style>{`
           @keyframes lm-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
@@ -54,10 +61,13 @@ export default function ExportRegions() {
 
       {/* Section heading */}
       <FadeInOnScroll direction="up">
-        <span className="text-label block mb-5 text-[var(--color-accent)]">
+        <span className="text-label block mb-4 text-[var(--color-accent)]">
           Our Export Markets
         </span>
-        <h2 className="font-display font-normal leading-tight mb-12 text-[var(--text-h2)] text-[var(--color-text-primary)]">
+        <h2
+          className="font-display font-normal leading-tight mb-8 text-[var(--color-text-primary)]"
+          style={{ fontSize: "clamp(1.75rem, 3vw, 2.75rem)" }}
+        >
           A Global Footprint
         </h2>
       </FadeInOnScroll>
@@ -65,12 +75,11 @@ export default function ExportRegions() {
       {/* World map visual */}
       <FadeInOnScroll direction="up" delay={0.1}>
         <div
-          className="relative w-full overflow-hidden mb-14 aspect-[3/2] max-h-[320px] border border-[var(--color-border)]"
+          className="relative w-full overflow-hidden mb-10 aspect-[3/2] max-h-[320px] border border-[var(--color-border)]"
           style={{
             background: "linear-gradient(180deg, #1A1A18 0%, #242220 100%)",
           }}
         >
-          {/* Globe map image with points already embedded */}
           <Image
             src="/images/Export/globlemap.png"
             alt="Global export map"
@@ -103,6 +112,7 @@ export default function ExportRegions() {
           </FadeInOnScroll>
         ))}
       </div>
-    </SectionWrapper>
+      </div>
+    </section>
   );
 }
