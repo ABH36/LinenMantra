@@ -8,8 +8,8 @@ import ProductLightbox from "./ProductLightbox";
 import FadeInOnScroll from "@/components/shared/FadeInOnScroll";
 import { products, type ProductCategory } from "@/data/products";
 
-export default function ProductsSection() {
-  const [activeCategory, setActiveCategory] = useState<ProductCategory>("all");
+export default function ProductsSection({ initialCategory = "all" }: { initialCategory?: ProductCategory }) {
+  const [activeCategory, setActiveCategory] = useState<ProductCategory>(initialCategory);
   const [lightboxIdx, setLightboxIdx]       = useState<number | null>(null);
 
   const filtered = useMemo(

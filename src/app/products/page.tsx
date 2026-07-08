@@ -10,7 +10,14 @@ export const metadata: Metadata = {
     "Explore Linen Mantra's premium linen fabric collections — 100% pure linen, linen blends, shirting, suiting, and designer fabrics ranging from 25 to 150 LEA. Custom development available.",
 };
 
-export default function ProductsPage() {
+export default async function ProductsPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ category?: string }>;
+}) {
+  const { category } = await searchParams;
+  const initial = category === "shirting" || category === "suiting" ? category : "all";
+
   return (
     <>
       {/* Page hero */}
@@ -22,7 +29,7 @@ export default function ProductsPage() {
       />
 
       {/* Filter tabs + animated product grid */}
-      <ProductsSection />
+      <ProductsSection initialCategory={initial} />
 
       {/* Custom development CTA */}
       <CustomDevelopmentStrip />
