@@ -26,12 +26,7 @@ export default function WeavingExcellence() {
               className="font-display font-normal leading-tight mb-5 text-[var(--color-text-primary)]"
               style={{ fontSize: "clamp(1.75rem, 3vw, 2.75rem)" }}
             >
-              Weaving Excellence
-              <br />
-              for Over{" "}
-              <em className="italic text-[var(--color-accent)]">
-                16 Years
-              </em>
+              Weaving Excellence for Over <em className="italic text-[var(--color-accent)]">16 Years</em>
             </h2>
             <span className="block h-px w-10 mb-6 bg-[var(--color-accent)]" />
           </FadeInOnScroll>
