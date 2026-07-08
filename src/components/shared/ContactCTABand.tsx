@@ -17,22 +17,19 @@ export default function ContactCTABand({
   dark = true,
 }: Props) {
   return (
-    <section
-      className={`w-full section-py ${dark ? "relative overflow-hidden bg-[var(--color-bg-primary)]" : "bg-[var(--color-bg-secondary)]"}`}
-      style={dark ? {
-        backgroundImage: "url('/images/about/footer/fabric.png')",
-        backgroundSize: "400px auto",
-        backgroundRepeat: "repeat",
-      } : undefined}
-    >
+    <section className={`w-full py-12 md:py-14 ${dark ? "bg-[var(--color-cta)]" : "bg-[var(--color-bg-secondary)]"}`}>
       <div className="container-site">
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-10">
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8">
+
           <FadeInOnScroll direction="up" className="max-w-xl">
-            <h2 className="font-display font-normal leading-tight text-[var(--text-h2)] text-[var(--color-text-primary)]">
+            <h2
+              className={`font-display font-normal leading-tight ${dark ? "text-[var(--color-text-light)]" : "text-[var(--color-text-primary)]"}`}
+              style={{ fontSize: "clamp(1.75rem, 3vw, 2.75rem)" }}
+            >
               {heading}
             </h2>
-            <span className="block h-px w-10 mt-5 bg-[var(--color-accent)]" />
-            <p className="mt-6 leading-relaxed text-[var(--color-text-secondary)] text-[var(--text-body)]">
+            <span className="block h-px w-10 mt-4 mb-5 bg-[var(--color-accent)]" />
+            <p className={`leading-relaxed text-[var(--text-body)] ${dark ? "text-[var(--color-text-light)] opacity-75" : "text-[var(--color-text-secondary)]"}`}>
               {subText}
             </p>
           </FadeInOnScroll>
@@ -40,11 +37,17 @@ export default function ContactCTABand({
           <FadeInOnScroll direction="up" delay={0.15} className="shrink-0">
             <Link
               href={ctaHref}
-              className="inline-flex items-center gap-3 px-8 py-4 text-sm font-medium tracking-widest uppercase rounded transition-opacity hover:opacity-80 bg-[var(--color-cta)] text-[var(--color-text-light)]"
+              className={`inline-flex items-center gap-3 px-8 py-4 text-sm font-medium tracking-widest uppercase transition-all duration-300 group ${
+                dark
+                  ? "bg-[var(--color-text-light)] text-[var(--color-cta)] hover:opacity-90"
+                  : "bg-[var(--color-cta)] text-[var(--color-text-light)] hover:opacity-80"
+              }`}
             >
-              {ctaLabel}
+              <span>{ctaLabel}</span>
+              <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
             </Link>
           </FadeInOnScroll>
+
         </div>
       </div>
     </section>
