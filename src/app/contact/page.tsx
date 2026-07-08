@@ -3,7 +3,7 @@ import PageHero from "@/components/shared/PageHero";
 import SectionWrapper from "@/components/shared/SectionWrapper";
 import EnquiryForm from "@/components/contact/EnquiryForm";
 import FadeInOnScroll from "@/components/shared/FadeInOnScroll";
-import { MapPin, Phone, Mail } from "lucide-react";
+import { MapPin, Phone } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Contact Us",
@@ -151,14 +151,14 @@ export default async function ContactPage({
 
           {/* Shrey */}
           <FadeInOnScroll direction="right" delay={0.15} className="h-full">
-            <div className="group relative h-full flex flex-col items-center justify-center px-8 py-8 bg-[var(--color-bg-secondary)] border-b sm:border-b-0 sm:border-r border-[var(--color-border)] text-center transition-colors duration-500 hover:border-[var(--color-accent)]">
-              <p className="text-[10px] font-black tracking-[0.18em] uppercase mb-3 text-[var(--color-accent)]">
+            <div className="group relative h-full flex flex-col items-center justify-center px-8 py-5 bg-[var(--color-bg-secondary)] border-b sm:border-b-0 sm:border-r border-[var(--color-border)] text-center">
+              <p className="text-[10px] font-black tracking-[0.18em] uppercase mb-2.5 text-[var(--color-accent)]">
                 Shrey Raichura
               </p>
               <div className="mb-3 h-px w-8 bg-[var(--color-accent)] opacity-50" />
               <a
                 href="tel:+919769422606"
-                className="font-display font-normal text-xl text-[var(--color-text-primary)] hover:text-[var(--color-accent)] transition-colors duration-200"
+                className="text-2xl font-medium tracking-wide text-[var(--color-text-primary)] hover:opacity-70 transition-opacity duration-200"
               >
                 +91 97694 22606
               </a>
@@ -168,17 +168,14 @@ export default async function ContactPage({
 
           {/* Email */}
           <FadeInOnScroll direction="up" delay={0.22} className="h-full">
-            <div className="group relative h-full flex flex-col items-center justify-center px-8 py-8 bg-[var(--color-bg-primary)] border-b sm:border-b-0 sm:border-r border-[var(--color-border)] text-center transition-colors duration-500 hover:border-[var(--color-accent)]">
-              <div className="w-9 h-9 flex items-center justify-center border border-[var(--color-border)] bg-[var(--color-bg-secondary)] mb-4">
-                <Mail size={13} className="text-[var(--color-accent)]" />
-              </div>
-              <p className="text-[10px] font-black tracking-[0.18em] uppercase mb-3 text-[var(--color-accent)]">
+            <div className="group relative h-full flex flex-col items-center justify-center px-8 py-5 bg-[var(--color-bg-primary)] border-b sm:border-b-0 sm:border-r border-[var(--color-border)] text-center">
+              <p className="text-[10px] font-black tracking-[0.18em] uppercase mb-2.5 text-[var(--color-accent)]">
                 Email Us
               </p>
               <div className="mb-3 h-px w-8 bg-[var(--color-accent)] opacity-50" />
               <a
                 href="mailto:linenmantra@gmail.com"
-                className="font-display font-normal text-xl text-[var(--color-text-primary)] hover:text-[var(--color-accent)] transition-colors duration-200 break-all"
+                className="text-xl font-medium tracking-wide text-[var(--color-text-primary)] hover:opacity-70 transition-opacity duration-200 break-all"
               >
                 linenmantra@gmail.com
               </a>
@@ -188,14 +185,14 @@ export default async function ContactPage({
 
           {/* Vipul */}
           <FadeInOnScroll direction="left" delay={0.15} className="h-full">
-            <div className="group relative h-full flex flex-col items-center justify-center px-8 py-8 bg-[var(--color-bg-secondary)] text-center transition-colors duration-500 hover:border-[var(--color-accent)]">
-              <p className="text-[10px] font-black tracking-[0.18em] uppercase mb-3 text-[var(--color-accent)]">
+            <div className="group relative h-full flex flex-col items-center justify-center px-8 py-5 bg-[var(--color-bg-secondary)] text-center">
+              <p className="text-[10px] font-black tracking-[0.18em] uppercase mb-2.5 text-[var(--color-accent)]">
                 Vipul Raichura
               </p>
               <div className="mb-3 h-px w-8 bg-[var(--color-accent)] opacity-50" />
               <a
                 href="tel:+919820286875"
-                className="font-display font-normal text-xl text-[var(--color-text-primary)] hover:text-[var(--color-accent)] transition-colors duration-200"
+                className="text-2xl font-medium tracking-wide text-[var(--color-text-primary)] hover:opacity-70 transition-opacity duration-200"
               >
                 +91 98202 86875
               </a>
