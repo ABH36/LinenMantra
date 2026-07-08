@@ -38,25 +38,25 @@ export default async function ContactPage({
               {/* Gold top accent */}
               <div className="absolute inset-x-0 top-0 h-px bg-[var(--color-accent)]" />
 
-              <div className="p-8 pt-10">
+              <div className="p-6 pt-7">
                 {/* Label */}
-                <p className="text-[10px] font-black tracking-[0.22em] uppercase text-center mb-3 text-[var(--color-accent)]">
+                <p className="text-[10px] font-black tracking-[0.22em] uppercase text-center mb-2 text-[var(--color-accent)]">
                   Head Office
                 </p>
                 {/* Gold rule */}
-                <div className="mx-auto mb-6 h-px w-10 bg-[var(--color-accent)] opacity-50" />
+                <div className="mx-auto mb-4 h-px w-10 bg-[var(--color-accent)] opacity-50" />
                 {/* City heading */}
-                <h3 className="font-display font-semibold text-center mb-7 text-[var(--text-h3)] text-[var(--color-text-primary)]">
+                <h3 className="font-display font-semibold text-center mb-5 text-[var(--text-h3)] text-[var(--color-text-primary)]">
                   Mumbai — Lower Parel
                 </h3>
 
                 {/* Thin divider */}
-                <div className="mb-6 h-px bg-[var(--color-border)]" />
+                <div className="mb-4 h-px bg-[var(--color-border)]" />
 
                 {/* Address row */}
-                <div className="flex items-start gap-4 mb-5">
-                  <div className="shrink-0 w-9 h-9 flex items-center justify-center border border-[var(--color-border)] bg-[var(--color-bg-primary)]">
-                    <MapPin size={13} className="text-[var(--color-accent)]" />
+                <div className="flex items-start gap-3 mb-3">
+                  <div className="shrink-0 w-8 h-8 flex items-center justify-center border border-[var(--color-border)] bg-[var(--color-bg-primary)]">
+                    <MapPin size={12} className="text-[var(--color-accent)]" />
                   </div>
                   <div>
                     <p className="text-[10px] font-semibold tracking-[0.14em] uppercase mb-1 text-[var(--color-text-muted)]">
@@ -69,9 +69,9 @@ export default async function ContactPage({
                 </div>
 
                 {/* Phone row */}
-                <div className="flex items-center gap-4">
-                  <div className="shrink-0 w-9 h-9 flex items-center justify-center border border-[var(--color-border)] bg-[var(--color-bg-primary)]">
-                    <Phone size={13} className="text-[var(--color-accent)]" />
+                <div className="flex items-center gap-3">
+                  <div className="shrink-0 w-8 h-8 flex items-center justify-center border border-[var(--color-border)] bg-[var(--color-bg-primary)]">
+                    <Phone size={12} className="text-[var(--color-accent)]" />
                   </div>
                   <div>
                     <p className="text-[10px] font-semibold tracking-[0.14em] uppercase mb-1 text-[var(--color-text-muted)]">
@@ -79,7 +79,7 @@ export default async function ContactPage({
                     </p>
                     <a
                       href="tel:+912245005662"
-                      className="text-sm text-[var(--color-text-secondary)] hover:text-[var(--color-accent)] transition-colors duration-200"
+                      className="text-sm text-[var(--color-text-secondary)] hover:opacity-70 transition-opacity duration-200"
                     >
                       +91 22 4500 5662
                     </a>
@@ -97,20 +97,20 @@ export default async function ContactPage({
             <div className="group relative h-full overflow-hidden border border-[var(--color-border)] bg-[var(--color-bg-secondary)] transition-colors duration-500 hover:border-[var(--color-accent)]">
               <div className="absolute inset-x-0 top-0 h-px bg-[var(--color-accent)]" />
 
-              <div className="p-8 pt-10">
-                <p className="text-[10px] font-black tracking-[0.22em] uppercase text-center mb-3 text-[var(--color-accent)]">
+              <div className="p-6 pt-7">
+                <p className="text-[10px] font-black tracking-[0.22em] uppercase text-center mb-2 text-[var(--color-accent)]">
                   Branch Office
                 </p>
-                <div className="mx-auto mb-6 h-px w-10 bg-[var(--color-accent)] opacity-50" />
-                <h3 className="font-display font-semibold text-center mb-7 text-[var(--text-h3)] text-[var(--color-text-primary)]">
+                <div className="mx-auto mb-4 h-px w-10 bg-[var(--color-accent)] opacity-50" />
+                <h3 className="font-display font-semibold text-center mb-5 text-[var(--text-h3)] text-[var(--color-text-primary)]">
                   Mumbai — Kalbadevi
                 </h3>
 
-                <div className="mb-6 h-px bg-[var(--color-border)]" />
+                <div className="mb-4 h-px bg-[var(--color-border)]" />
 
-                <div className="flex items-start gap-4 mb-5">
-                  <div className="shrink-0 w-9 h-9 flex items-center justify-center border border-[var(--color-border)] bg-[var(--color-bg-primary)]">
-                    <MapPin size={13} className="text-[var(--color-accent)]" />
+                <div className="flex items-start gap-3 mb-3">
+                  <div className="shrink-0 w-8 h-8 flex items-center justify-center border border-[var(--color-border)] bg-[var(--color-bg-primary)]">
+                    <MapPin size={12} className="text-[var(--color-accent)]" />
                   </div>
                   <div>
                     <p className="text-[10px] font-semibold tracking-[0.14em] uppercase mb-1 text-[var(--color-text-muted)]">
@@ -122,9 +122,9 @@ export default async function ContactPage({
                   </div>
                 </div>
 
-                <div className="flex items-center gap-4">
-                  <div className="shrink-0 w-9 h-9 flex items-center justify-center border border-[var(--color-border)] bg-[var(--color-bg-primary)]">
-                    <Phone size={13} className="text-[var(--color-accent)]" />
+                <div className="flex items-center gap-3">
+                  <div className="shrink-0 w-8 h-8 flex items-center justify-center border border-[var(--color-border)] bg-[var(--color-bg-primary)]">
+                    <Phone size={12} className="text-[var(--color-accent)]" />
                   </div>
                   <div>
                     <p className="text-[10px] font-semibold tracking-[0.14em] uppercase mb-1 text-[var(--color-text-muted)]">
@@ -132,7 +132,7 @@ export default async function ContactPage({
                     </p>
                     <a
                       href="tel:+912245687288"
-                      className="text-sm text-[var(--color-text-secondary)] hover:text-[var(--color-accent)] transition-colors duration-200"
+                      className="text-sm text-[var(--color-text-secondary)] hover:opacity-70 transition-opacity duration-200"
                     >
                       +91 22 4568 7288
                     </a>
