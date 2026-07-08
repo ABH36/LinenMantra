@@ -17,7 +17,7 @@ export default function ProductCard({ product, onImageClick }: Props) {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: 10 }}
       transition={{ duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
-      className="group flex flex-col h-full bg-[var(--color-bg-primary)] border border-[var(--color-border)] shadow-sm hover:shadow-xl transition-shadow duration-500"
+      className="group flex flex-col h-full bg-white border border-[var(--color-border)] shadow-sm hover:shadow-xl transition-shadow duration-500"
     >
       {/* ── Product image ─────────────────────────── */}
       <div
@@ -86,7 +86,7 @@ export default function ProductCard({ product, onImageClick }: Props) {
       {/* ── Card body ─────────────────────────────── */}
       <div className="flex flex-col flex-1 p-5">
         {/* Quality name */}
-        <h3 className="font-display font-normal leading-tight mb-2 text-xl text-[var(--color-text-primary)]">
+        <h3 className="font-display font-semibold leading-tight mb-2 text-xl text-[var(--color-text-primary)]">
           {product.name}
         </h3>
 

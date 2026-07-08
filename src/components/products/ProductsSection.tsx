@@ -27,7 +27,7 @@ export default function ProductsSection({ initialCategory = "all" }: { initialCa
 
       {/* ── Product grid ───────────────────────────────── */}
       <section
-        className="w-full section-py relative overflow-hidden"
+        className="w-full py-10 lg:py-12 relative overflow-hidden"
         style={{
           backgroundColor: "var(--color-bg-dark)",
           backgroundImage: "url('/images/about/footer/fabric.png')",
@@ -39,7 +39,7 @@ export default function ProductsSection({ initialCategory = "all" }: { initialCa
 
           {/* Result count */}
           <FadeInOnScroll direction="up">
-            <p className="text-sm mb-8 text-[var(--color-text-light)] opacity-55">
+            <p className="text-sm mb-6 text-[var(--color-text-light)] opacity-70">
               Showing{" "}
               <span className="opacity-100 font-medium text-[var(--color-text-light)]">
                 {filtered.length}
