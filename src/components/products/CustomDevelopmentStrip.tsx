@@ -9,10 +9,13 @@ export default function CustomDevelopmentStrip() {
 
           {/* Left text */}
           <FadeInOnScroll direction="up">
-            <span className="text-label block mb-5 text-[var(--color-accent)]">
+            <span className="text-label block mb-4 text-[var(--color-accent)]">
               Custom Development
             </span>
-            <h2 className="font-display font-normal leading-tight mb-4 text-[var(--text-h2)] text-[var(--color-text-primary)]">
+            <h2
+              className="font-display font-normal leading-tight mb-4 text-[var(--color-text-primary)]"
+              style={{ fontSize: "clamp(1.75rem, 3vw, 2.75rem)" }}
+            >
               Can&apos;t Find
               <br />
               What You Need?

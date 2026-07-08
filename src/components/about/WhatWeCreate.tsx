@@ -50,12 +50,15 @@ export default function WhatWeCreate() {
   return (
     <SectionWrapper>
       {/* Section header */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 mb-16">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 mb-12">
         <FadeInOnScroll direction="up">
-          <span className="text-label block mb-5 text-[var(--color-accent)]">
+          <span className="text-label block mb-4 text-[var(--color-accent)]">
             Our Specialisation
           </span>
-          <h2 className="font-display font-normal leading-tight text-[var(--text-h2)] text-[var(--color-text-primary)]">
+          <h2
+            className="font-display font-normal leading-tight text-[var(--color-text-primary)]"
+            style={{ fontSize: "clamp(1.75rem, 3vw, 2.75rem)" }}
+          >
             What We Create
           </h2>
           <span className="block h-px w-10 mt-5 bg-[var(--color-accent)]" />

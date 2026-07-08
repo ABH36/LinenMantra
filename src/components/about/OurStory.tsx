@@ -34,17 +34,20 @@ export default function OurStory() {
         {/* Left — text content (3/5 width) */}
         <div className="lg:col-span-3">
           <FadeInOnScroll direction="up">
-            <span className="text-label block mb-5 text-[var(--color-accent)]">
+            <span className="text-label block mb-4 text-[var(--color-accent)]">
               Who We Are
             </span>
-            <h2 className="font-display font-normal leading-tight mb-8 text-[var(--text-h2)] text-[var(--color-text-primary)]">
+            <h2
+              className="font-display font-normal leading-tight mb-6 text-[var(--color-text-primary)]"
+              style={{ fontSize: "clamp(1.75rem, 3vw, 2.75rem)" }}
+            >
               Built on Craft.
               <br />
               <em className="italic text-[var(--color-accent)]">
                 Driven by Quality.
               </em>
             </h2>
-            <span className="block h-px w-10 mb-10 bg-[var(--color-accent)]" />
+            <span className="block h-px w-10 mb-8 bg-[var(--color-accent)]" />
           </FadeInOnScroll>
 
           <div className="flex flex-col gap-6">
@@ -110,9 +113,9 @@ export default function OurStory() {
       </div>
 
       {/* Leadership section */}
-      <div className="mt-24">
+      <div className="mt-16">
         <FadeInOnScroll direction="up">
-          <div className="w-full h-px mb-14 bg-[var(--color-border)]" />
+          <div className="w-full h-px mb-10 bg-[var(--color-border)]" />
           <span className="text-label block mb-8 text-[var(--color-accent)]">
             Leadership
           </span>
