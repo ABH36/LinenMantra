@@ -5,7 +5,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { ZoomIn } from "lucide-react";
 import { AnimatePresence } from "framer-motion";
-import SectionTitle from "@/components/shared/SectionTitle";
 import FadeInOnScroll from "@/components/shared/FadeInOnScroll";
 import ProductLightbox from "@/components/products/ProductLightbox";
 import { featuredProducts } from "@/data/products";
@@ -20,10 +19,18 @@ export default function FeaturedQualities() {
         {/* Header row */}
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-5 mb-10">
           <FadeInOnScroll direction="up">
-            <SectionTitle
-              label="Our Collections"
-              heading="Featured Fabric Qualities"
-            />
+            <div>
+              <span className="text-label block mb-4 text-[var(--color-accent)]">
+                Our Collections
+              </span>
+              <h2
+                className="font-display font-normal leading-tight text-[var(--color-text-primary)]"
+                style={{ fontSize: "clamp(2rem, 3.5vw, 3.25rem)" }}
+              >
+                Featured Fabric Qualities
+              </h2>
+              <span className="block h-px w-10 mt-5 bg-[var(--color-accent)]" />
+            </div>
           </FadeInOnScroll>
           <FadeInOnScroll direction="up" delay={0.1} className="shrink-0">
             <Link
@@ -40,11 +47,11 @@ export default function FeaturedQualities() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
           {featuredProducts.map((product, i) => (
             <FadeInOnScroll key={product.id} direction="up" delay={i * 0.12}>
-              <article className="group flex flex-col h-full bg-white border border-[var(--color-border)]">
+              <article className="group flex flex-col h-full bg-white border border-[var(--color-border)] shadow-sm hover:shadow-lg transition-shadow duration-500">
 
                 {/* Clickable image */}
                 <div
-                  className="relative w-full overflow-hidden aspect-[3/2] cursor-pointer"
+                  className="relative w-full overflow-hidden aspect-[5/3] cursor-pointer"
                   onClick={() => setLightboxIdx(i)}
                 >
                   <Image
