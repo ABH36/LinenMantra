@@ -23,13 +23,13 @@ export default function ContactCTABand({
 
           <FadeInOnScroll direction="up" className="max-w-xl">
             <h2
-              className={`font-display font-normal leading-tight ${dark ? "text-[var(--color-text-light)]" : "text-[var(--color-text-primary)]"}`}
+              className={`font-display font-normal leading-tight ${dark ? "text-white" : "text-[var(--color-text-primary)]"}`}
               style={{ fontSize: "clamp(1.75rem, 3vw, 2.75rem)" }}
             >
               {heading}
             </h2>
             <span className="block h-px w-10 mt-4 mb-5 bg-[var(--color-accent)]" />
-            <p className={`leading-relaxed text-[var(--text-body)] ${dark ? "text-[var(--color-text-light)]" : "text-[var(--color-text-secondary)]"}`} style={dark ? { opacity: 0.92 } : undefined}>
+            <p className={`leading-relaxed text-[var(--text-body)] ${dark ? "text-white" : "text-[var(--color-text-secondary)]"}`}>
               {subText}
             </p>
           </FadeInOnScroll>
