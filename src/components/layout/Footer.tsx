@@ -63,8 +63,8 @@ export default function Footer() {
       {/* ════════════════════════════════
            MAIN GRID
           ════════════════════════════════ */}
-      <div className="relative z-10 container-site py-8 md:py-10">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-y-12 md:gap-x-8">
+      <div className="relative z-10 container-site py-7 md:py-9">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-y-10 md:gap-x-8 items-start">
 
           {/* ── Column 1: Brand (3 cols) ── */}
           <div className="md:col-span-3 flex flex-col">
@@ -94,9 +94,59 @@ export default function Footer() {
               fabrics — trusted by brands, designers, and export markets
               worldwide since 2010.
             </p>
+          </div>
 
-            {/* Follow Us + social icons */}
-            <div className="mt-5">
+          {/* ── Columns 2+3: Quick Links + Categories + Follow Us (4 cols) ── */}
+          <div className="md:col-span-4 flex flex-col gap-y-8">
+
+            {/* Quick Links + Categories side by side */}
+            <div className="grid grid-cols-2 gap-x-6">
+
+              {/* Quick Links */}
+              <div>
+                <h3 className="text-base font-black tracking-[0.1em] uppercase text-[var(--color-forest)]">
+                  Quick Links
+                </h3>
+                <HeadingLine />
+                <ul className="flex flex-col gap-3">
+                  {footerLinks.map((link) => (
+                    <li key={link.href} className="flex items-center gap-2.5">
+                      <span className="text-[var(--color-accent)] leading-none" style={{ fontSize: "0.75rem" }}>›</span>
+                      <Link
+                        href={link.href}
+                        className="text-[13px] leading-snug hover:opacity-60 transition-opacity text-[var(--color-text-secondary)]"
+                      >
+                        {link.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Categories */}
+              <div>
+                <h3 className="text-base font-black tracking-[0.1em] uppercase text-[var(--color-forest)]">
+                  Categories
+                </h3>
+                <HeadingLine />
+                <ul className="flex flex-col gap-3">
+                  {productCategoryLinks.map((link) => (
+                    <li key={link.href} className="flex items-center gap-2.5">
+                      <span className="text-[var(--color-accent)] leading-none" style={{ fontSize: "0.75rem" }}>›</span>
+                      <Link
+                        href={link.href}
+                        className="text-[13px] leading-snug hover:opacity-60 transition-opacity text-[var(--color-text-secondary)]"
+                      >
+                        {link.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            {/* Follow Us — sits below links, filling the empty space */}
+            <div>
               <p className="text-[10px] font-semibold tracking-[0.18em] uppercase text-center text-[var(--color-text-muted)] mb-3">
                 Follow Us
               </p>
@@ -116,48 +166,6 @@ export default function Footer() {
                 <span className="flex-1 h-px bg-[var(--color-accent)] opacity-30" />
               </div>
             </div>
-          </div>
-
-          {/* ── Column 2: Quick Links (2 cols) ── */}
-          <div className="md:col-span-2">
-            <h3 className="text-base font-black tracking-[0.1em] uppercase text-[var(--color-forest)]">
-              Quick Links
-            </h3>
-            <HeadingLine />
-            <ul className="flex flex-col gap-3">
-              {footerLinks.map((link) => (
-                <li key={link.href} className="flex items-center gap-2.5">
-                  <span className="text-[var(--color-accent)] leading-none" style={{ fontSize: "0.75rem" }}>›</span>
-                  <Link
-                    href={link.href}
-                    className="text-[13px] leading-snug hover:opacity-60 transition-opacity text-[var(--color-text-secondary)]"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* ── Column 3: Categories (2 cols) ── */}
-          <div className="md:col-span-2">
-            <h3 className="text-base font-black tracking-[0.1em] uppercase text-[var(--color-forest)]">
-              Categories
-            </h3>
-            <HeadingLine />
-            <ul className="flex flex-col gap-3">
-              {productCategoryLinks.map((link) => (
-                <li key={link.href} className="flex items-center gap-2.5">
-                  <span className="text-[var(--color-accent)] leading-none" style={{ fontSize: "0.75rem" }}>›</span>
-                  <Link
-                    href={link.href}
-                    className="text-[13px] leading-snug hover:opacity-60 transition-opacity text-[var(--color-text-secondary)]"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
           </div>
 
           {/* ── Columns 4+5: Offices wrapper (5 cols, internal 2-col grid) ── */}
