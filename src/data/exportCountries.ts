@@ -23,7 +23,7 @@ export const exportCountries: ExportCountry[] = [
 
 export const exportStats = [
   { value: "14+", label: "Countries" },
-  { value: "16+", label: "Years Experience" },
+  { value: "35+", label: "Years Experience" },
   { value: "B2B", label: "Focused" },
   { value: "Global", label: "Standards" },
 ];
