@@ -67,7 +67,7 @@ export default function PageHero({ label, heading, subText, dark = false, image 
           transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
         >
           {label && (
-            <span className="text-label block mb-4 text-[var(--color-accent)]">
+            <span className="text-label block mb-1 text-[var(--color-accent)]">
               {label}
             </span>
           )}
@@ -77,7 +77,7 @@ export default function PageHero({ label, heading, subText, dark = false, image 
           >
             {heading}
           </h1>
-          <AccentDivider className="mt-2" />
+          <AccentDivider className="mt-1" />
           {subText && (
             <p
               className="mt-6 max-w-xl leading-relaxed text-[var(--text-body)]"

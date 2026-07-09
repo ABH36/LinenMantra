@@ -53,7 +53,7 @@ export default function WhatWeCreate() {
       {/* Section header */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 mb-10">
         <FadeInOnScroll direction="up">
-          <span className="text-label block mb-4 text-[var(--color-accent)]">
+          <span className="text-label block mb-1 text-[var(--color-accent)]">
             Our Specialisation
           </span>
           <h2
@@ -62,7 +62,7 @@ export default function WhatWeCreate() {
           >
             What We Create
           </h2>
-          <AccentDivider className="mt-2" />
+          <AccentDivider className="mt-1" />
         </FadeInOnScroll>
 
         <FadeInOnScroll direction="up" delay={0.1} className="flex flex-col justify-end">

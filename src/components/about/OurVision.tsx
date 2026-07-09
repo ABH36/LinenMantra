@@ -14,7 +14,7 @@ export default function OurVision() {
       <div className="container-site relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           <FadeInOnScroll direction="up">
-            <span className="text-label block mb-4 text-[var(--color-accent)]">
+            <span className="text-label block mb-1 text-[var(--color-accent)]">
               Our Vision
             </span>
           </FadeInOnScroll>
@@ -41,7 +41,7 @@ export default function OurVision() {
           </FadeInOnScroll>
 
           <FadeInOnScroll direction="up" delay={0.2}>
-            <AccentDivider className="mx-auto mt-2 mb-5" />
+            <AccentDivider className="mx-auto mt-1 mb-5" />
             <p className="text-label text-[var(--color-text-muted)]">
               Linen Mantra · Est. 2010 · Mumbai, India
             </p>

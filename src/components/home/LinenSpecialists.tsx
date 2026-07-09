@@ -17,7 +17,7 @@ export default function LinenSpecialists() {
     <div className="container-site">
       {/* Section title */}
       <FadeInOnScroll direction="up" className="mb-10">
-        <span className="text-label block mb-4 text-[var(--color-accent)]">
+        <span className="text-label block mb-1 text-[var(--color-accent)]">
           Why Linen Mantra
         </span>
         <h2
@@ -26,7 +26,7 @@ export default function LinenSpecialists() {
         >
           Linen Specialists, <em className="italic text-[var(--color-accent)]">Since 2010</em>
         </h2>
-        <AccentDivider className="mt-2" />
+        <AccentDivider className="mt-1" />
       </FadeInOnScroll>
 
       {/* Split layout */}

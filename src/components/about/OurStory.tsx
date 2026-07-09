@@ -35,7 +35,7 @@ export default function OurStory() {
         {/* Left — text content (3/5 width) */}
         <div className="lg:col-span-3">
           <FadeInOnScroll direction="up">
-            <span className="text-label block mb-4 text-[var(--color-accent)]">
+            <span className="text-label block mb-1 text-[var(--color-accent)]">
               Who We Are
             </span>
             <h2
@@ -113,7 +113,7 @@ export default function OurStory() {
       <div className="mt-16">
         <FadeInOnScroll direction="up">
           <div className="w-full h-px mb-10 bg-[var(--color-border)]" />
-          <span className="text-label block mb-4 text-[var(--color-accent)]">
+          <span className="text-label block mb-1 text-[var(--color-accent)]">
             Leadership
           </span>
         </FadeInOnScroll>

@@ -61,7 +61,7 @@ export default function FlaxToFabric() {
       {/* Section heading */}
       <div className="container-site pt-10 pb-6 md:pt-12 md:pb-8">
         <FadeInOnScroll direction="up">
-          <span className="text-label block mb-4 text-[var(--color-accent)]">
+          <span className="text-label block mb-1 text-[var(--color-accent)]">
             Our Process
           </span>
           <h2
@@ -70,7 +70,7 @@ export default function FlaxToFabric() {
           >
             Flax to Fabric
           </h2>
-          <AccentDivider className="mt-2" />
+          <AccentDivider className="mt-1" />
         </FadeInOnScroll>
       </div>
 

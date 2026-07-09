@@ -61,7 +61,7 @@ export default function ExportRegions() {
 
       {/* Section heading */}
       <FadeInOnScroll direction="up">
-        <span className="text-label block mb-4 text-[var(--color-accent)]">
+        <span className="text-label block mb-1 text-[var(--color-accent)]">
           Our Export Markets
         </span>
         <h2
@@ -95,7 +95,7 @@ export default function ExportRegions() {
         {Object.entries(grouped).map(([region, countries], i) => (
           <FadeInOnScroll key={region} direction="up" delay={i * 0.08}>
             <div>
-              <h3 className="text-label mb-4 text-[var(--color-accent)]">
+              <h3 className="text-label mb-1 text-[var(--color-accent)]">
                 {region}
               </h3>
               <ul className="flex flex-col gap-2.5">

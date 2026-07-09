@@ -45,7 +45,7 @@ export default function ExportStrengths() {
     <section className="w-full py-10 lg:py-12 bg-[var(--color-bg-secondary)]">
       <div className="container-site">
       <FadeInOnScroll direction="up" className="mb-8">
-        <span className="text-label block mb-4 text-[var(--color-accent)]">
+        <span className="text-label block mb-1 text-[var(--color-accent)]">
           Why Partner With Us
         </span>
         <h2
@@ -54,7 +54,7 @@ export default function ExportStrengths() {
         >
           Built for Global Trade
         </h2>
-        <AccentDivider className="mt-2" />
+        <AccentDivider className="mt-1" />
       </FadeInOnScroll>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0 border-t border-l border-[var(--color-border)]">

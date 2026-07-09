@@ -10,7 +10,7 @@ export default function CustomDevelopmentStrip() {
 
           {/* Left text */}
           <FadeInOnScroll direction="up">
-            <span className="text-label block mb-4 text-[var(--color-accent)]">
+            <span className="text-label block mb-1 text-[var(--color-accent)]">
               Custom Development
             </span>
             <h2

@@ -45,7 +45,7 @@ export default function SectionTitle({
         {heading}
       </h2>
       {showLine && (
-        <AccentDivider className={`mt-2 ${isCenter ? "mx-auto" : ""}`} />
+        <AccentDivider className={`mt-1 ${isCenter ? "mx-auto" : ""}`} />
       )}
       {subText && (
         <p

@@ -21,7 +21,7 @@ export default function FeaturedQualities() {
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-5 mb-8">
           <FadeInOnScroll direction="up">
             <div>
-              <span className="text-label block mb-4 text-[var(--color-accent)]">
+              <span className="text-label block mb-1 text-[var(--color-accent)]">
                 Our Collections
               </span>
               <h2
@@ -30,7 +30,7 @@ export default function FeaturedQualities() {
               >
                 Featured Fabric Qualities
               </h2>
-              <AccentDivider className="mt-2" />
+              <AccentDivider className="mt-1" />
             </div>
           </FadeInOnScroll>
           <FadeInOnScroll direction="up" delay={0.1} className="shrink-0">

@@ -20,7 +20,7 @@ export default function WeavingExcellence() {
         {/* Left — text content */}
         <div className="order-1">
           <FadeInOnScroll direction="up">
-            <span className="text-label block mb-4 text-[var(--color-accent)]">
+            <span className="text-label block mb-1 text-[var(--color-accent)]">
               Manufacturing Excellence
             </span>
             <h2

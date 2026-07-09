@@ -45,7 +45,7 @@ export default function ArtAndScience() {
           <div className="flex flex-col justify-center">
 
             {/* Tag */}
-            <motion.p className="text-label mb-4" {...fadeUp(0.15)}>
+            <motion.p className="text-label mb-1" {...fadeUp(0.15)}>
               CRAFTED WITH{" "}
               <span className="text-[var(--color-accent)]">HERITAGE.</span>
               {" "}MADE WITH{" "}

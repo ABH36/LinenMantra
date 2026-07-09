@@ -218,7 +218,7 @@ export default async function ContactPage() {
 
             {/* Map */}
             <FadeInOnScroll direction="up" className="flex flex-col">
-              <span className="text-label block mb-4 text-[var(--color-accent)]">Find Us</span>
+              <span className="text-label block mb-1 text-[var(--color-accent)]">Find Us</span>
               <div className="relative flex-1 min-h-[360px] border border-[var(--color-border)] overflow-hidden">
                 <iframe
                   src="https://maps.google.com/maps?q=18.9971884,72.8267863&hl=en&z=17&output=embed"

@@ -33,7 +33,7 @@ export default function WhyGlobalBuyers() {
 
         {/* Left — heading + CTA */}
         <FadeInOnScroll direction="up" className="lg:sticky lg:top-[178px]">
-          <span className="text-label block mb-4 text-[var(--color-accent)]">
+          <span className="text-label block mb-1 text-[var(--color-accent)]">
             Why Source With Us
           </span>
           <h2
