@@ -1,47 +1,47 @@
-import Image from "next/image";
+import { Globe, Scissors, Package, BarChart3, Users, ShieldCheck, Plane, type LucideIcon } from "lucide-react";
 import FadeInOnScroll from "@/components/shared/FadeInOnScroll";
 import AccentDivider from "@/components/shared/AccentDivider";
 
-const FEATURES = [
+const FEATURES: { Icon: LucideIcon; title: string; body: string }[] = [
   {
-    icon: "/images/SocialMediaicon/globe.png",
+    Icon: Globe,
     title: "14+ Countries Served",
     body: "Trusted by buyers across 14+ international markets.",
   },
   {
-    icon: "/images/SocialMediaicon/cut.png",
+    Icon: Scissors,
     title: "Custom Fabric Development",
     body: "Develop fabrics tailored to your brand and specifications.",
   },
   {
-    icon: "/images/SocialMediaicon/box.png",
+    Icon: Package,
     title: "Ready Stock Collection",
     body: "Fast dispatch from our in-stock product range.",
   },
   {
-    icon: "/images/SocialMediaicon/column.png",
+    Icon: BarChart3,
     title: "Flexible MOQ",
     body: "Order quantities designed for businesses of all sizes.",
   },
   {
-    icon: "/images/SocialMediaicon/team.png",
+    Icon: Users,
     title: "Dedicated Export Support",
     body: "Complete assistance with documentation and logistics.",
   },
   {
-    icon: "/images/SocialMediaicon/shield.png",
+    Icon: ShieldCheck,
     title: "Consistent Quality",
     body: "Quality checks at every production stage.",
   },
   {
-    icon: "/images/SocialMediaicon/airplane.png",
+    Icon: Plane,
     title: "Fast Worldwide Delivery",
     body: "Reliable shipping with global logistics partners.",
   },
 ];
 
 function FeatureCard({
-  icon,
+  Icon,
   title,
   body,
   index,
@@ -58,14 +58,15 @@ function FeatureCard({
         {String(index + 1).padStart(2, "0")}
       </span>
 
-      {/* Icon — no box, drop-shadow for depth */}
-      <div className="mb-5 shrink-0">
-        <Image
-          src={icon}
-          alt=""
-          width={64}
-          height={64}
-          className="w-16 h-16 object-contain drop-shadow-md"
+      {/* Icon — gold tinted, clean line style */}
+      <div
+        className="w-16 h-16 flex items-center justify-center mb-5 shrink-0"
+        style={{ backgroundColor: "rgba(160,140,114,0.10)" }}
+      >
+        <Icon
+          size={30}
+          strokeWidth={1.4}
+          style={{ color: "var(--color-cta)" }}
         />
       </div>
 
