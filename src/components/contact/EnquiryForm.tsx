@@ -20,7 +20,7 @@ const productOptions = [
 const inputBase: React.CSSProperties = {
   width: "100%",
   padding: "0.875rem 1rem",
-  fontSize: "0.875rem",
+  fontSize: "var(--text-small)",
   outline: "none",
   border: "1px solid var(--color-border)",
   backgroundColor: "var(--color-bg-primary)",
@@ -135,7 +135,7 @@ export default function EnquiryForm() {
                 onBlur={() => setFocused(null)}
               />
               {errors.name && (
-                <p className="text-xs mt-1" style={{ color: "#c0392b" }}>{errors.name}</p>
+                <p className="text-xs mt-1" style={{ color: "var(--color-error)" }}>{errors.name}</p>
               )}
             </div>
             <div>
@@ -152,7 +152,7 @@ export default function EnquiryForm() {
                 onBlur={() => setFocused(null)}
               />
               {errors.email && (
-                <p className="text-xs mt-1" style={{ color: "#c0392b" }}>{errors.email}</p>
+                <p className="text-xs mt-1" style={{ color: "var(--color-error)" }}>{errors.email}</p>
               )}
             </div>
           </div>
@@ -229,7 +229,7 @@ export default function EnquiryForm() {
               onBlur={() => setFocused(null)}
             />
             {errors.message && (
-              <p className="text-xs mt-1" style={{ color: "#c0392b" }}>{errors.message}</p>
+              <p className="text-xs mt-1" style={{ color: "var(--color-error)" }}>{errors.message}</p>
             )}
           </div>
 
@@ -261,7 +261,7 @@ export default function EnquiryForm() {
           </div>
 
           {status === "error" && (
-            <p className="text-sm p-4" style={{ backgroundColor: "#fdf2f2", color: "#c0392b", border: "1px solid #f5c6cb" }}>
+            <p className="text-sm p-4" style={{ backgroundColor: "var(--color-error-bg)", color: "var(--color-error)", border: "1px solid var(--color-error-border)" }}>
               Something went wrong. Please try again or email us directly at{" "}
               <a href="mailto:info@linenmantra.com" className="underline">info@linenmantra.com</a>
             </p>

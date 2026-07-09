@@ -14,7 +14,7 @@ export default function MillVideoCard() {
   return (
     <div
       className="relative w-full overflow-hidden"
-      style={{ aspectRatio: "3/4", backgroundColor: "#111110" }}
+      style={{ aspectRatio: "3/4", backgroundColor: "var(--color-bg-dark)" }}
     >
       {/* Logo — shown for first 2 seconds */}
       <div
