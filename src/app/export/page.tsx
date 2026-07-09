@@ -13,9 +13,10 @@ export default function ExportPage() {
   return (
     <>
       <PageHero
-        label="Global Export"
-        heading="Trusted by Brands Across 14+ Countries"
+        label="Trusted by Brands Across 14+ Countries"
+        heading="Global Export"
         subText="We partner with garment manufacturers, fashion labels, and designers worldwide — delivering premium linen fabrics with the reliability that global production demands."
+        lightImage
         image="/images/Export/exportherobanner.png"
       />
 

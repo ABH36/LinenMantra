@@ -17,9 +17,10 @@ export default function AboutPage() {
     <>
       {/* Page hero */}
       <PageHero
-        label="About Linen Mantra"
-        heading="A Legacy of Linen Excellence"
+        label="A Legacy of Linen Excellence"
+        heading="About Linen Mantra"
         subText="16+ years of craftsmanship, manufacturing expertise, and an unwavering commitment to quality — from Mumbai to global markets."
+        lightImage
         image="/images/about/aboutherobanner.png"
       />
 

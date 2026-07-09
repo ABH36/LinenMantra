@@ -14,9 +14,10 @@ export default async function ContactPage() {
   return (
     <>
       <PageHero
-        label="Contact Us"
-        heading="Start a Conversation"
+        label="Start a Conversation"
+        heading="Contact Us"
         subText="Tell us what you're looking for. Our team will respond with the detail and clarity your sourcing decisions deserve."
+        lightImage
         image="/images/contactus/contactherobanner.png"
       />
 

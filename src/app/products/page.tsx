@@ -22,9 +22,10 @@ export default async function ProductsPage({
     <>
       {/* Page hero */}
       <PageHero
-        label="Our Collections"
-        heading="Premium Linen Fabric Qualities"
+        label="Premium Linen Fabric Qualities"
+        heading="Our Collections"
         subText="A curated range of signature linen fabrics — crafted across the full count spectrum for brands, designers, and garment manufacturers worldwide."
+        lightImage
         image="/images/products/productherobanner.png"
       />
 

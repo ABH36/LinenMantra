@@ -10,36 +10,50 @@ type Props = {
   subText?: string;
   dark?: boolean;
   image?: string;
+  lightImage?: boolean;
 };
 
-export default function PageHero({ label, heading, subText, dark = false, image }: Props) {
+export default function PageHero({
+  label,
+  heading,
+  subText,
+  dark = false,
+  image,
+  lightImage = false,
+}: Props) {
   const hasImage = !!image;
   const isDark = hasImage || dark;
 
-  const bg = hasImage
-    ? ""
-    : isDark
-    ? ""
-    : "bg-[var(--color-bg-secondary)]";
+  const bg = hasImage ? "" : isDark ? "" : "bg-[var(--color-bg-secondary)]";
 
-  const headingColor = hasImage ? "var(--color-text-light)" : "var(--color-text-primary)";
-  const subColor = hasImage ? "rgba(248,245,240,0.6)" : "var(--color-text-secondary)";
+  const headingColor = lightImage
+    ? "var(--color-cta)"
+    : hasImage
+    ? "var(--color-text-light)"
+    : "var(--color-text-primary)";
+
+  const subColor = lightImage
+    ? "var(--color-text-secondary)"
+    : hasImage
+    ? "rgba(248,245,240,0.88)"
+    : "var(--color-text-secondary)";
 
   return (
     <section
-      className={`relative w-full pt-28 pb-12 md:pt-44 md:pb-24 overflow-hidden ${hasImage ? "" : bg}`}
-      style={hasImage
-        ? { backgroundColor: "#111110" }
-        : (!hasImage && isDark)
-        ? {
-            backgroundImage: "url('/images/about/footer/fabric.webp')",
-            backgroundSize: "400px auto",
-            backgroundRepeat: "repeat",
-          }
-        : undefined}
+      className={`relative w-full pt-28 pb-14 md:pt-44 md:pb-24 overflow-hidden ${hasImage ? "" : bg}`}
+      style={
+        hasImage
+          ? { backgroundColor: "#111110" }
+          : !hasImage && isDark
+          ? {
+              backgroundImage: "url('/images/about/footer/fabric.webp')",
+              backgroundSize: "400px auto",
+              backgroundRepeat: "repeat",
+            }
+          : undefined
+      }
     >
-
-      {/* Background image + overlay */}
+      {/* Background image */}
       {hasImage && (
         <>
           <Image
@@ -50,13 +64,16 @@ export default function PageHero({ label, heading, subText, dark = false, image 
             className="object-cover object-center"
             priority
           />
-          <div
-            className="absolute inset-0"
-            style={{
-              background:
-                "linear-gradient(105deg, rgba(10,9,8,0.82) 0%, rgba(10,9,8,0.58) 55%, rgba(10,9,8,0.28) 100%)",
-            }}
-          />
+          {/* Dark overlay only for dark-background images */}
+          {!lightImage && (
+            <div
+              className="absolute inset-0"
+              style={{
+                background:
+                  "linear-gradient(105deg, rgba(10,9,8,0.82) 0%, rgba(10,9,8,0.58) 55%, rgba(10,9,8,0.28) 100%)",
+              }}
+            />
+          )}
         </>
       )}
 
@@ -66,21 +83,35 @@ export default function PageHero({ label, heading, subText, dark = false, image 
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
         >
-          {label && (
-            <span className="text-label block mb-1 text-[var(--color-accent)]">
-              {label}
-            </span>
-          )}
+          {/* Large page title */}
           <h1
-            className="font-display font-normal leading-tight max-w-3xl"
-            style={{ color: headingColor, fontSize: "clamp(1.75rem, 3vw, 2.75rem)" }}
+            className="font-display font-normal leading-tight"
+            style={{
+              color: headingColor,
+              fontSize: "clamp(2.75rem, 5.5vw, 5rem)",
+            }}
           >
             {heading}
           </h1>
-          <AccentDivider className="mt-1" />
+
+          {/* Italic subtitle below heading */}
+          {label && (
+            <p
+              className="font-display italic leading-snug mt-2"
+              style={{
+                color: headingColor,
+                fontSize: "clamp(1.1rem, 2vw, 1.6rem)",
+              }}
+            >
+              {label}
+            </p>
+          )}
+
+          <AccentDivider className="mt-2" />
+
           {subText && (
             <p
-              className="mt-6 max-w-xl leading-relaxed text-[var(--text-body)]"
+              className="mt-5 max-w-lg leading-relaxed text-base"
               style={{ color: subColor }}
             >
               {subText}
