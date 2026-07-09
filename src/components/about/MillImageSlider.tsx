@@ -48,7 +48,7 @@ export default function MillImageSlider() {
         }}
       >
         <p className="text-label" style={{ color: "rgba(248,245,240,0.7)" }}>
-          Manufacturing - Navsari, Gujarat
+          Warehouse - Bhiwandi, Maharashtra
         </p>
       </div>
     </div>
