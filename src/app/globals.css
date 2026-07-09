@@ -112,6 +112,7 @@ body {
   p {
     color: var(--color-text-secondary);
     line-height: 1.75;
+    text-align: justify;
   }
 
   a {
