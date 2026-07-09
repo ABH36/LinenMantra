@@ -7,7 +7,7 @@ const capabilities = [
   { label: "Fabric Types", value: "Shirting · Suiting · Ceremonial · Fashion" },
   { label: "Blends", value: "Linen · Wool · Cotton · Art Silk" },
   { label: "Finishes", value: "Plain · Yarn-Dyed · Dobby · Jacquard · Digital Print" },
-  { label: "Manufacturing", value: "Navsari, Gujarat" },
+  { label: "Warehousing", value: "Bhiwandi, Maharashtra" },
   { label: "Machinery", value: "European Technology" },
 ];
 
