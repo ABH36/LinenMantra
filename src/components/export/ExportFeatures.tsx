@@ -58,24 +58,21 @@ function FeatureCard({
         {String(index + 1).padStart(2, "0")}
       </span>
 
-      {/* Icon */}
-      <div
-        className="w-14 h-14 flex items-center justify-center mb-5 shrink-0"
-        style={{ backgroundColor: "rgba(160,140,114,0.14)" }}
-      >
+      {/* Icon — no box, drop-shadow for depth */}
+      <div className="mb-5 shrink-0">
         <Image
           src={icon}
           alt=""
-          width={28}
-          height={28}
-          className="w-7 h-7 object-contain"
+          width={64}
+          height={64}
+          className="w-16 h-16 object-contain drop-shadow-md"
         />
       </div>
 
       {/* Title — dark green, bold */}
       <h3
         className="font-display font-bold leading-tight mb-2 text-[var(--color-cta)]"
-        style={{ fontSize: "clamp(1.05rem, 1.4vw, 1.2rem)" }}
+        style={{ fontSize: "clamp(1.15rem, 1.6vw, 1.4rem)" }}
       >
         {title}
       </h3>
