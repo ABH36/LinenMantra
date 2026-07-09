@@ -22,14 +22,14 @@ const services = [
     number: "03",
     title: "Custom Development",
     description: "Bespoke fabric construction and exclusive weave development",
-    image: "/images/about/mill2.png",
+    image: "/images/about/mill2.jpeg",
     href: "/contact",
   },
   {
     number: "04",
     title: "Export & Sampling",
     description: "B2B export support from sampling to bulk production",
-    image: "/images/about/mill4.png",
+    image: "/images/about/mill4.jpeg",
     href: "/export",
   },
 ];

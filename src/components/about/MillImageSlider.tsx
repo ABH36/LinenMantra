@@ -4,11 +4,12 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 
 const images = [
-  "/images/about/mill1.png",
-  "/images/about/mill2.png",
-  "/images/about/mill3.png",
-  "/images/about/mill4.png",
-  "/images/about/mill5.png",
+  "/images/about/mill1.jpeg",
+  "/images/about/mill2.jpeg",
+  "/images/about/mill3.jpeg",
+  "/images/about/mill4.jpeg",
+  "/images/about/mill5.jpeg",
+  "/images/about/mill6.jpeg",
 ];
 
 const INTERVAL = 3200;
