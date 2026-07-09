@@ -1,7 +1,8 @@
 export type ProductCategory =
   | "all"
   | "shirting"
-  | "suiting";
+  | "suiting"
+  | "gift";
 
 export type Product = {
   id: string;
@@ -108,12 +109,43 @@ export const products: Product[] = [
       "A distinguished linen suiting with standout character — crafted for fashion-forward brands seeking fabrics that make a statement.",
     image: "/images/products/suiting/on-star.png",
   },
+  {
+    id: "coord-set-gift-box",
+    name: "Coord Set Linen Gift Box",
+    category: "gift",
+    composition: "100% Pure Linen",
+    description:
+      "A curated linen coord set presented in an elegant gift box — the perfect premium gifting solution for lifestyle and fashion brands.",
+    image: "/images/products/giftproducts/Coord%20Set%20Linen%20Gift%20Box.PNG",
+    featured: false,
+  },
+  {
+    id: "linen-duo-gift-set",
+    name: "Linen Duo Gift Set",
+    category: "gift",
+    composition: "100% Pure Linen",
+    description:
+      "A thoughtfully paired duo of premium linen pieces, beautifully packaged — ideal for corporate gifting and retail collections.",
+    image: "/images/products/giftproducts/Linen%20Duo%20Gift%20Set.jpg",
+    featured: false,
+  },
+  {
+    id: "single-piece-gift-box",
+    name: "Single Piece Gift Box",
+    category: "gift",
+    composition: "100% Pure Linen",
+    description:
+      "A single premium linen piece presented in a refined gift box — perfect for individual gifting with a touch of elegance.",
+    image: "/images/products/giftproducts/Single%20Piece%20Gift%20Box.PNG",
+    featured: false,
+  },
 ];
 
 export const productCategories: { value: ProductCategory; label: string }[] = [
   { value: "all", label: "All Collections" },
   { value: "shirting", label: "Shirting" },
   { value: "suiting", label: "Suiting" },
+  { value: "gift", label: "Gift Packing" },
 ];
 
 export const featuredProducts = products.filter((p) => p.featured);
