@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     template: "%s | Linen Mantra",
   },
   description:
-    "India's leading manufacturer of premium linen and linen blend fabrics. Serving fashion brands, garment manufacturers, designers, and export markets worldwide. 16+ years of textile expertise.",
+    "India's leading manufacturer of premium linen and linen blend fabrics. Serving fashion brands, garment manufacturers, designers, and export markets worldwide. 35+ years of textile expertise.",
   keywords: [
     "linen fabric manufacturer",
     "premium linen",

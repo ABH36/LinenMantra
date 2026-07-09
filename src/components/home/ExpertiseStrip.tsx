@@ -5,7 +5,7 @@ import { useInView, animate } from "framer-motion";
 import FadeInOnScroll from "@/components/shared/FadeInOnScroll";
 
 const stats = [
-  { value: 16, suffix: "+", label: "Years of Textile Expertise" },
+  { value: 35, suffix: "+", label: "Years of Textile Expertise" },
   { value: 150, suffix: " LEA", label: "Finest Linen Count" },
   { value: 14, suffix: "+", label: "Export Countries" },
   { value: 2010, suffix: "", label: "Year Established" },
