@@ -9,7 +9,7 @@ import ContactCTABand from "@/components/shared/ContactCTABand";
 export const metadata: Metadata = {
   title: "About Us",
   description:
-    "Learn about Linen Mantra's 16+ year journey — from a textile trading venture to one of India's leading premium linen fabric manufacturers. Founded by Vipul Raichura, manufacturing in Navsari, Gujarat.",
+    "Learn about Linen Mantra's 35+ year journey — from a textile trading venture to one of India's leading premium linen fabric manufacturers. Founded by Vipul Raichura, manufacturing in Navsari, Gujarat.",
 };
 
 export default function AboutPage() {
@@ -19,7 +19,7 @@ export default function AboutPage() {
       <PageHero
         label="A Legacy of Linen Excellence"
         heading="About Linen Mantra"
-        subText="16+ years of craftsmanship, manufacturing expertise, and an unwavering commitment to quality — from Mumbai to global markets."
+        subText="35+ years of craftsmanship, manufacturing expertise, and an unwavering commitment to quality — from Mumbai to global markets."
         lightImage
         image="/images/about/aboutherobanner.png"
       />

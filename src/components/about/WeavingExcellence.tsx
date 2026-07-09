@@ -78,7 +78,7 @@ export default function WeavingExcellence() {
                 className="font-display font-normal leading-none mb-2 text-[var(--color-accent-light)]"
                 style={{ fontSize: "2.5rem" }}
               >
-                16+
+                35+
               </p>
               <p className="text-label" style={{ color: "rgba(248,245,240,0.5)" }}>
                 Years of Weaving Excellence

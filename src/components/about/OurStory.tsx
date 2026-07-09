@@ -71,10 +71,10 @@ export default function OurStory() {
                   className="font-display font-normal text-[var(--color-text-primary)] leading-none"
                   style={{ fontSize: "2rem" }}
                 >
-                  2010
+                  1991
                 </p>
                 <p className="text-label mt-1 text-[var(--color-text-muted)]">
-                  Year Founded
+                  Year Est.
                 </p>
               </div>
               <div className="w-px self-stretch bg-[var(--color-border)]" />
@@ -83,7 +83,7 @@ export default function OurStory() {
                   className="font-display font-normal text-[var(--color-text-primary)] leading-none"
                   style={{ fontSize: "2rem" }}
                 >
-                  16+
+                  35+
                 </p>
                 <p className="text-label mt-1 text-[var(--color-text-muted)]">
                   Years of Expertise
