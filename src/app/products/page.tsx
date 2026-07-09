@@ -25,7 +25,7 @@ export default async function ProductsPage({
         label="Our Collections"
         heading="Premium Linen Fabric Qualities"
         subText="A curated range of signature linen fabrics — crafted across the full count spectrum for brands, designers, and garment manufacturers worldwide."
-        image="/images/products/productpageherobanner.png"
+        image="/images/products/productherobanner.png"
       />
 
       {/* Filter tabs + animated product grid */}

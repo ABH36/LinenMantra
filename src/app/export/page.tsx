@@ -16,7 +16,7 @@ export default function ExportPage() {
         label="Global Export"
         heading="Trusted by Brands Across 14+ Countries"
         subText="We partner with garment manufacturers, fashion labels, and designers worldwide — delivering premium linen fabrics with the reliability that global production demands."
-        image="/images/Export/exportpageherobanner.png"
+        image="/images/Export/exportherobanner.png"
       />
 
       {/* Global map with stats */}

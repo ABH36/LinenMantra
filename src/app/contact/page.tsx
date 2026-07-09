@@ -17,7 +17,7 @@ export default async function ContactPage() {
         label="Contact Us"
         heading="Start a Conversation"
         subText="Tell us what you're looking for. Our team will respond with the detail and clarity your sourcing decisions deserve."
-        image="/images/contactus/contactupherobanner.png"
+        image="/images/contactus/contactherobanner.png"
       />
 
       {/* ════════════════════════════════════════════

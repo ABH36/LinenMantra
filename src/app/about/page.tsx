@@ -20,7 +20,7 @@ export default function AboutPage() {
         label="About Linen Mantra"
         heading="A Legacy of Linen Excellence"
         subText="16+ years of craftsmanship, manufacturing expertise, and an unwavering commitment to quality — from Mumbai to global markets."
-        image="/images/about/aboutuppageherobanner.png"
+        image="/images/about/aboutherobanner.png"
       />
 
       {/* Our Story — company narrative + leadership */}
