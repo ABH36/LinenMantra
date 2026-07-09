@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import AccentDivider from "@/components/shared/AccentDivider";
 
 export const metadata: Metadata = {
   title: "Page Not Found",
@@ -20,7 +21,7 @@ export default function NotFound() {
         <h1 className="font-display font-normal mb-4 text-[var(--text-h2)] text-[var(--color-text-primary)]">
           Page Not Found
         </h1>
-        <span className="block h-px w-10 mx-auto mb-6 bg-[var(--color-accent)]" />
+        <AccentDivider className="mx-auto mb-6" />
         <p className="mb-10 max-w-sm mx-auto text-[var(--color-text-secondary)]">
           The page you were looking for doesn&apos;t exist or may have moved. Let&apos;s get you back on track.
         </p>

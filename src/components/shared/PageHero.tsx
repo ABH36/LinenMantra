@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import AccentDivider from "./AccentDivider";
 
 type Props = {
   label?: string;
@@ -76,7 +77,7 @@ export default function PageHero({ label, heading, subText, dark = false, image 
           >
             {heading}
           </h1>
-          <span className="block h-px w-10 mt-6 bg-[var(--color-accent)]" />
+          <AccentDivider className="mt-6" />
           {subText && (
             <p
               className="mt-6 max-w-xl leading-relaxed text-[var(--text-body)]"

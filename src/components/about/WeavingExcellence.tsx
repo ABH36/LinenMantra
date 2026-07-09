@@ -1,4 +1,5 @@
 import FadeInOnScroll from "@/components/shared/FadeInOnScroll";
+import AccentDivider from "@/components/shared/AccentDivider";
 import MillImageSlider from "./MillImageSlider";
 
 const capabilities = [
@@ -28,7 +29,7 @@ export default function WeavingExcellence() {
             >
               Weaving Excellence for Over <em className="italic text-[var(--color-accent)]">16 Years</em>
             </h2>
-            <span className="block h-px w-10 mb-6 bg-[var(--color-accent)]" />
+            <AccentDivider className="mb-6" />
           </FadeInOnScroll>
 
           <FadeInOnScroll direction="up" delay={0.1}>

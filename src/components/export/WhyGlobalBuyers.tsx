@@ -1,5 +1,6 @@
 import Link from "next/link";
 import FadeInOnScroll from "@/components/shared/FadeInOnScroll";
+import AccentDivider from "@/components/shared/AccentDivider";
 
 const reasons = [
   {
@@ -41,7 +42,7 @@ export default function WhyGlobalBuyers() {
           >
             What Global Buyers Value Most
           </h2>
-          <span className="block h-px w-10 mb-6 bg-[var(--color-accent)]" />
+          <AccentDivider className="mb-6" />
           <p className="leading-relaxed mb-8 max-w-sm text-[var(--color-text-secondary)]">
             From independent designers to established retail brands, global buyers
             choose Linen Mantra for one reason: we deliver exactly what we promise,

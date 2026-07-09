@@ -1,5 +1,6 @@
 import Link from "next/link";
 import FadeInOnScroll from "@/components/shared/FadeInOnScroll";
+import AccentDivider from "@/components/shared/AccentDivider";
 
 export default function CustomDevelopmentStrip() {
   return (
@@ -18,7 +19,7 @@ export default function CustomDevelopmentStrip() {
             >
               Can&apos;t Find What You Need?
             </h2>
-            <span className="block h-px w-10 mb-6 bg-[var(--color-accent)]" />
+            <AccentDivider className="mb-6" />
             <p className="leading-relaxed max-w-md text-[var(--color-text-secondary)] text-[var(--text-body)]">
               We specialise in end-to-end custom fabric development — from
               construction specification and yarn selection to sampling and

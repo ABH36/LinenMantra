@@ -1,4 +1,5 @@
 import FadeInOnScroll from "@/components/shared/FadeInOnScroll";
+import AccentDivider from "@/components/shared/AccentDivider";
 
 export default function OurVision() {
   return (
@@ -40,7 +41,7 @@ export default function OurVision() {
           </FadeInOnScroll>
 
           <FadeInOnScroll direction="up" delay={0.2}>
-            <span className="block h-px w-10 mx-auto mt-6 mb-5 bg-[var(--color-accent)]" />
+            <AccentDivider className="mx-auto mt-6 mb-5" />
             <p className="text-label text-[var(--color-text-muted)]">
               Linen Mantra · Est. 2010 · Mumbai, India
             </p>

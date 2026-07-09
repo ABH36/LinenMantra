@@ -6,6 +6,7 @@ import Image from "next/image";
 import { ZoomIn } from "lucide-react";
 import { AnimatePresence } from "framer-motion";
 import FadeInOnScroll from "@/components/shared/FadeInOnScroll";
+import AccentDivider from "@/components/shared/AccentDivider";
 import ProductLightbox from "@/components/products/ProductLightbox";
 import { featuredProducts } from "@/data/products";
 
@@ -29,7 +30,7 @@ export default function FeaturedQualities() {
               >
                 Featured Fabric Qualities
               </h2>
-              <span className="block h-px w-10 mt-5 bg-[var(--color-accent)]" />
+              <AccentDivider className="mt-5" />
             </div>
           </FadeInOnScroll>
           <FadeInOnScroll direction="up" delay={0.1} className="shrink-0">

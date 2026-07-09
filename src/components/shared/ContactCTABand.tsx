@@ -1,5 +1,6 @@
 import Link from "next/link";
 import FadeInOnScroll from "./FadeInOnScroll";
+import AccentDivider from "./AccentDivider";
 
 type Props = {
   heading?: string;
@@ -28,7 +29,7 @@ export default function ContactCTABand({
             >
               {heading}
             </h2>
-            <span className="block h-px w-10 mt-4 mb-5 bg-[var(--color-accent)]" />
+            <AccentDivider className="mt-4 mb-5" />
             <p className={`leading-relaxed text-[var(--text-body)] ${dark ? "text-white" : "text-[var(--color-text-secondary)]"}`}>
               {subText}
             </p>

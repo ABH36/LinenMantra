@@ -1,4 +1,5 @@
 import FadeInOnScroll from "@/components/shared/FadeInOnScroll";
+import AccentDivider from "@/components/shared/AccentDivider";
 import { Phone, Mail, Clock } from "lucide-react";
 
 const contactDetails = [
@@ -32,7 +33,7 @@ export default function ContactInfo() {
           <br />
           Linen
         </h2>
-        <span className="block h-px w-10 mb-6 bg-[var(--color-accent)]" />
+        <AccentDivider className="mb-6" />
         <p className="leading-relaxed max-w-sm text-[var(--color-text-secondary)]">
           Whether you&apos;re looking to source a specific fabric, develop a custom
           construction, or simply learn more about what we do — we&apos;re here to

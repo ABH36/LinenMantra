@@ -1,4 +1,5 @@
 import FadeInOnScroll from "@/components/shared/FadeInOnScroll";
+import AccentDivider from "@/components/shared/AccentDivider";
 
 const strengths = [
   {
@@ -53,7 +54,7 @@ export default function ExportStrengths() {
         >
           Built for Global Trade
         </h2>
-        <span className="block h-px w-10 mt-5 bg-[var(--color-accent)]" />
+        <AccentDivider className="mt-5" />
       </FadeInOnScroll>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0 border-t border-l border-[var(--color-border)]">

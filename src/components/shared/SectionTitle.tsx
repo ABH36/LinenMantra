@@ -1,3 +1,5 @@
+import AccentDivider from "./AccentDivider";
+
 type Alignment = "left" | "center";
 
 type Props = {
@@ -43,9 +45,7 @@ export default function SectionTitle({
         {heading}
       </h2>
       {showLine && (
-        <span
-          className={`block h-px w-10 mt-5 bg-[var(--color-accent)] ${isCenter ? "mx-auto" : ""}`}
-        />
+        <AccentDivider className={`mt-5 ${isCenter ? "mx-auto" : ""}`} />
       )}
       {subText && (
         <p

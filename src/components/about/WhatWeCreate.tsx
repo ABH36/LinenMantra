@@ -1,4 +1,5 @@
 import FadeInOnScroll from "@/components/shared/FadeInOnScroll";
+import AccentDivider from "@/components/shared/AccentDivider";
 
 const productTypes = [
   {
@@ -61,7 +62,7 @@ export default function WhatWeCreate() {
           >
             What We Create
           </h2>
-          <span className="block h-px w-10 mt-5 bg-[var(--color-accent)]" />
+          <AccentDivider className="mt-5" />
         </FadeInOnScroll>
 
         <FadeInOnScroll direction="up" delay={0.1} className="flex flex-col justify-end">

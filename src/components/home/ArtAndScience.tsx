@@ -1,8 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { Leaf } from "lucide-react";
 import { motion, useInView } from "framer-motion";
+import AccentDivider from "@/components/shared/AccentDivider";
 import { useRef } from "react";
 
 const EASE = [0.25, 0.1, 0.25, 1] as const;
@@ -53,9 +53,8 @@ export default function ArtAndScience() {
             </motion.p>
 
             {/* Flourish */}
-            <motion.div className="flex items-center gap-2.5 mb-5" {...fadeUp(0.22)}>
-              <span className="block h-px w-10 bg-[var(--color-accent)] opacity-55" />
-              <Leaf size={13} className="text-[var(--color-accent)] opacity-70" />
+            <motion.div {...fadeUp(0.22)}>
+              <AccentDivider className="mb-5" />
             </motion.div>
 
             {/* Heading */}

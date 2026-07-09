@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import FadeInOnScroll from "@/components/shared/FadeInOnScroll";
+import AccentDivider from "@/components/shared/AccentDivider";
 import { specialists } from "@/data/specialists";
 
 export default function LinenSpecialists() {
@@ -25,7 +26,7 @@ export default function LinenSpecialists() {
         >
           Linen Specialists, <em className="italic text-[var(--color-accent)]">Since 2010</em>
         </h2>
-        <span className="block h-px w-10 mt-5 bg-[var(--color-accent)]" />
+        <AccentDivider className="mt-5" />
       </FadeInOnScroll>
 
       {/* Split layout */}

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import FadeInOnScroll from "@/components/shared/FadeInOnScroll";
+import AccentDivider from "@/components/shared/AccentDivider";
 import MillVideoCard from "./MillVideoCard";
 
 const paragraphs = [
@@ -43,7 +44,7 @@ export default function OurStory() {
             >
               Built on Craft. <em className="italic text-[var(--color-accent)]">Driven by Quality.</em>
             </h2>
-            <span className="block h-px w-10 mb-8 bg-[var(--color-accent)]" />
+            <AccentDivider className="mb-8" />
           </FadeInOnScroll>
 
           <div className="flex flex-col gap-6">

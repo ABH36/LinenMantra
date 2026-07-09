@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import FadeInOnScroll from "@/components/shared/FadeInOnScroll";
+import AccentDivider from "@/components/shared/AccentDivider";
 
 const steps = [
   {
@@ -69,7 +70,7 @@ export default function FlaxToFabric() {
           >
             Flax to Fabric
           </h2>
-          <span className="block h-px w-10 mt-5 bg-[var(--color-accent)]" />
+          <AccentDivider className="mt-5" />
         </FadeInOnScroll>
       </div>
 
