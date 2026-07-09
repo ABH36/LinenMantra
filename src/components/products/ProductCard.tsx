@@ -86,24 +86,20 @@ export default function ProductCard({ product, onImageClick }: Props) {
       {/* ── Card body ─────────────────────────────── */}
       <div className="flex flex-col flex-1 p-5">
         {/* Quality name */}
-        <h3 className="font-display font-semibold leading-tight mb-2 text-xl text-[var(--color-text-primary)]">
+        <h3 className="font-display font-normal leading-tight mb-1.5 text-2xl md:text-3xl text-[var(--color-text-primary)]">
           {product.name}
         </h3>
 
-        {/* Composition label */}
+        {/* Composition + LEA */}
         <p className="text-label mb-3 text-[var(--color-accent)]">
           {product.composition}
-        </p>
-
-        {/* Description */}
-        <p className="text-sm leading-relaxed flex-1 mb-4 text-[var(--color-text-secondary)]">
-          {product.description}
+          {product.leaRange ? ` · ${product.leaRange}` : ""}
         </p>
 
         {/* CTA */}
         <Link
           href="/contact"
-          className="inline-flex items-center gap-2 text-sm font-medium tracking-widest uppercase transition-opacity hover:opacity-60 group/link text-[var(--color-text-primary)]"
+          className="inline-flex items-center gap-2 text-sm font-medium tracking-widest uppercase transition-opacity hover:opacity-60 group/link mt-auto text-[var(--color-text-primary)]"
         >
           <span>Get a Quote</span>
           <span className="transition-transform duration-300 group-hover/link:translate-x-1">→</span>
