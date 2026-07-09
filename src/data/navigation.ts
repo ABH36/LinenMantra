@@ -21,4 +21,5 @@ export const footerLinks: NavLink[] = [
 export const productCategoryLinks: NavLink[] = [
   { label: "Shirting Fabrics", href: "/products?category=shirting" },
   { label: "Suiting Fabrics",  href: "/products?category=suiting" },
+  { label: "Gift Packing",     href: "/products?category=gift" },
 ];
