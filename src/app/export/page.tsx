@@ -20,11 +20,11 @@ export default function ExportPage() {
         image="/images/Export/exportherobanner.png"
       />
 
-      {/* Global map with stats */}
-      <GlobalMapSection />
-
       {/* 7 export feature cards — 3-3-1 layout */}
       <ExportFeatures />
+
+      {/* Global map */}
+      <GlobalMapSection />
 
     </>
   );
