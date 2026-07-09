@@ -27,16 +27,14 @@ export default function WeavingExcellence() {
               className="font-display font-normal leading-tight mb-5 text-[var(--color-text-primary)]"
               style={{ fontSize: "clamp(1.75rem, 3vw, 2.75rem)" }}
             >
-              Weaving Excellence for Over <em className="italic text-[var(--color-accent)]">16 Years</em>
+              Weaving Excellence for Over <em className="italic text-[var(--color-accent)]">35 Years</em>
             </h2>
             <AccentDivider className="mb-6" />
           </FadeInOnScroll>
 
           <FadeInOnScroll direction="up" delay={0.1}>
             <p className="leading-relaxed mb-6 text-[var(--color-text-secondary)] text-[var(--text-body)]">
-              With over 16 years of experience in textiles, Linen Mantra has
-              built its reputation as a linen specialist, combining deep
-              technical expertise with an unwavering commitment to quality.
+              With over 35 years of experience in textiles, Linen Mantra has built its reputation as a linen specialist, combining deep technical expertise with an unwavering commitment to quality.
             </p>
             <p className="leading-relaxed text-[var(--color-text-secondary)] text-[var(--text-body)]">
               Our manufacturing facility in Navsari, Gujarat, is equipped with

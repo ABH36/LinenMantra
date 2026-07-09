@@ -73,9 +73,7 @@ export default function ArtAndScience() {
               className="leading-relaxed text-[var(--color-text-secondary)] text-base"
               {...fadeUp(0.34)}
             >
-              At Linen Mantra, every fabric is a result of thoughtful craftsmanship
-              and modern technology. From the finest flax to the final finish,
-              we ensure perfection in every detail.
+              Backed by over three decades of textile expertise, Linen Mantra combines skilled craftsmanship with modern technology to create premium linen fabrics with exceptional quality and unique design - from the finest flax to final finish.
             </motion.p>
 
           </div>
