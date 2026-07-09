@@ -62,7 +62,7 @@ export default function WhatWeCreate() {
           >
             What We Create
           </h2>
-          <AccentDivider className="mt-5" />
+          <AccentDivider className="mt-2" />
         </FadeInOnScroll>
 
         <FadeInOnScroll direction="up" delay={0.1} className="flex flex-col justify-end">

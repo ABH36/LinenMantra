@@ -70,7 +70,7 @@ export default function FlaxToFabric() {
           >
             Flax to Fabric
           </h2>
-          <AccentDivider className="mt-5" />
+          <AccentDivider className="mt-2" />
         </FadeInOnScroll>
       </div>
 

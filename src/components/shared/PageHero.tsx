@@ -77,7 +77,7 @@ export default function PageHero({ label, heading, subText, dark = false, image 
           >
             {heading}
           </h1>
-          <AccentDivider className="mt-6" />
+          <AccentDivider className="mt-2" />
           {subText && (
             <p
               className="mt-6 max-w-xl leading-relaxed text-[var(--text-body)]"

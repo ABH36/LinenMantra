@@ -29,7 +29,7 @@ export default function ContactCTABand({
             >
               {heading}
             </h2>
-            <AccentDivider className="mt-4 mb-5" />
+            <AccentDivider className="mt-2 mb-5" />
             <p className={`leading-relaxed text-[var(--text-body)] ${dark ? "text-white" : "text-[var(--color-text-secondary)]"}`}>
               {subText}
             </p>

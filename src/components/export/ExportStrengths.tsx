@@ -54,7 +54,7 @@ export default function ExportStrengths() {
         >
           Built for Global Trade
         </h2>
-        <AccentDivider className="mt-5" />
+        <AccentDivider className="mt-2" />
       </FadeInOnScroll>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0 border-t border-l border-[var(--color-border)]">

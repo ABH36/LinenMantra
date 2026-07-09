@@ -30,7 +30,7 @@ export default function FeaturedQualities() {
               >
                 Featured Fabric Qualities
               </h2>
-              <AccentDivider className="mt-5" />
+              <AccentDivider className="mt-2" />
             </div>
           </FadeInOnScroll>
           <FadeInOnScroll direction="up" delay={0.1} className="shrink-0">

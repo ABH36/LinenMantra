@@ -26,7 +26,7 @@ export default function LinenSpecialists() {
         >
           Linen Specialists, <em className="italic text-[var(--color-accent)]">Since 2010</em>
         </h2>
-        <AccentDivider className="mt-5" />
+        <AccentDivider className="mt-2" />
       </FadeInOnScroll>
 
       {/* Split layout */}
