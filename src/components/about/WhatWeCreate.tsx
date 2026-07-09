@@ -1,3 +1,7 @@
+"use client";
+
+import { useState, useEffect } from "react";
+import Image from "next/image";
 import FadeInOnScroll from "@/components/shared/FadeInOnScroll";
 import AccentDivider from "@/components/shared/AccentDivider";
 
@@ -5,128 +9,232 @@ const productTypes = [
   {
     number: "01",
     name: "100% Pure Linen Fabrics",
-    description:
-      "The purest expression of linen — breathable, naturally textured, and crafted across a full count range from 25 to 150 LEA.",
+    description: "Natural plant origin",
+    body: "The purest expression of linen — breathable, naturally textured, and crafted across a full count range from 25 to 150 LEA.",
+    image: "/images/products/Limestone.PNG",
   },
   {
     number: "02",
     name: "Linen Blended Fabrics",
-    description:
-      "Carefully engineered blends of linen with cotton, wool, and art silk — combining the best of each fibre for superior performance and hand-feel.",
+    description: "Cotton · Wool · Art Silk",
+    body: "Carefully engineered blends of linen with cotton, wool, and art silk — combining the best of each fibre for superior performance and hand-feel.",
+    image: "/images/products/Alpino.PNG",
   },
   {
     number: "03",
     name: "Linen Shirting",
-    description:
-      "Premium shirting fabrics in plain, yarn-dyed, dobby, and printed constructions — crafted for fashion-forward menswear and womenswear collections.",
+    description: "Plain · Dobby · Printed",
+    body: "Premium shirting fabrics in plain, yarn-dyed, dobby, and printed constructions — crafted for fashion-forward menswear and womenswear collections.",
+    image: "/images/products/ireland.png",
   },
   {
     number: "04",
     name: "Linen Suiting",
-    description:
-      "Structured, refined suiting fabrics for formal tailoring and contemporary fashion — available in pure linen and premium blended compositions.",
+    description: "Structured & refined",
+    body: "Structured, refined suiting fabrics for formal tailoring and contemporary fashion — available in pure linen and premium blended compositions.",
+    image: "/images/products/suiting/leonard.jpg",
   },
   {
     number: "05",
-    name: "Yarn-Dyed Linen Fabrics",
-    description:
-      "Rich, colour-fast yarn-dyed linens featuring stripes, checks, and geometric patterns with exceptional depth and consistency of colour.",
+    name: "Yarn-Dyed Linen",
+    description: "Stripes · Checks · Geometric",
+    body: "Rich, colour-fast yarn-dyed linens featuring stripes, checks, and geometric patterns with exceptional depth and consistency of colour.",
+    image: "/images/products/rare-lea.png",
   },
   {
     number: "06",
-    name: "Designer Linen Collections",
-    description:
-      "Seasonal and trend-driven collections featuring jacquards, digital prints, panel designs, and specialty weaves for high-fashion applications.",
+    name: "Designer Collections",
+    description: "Jacquard · Digital Print",
+    body: "Seasonal and trend-driven collections featuring jacquards, digital prints, panel designs, and specialty weaves for high-fashion applications.",
+    image: "/images/products/la-seta-linen.jpg",
   },
   {
     number: "07",
-    name: "Custom Fabric Development",
-    description:
-      "End-to-end bespoke fabric development for brands — from construction specification and yarn selection through to sampling and production.",
+    name: "Custom Development",
+    description: "Bespoke fabric creation",
+    body: "End-to-end bespoke fabric development for brands — from construction specification and yarn selection through to sampling and production.",
+    image: "/images/about/mill1.jpeg",
   },
 ];
 
+const DURATION = 2800;
+
 export default function WhatWeCreate() {
+  const [active, setActive] = useState(0);
+  const [paused, setPaused] = useState(false);
+
+  useEffect(() => {
+    if (paused) return;
+    const id = setInterval(() => setActive((a) => (a + 1) % productTypes.length), DURATION);
+    return () => clearInterval(id);
+  }, [paused]);
+
   return (
-    <section className="w-full py-10 lg:py-12 bg-[var(--color-bg-primary)]">
-      <div className="container-site">
-      {/* Section header */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 mb-10">
-        <FadeInOnScroll direction="up">
-          <span className="text-label block mb-1 text-[var(--color-accent)]">
-            Our Specialisation
-          </span>
-          <h2
-            className="font-display font-normal leading-tight text-[var(--color-text-primary)]"
-            style={{ fontSize: "clamp(1.75rem, 3vw, 2.75rem)" }}
-          >
-            What We Create
-          </h2>
-          <AccentDivider className="mt-1" />
-        </FadeInOnScroll>
+    <section className="w-full bg-[var(--color-bg-primary)]">
 
-        <FadeInOnScroll direction="up" delay={0.1} className="flex flex-col justify-end">
-          <p className="leading-relaxed text-[var(--color-text-secondary)] text-[var(--text-body)]">
-            At Linen Mantra, we specialise in developing premium linen fabrics
-            designed for contemporary fashion and lifestyle applications. We
-            manufacture across a full linen count range — from 25 LEA to 150
-            LEA — offering diverse textures, constructions, colours, and finishes
-            suited to any design requirement.
-          </p>
-        </FadeInOnScroll>
-      </div>
-
-      {/* Product type grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0 border-t border-l border-[var(--color-border)]">
-        {productTypes.map((type, i) => (
-          <FadeInOnScroll key={type.number} direction="up" delay={i * 0.07}>
-            <div className="p-6 h-full group transition-colors duration-300 hover:bg-[var(--color-bg-secondary)] border-r border-b border-[var(--color-border)]">
-              {/* Number */}
-              <span
-                className="font-display font-normal block mb-5 transition-colors duration-300 leading-none text-[var(--color-border)]"
-                style={{ fontSize: "2.5rem" }}
-              >
-                {type.number}
-              </span>
-
-              {/* Name */}
-              <h3 className="font-display font-normal leading-tight mb-4 text-[var(--text-h4)] text-[var(--color-text-primary)]">
-                {type.name}
-              </h3>
-
-              {/* Accent line */}
-              <span className="block h-px w-6 mb-4 transition-all duration-300 group-hover:w-10 bg-[var(--color-accent)]" />
-
-              {/* Description */}
-              <p className="text-sm leading-relaxed text-[var(--color-text-secondary)]">
-                {type.description}
-              </p>
-            </div>
+      {/* Section heading */}
+      <div className="container-site pt-10 pb-6 md:pt-12 md:pb-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-end">
+          <FadeInOnScroll direction="up">
+            <span className="text-label block mb-1 text-[var(--color-accent)]">
+              Our Specialisation
+            </span>
+            <h2
+              className="font-display font-normal leading-tight text-[var(--color-text-primary)]"
+              style={{ fontSize: "clamp(1.75rem, 3vw, 2.75rem)" }}
+            >
+              What We Create
+            </h2>
+            <AccentDivider className="mt-1" />
           </FadeInOnScroll>
-        ))}
 
-        {/* 8th cell — count range highlight */}
-        <FadeInOnScroll direction="up" delay={0.49}>
-          <div className="p-6 h-full flex flex-col justify-between bg-[var(--color-bg-dark)] border-r border-b border-[var(--color-border-dark)]">
-            <div>
-              <span
-                className="font-display font-normal block leading-none text-[var(--color-accent-light)]"
-                style={{ fontSize: "clamp(2.5rem, 4vw, 3.5rem)" }}
-              >
-                25–150
-              </span>
-              <p className="text-label mt-2" style={{ color: "rgba(248,245,240,0.45)" }}>
-                LEA Count Range
-              </p>
-            </div>
-            <p className="text-sm leading-relaxed mt-6" style={{ color: "rgba(248,245,240,0.4)" }}>
-              The full spectrum of linen — from heavy structured weaves to
-              ultra-fine luxury fabrics.
+          <FadeInOnScroll direction="up" delay={0.1}>
+            <p className="leading-relaxed text-[var(--color-text-secondary)]">
+              At Linen Mantra, we specialise in developing premium linen fabrics
+              designed for contemporary fashion and lifestyle applications. We
+              manufacture across a full linen count range — from 25 LEA to 150
+              LEA — offering diverse textures, constructions, colours, and finishes
+              suited to any design requirement.
             </p>
-          </div>
-        </FadeInOnScroll>
+          </FadeInOnScroll>
+        </div>
       </div>
+
+      {/* 7-panel interactive image strip */}
+      <div
+        className="w-full flex overflow-x-auto no-scrollbar"
+        onMouseEnter={() => setPaused(true)}
+        onMouseLeave={() => setPaused(false)}
+      >
+        {productTypes.map((item, i) => {
+          const isActive = i === active;
+          return (
+            <button
+              key={item.number}
+              onClick={() => setActive(i)}
+              className="relative flex-1 min-w-[140px] overflow-hidden cursor-pointer text-left"
+              style={{ minHeight: "clamp(240px, 28vw, 380px)", background: "none", border: "none", padding: 0 }}
+            >
+              {/* Photo */}
+              <Image
+                src={item.image}
+                alt={item.name}
+                fill
+                sizes="(max-width: 768px) 50vw, 15vw"
+                className="object-cover object-center"
+                style={{
+                  transform:  isActive ? "scale(1.06)" : "scale(1)",
+                  transition: "transform 0.9s cubic-bezier(0.25, 0.1, 0.25, 1)",
+                }}
+              />
+
+              {/* Overlay */}
+              <div
+                className="absolute inset-0 pointer-events-none"
+                style={{
+                  background: isActive
+                    ? "linear-gradient(to bottom, rgba(0,0,0,0.18) 0%, rgba(0,0,0,0.0) 40%, rgba(0,0,0,0.55) 100%)"
+                    : "linear-gradient(to bottom, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.06) 40%, rgba(0,0,0,0.65) 100%)",
+                  transition: "background 0.7s ease",
+                }}
+              />
+
+              {/* Accent bottom bar */}
+              <div
+                className="absolute bottom-0 left-0 right-0 pointer-events-none bg-[var(--color-accent)]"
+                style={{
+                  height:          "3px",
+                  transform:       isActive ? "scaleX(1)" : "scaleX(0)",
+                  transformOrigin: "left",
+                  transition:      "transform 0.55s cubic-bezier(0.25, 0.1, 0.25, 1)",
+                }}
+              />
+
+              {/* Step number */}
+              <span
+                className="absolute top-5 left-5 font-display text-5xl font-normal select-none"
+                style={{
+                  color:      "rgba(248,245,240,1)",
+                  lineHeight: 1,
+                  opacity:    isActive ? 0.65 : 0.22,
+                  transition: "opacity 0.6s ease",
+                }}
+              >
+                {item.number}
+              </span>
+
+              {/* Arrow connector */}
+              {i < productTypes.length - 1 && (
+                <div
+                  className="absolute right-3 top-1/2 -translate-y-1/2 z-10 w-6 h-6 flex items-center justify-center rounded-full"
+                  style={{
+                    backgroundColor: "rgba(255,255,255,0.14)",
+                    backdropFilter:  "blur(6px)",
+                    border:          "1px solid rgba(255,255,255,0.2)",
+                    color:           "rgba(248,245,240,0.85)",
+                    fontSize:        "0.65rem",
+                  }}
+                >
+                  →
+                </div>
+              )}
+
+              {/* Bottom label */}
+              <div
+                className="absolute bottom-0 left-0 right-0 px-5"
+                style={{
+                  paddingBottom: isActive ? "26px" : "20px",
+                  transition:    "padding-bottom 0.55s ease",
+                }}
+              >
+                <p
+                  className="font-display font-normal mb-0.5"
+                  style={{
+                    fontSize:      "clamp(0.9rem, 1.6vw, 1.3rem)",
+                    color:         "rgba(248,245,240,0.95)",
+                    letterSpacing: "0.02em",
+                  }}
+                >
+                  {item.name}
+                </p>
+                <p
+                  className="text-label"
+                  style={{
+                    color:      "rgba(248,245,240,0.9)",
+                    opacity:    isActive ? 0.82 : 0.5,
+                    transition: "opacity 0.5s ease",
+                  }}
+                >
+                  {item.description}
+                </p>
+              </div>
+            </button>
+          );
+        })}
       </div>
+
+      {/* Progress dots */}
+      <div className="flex justify-center gap-2 py-4 border-t border-[var(--color-border)]">
+        {productTypes.map((item, i) => (
+          <button
+            key={item.number}
+            onClick={() => setActive(i)}
+            aria-label={item.name}
+            style={{ background: "none", border: "none", padding: "4px", cursor: "pointer" }}
+          >
+            <span
+              className="block rounded-full"
+              style={{
+                width:           i === active ? "2rem" : "0.5rem",
+                height:          "2px",
+                backgroundColor: i === active ? "var(--color-accent)" : "var(--color-border)",
+                transition:      "width 0.4s ease, background-color 0.4s ease",
+              }}
+            />
+          </button>
+        ))}
+      </div>
+
     </section>
   );
 }
