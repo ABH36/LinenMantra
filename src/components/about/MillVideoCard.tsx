@@ -61,7 +61,7 @@ export default function MillVideoCard() {
         }}
       >
         <p className="text-label" style={{ color: "rgba(248,245,240,0.7)" }}>
-          Warehouse - Bhiwandi, Maharashtra
+          Manufacturing - Navsari, Gujarat
         </p>
       </div>
     </div>
