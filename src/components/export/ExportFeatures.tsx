@@ -1,5 +1,6 @@
 import { Globe, Scissors, Package, BarChart3, Users, ShieldCheck, Plane } from "lucide-react";
 import FadeInOnScroll from "@/components/shared/FadeInOnScroll";
+import AccentDivider from "@/components/shared/AccentDivider";
 import type { LucideIcon } from "lucide-react";
 
 const FEATURES: { Icon: LucideIcon; title: string; body: string }[] = [
@@ -40,29 +41,50 @@ const FEATURES: { Icon: LucideIcon; title: string; body: string }[] = [
   },
 ];
 
-function FeatureCard({ Icon, title, body }: (typeof FEATURES)[number]) {
+function FeatureCard({
+  Icon,
+  title,
+  body,
+  index,
+}: (typeof FEATURES)[number] & { index: number }) {
   return (
-    <div className="group relative flex flex-col items-center text-center h-full p-8 bg-[var(--color-bg-primary)] border border-[var(--color-border)]">
+    <div className="group relative flex flex-col h-full p-6 bg-white shadow-sm border border-[var(--color-border)] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+
+      {/* Faint sequence number — top right */}
+      <span
+        className="absolute top-3 right-4 font-display font-normal leading-none select-none pointer-events-none text-[var(--color-border)]"
+        style={{ fontSize: "3.5rem", opacity: 0.5 }}
+        aria-hidden="true"
+      >
+        {String(index + 1).padStart(2, "0")}
+      </span>
+
       {/* Icon box */}
-      <div className="w-11 h-11 flex items-center justify-center mb-5 shrink-0 bg-[var(--color-bg-secondary)]">
-        <Icon size={18} className="text-[var(--color-accent)]" />
+      <div
+        className="w-12 h-12 flex items-center justify-center mb-5 shrink-0"
+        style={{ backgroundColor: "rgba(160,140,114,0.14)" }}
+      >
+        <Icon size={20} className="text-[var(--color-accent)]" />
       </div>
 
       {/* Title */}
       <h3
-        className="font-display font-semibold leading-tight mb-3 text-[var(--color-text-primary)]"
-        style={{ fontSize: "clamp(1.05rem, 1.4vw, 1.25rem)" }}
+        className="font-display font-semibold leading-tight mb-2 text-[var(--color-text-primary)]"
+        style={{ fontSize: "clamp(1.05rem, 1.4vw, 1.2rem)" }}
       >
         {title}
       </h3>
 
+      {/* Short gold accent line */}
+      <span className="block w-6 h-px mb-4 bg-[var(--color-accent)]" />
+
       {/* Body */}
-      <p className="text-sm font-medium leading-relaxed text-[var(--color-text-secondary)]">
+      <p className="text-sm leading-relaxed text-[var(--color-text-secondary)]">
         {body}
       </p>
 
-      {/* Gold accent bottom rule on hover */}
-      <div className="absolute bottom-0 left-0 h-px w-0 group-hover:w-full transition-all duration-500 bg-[var(--color-accent)]" />
+      {/* Bottom border — slides in on hover */}
+      <div className="absolute bottom-0 left-0 h-[2px] w-0 group-hover:w-full transition-all duration-500 bg-[var(--color-accent)]" />
     </div>
   );
 }
@@ -70,9 +92,8 @@ function FeatureCard({ Icon, title, body }: (typeof FEATURES)[number]) {
 export default function ExportFeatures() {
   return (
     <section
-      className="w-full py-10 lg:py-12 relative overflow-hidden"
+      className="w-full py-10 lg:py-14 relative overflow-hidden"
       style={{
-        backgroundColor: "var(--color-bg-dark)",
         backgroundImage: "url('/images/about/footer/fabric.webp')",
         backgroundSize: "400px auto",
         backgroundRepeat: "repeat",
@@ -82,30 +103,31 @@ export default function ExportFeatures() {
 
         {/* Section heading */}
         <FadeInOnScroll direction="up">
-          <span className="text-label block mb-5 text-[var(--color-accent)]">
+          <span className="text-label block mb-1 text-[var(--color-accent)]">
             Why Export With Us
           </span>
           <h2
-            className="font-display font-normal leading-tight mb-8 text-[var(--color-text-primary)]"
+            className="font-display font-normal leading-tight text-[var(--color-text-primary)]"
             style={{ fontSize: "clamp(1.75rem, 3vw, 2.75rem)" }}
           >
             Built for Global Business
           </h2>
+          <AccentDivider className="mt-2 mb-8" />
         </FadeInOnScroll>
 
-        {/* Rows 1 & 2 — 3 × 2 grid */}
+        {/* 3 × 2 grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-5">
           {FEATURES.slice(0, 6).map((item, i) => (
             <FadeInOnScroll key={item.title} direction="up" delay={i * 0.07}>
-              <FeatureCard {...item} />
+              <FeatureCard {...item} index={i} />
             </FadeInOnScroll>
           ))}
         </div>
 
-        {/* Row 3 — single card centred */}
+        {/* 7th card — centred */}
         <FadeInOnScroll direction="up" delay={0.44} className="flex justify-center">
           <div className="w-full md:w-1/3">
-            <FeatureCard {...FEATURES[6]} />
+            <FeatureCard {...FEATURES[6]} index={6} />
           </div>
         </FadeInOnScroll>
 
