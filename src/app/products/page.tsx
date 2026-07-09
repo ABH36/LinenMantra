@@ -26,7 +26,7 @@ export default async function ProductsPage({
         heading="Our Collections"
         subText="A curated range of signature linen fabrics — crafted across the full count spectrum for brands, designers, and garment manufacturers worldwide."
         lightImage
-        image="/images/products/poductherobanner.png"
+        image="/images/products/productherobanner.png"
       />
 
       {/* Filter tabs + animated product grid */}
