@@ -190,7 +190,7 @@ export default function Footer() {
 
               <li className="flex items-center gap-3">
                 <a href="tel:+912245005662" className="shrink-0 flex items-center leading-none hover:opacity-60 transition-opacity">
-                  <Image src="/images/SocialMediaicon/phone-call.png" alt="Phone" width={24} height={24} />
+                  <Image src="/images/SocialMediaicon/landline.png" alt="Phone" width={24} height={24} />
                 </a>
                 <a href="tel:+912245005662" className="text-[12px] hover:opacity-60 transition-opacity text-[var(--color-text-secondary)]">
                   +91 22 4500 5662
@@ -249,7 +249,7 @@ export default function Footer() {
 
               <li className="flex items-center gap-3">
                 <a href="tel:+912245687288" className="shrink-0 flex items-center leading-none hover:opacity-60 transition-opacity">
-                  <Image src="/images/SocialMediaicon/phone-call.png" alt="Phone" width={24} height={24} />
+                  <Image src="/images/SocialMediaicon/landline.png" alt="Phone" width={24} height={24} />
                 </a>
                 <a href="tel:+912245687288" className="text-[12px] hover:opacity-60 transition-opacity text-[var(--color-text-secondary)]">
                   +91 22 4568 7288
