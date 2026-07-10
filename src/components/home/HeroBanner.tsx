@@ -54,8 +54,6 @@ const SLIDES: SlideData[] = [
     h2:       "Reimagined.",
     h2Color:  TERRA,
     flourish: true,
-    body:     "From flax fields to premium collections, we craft linen fabrics trusted by designers, manufacturers, and brands worldwide.",
-    cta:      { text: "Explore Collections", href: "/products", bg: FOREST, fg: CREAM },
   },
 ];
 
@@ -163,23 +161,6 @@ export default function HeroBanner() {
                 exit={{ opacity: 0, y: -14 }}
                 transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
               >
-                {/* Label */}
-                <div className="flex items-center gap-2 mb-4">
-                  <Leaf
-                    size={11}
-                    style={{ color: FOREST, opacity: 0.7 }}
-                  />
-                  <p
-                    className="font-medium tracking-widest uppercase"
-                    style={{
-                      fontSize: "0.6rem",
-                      color: "rgba(44,74,45,0.80)",
-                    }}
-                  >
-                    Premium Linen Fabric Manufacturer
-                  </p>
-                </div>
-
                 {/* Two-tone heading */}
                 <h1
                   className="font-display font-normal leading-none uppercase"
