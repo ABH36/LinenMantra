@@ -55,6 +55,15 @@ const SLIDES: SlideData[] = [
     h2Color:  TERRA,
     flourish: true,
   },
+  {
+    id: 2,
+    image:       "/images/hero/herobanner.png",
+    mobileImage: "/images/hero/herobanner.png",
+    h1:       "",
+    h1Color:  FOREST,
+    h2:       "",
+    h2Color:  TERRA,
+  },
 ];
 
 const TOTAL       = SLIDES.length;
