@@ -20,7 +20,7 @@ const leadership = [
   },
   {
     name: "Shrey Raichura",
-    role: "Product Development & Branding",
+    role: "Business Development",
     description:
       "Bringing a fresh perspective to the next chapter, Shrey leads product innovation, brand positioning, and global market expansion — continuing the legacy with a contemporary vision.",
   },

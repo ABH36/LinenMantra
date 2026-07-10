@@ -15,7 +15,7 @@ export default function ExportPage() {
       <PageHero
         label="Trusted by Brands Across 14+ Countries"
         heading="Global Export"
-        subText="We partner with garment manufacturers, fashion labels, and designers worldwide — delivering premium linen fabrics with the reliability that global production demands."
+        subText="India's trusted B2B source for premium apparel linen — shirting, suiting, and linen blend fabrics supplied to fashion labels and garment manufacturers across 14+ countries."
         lightImage
         image="/images/Export/exportherobanner.png"
       />
