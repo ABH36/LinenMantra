@@ -22,16 +22,18 @@ const STRIP = [
 
 // ── Slide data ───────────────────────────────────────────────────────
 interface SlideData {
-  id:          number;
-  image:       string;
-  mobileImage: string;
-  h1:          string;
-  h1Color:   string;
-  h2:        string;
-  h2Color:   string;
-  flourish?: boolean;
-  body?:     string;
-  cta?:      { text: string; href: string; bg: string; fg: string };
+  id:             number;
+  image:          string;
+  mobileImage:    string;
+  objectPosition?: string;
+  h1:             string;
+  h1Color:        string;
+  h2:             string;
+  h2Color:        string;
+  label?:         boolean;
+  flourish?:      boolean;
+  body?:          string;
+  cta?:           { text: string; href: string; bg: string; fg: string };
 }
 
 const SLIDES: SlideData[] = [
@@ -43,6 +45,7 @@ const SLIDES: SlideData[] = [
     h1Color:  FOREST,
     h2:       "Crafted by Linen Mantra.",
     h2Color:  TERRA,
+    label:    true,
     flourish: true,
   },
   {
@@ -57,8 +60,9 @@ const SLIDES: SlideData[] = [
   },
   {
     id: 2,
-    image:       "/images/hero/herobanner.png",
-    mobileImage: "/images/hero/herobanner.png",
+    image:          "/images/hero/herobanner.png",
+    mobileImage:    "/images/hero/herobanner.png",
+    objectPosition: "top",
     h1:       "",
     h1Color:  FOREST,
     h2:       "",
@@ -122,7 +126,8 @@ export default function HeroBanner() {
               alt="Linen Mantra"
               fill
               sizes="100vw"
-              className="object-cover object-center block md:hidden"
+              className="object-cover block md:hidden"
+              style={{ objectPosition: s.objectPosition ?? "center" }}
               priority={s.id === 0}
             />
             {/* Desktop image */}
@@ -131,7 +136,8 @@ export default function HeroBanner() {
               alt="Linen Mantra"
               fill
               sizes="100vw"
-              className="object-cover object-center hidden md:block"
+              className="object-cover hidden md:block"
+              style={{ objectPosition: s.objectPosition ?? "center" }}
               priority={s.id === 0}
             />
           </div>
@@ -170,6 +176,19 @@ export default function HeroBanner() {
                 exit={{ opacity: 0, y: -14 }}
                 transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
               >
+                {/* Label — first banner only */}
+                {slide.label && (
+                  <div className="flex items-center gap-2 mb-4">
+                    <Leaf size={11} style={{ color: FOREST, opacity: 0.7 }} />
+                    <p
+                      className="font-medium tracking-widest uppercase"
+                      style={{ fontSize: "0.6rem", color: "rgba(44,74,45,0.80)" }}
+                    >
+                      Premium Linen Fabric Manufacturer
+                    </p>
+                  </div>
+                )}
+
                 {/* Two-tone heading */}
                 <h1
                   className="font-display font-normal leading-none uppercase"
