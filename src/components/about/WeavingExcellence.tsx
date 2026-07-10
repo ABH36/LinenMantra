@@ -82,7 +82,7 @@ export default function WeavingExcellence() {
                 35+
               </p>
               <p className="text-label" style={{ color: "rgba(248,245,240,0.5)" }}>
-                Years of Weaving Excellence
+                Years of Textile Expertise
               </p>
             </div>
           </div>
