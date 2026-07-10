@@ -57,30 +57,6 @@ const SLIDES: SlideData[] = [
     body:     "From flax fields to premium collections, we craft linen fabrics trusted by designers, manufacturers, and brands worldwide.",
     cta:      { text: "Explore Collections", href: "/products", bg: FOREST, fg: CREAM },
   },
-  {
-    id: 2,
-    image:       "/images/hero/herobanner3.png",
-    mobileImage: "/images/hero/herobanner3-mobile.jpg",
-    h1:       "India's Premium",
-    h1Color:  FOREST,
-    h2:       "Linen Export House",
-    h2Color:  TERRA,
-    flourish: true,
-    body:     "Supplying premium linen and linen-blend fabrics to global brands across 14+ countries since 2010.",
-    cta:      { text: "Get Export Quote", href: "/contact", bg: FOREST, fg: CREAM },
-  },
-  {
-    id: 3,
-    image:       "/images/hero/herobanner4.png",
-    mobileImage: "/images/hero/herobanner4.png",
-    h1:       "Fabric.",
-    h1Color:  FOREST,
-    h2:       "Elevated.",
-    h2Color:  TERRA,
-    flourish: true,
-    body:     "Every metre we weave — from fine shirting to rich suiting blends — carries our promise of consistency, craftsmanship, and care that global brands depend on.",
-    cta:      { text: "Discover Our Range", href: "/products", bg: FOREST, fg: CREAM },
-  },
 ];
 
 const TOTAL       = SLIDES.length;
