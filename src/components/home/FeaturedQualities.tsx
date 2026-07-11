@@ -100,10 +100,6 @@ export default function FeaturedQualities() {
                   <h3 className="font-display font-normal mb-1.5 text-2xl md:text-3xl text-[var(--color-text-primary)]">
                     {product.name}
                   </h3>
-                  <p className="text-label mb-3 text-[var(--color-accent)]">
-                    {product.composition}
-                    {product.leaRange ? ` · ${product.leaRange}` : ""}
-                  </p>
                   <Link
                     href="/contact"
                     className="inline-flex items-center gap-2 text-sm font-medium tracking-widest uppercase transition-all duration-300 hover:opacity-70 group/link mt-auto text-[var(--color-text-primary)]"
