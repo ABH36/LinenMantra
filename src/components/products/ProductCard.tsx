@@ -90,12 +90,6 @@ export default function ProductCard({ product, onImageClick }: Props) {
           {product.name}
         </h3>
 
-        {/* Composition + LEA */}
-        <p className="text-label mb-3 text-[var(--color-accent)]">
-          {product.composition}
-          {product.leaRange ? ` · ${product.leaRange}` : ""}
-        </p>
-
         {/* CTA */}
         <Link
           href="/contact"
