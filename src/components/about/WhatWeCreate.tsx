@@ -21,8 +21,22 @@ const productTypes = [
       "Carefully engineered blends of linen with cotton, lyocell, viscose, silk, PU & polyester — combining the best of each fibre for superior performance and hand-feel.",
   },
   {
-    id: "custom",
+    id: "menswear-womenswear",
     number: "03",
+    title: "Menswear & Womenswear",
+    description:
+      "Premium linen fabrics crafted for contemporary apparel across men's and women's fashion. Offering versatile qualities, colours, and finishes for every season.",
+  },
+  {
+    id: "home-furnishings",
+    number: "04",
+    title: "Home Furnishings",
+    description:
+      "Beautifully woven linen for curtains, upholstery, cushions, table linens, and home décor.",
+  },
+  {
+    id: "custom",
+    number: "05",
     title: "Custom Fabric Development",
     description:
       "End-to-end bespoke fabric development for brands — from construction specification and yarn selection through to sampling and production.",
