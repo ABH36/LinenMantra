@@ -45,7 +45,6 @@ const SLIDES: SlideData[] = [
     h1Color:     FOREST,
     h2:          "Crafted by Linen Mantra.",
     h2Color:     TERRA,
-    label:       true,
     flourish:    true,
   },
   {
