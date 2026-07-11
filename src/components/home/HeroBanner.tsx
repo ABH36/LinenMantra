@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { Leaf, Shirt, LayoutGrid, Factory } from "lucide-react";
+import { Leaf, Shirt, LayoutGrid, Factory, Home } from "lucide-react";
 
 // ── Hero-specific colour palette ─────────────────────────────────────
 const FOREST = "var(--color-forest)";
@@ -14,10 +14,11 @@ const CREAM  = "var(--color-text-light)";
 
 // ── Persistent bottom strip ──────────────────────────────────────────
 const STRIP = [
-  { Icon: Leaf,       bold: "PURE BY NATURE",          light: "Perfected by Expertise."   },
-  { Icon: Factory,    bold: "B2B MANUFACTURING",       light: "For Brands. For Business." },
-  { Icon: LayoutGrid, bold: "READY STOCK COLLECTION",  light: "Extensive Inventory."      },
-  { Icon: Shirt,      bold: "SHIRTING & SUITING",      light: "25 to 150 LEA."            },
+  { Icon: Leaf,       bold: "PURE BY NATURE",          light: "Perfected by Expertise."      },
+  { Icon: Factory,    bold: "B2B MANUFACTURING",       light: "For Brands. For Business."    },
+  { Icon: LayoutGrid, bold: "READY STOCK COLLECTION",  light: "Extensive Inventory."         },
+  { Icon: Shirt,      bold: "SHIRTING & SUITING",      light: "25 LEA TO 150 LEA · 58\""    },
+  { Icon: Home,       bold: "HOME FURNISHINGS",        light: "6 LEA TO 150 LEA · 128\""    },
 ];
 
 // ── Slide data ───────────────────────────────────────────────────────
@@ -199,9 +200,9 @@ export default function HeroBanner() {
 
       {/* Bottom strip — 2×2 grid on mobile */}
       <div className="bg-[var(--color-forest)]">
-        <div className="grid grid-cols-2">
+        <div className="grid grid-cols-3">
           {STRIP.map(({ Icon, bold, light }, i) => (
-            <div key={i} className="flex items-center gap-2.5 px-5 py-3" style={{ borderRight: i % 2 === 0 ? "1px solid rgba(248,245,240,0.08)" : "none", borderTop: i >= 2 ? "1px solid rgba(248,245,240,0.08)" : "none" }}>
+            <div key={i} className="flex items-center gap-2.5 px-4 py-3" style={{ borderRight: (i + 1) % 3 !== 0 ? "1px solid rgba(248,245,240,0.08)" : "none", borderTop: i >= 3 ? "1px solid rgba(248,245,240,0.08)" : "none" }}>
               <Icon size={13} style={{ color: GOLD, opacity: 0.8, flexShrink: 0 }} />
               <div>
                 <p className="font-semibold leading-tight" style={{ fontSize: "0.58rem", color: CREAM, letterSpacing: "0.06em" }}>{bold}</p>
@@ -314,7 +315,7 @@ export default function HeroBanner() {
       <div className="absolute inset-x-0 bottom-0 z-30 bg-[var(--color-forest)]"
       >
         <div className="container-site">
-          <div className="grid grid-cols-4">
+          <div className="grid grid-cols-5">
             {STRIP.map(({ Icon, bold, light }, i) => (
               <div
                 key={i}
