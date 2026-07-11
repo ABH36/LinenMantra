@@ -74,12 +74,12 @@ const TOTAL       = SLIDES.length;
 const INTERVAL_MS = 5000;
 
 // ── Leaf flourish divider ────────────────────────────────────────────
-function Flourish({ color }: { color: string }) {
+function Flourish() {
   return (
-    <div className="flex items-center gap-2.5 my-5">
-      <span className="block h-px w-12" style={{ backgroundColor: color, opacity: 0.45 }} />
-      <Leaf size={12} style={{ color, opacity: 0.65 }} />
-      <span className="block h-px w-6"  style={{ backgroundColor: color, opacity: 0.28 }} />
+    <div className="flex items-center gap-3 my-5">
+      <span className="block h-px w-10 bg-[var(--color-accent)]" />
+      <Image src="/images/about/footer/leaf.webp" alt="" width={20} height={17} className="w-5 h-auto object-contain opacity-85" aria-hidden="true" />
+      <span className="block h-px w-10 bg-[var(--color-accent)]" />
     </div>
   );
 }
@@ -168,7 +168,7 @@ export default function HeroBanner() {
                 <span className="block" style={{ color: slide.h2Color }}>{slide.h2}</span>
               </h1>
             )}
-            {slide.flourish && <Flourish color={FOREST} />}
+            {slide.flourish && <Flourish />}
             {slide.body && (
               <p className="leading-relaxed mb-5" style={{ fontSize: "0.875rem", color: "rgba(44,74,45,0.82)" }}>
                 {slide.body}
@@ -283,7 +283,7 @@ export default function HeroBanner() {
                   <span className="block" style={{ color: slide.h1Color }}>{slide.h1}</span>
                   <span className="block" style={{ color: slide.h2Color }}>{slide.h2}</span>
                 </h1>
-                {slide.flourish && <Flourish color={FOREST} />}
+                {slide.flourish && <Flourish />}
                 {slide.body && (
                   <p className="leading-relaxed mb-6" style={{ fontSize: "0.9rem", color: "rgba(44,74,45,0.82)" }}>
                     {slide.body}
