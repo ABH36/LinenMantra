@@ -6,8 +6,8 @@ import FadeInOnScroll from "@/components/shared/FadeInOnScroll";
 const services = [
   {
     number: "01",
-    title: "Pure Linen Fabrics",
-    description: "100% premium linen across the full 25–150 LEA count spectrum",
+    title: "Linen Fabrics",
+    description: "100% premium linen across the full 6–150 LEA count spectrum",
     image: "/images/products/Limestone.png",
     href: "/products",
   },
