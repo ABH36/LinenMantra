@@ -108,10 +108,10 @@ export default function HeroBanner() {
     {/* ════════════════════════════════════════
         MOBILE LAYOUT — image top, content below
     ════════════════════════════════════════ */}
-    <section className="md:hidden flex flex-col w-full" style={{ paddingTop: "90px" }}>
+    <section className="md:hidden flex flex-col w-full">
 
-      {/* Image — full natural size, no crop */}
-      <div className="w-full overflow-hidden">
+      {/* Image — slides behind transparent header, gradient ensures hamburger visibility */}
+      <div className="relative w-full overflow-hidden">
         <div
           className="flex"
           style={{
@@ -134,6 +134,12 @@ export default function HeroBanner() {
             </div>
           ))}
         </div>
+
+        {/* Top gradient — makes cream hamburger icon visible over image */}
+        <div
+          className="absolute inset-x-0 top-0 pointer-events-none z-10"
+          style={{ height: "100px", background: "linear-gradient(to bottom, rgba(0,0,0,0.28) 0%, transparent 100%)" }}
+        />
       </div>
 
       {/* Content — below image */}
