@@ -22,25 +22,23 @@ const STRIP = [
 
 // ── Slide data ───────────────────────────────────────────────────────
 interface SlideData {
-  id:             number;
-  image:          string;
-  mobileImage:    string;
+  id:              number;
+  image:           string;
   objectPosition?: string;
-  h1:             string;
-  h1Color:        string;
-  h2:             string;
-  h2Color:        string;
-  label?:         boolean;
-  flourish?:      boolean;
-  body?:          string;
-  cta?:           { text: string; href: string; bg: string; fg: string };
+  h1:              string;
+  h1Color:         string;
+  h2:              string;
+  h2Color:         string;
+  label?:          boolean;
+  flourish?:       boolean;
+  body?:           string;
+  cta?:            { text: string; href: string; bg: string; fg: string };
 }
 
 const SLIDES: SlideData[] = [
   {
-    id: 0,
-    image:       "/images/hero/herobanner2.png",
-    mobileImage: "/images/hero/herobanner2-mobile.jpg",
+    id:       0,
+    image:    "/images/hero/herobanner2.png",
     h1:       "From Flax to Fabric.",
     h1Color:  FOREST,
     h2:       "Crafted by Linen Mantra.",
@@ -49,9 +47,8 @@ const SLIDES: SlideData[] = [
     flourish: true,
   },
   {
-    id: 1,
-    image:       "/images/hero/herobanner1.png",
-    mobileImage: "/images/hero/herobanner1-mobile.jpg",
+    id:       1,
+    image:    "/images/hero/herobanner1.png",
     h1:       "Linen",
     h1Color:  FOREST,
     h2:       "Reimagined.",
@@ -59,14 +56,13 @@ const SLIDES: SlideData[] = [
     flourish: true,
   },
   {
-    id: 2,
+    id:             2,
     image:          "/images/hero/herobanner.png",
-    mobileImage:    "/images/hero/herobanner.png",
     objectPosition: "top",
-    h1:       "",
-    h1Color:  FOREST,
-    h2:       "",
-    h2Color:  TERRA,
+    h1:             "",
+    h1Color:        FOREST,
+    h2:             "",
+    h2Color:        TERRA,
   },
 ];
 
@@ -126,7 +122,7 @@ export default function HeroBanner() {
           {SLIDES.map((s) => (
             <div key={s.id} style={{ flexShrink: 0, minWidth: "100%" }}>
               <Image
-                src={s.mobileImage}
+                src={s.image}
                 alt="Linen Mantra"
                 width={1080}
                 height={1350}
