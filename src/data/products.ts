@@ -31,8 +31,8 @@ export const products: Product[] = [
     id: "alpino",
     name: "Alpino",
     category: "shirting",
-    composition: "100% Pure Linen",
-    leaRange: "80 LEA",
+    composition: "100% Linen",
+    leaRange: "60 LEA",
     description:
       "A sophisticated linen suiting fabric offering exceptional drape and structure for formal tailoring.",
     image: "/images/products/Alpino.png",
@@ -43,7 +43,7 @@ export const products: Product[] = [
     name: "La Seta Linen",
     category: "shirting",
     composition: "Linen-Silk Blend",
-    leaRange: "70 LEA",
+    leaRange: "60 LEA",
     description:
       "An exquisite linen fabric with a silken hand-feel — crafted for designers who seek fabric that bridges heritage and luxury.",
     image: "/images/products/la-seta-linen.jpg",
@@ -54,7 +54,6 @@ export const products: Product[] = [
     name: "Rare Lea",
     category: "shirting",
     composition: "100% Pure Linen",
-    leaRange: "100 LEA",
     description:
       "A premium high-count linen suiting with unmatched finesse — delivering rare construction and superior drape for bespoke tailoring.",
     image: "/images/products/rare-lea.png",
@@ -64,7 +63,6 @@ export const products: Product[] = [
     name: "Ireland",
     category: "shirting",
     composition: "100% Pure Linen",
-    leaRange: "40 LEA",
     description:
       "Inspired by the finest Irish linen tradition — a pure linen shirting with crisp texture and superior breathability for discerning menswear.",
     image: "/images/products/ireland.png",
@@ -74,7 +72,6 @@ export const products: Product[] = [
     name: "Euro Style",
     category: "suiting",
     composition: "100% Pure Linen",
-    leaRange: "80 LEA",
     description:
       "A classic European-inspired linen suiting with refined structure and a clean hand-feel — ideal for formal and semi-formal tailoring.",
     image: "/images/products/suiting/euro-style.png",
@@ -84,7 +81,6 @@ export const products: Product[] = [
     name: "Foglia",
     category: "suiting",
     composition: "100% Pure Linen",
-    leaRange: "90 LEA",
     description:
       "A lightweight linen suiting with natural texture and elegant drape — where Italian design sensibility meets premium linen craft.",
     image: "/images/products/suiting/foglia.png",
@@ -94,7 +90,6 @@ export const products: Product[] = [
     name: "Leonard",
     category: "suiting",
     composition: "100% Pure Linen",
-    leaRange: "100 LEA",
     description:
       "A premium high-count linen suiting delivering weight, structure, and versatility — built for brands that demand the finest.",
     image: "/images/products/suiting/leonard.jpg",
@@ -104,7 +99,6 @@ export const products: Product[] = [
     name: "On Star",
     category: "suiting",
     composition: "100% Pure Linen",
-    leaRange: "80 LEA",
     description:
       "A distinguished linen suiting with standout character — crafted for fashion-forward brands seeking fabrics that make a statement.",
     image: "/images/products/suiting/on-star.png",
