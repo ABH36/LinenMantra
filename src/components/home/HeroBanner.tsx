@@ -63,10 +63,13 @@ const SLIDES: SlideData[] = [
     image:          "/images/hero/herobanner.png",
     mobileImage:    "/images/hero/herobannermob.png",
     objectPosition: "top",
-    h1:             "",
+    h1:             "Trusted by",
     h1Color:        FOREST,
-    h2:             "",
+    h2:             "Global Brands.",
     h2Color:        TERRA,
+    flourish:       true,
+    body:           "Supplying premium linen fabrics to fashion labels and garment manufacturers across 14+ countries.",
+    cta:            { text: "Explore Export", href: "/export", bg: FOREST, fg: CREAM },
   },
 ];
 
