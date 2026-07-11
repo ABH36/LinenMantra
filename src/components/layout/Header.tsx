@@ -56,8 +56,8 @@ export default function Header() {
                 width={1536}
                 height={1024}
                 priority
-                sizes="(max-width: 768px) 110px, 220px"
-                className="h-[54px] md:h-[112px] w-auto transition-all duration-300"
+                sizes="(max-width: 768px) 140px, 280px"
+                className="h-[70px] md:h-[140px] w-auto transition-all duration-300"
                 style={{ filter: "none" }}
               />
             </Link>
