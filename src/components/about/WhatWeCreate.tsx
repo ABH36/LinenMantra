@@ -11,7 +11,7 @@ const productTypes = [
     number: "01",
     title: "100% Pure Linen Fabrics",
     description:
-      "The purest expression of linen — breathable, naturally textured, and crafted across a full count range from 25 to 150 LEA.",
+      "The purest expression of linen — breathable, naturally textured, and crafted across a full count range from 6 LEA to 150 LEA.",
   },
   {
     id: "blended",
