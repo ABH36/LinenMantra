@@ -68,8 +68,6 @@ const SLIDES: SlideData[] = [
     h2:             "Global Brands.",
     h2Color:        TERRA,
     flourish:       true,
-    body:           "Supplying premium linen fabrics to fashion labels and garment manufacturers across 14+ countries.",
-    cta:            { text: "Explore Export", href: "/export", bg: FOREST, fg: CREAM },
   },
 ];
 
