@@ -120,13 +120,14 @@ export default function HeroBanner() {
           }}
         >
           {SLIDES.map((s) => (
-            <div key={s.id} style={{ flexShrink: 0, minWidth: "100%" }}>
+            <div key={s.id} className="relative flex-shrink-0" style={{ minWidth: "100%", aspectRatio: "4/5" }}>
               <Image
                 src={s.image}
                 alt="Linen Mantra"
-                width={1080}
-                height={1350}
-                className="w-full h-auto block"
+                fill
+                sizes="100vw"
+                className="object-cover"
+                style={{ objectPosition: s.objectPosition ?? "center top" }}
                 priority={s.id === 0}
               />
             </div>

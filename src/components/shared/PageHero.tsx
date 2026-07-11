@@ -41,13 +41,13 @@ export default function PageHero({
       {/* ── MOBILE: image on top, content below ── */}
       <section className="md:hidden w-full">
         {hasImage && (
-          <div className="w-full overflow-hidden">
+          <div className="relative w-full" style={{ aspectRatio: "16/9" }}>
             <Image
               src={image}
               alt=""
-              width={1920}
-              height={1080}
-              className="w-full h-auto block"
+              fill
+              sizes="100vw"
+              className="object-cover object-center"
               priority
             />
           </div>
