@@ -21,36 +21,8 @@ const productTypes = [
       "Carefully engineered blends of linen with cotton, wool, and art silk — combining the best of each fibre for superior performance and hand-feel.",
   },
   {
-    id: "shirting",
-    number: "03",
-    title: "Linen Shirting",
-    description:
-      "Premium shirting fabrics in plain, yarn-dyed, dobby, and printed constructions — crafted for fashion-forward menswear and womenswear collections.",
-  },
-  {
-    id: "suiting",
-    number: "04",
-    title: "Linen Suiting",
-    description:
-      "Structured, refined suiting fabrics for formal tailoring and contemporary fashion — available in pure linen and premium blended compositions.",
-  },
-  {
-    id: "yarn-dyed",
-    number: "05",
-    title: "Yarn-Dyed Linen Fabrics",
-    description:
-      "Rich, colour-fast yarn-dyed linens featuring stripes, checks, and geometric patterns with exceptional depth and consistency of colour.",
-  },
-  {
-    id: "designer",
-    number: "06",
-    title: "Designer Linen Collections",
-    description:
-      "Seasonal and trend-driven collections featuring jacquards, digital prints, panel designs, and specialty weaves for high-fashion applications.",
-  },
-  {
     id: "custom",
-    number: "07",
+    number: "03",
     title: "Custom Fabric Development",
     description:
       "End-to-end bespoke fabric development for brands — from construction specification and yarn selection through to sampling and production.",
