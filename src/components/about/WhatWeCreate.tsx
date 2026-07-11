@@ -18,7 +18,7 @@ const productTypes = [
     number: "02",
     title: "Linen Blended Fabrics",
     description:
-      "Carefully engineered blends of linen with cotton, wool, and art silk — combining the best of each fibre for superior performance and hand-feel.",
+      "Carefully engineered blends of linen with cotton, lyocell, viscose, silk, PU & polyester — combining the best of each fibre for superior performance and hand-feel.",
   },
   {
     id: "custom",
