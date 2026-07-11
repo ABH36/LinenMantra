@@ -24,6 +24,7 @@ const STRIP = [
 interface SlideData {
   id:              number;
   image:           string;
+  mobileImage:     string;
   objectPosition?: string;
   h1:              string;
   h1Color:         string;
@@ -37,28 +38,30 @@ interface SlideData {
 
 const SLIDES: SlideData[] = [
   {
-    id:       0,
-    image:    "/images/hero/herobanner2.png",
-    h1:       "From Flax to Fabric.",
-    h1Color:  FOREST,
-    h2:       "Crafted by Linen Mantra.",
-    h2Color:  TERRA,
-    label:    true,
-    flourish: true,
+    id:          0,
+    image:       "/images/hero/herobanner2.png",
+    mobileImage: "/images/hero/herobanner2mob.png",
+    h1:          "From Flax to Fabric.",
+    h1Color:     FOREST,
+    h2:          "Crafted by Linen Mantra.",
+    h2Color:     TERRA,
+    label:       true,
+    flourish:    true,
   },
   {
-    id:             1,
-    image:          "/images/hero/herobanner1.png",
-    objectPosition: "center",
-    h1:             "Linen",
-    h1Color:        FOREST,
-    h2:             "Reimagined.",
-    h2Color:        TERRA,
-    flourish:       true,
+    id:          1,
+    image:       "/images/hero/herobanner1.png",
+    mobileImage: "/images/hero/herobanner1mob.png",
+    h1:          "Linen",
+    h1Color:     FOREST,
+    h2:          "Reimagined.",
+    h2Color:     TERRA,
+    flourish:    true,
   },
   {
     id:             2,
     image:          "/images/hero/herobanner.png",
+    mobileImage:    "/images/hero/herobannermob.png",
     objectPosition: "top",
     h1:             "",
     h1Color:        FOREST,
@@ -123,12 +126,11 @@ export default function HeroBanner() {
           {SLIDES.map((s) => (
             <div key={s.id} className="relative flex-shrink-0" style={{ minWidth: "100%", aspectRatio: "4/5" }}>
               <Image
-                src={s.image}
+                src={s.mobileImage}
                 alt="Linen Mantra"
                 fill
                 sizes="100vw"
-                className="object-cover"
-                style={{ objectPosition: s.objectPosition ?? "center top" }}
+                className="object-cover object-center"
                 priority={s.id === 0}
               />
             </div>
