@@ -61,6 +61,7 @@ export const products: Product[] = [
     id: "ireland",
     name: "Ireland",
     category: "shirting",
+    leaRange: "60 LEA",
     description:
       "Inspired by the finest Irish linen tradition — a pure linen shirting with crisp texture and superior breathability for discerning menswear.",
     image: "/images/products/ireland.png",
@@ -69,6 +70,7 @@ export const products: Product[] = [
     id: "euro-style",
     name: "Euro Style",
     category: "suiting",
+    leaRange: "25 LEA",
     description:
       "A classic European-inspired linen suiting with refined structure and a clean hand-feel — ideal for formal and semi-formal tailoring.",
     image: "/images/products/suiting/euro-style.png",
@@ -85,6 +87,7 @@ export const products: Product[] = [
     id: "leonard",
     name: "Leonard",
     category: "suiting",
+    leaRange: "40 LEA",
     description:
       "A premium high-count linen suiting delivering weight, structure, and versatility — built for brands that demand the finest.",
     image: "/images/products/suiting/leonard.jpg",
@@ -93,6 +96,7 @@ export const products: Product[] = [
     id: "on-star",
     name: "On Star",
     category: "suiting",
+    leaRange: "60 LEA",
     description:
       "A distinguished linen suiting with standout character — crafted for fashion-forward brands seeking fabrics that make a statement.",
     image: "/images/products/suiting/on-star.png",
