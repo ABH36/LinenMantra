@@ -53,17 +53,6 @@ export default function MillVideoCard() {
         <source src="/images/about/A_cinematic_slow_motion_docum.mp4" type="video/mp4" />
       </video>
 
-      {/* Bottom label — always visible */}
-      <div
-        className="absolute bottom-0 left-0 right-0 p-5 z-10"
-        style={{
-          background: "linear-gradient(to top, rgba(28,28,26,0.82) 0%, transparent 100%)",
-        }}
-      >
-        <p className="text-label" style={{ color: "rgba(248,245,240,0.7)" }}>
-          Manufacturing - Navsari, Gujarat
-        </p>
-      </div>
     </div>
   );
 }
