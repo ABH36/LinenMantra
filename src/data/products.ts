@@ -20,7 +20,7 @@ export const products: Product[] = [
     id: "limestone",
     name: "Limestone",
     category: "shirting",
-    composition: "100% Pure Linen",
+    composition: "100% Linen",
     leaRange: "60 LEA",
     description:
       "A refined, breathable shirting fabric with a natural muted finish — ideal for premium menswear collections.",

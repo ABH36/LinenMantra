@@ -9,7 +9,7 @@ const productTypes = [
   {
     id: "pure-linen",
     number: "01",
-    title: "100% Pure Linen Fabrics",
+    title: "100% Linen Fabrics",
     description:
       "The purest expression of linen — breathable, naturally textured, and crafted across a full count range from 6 LEA to 150 LEA.",
   },
