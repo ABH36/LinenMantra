@@ -39,7 +39,7 @@ export default function PageHero({
   return (
     <>
       {/* ── MOBILE: image on top, content below ── */}
-      <section className="md:hidden w-full">
+      <section className="md:hidden w-full" style={{ paddingTop: "90px" }}>
         {hasImage && (
           <div className="relative w-full" style={{ aspectRatio: "16/9" }}>
             <Image

@@ -107,7 +107,7 @@ export default function HeroBanner() {
     {/* ════════════════════════════════════════
         MOBILE LAYOUT — image top, content below
     ════════════════════════════════════════ */}
-    <section className="md:hidden flex flex-col w-full">
+    <section className="md:hidden flex flex-col w-full" style={{ paddingTop: "90px" }}>
 
       {/* Image — full natural size, no crop */}
       <div className="w-full overflow-hidden">
