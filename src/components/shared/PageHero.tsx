@@ -41,21 +41,15 @@ export default function PageHero({
       {/* ── MOBILE: image on top, content below ── */}
       <section className="md:hidden w-full">
         {hasImage && (
-          <div className="relative w-full" style={{ height: "260px" }}>
+          <div className="w-full overflow-hidden">
             <Image
               src={image}
               alt=""
-              fill
-              sizes="100vw"
-              className="object-cover object-center"
+              width={1920}
+              height={1080}
+              className="w-full h-auto block"
               priority
             />
-            {!lightImage && (
-              <div
-                className="absolute inset-0"
-                style={{ background: "linear-gradient(to bottom, rgba(10,9,8,0.18) 0%, rgba(10,9,8,0.45) 100%)" }}
-              />
-            )}
           </div>
         )}
         <div

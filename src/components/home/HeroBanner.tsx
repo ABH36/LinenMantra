@@ -113,26 +113,24 @@ export default function HeroBanner() {
     ════════════════════════════════════════ */}
     <section className="md:hidden flex flex-col w-full">
 
-      {/* Image — top half */}
-      <div className="relative w-full overflow-hidden" style={{ height: "52svh", minHeight: "280px" }}>
+      {/* Image — full natural size, no crop */}
+      <div className="w-full overflow-hidden">
         <div
-          className="absolute inset-0 flex h-full"
+          className="flex"
           style={{
-            width:      `${TOTAL * 100}%`,
-            transform:  `translateX(-${(current * 100) / TOTAL}%)`,
+            transform:  `translateX(-${current * 100}%)`,
             transition: "transform 0.65s cubic-bezier(0.65, 0, 0.35, 1)",
             willChange: "transform",
           }}
         >
           {SLIDES.map((s) => (
-            <div key={s.id} className="relative h-full flex-shrink-0" style={{ width: `${100 / TOTAL}%` }}>
+            <div key={s.id} style={{ flexShrink: 0, minWidth: "100%" }}>
               <Image
                 src={s.mobileImage}
                 alt="Linen Mantra"
-                fill
-                sizes="100vw"
-                className="object-cover"
-                style={{ objectPosition: s.objectPosition ?? "center top" }}
+                width={1080}
+                height={1350}
+                className="w-full h-auto block"
                 priority={s.id === 0}
               />
             </div>
