@@ -3,13 +3,13 @@ import AccentDivider from "@/components/shared/AccentDivider";
 import MillImageSlider from "./MillImageSlider";
 
 const capabilities = [
-  { label: "Yarn Count Range", value: "25 – 150 LEA" },
-  { label: "Fabric Types", value: "Shirting · Suiting · Ceremonial · Fashion" },
+  { label: "Yarn Count Range", value: "6 LEA – 150 LEA" },
+  { label: "Fabric Types", value: "Shirting · Suiting · Ceremonial · Fashion · Home Furnishings" },
+  { label: "Specialising", value: "Plain · Dobby · Jacquard · PD · YD · Block · Discharge · Rotary · Digital Prints" },
   { label: "Blends", value: "100% Linen · Linen blended with Cotton, Lyocell, Viscose, PC & Polyester" },
-  { label: "Finishes", value: "Plain · Yarn-Dyed · Dobby · Jacquard · Digital Print" },
   { label: "Manufacturing", value: "Navsari, Gujarat" },
   { label: "Warehousing", value: "Bhiwandi, Maharashtra" },
-  { label: "Machinery", value: "European Technology" },
+  { label: "Machinery", value: "German Technology" },
 ];
 
 export default function WeavingExcellence() {
