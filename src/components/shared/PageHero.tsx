@@ -24,8 +24,6 @@ export default function PageHero({
   const hasImage = !!image;
   const isDark = hasImage || dark;
 
-  const bg = hasImage ? "" : isDark ? "" : "bg-[var(--color-bg-secondary)]";
-
   const headingColor = lightImage
     ? "var(--color-cta)"
     : hasImage
@@ -39,86 +37,141 @@ export default function PageHero({
     : "var(--color-text-secondary)";
 
   return (
-    <section
-      className={`relative w-full pt-28 pb-14 md:pt-44 md:pb-24 overflow-hidden ${hasImage ? "" : bg}`}
-      style={
-        hasImage
-          ? { backgroundColor: "#111110" }
-          : !hasImage && isDark
-          ? {
-              backgroundImage: "url('/images/about/footer/fabric.webp')",
-              backgroundSize: "400px auto",
-              backgroundRepeat: "repeat",
-            }
-          : undefined
-      }
-    >
-      {/* Background image */}
-      {hasImage && (
-        <>
-          <Image
-            src={image}
-            alt=""
-            fill
-            sizes="100vw"
-            className="object-cover object-center"
-            priority
-          />
-          {/* Dark overlay only for dark-background images */}
-          {!lightImage && (
-            <div
-              className="absolute inset-0"
-              style={{
-                background:
-                  "linear-gradient(105deg, rgba(10,9,8,0.82) 0%, rgba(10,9,8,0.58) 55%, rgba(10,9,8,0.28) 100%)",
-              }}
+    <>
+      {/* ── MOBILE: image on top, content below ── */}
+      <section className="md:hidden w-full">
+        {hasImage && (
+          <div className="relative w-full" style={{ height: "260px" }}>
+            <Image
+              src={image}
+              alt=""
+              fill
+              sizes="100vw"
+              className="object-cover object-center"
+              priority
             />
-          )}
-        </>
-      )}
-
-      <div className="container-site relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
+            {!lightImage && (
+              <div
+                className="absolute inset-0"
+                style={{ background: "linear-gradient(to bottom, rgba(10,9,8,0.18) 0%, rgba(10,9,8,0.45) 100%)" }}
+              />
+            )}
+          </div>
+        )}
+        <div
+          className="px-6 py-10"
+          style={{
+            backgroundColor: hasImage
+              ? "var(--color-bg-primary)"
+              : isDark
+              ? "var(--color-bg-secondary)"
+              : "var(--color-bg-secondary)",
+          }}
         >
-          {/* Large page title */}
-          <h1
-            className="font-display font-normal leading-tight"
-            style={{
-              color: headingColor,
-              fontSize: "clamp(2.75rem, 5.5vw, 5rem)",
-            }}
+          <motion.div
+            initial={{ opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
           >
-            {heading}
-          </h1>
+            <h1
+              className="font-display font-normal leading-tight text-[var(--color-text-primary)]"
+              style={{ fontSize: "clamp(2rem, 9vw, 2.75rem)" }}
+            >
+              {heading}
+            </h1>
+            {label && (
+              <p
+                className="font-display italic leading-snug mt-2 text-[var(--color-text-primary)]"
+                style={{ fontSize: "clamp(1rem, 4vw, 1.25rem)" }}
+              >
+                {label}
+              </p>
+            )}
+            <AccentDivider className="mt-2" />
+            {subText && (
+              <p className="mt-5 leading-relaxed text-base text-[var(--color-text-secondary)]">
+                {subText}
+              </p>
+            )}
+          </motion.div>
+        </div>
+      </section>
 
-          {/* Italic subtitle below heading */}
-          {label && (
-            <p
-              className="font-display italic leading-snug mt-2"
+      {/* ── DESKTOP: full-bleed image with overlaid text ── */}
+      <section
+        className={`hidden md:block relative w-full pt-44 pb-24 overflow-hidden`}
+        style={
+          hasImage
+            ? { backgroundColor: "#111110" }
+            : isDark
+            ? {
+                backgroundImage: "url('/images/about/footer/fabric.webp')",
+                backgroundSize: "400px auto",
+                backgroundRepeat: "repeat",
+              }
+            : { backgroundColor: "var(--color-bg-secondary)" }
+        }
+      >
+        {hasImage && (
+          <>
+            <Image
+              src={image}
+              alt=""
+              fill
+              sizes="100vw"
+              className="object-cover object-center"
+              priority
+            />
+            {!lightImage && (
+              <div
+                className="absolute inset-0"
+                style={{
+                  background:
+                    "linear-gradient(105deg, rgba(10,9,8,0.82) 0%, rgba(10,9,8,0.58) 55%, rgba(10,9,8,0.28) 100%)",
+                }}
+              />
+            )}
+          </>
+        )}
+
+        <div className="container-site relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
+          >
+            <h1
+              className="font-display font-normal leading-tight"
               style={{
                 color: headingColor,
-                fontSize: "clamp(1.1rem, 2vw, 1.6rem)",
+                fontSize: "clamp(2.75rem, 5.5vw, 5rem)",
               }}
             >
-              {label}
-            </p>
-          )}
-
-          <AccentDivider className="mt-2" />
-
-          {subText && (
-            <p
-              className="mt-5 max-w-lg leading-relaxed text-base"
-              style={{ color: subColor }}
-            >
-              {subText}
-            </p>
-          )}
-        </motion.div>
-      </div>
-    </section>
+              {heading}
+            </h1>
+            {label && (
+              <p
+                className="font-display italic leading-snug mt-2"
+                style={{
+                  color: headingColor,
+                  fontSize: "clamp(1.1rem, 2vw, 1.6rem)",
+                }}
+              >
+                {label}
+              </p>
+            )}
+            <AccentDivider className="mt-2" />
+            {subText && (
+              <p
+                className="mt-5 max-w-lg leading-relaxed text-base"
+                style={{ color: subColor }}
+              >
+                {subText}
+              </p>
+            )}
+          </motion.div>
+        </div>
+      </section>
+    </>
   );
 }
