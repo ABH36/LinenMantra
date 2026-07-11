@@ -42,7 +42,7 @@ export default function Header() {
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${headerBg}`}
       >
         <div className="container-site">
-          <div className="flex items-center justify-between h-[90px] md:h-[170px]">
+          <div className="flex items-center justify-between h-[64px] md:h-[120px]">
 
             {/* Logo */}
             <Link

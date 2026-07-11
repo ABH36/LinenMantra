@@ -260,7 +260,7 @@ export default function HeroBanner() {
       />
 
       {/* ── Slide content ── */}
-      <div className="absolute inset-0 z-20 flex flex-col pt-[170px] pb-[48px]" style={{ paddingRight: "clamp(0px, 14vw, 215px)" }}>
+      <div className="absolute inset-0 z-20 flex flex-col pt-[120px] pb-[48px]" style={{ paddingRight: "clamp(0px, 14vw, 215px)" }}>
         <div className="container-site flex-1 flex items-center">
           <div className="w-full max-w-[555px]">
             <AnimatePresence mode="wait">
