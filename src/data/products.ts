@@ -8,7 +8,7 @@ export type Product = {
   id: string;
   name: string;
   category: ProductCategory;
-  composition: string;
+  composition?: string;
   leaRange?: string;
   description: string;
   image: string;
@@ -53,7 +53,6 @@ export const products: Product[] = [
     id: "rare-lea",
     name: "Rare Lea",
     category: "shirting",
-    composition: "100% Pure Linen",
     description:
       "A premium high-count linen suiting with unmatched finesse — delivering rare construction and superior drape for bespoke tailoring.",
     image: "/images/products/rare-lea.png",
@@ -62,7 +61,6 @@ export const products: Product[] = [
     id: "ireland",
     name: "Ireland",
     category: "shirting",
-    composition: "100% Pure Linen",
     description:
       "Inspired by the finest Irish linen tradition — a pure linen shirting with crisp texture and superior breathability for discerning menswear.",
     image: "/images/products/ireland.png",
@@ -71,7 +69,6 @@ export const products: Product[] = [
     id: "euro-style",
     name: "Euro Style",
     category: "suiting",
-    composition: "100% Pure Linen",
     description:
       "A classic European-inspired linen suiting with refined structure and a clean hand-feel — ideal for formal and semi-formal tailoring.",
     image: "/images/products/suiting/euro-style.png",
@@ -80,7 +77,6 @@ export const products: Product[] = [
     id: "foglia",
     name: "Foglia",
     category: "suiting",
-    composition: "100% Pure Linen",
     description:
       "A lightweight linen suiting with natural texture and elegant drape — where Italian design sensibility meets premium linen craft.",
     image: "/images/products/suiting/foglia.png",
@@ -89,7 +85,6 @@ export const products: Product[] = [
     id: "leonard",
     name: "Leonard",
     category: "suiting",
-    composition: "100% Pure Linen",
     description:
       "A premium high-count linen suiting delivering weight, structure, and versatility — built for brands that demand the finest.",
     image: "/images/products/suiting/leonard.jpg",
@@ -98,7 +93,6 @@ export const products: Product[] = [
     id: "on-star",
     name: "On Star",
     category: "suiting",
-    composition: "100% Pure Linen",
     description:
       "A distinguished linen suiting with standout character — crafted for fashion-forward brands seeking fabrics that make a statement.",
     image: "/images/products/suiting/on-star.png",
@@ -107,7 +101,6 @@ export const products: Product[] = [
     id: "coord-set-gift-box",
     name: "Coord Set Linen Gift Box",
     category: "gift",
-    composition: "100% Pure Linen",
     description:
       "A curated linen coord set presented in an elegant gift box — the perfect premium gifting solution for lifestyle and fashion brands.",
     image: "/images/products/giftproducts/Coord%20Set%20Linen%20Gift%20Box.PNG",
@@ -117,7 +110,6 @@ export const products: Product[] = [
     id: "linen-duo-gift-set",
     name: "Linen Duo Gift Set",
     category: "gift",
-    composition: "100% Pure Linen",
     description:
       "A thoughtfully paired duo of premium linen pieces, beautifully packaged — ideal for corporate gifting and retail collections.",
     image: "/images/products/giftproducts/Linen%20Duo%20Gift%20Set.jpg",
@@ -127,7 +119,6 @@ export const products: Product[] = [
     id: "single-piece-gift-box",
     name: "Single Piece Gift Box",
     category: "gift",
-    composition: "100% Pure Linen",
     description:
       "A single premium linen piece presented in a refined gift box — perfect for individual gifting with a touch of elegance.",
     image: "/images/products/giftproducts/Single%20Piece%20Gift%20Box.PNG",
