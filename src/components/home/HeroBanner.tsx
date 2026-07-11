@@ -95,14 +95,23 @@ export default function HeroBanner() {
     return () => clearInterval(id);
   }, [paused]);
 
+  // Resume autoplay when user returns to this tab
+  useEffect(() => {
+    const handleVisibility = () => {
+      if (document.visibilityState === "visible") setPaused(false);
+    };
+    document.addEventListener("visibilitychange", handleVisibility);
+    return () => document.removeEventListener("visibilitychange", handleVisibility);
+  }, []);
+
   const slide = SLIDES[current];
 
   return (
     <section
       className="relative w-full overflow-hidden"
       style={{ height: "100vh", minHeight: "680px" }}
-      onMouseEnter={() => setPaused(true)}
-      onMouseLeave={() => setPaused(false)}
+      onPointerEnter={(e) => { if (e.pointerType === "mouse") setPaused(true); }}
+      onPointerLeave={(e) => { if (e.pointerType === "mouse") setPaused(false); }}
     >
       {/* ── CSS transform horizontal slide track ── */}
       <div
