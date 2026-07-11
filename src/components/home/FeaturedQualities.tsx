@@ -78,6 +78,19 @@ export default function FeaturedQualities() {
                   >
                     {product.category}
                   </span>
+                  {/* LEA badge — top right */}
+                  {product.leaRange && (
+                    <span
+                      className="absolute top-3.5 right-3.5 text-label px-2.5 py-1"
+                      style={{
+                        backgroundColor: "rgba(28,28,26,0.52)",
+                        color: "rgba(248,245,240,0.92)",
+                        backdropFilter: "blur(6px)",
+                      }}
+                    >
+                      {product.leaRange}
+                    </span>
+                  )}
                   {/* Zoom overlay */}
                   <div
                     className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
