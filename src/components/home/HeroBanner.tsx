@@ -14,7 +14,6 @@ const CREAM  = "var(--color-text-light)";
 
 // ── Persistent bottom strip ──────────────────────────────────────────
 const STRIP = [
-  { Icon: Leaf,       bold: "PURE BY NATURE",          light: "Perfected by Expertise."      },
   { Icon: Factory,    bold: "B2B MANUFACTURING",       light: "For Brands. For Business."    },
   { Icon: LayoutGrid, bold: "READY STOCK COLLECTION",  light: "Extensive Inventory."         },
   { Icon: Shirt,      bold: "SHIRTING & SUITING",      light: "25 LEA TO 150 LEA · 58\""    },
@@ -315,7 +314,7 @@ export default function HeroBanner() {
       <div className="absolute inset-x-0 bottom-0 z-30 bg-[var(--color-forest)]"
       >
         <div className="container-site">
-          <div className="grid grid-cols-5">
+          <div className="grid grid-cols-4">
             {STRIP.map(({ Icon, bold, light }, i) => (
               <div
                 key={i}
