@@ -5,7 +5,7 @@ import MillImageSlider from "./MillImageSlider";
 const capabilities = [
   { label: "Yarn Count Range", value: "25 – 150 LEA" },
   { label: "Fabric Types", value: "Shirting · Suiting · Ceremonial · Fashion" },
-  { label: "Blends", value: "Linen · Wool · Cotton · Art Silk" },
+  { label: "Blends", value: "100% Linen · Linen blended with Cotton, Lyocell, Viscose, PC & Polyester" },
   { label: "Finishes", value: "Plain · Yarn-Dyed · Dobby · Jacquard · Digital Print" },
   { label: "Manufacturing", value: "Navsari, Gujarat" },
   { label: "Warehousing", value: "Bhiwandi, Maharashtra" },
