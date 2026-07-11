@@ -50,7 +50,7 @@ export default function MillVideoCard() {
           transition: "opacity 0.9s ease",
         }}
       >
-        <source src="/images/about/milltop.mp4" type="video/mp4" />
+        <source src="/images/about/A_cinematic_slow_motion_docum.mp4" type="video/mp4" />
       </video>
 
       {/* Bottom label — always visible */}
