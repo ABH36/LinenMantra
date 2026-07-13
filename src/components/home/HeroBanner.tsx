@@ -321,14 +321,9 @@ export default function HeroBanner() {
             {STRIP.map(({ Icon, bold, light }, i) => (
               <div
                 key={i}
-                className="flex items-center gap-3 py-3.5"
+                className="flex items-center justify-center gap-3 py-3.5 px-5"
                 style={{
-                  borderRight:
-                    i < STRIP.length - 1
-                      ? "1px solid rgba(248,245,240,0.08)"
-                      : "none",
-                  paddingLeft:  i > 0 ? "1.25rem" : "0",
-                  paddingRight: "1.25rem",
+                  borderRight: i < STRIP.length - 1 ? "1px solid rgba(248,245,240,0.08)" : "none",
                 }}
               >
                 <Icon
