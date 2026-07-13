@@ -5,6 +5,6 @@ type LoaderParams = {
 };
 
 export default function cloudinaryLoader({ src, width, quality }: LoaderParams): string {
-  const params = `f_auto,c_limit,w_${width},q_${quality ?? "auto"}`;
+  const params = `f_auto,fl_lossy,c_limit,w_${width},q_${quality ?? "auto"}`;
   return src.replace("/upload/", `/upload/${params}/`);
 }

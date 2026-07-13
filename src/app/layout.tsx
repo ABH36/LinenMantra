@@ -134,8 +134,8 @@ export default function RootLayout({
           rel="preload"
           as="image"
           fetchPriority="high"
-          href={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/f_auto,c_limit,w_640,q_auto/linen-mantra/hero/herobanner2mob.png`}
-          imageSrcSet={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/f_auto,c_limit,w_412,q_auto/linen-mantra/hero/herobanner2mob.png 412w, https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/f_auto,c_limit,w_512,q_auto/linen-mantra/hero/herobanner2mob.png 512w, https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/f_auto,c_limit,w_640,q_auto/linen-mantra/hero/herobanner2mob.png 640w, https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/f_auto,c_limit,w_750,q_auto/linen-mantra/hero/herobanner2mob.png 750w, https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/f_auto,c_limit,w_828,q_auto/linen-mantra/hero/herobanner2mob.png 828w`}
+          href={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/f_auto,fl_lossy,c_limit,w_640,q_auto/linen-mantra/hero/herobanner2mob.png`}
+          imageSrcSet={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/f_auto,fl_lossy,c_limit,w_412,q_auto/linen-mantra/hero/herobanner2mob.png 412w, https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/f_auto,fl_lossy,c_limit,w_512,q_auto/linen-mantra/hero/herobanner2mob.png 512w, https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/f_auto,fl_lossy,c_limit,w_640,q_auto/linen-mantra/hero/herobanner2mob.png 640w, https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/f_auto,fl_lossy,c_limit,w_750,q_auto/linen-mantra/hero/herobanner2mob.png 750w, https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/f_auto,fl_lossy,c_limit,w_828,q_auto/linen-mantra/hero/herobanner2mob.png 828w`}
           imageSizes="100vw"
           media="(max-width: 767px)"
         />
@@ -144,8 +144,8 @@ export default function RootLayout({
           rel="preload"
           as="image"
           fetchPriority="high"
-          href={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/f_auto,c_limit,w_1920,q_auto/linen-mantra/hero/herobanner2.jpg`}
-          imageSrcSet={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/f_auto,c_limit,w_1080,q_auto/linen-mantra/hero/herobanner2.jpg 1080w, https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/f_auto,c_limit,w_1200,q_auto/linen-mantra/hero/herobanner2.jpg 1200w, https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/f_auto,c_limit,w_1920,q_auto/linen-mantra/hero/herobanner2.jpg 1920w`}
+          href={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/f_auto,fl_lossy,c_limit,w_1920,q_auto/linen-mantra/hero/herobanner2.jpg`}
+          imageSrcSet={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/f_auto,fl_lossy,c_limit,w_1080,q_auto/linen-mantra/hero/herobanner2.jpg 1080w, https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/f_auto,fl_lossy,c_limit,w_1200,q_auto/linen-mantra/hero/herobanner2.jpg 1200w, https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/f_auto,fl_lossy,c_limit,w_1920,q_auto/linen-mantra/hero/herobanner2.jpg 1920w`}
           imageSizes="100vw"
           media="(min-width: 768px)"
         />
