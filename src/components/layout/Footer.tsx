@@ -89,7 +89,7 @@ export default function Footer() {
             <div className="mt-2 mb-3 h-px bg-[var(--color-accent)] opacity-50" />
 
             {/* Description */}
-            <p className="text-[13px] leading-[1.75] text-justify text-[var(--color-text-secondary)]">
+            <p className="text-[13px] leading-[1.75] text-[var(--color-text-secondary)]">
               India&apos;s leading manufacturer of premium linen and linen blend fabrics - trusted by fashion brands, garment manufacturers and sourcing partners worldwide since 2010.
             </p>
           </div>
