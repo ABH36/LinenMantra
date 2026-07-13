@@ -1,6 +1,176 @@
 import { NextRequest, NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 
+const SITE = "https://linenmantra.com";
+
+function buildHtml(fields: {
+  name: string;
+  email: string;
+  phone?: string;
+  company?: string;
+  interest?: string;
+  message: string;
+}) {
+  const row = (label: string, value: string, isLast = false) => `
+    <tr>
+      <td width="130" valign="top" style="
+        padding: 14px 20px 14px 0;
+        font-family: Arial, sans-serif;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: #A08C72;
+        white-space: nowrap;
+        border-bottom: ${isLast ? "none" : "1px solid #EDE8E0"};
+      ">${label}</td>
+      <td valign="top" style="
+        padding: 14px 0 14px 20px;
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+        color: #1C1C1A;
+        line-height: 1.6;
+        border-left: 1px solid #EDE8E0;
+        border-bottom: ${isLast ? "none" : "1px solid #EDE8E0"};
+      ">${value}</td>
+    </tr>`;
+
+  return `<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head>
+<body style="margin:0;padding:0;background:#F0EBE3;">
+
+<table width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#F0EBE3;padding:40px 16px;">
+<tr><td align="center">
+
+  <!-- Card -->
+  <table width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:600px;width:100%;background:#FFFFFF;">
+
+    <!-- ── Header ── -->
+    <tr>
+      <td align="center" style="background:#2C4A2D;padding:40px 40px 32px;">
+
+        <!-- Logo -->
+        <img
+          src="${SITE}/images/about/footer/companylogo.png"
+          alt="Linen Mantra"
+          height="72"
+          style="display:block;margin:0 auto;max-width:220px;"
+        />
+
+        <!-- Leaf divider -->
+        <table cellpadding="0" cellspacing="0" border="0" style="margin:20px auto 18px;">
+          <tr>
+            <td style="width:50px;border-bottom:1px solid rgba(201,164,82,0.6);vertical-align:middle;"> </td>
+            <td style="padding:0 10px;vertical-align:middle;">
+              <img
+                src="${SITE}/images/about/footer/leaf.webp"
+                alt=""
+                width="18"
+                height="16"
+                style="display:block;"
+              />
+            </td>
+            <td style="width:50px;border-bottom:1px solid rgba(201,164,82,0.6);vertical-align:middle;"> </td>
+          </tr>
+        </table>
+
+        <!-- Title -->
+        <p style="
+          margin:0;
+          font-family:Arial,sans-serif;
+          font-size:10px;
+          font-weight:600;
+          letter-spacing:0.25em;
+          text-transform:uppercase;
+          color:#C9A452;
+        ">Web Enquiry from Linen Mantra</p>
+
+      </td>
+    </tr>
+
+    <!-- ── Gold top border on content ── -->
+    <tr>
+      <td style="background:linear-gradient(90deg,#C9A452,#A08C72);height:2px;font-size:0;line-height:0;"> </td>
+    </tr>
+
+    <!-- ── Intro strip ── -->
+    <tr>
+      <td style="background:#F8F5F0;padding:16px 40px;border-bottom:1px solid #EDE8E0;">
+        <p style="
+          margin:0;
+          font-family:Arial,sans-serif;
+          font-size:12px;
+          color:#6B6560;
+          letter-spacing:0.04em;
+        ">A new enquiry has been submitted via the Linen Mantra website.</p>
+      </td>
+    </tr>
+
+    <!-- ── Field rows ── -->
+    <tr>
+      <td style="padding:8px 40px 24px;">
+        <table width="100%" cellpadding="0" cellspacing="0" border="0">
+          ${row("Name", fields.name)}
+          ${row("Email", `<a href="mailto:${fields.email}" style="color:#2C4A2D;text-decoration:none;">${fields.email}</a>`)}
+          ${row("Phone", fields.phone || "—")}
+          ${row("Company", fields.company || "—")}
+          ${row("Interest", fields.interest || "—")}
+          ${row("Message", `<span style="white-space:pre-wrap;">${fields.message}</span>`, true)}
+        </table>
+      </td>
+    </tr>
+
+    <!-- ── Reply CTA ── -->
+    <tr>
+      <td style="padding:0 40px 36px;">
+        <table cellpadding="0" cellspacing="0" border="0">
+          <tr>
+            <td style="background:#2C4A2D;padding:12px 28px;">
+              <a href="mailto:${fields.email}" style="
+                font-family:Arial,sans-serif;
+                font-size:11px;
+                font-weight:600;
+                letter-spacing:0.15em;
+                text-transform:uppercase;
+                color:#F8F5F0;
+                text-decoration:none;
+              ">Reply to ${fields.name} →</a>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+
+    <!-- ── Gold bottom border ── -->
+    <tr>
+      <td style="background:linear-gradient(90deg,#C9A452,#A08C72);height:1px;font-size:0;line-height:0;"> </td>
+    </tr>
+
+    <!-- ── Footer ── -->
+    <tr>
+      <td align="center" style="background:#2C4A2D;padding:20px 40px;">
+        <p style="
+          margin:0;
+          font-family:Arial,sans-serif;
+          font-size:10px;
+          letter-spacing:0.12em;
+          color:rgba(248,245,240,0.45);
+          text-transform:uppercase;
+        ">© ${new Date().getFullYear()} Linen Mantra &nbsp;·&nbsp; Silverline Fashion Fabrics Ltd. &nbsp;·&nbsp; Mumbai, India</p>
+      </td>
+    </tr>
+
+  </table>
+  <!-- /Card -->
+
+</td></tr>
+</table>
+
+</body>
+</html>`;
+}
+
 export async function POST(req: NextRequest) {
   const { name, email, phone, company, interest, message } = await req.json();
 
@@ -18,25 +188,11 @@ export async function POST(req: NextRequest) {
     },
   });
 
-  const html = `
-    <table style="font-family:Arial,sans-serif;font-size:14px;color:#222;width:100%;max-width:600px;border-collapse:collapse;">
-      <tr><td colspan="2" style="background:#2C4A2D;padding:20px 24px;">
-        <span style="color:#F8F5F0;font-size:18px;font-weight:600;letter-spacing:1px;">Linen Mantra — Web Enquiry</span>
-      </td></tr>
-      <tr><td style="padding:8px 24px;width:140px;color:#666;border-bottom:1px solid #eee;">Name</td><td style="padding:8px 24px;border-bottom:1px solid #eee;">${name}</td></tr>
-      <tr><td style="padding:8px 24px;color:#666;border-bottom:1px solid #eee;">Email</td><td style="padding:8px 24px;border-bottom:1px solid #eee;"><a href="mailto:${email}">${email}</a></td></tr>
-      <tr><td style="padding:8px 24px;color:#666;border-bottom:1px solid #eee;">Phone</td><td style="padding:8px 24px;border-bottom:1px solid #eee;">${phone || "—"}</td></tr>
-      <tr><td style="padding:8px 24px;color:#666;border-bottom:1px solid #eee;">Company</td><td style="padding:8px 24px;border-bottom:1px solid #eee;">${company || "—"}</td></tr>
-      <tr><td style="padding:8px 24px;color:#666;border-bottom:1px solid #eee;">Interest</td><td style="padding:8px 24px;border-bottom:1px solid #eee;">${interest || "—"}</td></tr>
-      <tr><td style="padding:8px 24px;color:#666;vertical-align:top;">Message</td><td style="padding:8px 24px;white-space:pre-wrap;">${message}</td></tr>
-    </table>
-  `;
-
   await transporter.sendMail({
     from: `"Linen Mantra Website" <${process.env.SMTP_USER}>`,
     to: process.env.SMTP_TO,
     subject: "Web Inquiry from Linen Mantra",
-    html,
+    html: buildHtml({ name, email, phone, company, interest, message }),
     replyTo: email,
   });
 
