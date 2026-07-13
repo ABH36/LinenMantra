@@ -49,6 +49,7 @@ export default function FlaxToFabric() {
   const [active, setActive] = useState(0);
   const [paused, setPaused] = useState(false);
   const panelRefs = useRef<(HTMLButtonElement | null)[]>([]);
+  const stripRef  = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (paused) return;
@@ -56,13 +57,16 @@ export default function FlaxToFabric() {
     return () => clearInterval(id);
   }, [paused]);
 
-  // Auto-scroll active panel into view on mobile
+  // Scroll only the strip container horizontally — never the page
   useEffect(() => {
-    panelRefs.current[active]?.scrollIntoView({
-      behavior: "smooth",
-      block:    "nearest",
-      inline:   "center",
-    });
+    const strip = stripRef.current;
+    const panel = panelRefs.current[active];
+    if (!strip || !panel) return;
+    const panelLeft   = panel.offsetLeft;
+    const panelWidth  = panel.offsetWidth;
+    const stripWidth  = strip.offsetWidth;
+    const targetLeft  = panelLeft - (stripWidth / 2) + (panelWidth / 2);
+    strip.scrollTo({ left: targetLeft, behavior: "smooth" });
   }, [active]);
 
   return (
@@ -86,6 +90,7 @@ export default function FlaxToFabric() {
 
       {/* 5-panel image strip */}
       <div
+        ref={stripRef}
         className="w-full flex overflow-x-auto no-scrollbar"
         onMouseEnter={() => setPaused(true)}
         onMouseLeave={() => setPaused(false)}
