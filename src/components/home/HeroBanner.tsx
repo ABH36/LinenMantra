@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { Leaf, Shirt, LayoutGrid, Factory, Home } from "lucide-react";
+import { Shirt, LayoutGrid, Factory, Home } from "lucide-react";
 
 // ── Hero-specific colour palette ─────────────────────────────────────
 const FOREST = "var(--color-forest)";
@@ -31,7 +31,6 @@ interface SlideData {
   h2:              string;
   h2Color:         string;
   large?:          boolean;
-  label?:          boolean;
   flourish?:       boolean;
   body?:           string;
   cta?:            { text: string; href: string; bg: string; fg: string };
@@ -157,14 +156,6 @@ export default function HeroBanner() {
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.45, ease: [0.25, 0.1, 0.25, 1] }}
           >
-            {slide.label && (
-              <div className="flex items-center gap-2 mb-3">
-                <Leaf size={10} style={{ color: FOREST, opacity: 0.7 }} />
-                <p className="font-medium tracking-widest uppercase" style={{ fontSize: "0.58rem", color: "rgba(44,74,45,0.80)" }}>
-                  Premium Linen Fabric Manufacturer
-                </p>
-              </div>
-            )}
             {(slide.h1 || slide.h2) && (
               <h1 className="font-display font-normal leading-none uppercase" style={{ fontSize: slide.large ? "clamp(2.2rem, 9vw, 3.5rem)" : "clamp(2rem, 8vw, 2.8rem)", letterSpacing: "-0.01em" }}>
                 <span className="block" style={{ color: slide.h1Color }}>{slide.h1}</span>
@@ -274,14 +265,6 @@ export default function HeroBanner() {
                 exit={{ opacity: 0, y: -14 }}
                 transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
               >
-                {slide.label && (
-                  <div className="flex items-center gap-2 mb-4">
-                    <Leaf size={11} style={{ color: FOREST, opacity: 0.7 }} />
-                    <p className="font-medium tracking-widest uppercase" style={{ fontSize: "0.6rem", color: "rgba(44,74,45,0.80)" }}>
-                      Premium Linen Fabric Manufacturer
-                    </p>
-                  </div>
-                )}
                 <h1 className="font-display font-normal leading-none uppercase" style={{ fontSize: slide.large ? "clamp(2.8rem, 5.5vw, 5.5rem)" : "clamp(2.3rem, 4.8vw, 4rem)", letterSpacing: "-0.01em" }}>
                   <span className="block" style={{ color: slide.h1Color }}>{slide.h1}</span>
                   <span className="block" style={{ color: slide.h2Color }}>{slide.h2}</span>

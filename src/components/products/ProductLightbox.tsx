@@ -131,10 +131,13 @@ export default function ProductLightbox({ products, startIndex, onClose }: Props
           <p className="font-display font-normal text-white" style={{ fontSize: "clamp(1.3rem, 2.5vw, 1.9rem)" }}>
             {product.name}
           </p>
-          <p className="text-sm mt-1 text-[var(--color-accent)]">
-            {product.composition}
-            {product.leaRange ? ` · ${product.leaRange}` : ""}
-          </p>
+          {(product.composition || product.leaRange) && (
+            <p className="text-sm mt-1 text-[var(--color-accent)]">
+              {product.composition}
+              {product.composition && product.leaRange ? " · " : ""}
+              {product.leaRange}
+            </p>
+          )}
         </div>
 
         {/* Dot indicators */}

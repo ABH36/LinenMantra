@@ -7,7 +7,7 @@ import ContactCTABand from "@/components/shared/ContactCTABand";
 export const metadata: Metadata = {
   title: "Products",
   description:
-    "Explore Linen Mantra's premium linen fabric collections — 100% pure linen, linen blends, shirting, suiting, and designer fabrics ranging from 25 to 150 LEA. Custom development available.",
+    "Explore Linen Mantra's premium linen fabric collections — 100% linen, linen blends, shirting, suiting, and home furnishing fabrics ranging from 6 to 150 LEA. Custom development available.",
 };
 
 export default async function ProductsPage({

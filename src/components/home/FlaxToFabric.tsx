@@ -24,7 +24,7 @@ const steps = [
     id:          "yarn",
     label:       "Yarn",
     description: "Spun to count",
-    body:        "Processed fibres are spun into yarn across our precise count range of 25–150 LEA. Higher counts yield finer, lighter fabrics while lower counts produce structured, robust textiles for tailoring.",
+    body:        "Processed fibres are spun into yarn across our precise count range of 6–150 LEA. Higher counts yield finer, lighter fabrics while lower counts produce structured, robust textiles for tailoring.",
     image:       "/images/process/Yarn.png",
   },
   {
