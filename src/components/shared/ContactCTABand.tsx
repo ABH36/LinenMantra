@@ -14,7 +14,7 @@ export default function ContactCTABand({
   heading = "Let's Create Something Exceptional",
   subText = "Reach out to discuss your fabric requirements, request samples, or explore our latest collections.",
   ctaLabel = "Get a Quote",
-  ctaHref = "/contact",
+  ctaHref = "/contact#enquiry",
   dark = true,
 }: Props) {
   return (

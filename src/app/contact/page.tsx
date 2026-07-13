@@ -214,7 +214,7 @@ export default async function ContactPage() {
       {/* ════════════════════════════════════════════
            MAP + ENQUIRY FORM
           ════════════════════════════════════════════ */}
-      <section className="w-full py-10 lg:py-14 bg-[var(--color-bg-primary)]">
+      <section id="enquiry" className="w-full py-10 lg:py-14 bg-[var(--color-bg-primary)]">
         <div className="container-site">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 lg:items-stretch">
 

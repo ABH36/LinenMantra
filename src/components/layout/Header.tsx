@@ -87,7 +87,7 @@ export default function Header() {
             <div className="flex items-center gap-4">
               {/* Desktop CTA */}
               <Link
-                href="/contact"
+                href="/contact#enquiry"
                 className="hidden md:inline-flex items-center gap-2 text-sm font-medium tracking-widest uppercase rounded px-5 py-2.5 transition-all duration-300 hover:opacity-80"
                 style={{
                   backgroundColor: "var(--color-cta)",

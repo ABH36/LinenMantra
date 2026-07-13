@@ -73,7 +73,7 @@ export default function ProductCard({ product }: Props) {
           )}
         </div>
         <Link
-          href="/contact"
+          href="/contact#enquiry"
           className="inline-flex items-center gap-1.5 text-xs font-semibold tracking-widest uppercase transition-opacity hover:opacity-60 group/link shrink-0 text-[var(--color-text-primary)]"
         >
           <span>Get a Quote</span>
