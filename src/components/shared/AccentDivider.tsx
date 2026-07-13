@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { CLD } from "@/lib/cloudinary";
 
 type Props = {
   className?: string;
@@ -9,7 +10,7 @@ export default function AccentDivider({ className = "" }: Props) {
     <div className={`inline-flex items-center gap-3 ${className}`}>
       <span className="block h-px w-10 bg-[var(--color-accent)]" />
       <Image
-        src="/images/about/footer/leaf.webp"
+        src={CLD.about.leaf}
         alt=""
         width={20}
         height={17}

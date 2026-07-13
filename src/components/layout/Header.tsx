@@ -7,6 +7,7 @@ import { usePathname } from "next/navigation";
 import { Menu } from "lucide-react";
 import MobileMenu from "./MobileMenu";
 import { navLinks } from "@/data/navigation";
+import { CLD } from "@/lib/cloudinary";
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -51,7 +52,7 @@ export default function Header() {
               aria-label="Linen Mantra — Home"
             >
               <Image
-                src="/images/logo/logo.png"
+                src={CLD.logo}
                 alt="Linen Mantra"
                 width={1536}
                 height={1024}

@@ -6,6 +6,7 @@ import ProductFilter from "./ProductFilter";
 import ProductCard from "./ProductCard";
 import FadeInOnScroll from "@/components/shared/FadeInOnScroll";
 import { products, type ProductCategory } from "@/data/products";
+import { CLD } from "@/lib/cloudinary";
 
 export default function ProductsSection({ initialCategory = "all" }: { initialCategory?: ProductCategory }) {
   const [activeCategory, setActiveCategory] = useState<ProductCategory>(initialCategory);
@@ -27,7 +28,7 @@ export default function ProductsSection({ initialCategory = "all" }: { initialCa
       <section
         className="w-full py-8 lg:py-10 relative overflow-hidden"
         style={{
-          backgroundImage: "url('/images/about/footer/fabric.webp')",
+          backgroundImage: `url('${CLD.about.fabric}')`,
           backgroundSize: "400px auto",
           backgroundRepeat: "repeat",
           backgroundColor: "var(--color-bg-secondary)",

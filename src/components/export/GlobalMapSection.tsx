@@ -1,12 +1,13 @@
 import Image from "next/image";
 import FadeInOnScroll from "@/components/shared/FadeInOnScroll";
+import { CLD } from "@/lib/cloudinary";
 
 export default function GlobalMapSection() {
   return (
     <section className="w-full bg-[var(--color-bg-secondary)]">
       <FadeInOnScroll direction="up">
         <Image
-          src="/images/Export/globlemap.webp"
+          src={CLD.export.globeMap}
           alt="Linen Mantra global export markets"
           width={1672}
           height={941}

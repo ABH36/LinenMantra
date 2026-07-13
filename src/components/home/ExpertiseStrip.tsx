@@ -3,6 +3,7 @@
 import { useRef, useEffect } from "react";
 import { useInView, animate } from "framer-motion";
 import FadeInOnScroll from "@/components/shared/FadeInOnScroll";
+import { CLD } from "@/lib/cloudinary";
 
 const stats = [
   { value: 35, suffix: "+", label: "Years of Textile Expertise" },
@@ -47,7 +48,7 @@ export default function ExpertiseStrip() {
     <section
       className="w-full py-10 lg:py-12 relative overflow-hidden"
       style={{
-        backgroundImage: "url('/images/about/footer/fabric.webp')",
+        backgroundImage: `url('${CLD.about.fabric}')`,
         backgroundSize: "400px auto",
         backgroundRepeat: "repeat",
       }}

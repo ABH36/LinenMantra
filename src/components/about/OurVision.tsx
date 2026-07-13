@@ -1,12 +1,13 @@
 import FadeInOnScroll from "@/components/shared/FadeInOnScroll";
 import AccentDivider from "@/components/shared/AccentDivider";
+import { CLD } from "@/lib/cloudinary";
 
 export default function OurVision() {
   return (
     <section
       className="w-full py-10 lg:py-12 relative overflow-hidden bg-[var(--color-bg-primary)]"
       style={{
-        backgroundImage: "url('/images/about/footer/fabric.webp')",
+        backgroundImage: `url('${CLD.about.fabric}')`,
         backgroundSize: "400px auto",
         backgroundRepeat: "repeat",
       }}

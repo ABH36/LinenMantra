@@ -4,6 +4,7 @@ import Image from "next/image";
 import { motion, useInView } from "framer-motion";
 import AccentDivider from "@/components/shared/AccentDivider";
 import { useRef } from "react";
+import { CLD } from "@/lib/cloudinary";
 
 const EASE = [0.25, 0.1, 0.25, 1] as const;
 
@@ -33,7 +34,7 @@ export default function ArtAndScience() {
             transition={{ duration: 0.85, delay: 0.05, ease: EASE }}
           >
             <Image
-              src="/images/expert/expert1.png"
+              src={CLD.expert.expert1}
               alt="Linen weaving mill"
               fill
               sizes="(max-width: 1024px) 100vw, 560px"

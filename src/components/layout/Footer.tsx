@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { footerLinks, productCategoryLinks } from "@/data/navigation";
+import { CLD } from "@/lib/cloudinary";
 
 // ── Gold accent line under every heading ──────────────────────────────
 function HeadingLine() {
@@ -45,7 +46,7 @@ export default function Footer() {
     <footer
       className="w-full relative overflow-hidden"
       style={{
-        backgroundImage:  "url('/images/about/footer/fabric.webp')",
+        backgroundImage:  `url('${CLD.about.fabric}')`,
         backgroundSize:   "400px auto",
         backgroundRepeat: "repeat",
       }}
@@ -72,7 +73,7 @@ export default function Footer() {
             {/* Logo */}
             <Link href="/" className="inline-block hover:opacity-80 transition-opacity">
               <Image
-                src="/images/about/footer/companylogo.png"
+                src={CLD.about.companyLogo}
                 alt="Silverline Linen Mantra"
                 width={1536}
                 height={1024}
@@ -152,13 +153,13 @@ export default function Footer() {
                 <span className="flex-1 h-px bg-[var(--color-accent)] opacity-30" />
                 <div className="flex items-center gap-3">
                   <a href="https://www.instagram.com/linen_mantra?igsh=OHExNWpubWozczdl" target="_blank" rel="noopener noreferrer" aria-label="Follow on Instagram" className="hover:opacity-80 transition-opacity">
-                    <Image src="/images/SocialMediaicon/instagram.png" alt="Instagram" width={32} height={32} style={{ width: 32, height: 32 }} />
+                    <Image src={CLD.social.instagram} alt="Instagram" width={32} height={32} style={{ width: 32, height: 32 }} />
                   </a>
                   <a href="https://www.linkedin.com/company/linen-mantra/" target="_blank" rel="noopener noreferrer" aria-label="Connect on LinkedIn" className="hover:opacity-80 transition-opacity">
-                    <Image src="/images/SocialMediaicon/linkedin.png" alt="LinkedIn" width={32} height={32} style={{ width: 32, height: 32 }} />
+                    <Image src={CLD.social.linkedin} alt="LinkedIn" width={32} height={32} style={{ width: 32, height: 32 }} />
                   </a>
                   <a href="#" aria-label="Follow on Facebook" className="hover:opacity-80 transition-opacity">
-                    <Image src="/images/SocialMediaicon/facebook.png" alt="Facebook" width={32} height={32} style={{ width: 32, height: 32 }} />
+                    <Image src={CLD.social.facebook} alt="Facebook" width={32} height={32} style={{ width: 32, height: 32 }} />
                   </a>
                 </div>
                 <span className="flex-1 h-px bg-[var(--color-accent)] opacity-30" />
@@ -179,7 +180,7 @@ export default function Footer() {
 
               <li className="flex items-center gap-3">
                 <a href="https://wa.me/919769422606" target="_blank" rel="noopener noreferrer" className="shrink-0 flex items-center leading-none hover:opacity-60 transition-opacity">
-                  <Image src="/images/SocialMediaicon/whatsapp.png" alt="WhatsApp" width={24} height={24} />
+                  <Image src={CLD.social.whatsapp} alt="WhatsApp" width={24} height={24} />
                 </a>
                 <a href="https://wa.me/919769422606" target="_blank" rel="noopener noreferrer" className="text-[12px] hover:opacity-60 transition-opacity text-[var(--color-text-secondary)]">
                   +91 97694 22606
@@ -188,7 +189,7 @@ export default function Footer() {
 
               <li className="flex items-center gap-3">
                 <a href="tel:+912245005662" className="shrink-0 flex items-center leading-none hover:opacity-60 transition-opacity">
-                  <Image src="/images/SocialMediaicon/landline.png" alt="Phone" width={24} height={24} />
+                  <Image src={CLD.social.landline} alt="Phone" width={24} height={24} />
                 </a>
                 <a href="tel:+912245005662" className="text-[12px] hover:opacity-60 transition-opacity text-[var(--color-text-secondary)]">
                   +91 22 4500 5662
@@ -197,7 +198,7 @@ export default function Footer() {
 
               <li className="flex items-center gap-3">
                 <a href="mailto:linenmantra@gmail.com" className="shrink-0 flex items-center leading-none hover:opacity-60 transition-opacity">
-                  <Image src="/images/SocialMediaicon/gmail.png" alt="Email" width={24} height={24} />
+                  <Image src={CLD.social.gmail} alt="Email" width={24} height={24} />
                 </a>
                 <a href="mailto:linenmantra@gmail.com" className="text-[12px] hover:opacity-60 transition-opacity text-[var(--color-text-secondary)]">
                   linenmantra@gmail.com
@@ -211,7 +212,7 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   className="shrink-0 flex items-center leading-none hover:opacity-60 transition-opacity"
                 >
-                  <Image src="/images/SocialMediaicon/google-maps.png" alt="Location" width={24} height={24} />
+                  <Image src={CLD.social.googleMaps} alt="Location" width={24} height={24} />
                 </a>
                 <a
                   href="https://maps.google.com/maps?q=18.9971884,72.8267863"
@@ -238,7 +239,7 @@ export default function Footer() {
 
               <li className="flex items-center gap-3">
                 <a href="https://wa.me/919769422606" target="_blank" rel="noopener noreferrer" className="shrink-0 flex items-center leading-none hover:opacity-60 transition-opacity">
-                  <Image src="/images/SocialMediaicon/whatsapp.png" alt="WhatsApp" width={24} height={24} />
+                  <Image src={CLD.social.whatsapp} alt="WhatsApp" width={24} height={24} />
                 </a>
                 <a href="https://wa.me/919769422606" target="_blank" rel="noopener noreferrer" className="text-[12px] hover:opacity-60 transition-opacity text-[var(--color-text-secondary)]">
                   +91 97694 22606
@@ -247,7 +248,7 @@ export default function Footer() {
 
               <li className="flex items-center gap-3">
                 <a href="tel:+912245687288" className="shrink-0 flex items-center leading-none hover:opacity-60 transition-opacity">
-                  <Image src="/images/SocialMediaicon/landline.png" alt="Phone" width={24} height={24} />
+                  <Image src={CLD.social.landline} alt="Phone" width={24} height={24} />
                 </a>
                 <a href="tel:+912245687288" className="text-[12px] hover:opacity-60 transition-opacity text-[var(--color-text-secondary)]">
                   +91 22 4568 7288
@@ -256,7 +257,7 @@ export default function Footer() {
 
               <li className="flex items-center gap-3">
                 <a href="mailto:linenmantra@gmail.com" className="shrink-0 flex items-center leading-none hover:opacity-60 transition-opacity">
-                  <Image src="/images/SocialMediaicon/gmail.png" alt="Email" width={24} height={24} />
+                  <Image src={CLD.social.gmail} alt="Email" width={24} height={24} />
                 </a>
                 <a href="mailto:linenmantra@gmail.com" className="text-[12px] hover:opacity-60 transition-opacity text-[var(--color-text-secondary)]">
                   linenmantra@gmail.com
@@ -270,7 +271,7 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   className="shrink-0 flex items-center leading-none hover:opacity-60 transition-opacity"
                 >
-                  <Image src="/images/SocialMediaicon/google-maps.png" alt="Location" width={24} height={24} />
+                  <Image src={CLD.social.googleMaps} alt="Location" width={24} height={24} />
                 </a>
                 <a
                   href="https://maps.google.com/maps?q=384-M+Dabholkar+Wadi+Kalbadevi+Road+Mumbai+400002"

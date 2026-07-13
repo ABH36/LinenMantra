@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import AccentDivider from "./AccentDivider";
+import { CLD } from "@/lib/cloudinary";
 
 type Props = {
   label?: string;
@@ -99,7 +100,7 @@ export default function PageHero({
             ? { backgroundColor: "#111110" }
             : isDark
             ? {
-                backgroundImage: "url('/images/about/footer/fabric.webp')",
+                backgroundImage: `url('${CLD.about.fabric}')`,
                 backgroundSize: "400px auto",
                 backgroundRepeat: "repeat",
               }

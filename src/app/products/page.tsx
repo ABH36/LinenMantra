@@ -3,6 +3,7 @@ import PageHero from "@/components/shared/PageHero";
 import ProductsSection from "@/components/products/ProductsSection";
 import CustomDevelopmentStrip from "@/components/products/CustomDevelopmentStrip";
 import ContactCTABand from "@/components/shared/ContactCTABand";
+import { CLD } from "@/lib/cloudinary";
 
 export const metadata: Metadata = {
   title: "Products",
@@ -26,7 +27,7 @@ export default async function ProductsPage({
         heading="Our Collections"
         subText="A curated range of signature linen fabrics — crafted across the full count spectrum for brands, designers, and garment manufacturers worldwide."
         lightImage
-        image="/images/products/productherobanner.png"
+        image={CLD.products.productHeroBanner}
       />
 
       {/* Filter tabs + animated product grid */}

@@ -6,6 +6,7 @@ import Image from "next/image";
 import { X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { navLinks } from "@/data/navigation";
+import { CLD } from "@/lib/cloudinary";
 
 type Props = {
   isOpen: boolean;
@@ -52,7 +53,7 @@ export default function MobileMenu({ isOpen, onClose, currentPath }: Props) {
             {/* Top bar — logo + close */}
             <div className="flex items-center justify-between px-8 py-5">
               <Image
-                src="/images/logo/logo.png"
+                src={CLD.logo}
                 alt="Linen Mantra"
                 width={1536}
                 height={1024}
