@@ -115,7 +115,13 @@ body {
   p {
     color: var(--color-text-secondary);
     line-height: 1.75;
-    text-align: justify;
+    text-align: left;
+  }
+
+  @media (min-width: 768px) {
+    p {
+      text-align: justify;
+    }
   }
 
   a {
