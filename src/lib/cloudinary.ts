@@ -18,7 +18,7 @@ export const CLD = {
     mill4:       `${I}/linen-mantra/about/mill4.jpg`,
     mill5:       `${I}/linen-mantra/about/mill5.jpg`,
     companyLogo: `${I}/linen-mantra/about/footer/companylogo.png`,
-    fabric:      `${I}/linen-mantra/about/footer/fabric.webp`,
+    fabric:      `${I}/f_auto,fl_lossy,w_400,q_auto/linen-mantra/about/footer/fabric.webp`,
     leaf:        `${I}/linen-mantra/about/footer/leaf.webp`,
     millVideo:   `${V}/linen-mantra/about/mill-video.mp4`,
   },
