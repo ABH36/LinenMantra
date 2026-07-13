@@ -166,7 +166,7 @@ export default function HeroBanner() {
               </div>
             )}
             {(slide.h1 || slide.h2) && (
-              <h1 className="font-display font-normal leading-none uppercase" style={{ fontSize: slide.large ? "clamp(3rem, 12vw, 4.5rem)" : "clamp(2rem, 8vw, 2.8rem)", letterSpacing: "-0.01em" }}>
+              <h1 className="font-display font-normal leading-none uppercase" style={{ fontSize: slide.large ? "clamp(2.2rem, 9vw, 3.5rem)" : "clamp(2rem, 8vw, 2.8rem)", letterSpacing: "-0.01em" }}>
                 <span className="block" style={{ color: slide.h1Color }}>{slide.h1}</span>
                 <span className="block" style={{ color: slide.h2Color }}>{slide.h2}</span>
               </h1>
@@ -282,7 +282,7 @@ export default function HeroBanner() {
                     </p>
                   </div>
                 )}
-                <h1 className="font-display font-normal leading-none uppercase" style={{ fontSize: slide.large ? "clamp(3.5rem, 7.5vw, 7rem)" : "clamp(2.3rem, 4.8vw, 4rem)", letterSpacing: "-0.01em" }}>
+                <h1 className="font-display font-normal leading-none uppercase" style={{ fontSize: slide.large ? "clamp(2.8rem, 5.5vw, 5.5rem)" : "clamp(2.3rem, 4.8vw, 4rem)", letterSpacing: "-0.01em" }}>
                   <span className="block" style={{ color: slide.h1Color }}>{slide.h1}</span>
                   <span className="block" style={{ color: slide.h2Color }}>{slide.h2}</span>
                 </h1>
