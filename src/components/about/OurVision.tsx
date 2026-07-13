@@ -20,15 +20,7 @@ export default function OurVision() {
           </FadeInOnScroll>
 
           <FadeInOnScroll direction="up" delay={0.1}>
-            {/* Opening quote mark */}
-            <span
-              className="font-display font-normal block mb-4 select-none text-[var(--color-accent)] opacity-25"
-              style={{ fontSize: "6rem", lineHeight: 0.8 }}
-              aria-hidden="true"
-            >
-              &ldquo;
-            </span>
-
+            <AccentDivider className="mx-auto mb-6" />
             <blockquote
               className="font-display font-normal leading-snug text-[var(--color-text-primary)] tracking-[-0.01em]"
               style={{ fontSize: "clamp(1.5rem, 3vw, 2.25rem)" }}
@@ -38,10 +30,7 @@ export default function OurVision() {
               premium linen fabrics, delivering excellence from yarn to finished
               fabric.
             </blockquote>
-          </FadeInOnScroll>
-
-          <FadeInOnScroll direction="up" delay={0.2}>
-            <AccentDivider className="mx-auto mt-1 mb-5" />
+            <AccentDivider className="mx-auto mt-6" />
           </FadeInOnScroll>
 
           {/* Background decorative text */}
