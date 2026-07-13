@@ -37,7 +37,7 @@ export default function ArtAndScience() {
               src={CLD.expert.expert1}
               alt="Linen weaving mill"
               fill
-              sizes="(max-width: 1024px) 100vw, 560px"
+              sizes="(max-width: 1024px) 100vw, 460px"
               className="object-cover"
             />
           </motion.div>
