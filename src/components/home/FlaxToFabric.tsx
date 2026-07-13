@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import FadeInOnScroll from "@/components/shared/FadeInOnScroll";
 import AccentDivider from "@/components/shared/AccentDivider";
@@ -48,12 +48,22 @@ const DURATION = 2800;
 export default function FlaxToFabric() {
   const [active, setActive] = useState(0);
   const [paused, setPaused] = useState(false);
+  const panelRefs = useRef<(HTMLButtonElement | null)[]>([]);
 
   useEffect(() => {
     if (paused) return;
     const id = setInterval(() => setActive((a) => (a + 1) % steps.length), DURATION);
     return () => clearInterval(id);
   }, [paused]);
+
+  // Auto-scroll active panel into view on mobile
+  useEffect(() => {
+    panelRefs.current[active]?.scrollIntoView({
+      behavior: "smooth",
+      block:    "nearest",
+      inline:   "center",
+    });
+  }, [active]);
 
   return (
     <section className="w-full bg-[var(--color-bg-secondary)]">
@@ -85,6 +95,7 @@ export default function FlaxToFabric() {
           return (
             <button
               key={step.id}
+              ref={(el) => { panelRefs.current[i] = el; }}
               onClick={() => setActive(i)}
               className="relative flex-1 min-w-[180px] overflow-hidden cursor-pointer text-left"
               style={{ minHeight: "clamp(240px, 28vw, 380px)", background: "none", border: "none", padding: 0 }}
