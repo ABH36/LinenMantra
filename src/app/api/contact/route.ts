@@ -35,7 +35,7 @@ export async function POST(req: NextRequest) {
   await transporter.sendMail({
     from: `"Linen Mantra Website" <${process.env.SMTP_USER}>`,
     to: process.env.SMTP_TO,
-    subject: "web inquiry from linen mantra",
+    subject: "Web Inquiry from Linen Mantra",
     html,
     replyTo: email,
   });
