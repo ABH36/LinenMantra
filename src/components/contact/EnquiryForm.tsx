@@ -226,7 +226,7 @@ export default function EnquiryForm() {
               id="message"
               name="message"
               rows={5}
-              placeholder="Tell us about your fabric requirements — count, quantity, composition, end use..."
+              placeholder="Describe your enquiry..."
               style={{
                 ...focusStyle("message"),
                 resize: "vertical",
