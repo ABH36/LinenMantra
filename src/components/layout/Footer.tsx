@@ -310,7 +310,7 @@ export default function Footer() {
             <p className="text-[11px] text-[var(--color-text-muted)]">
               Designed &amp; Developed by{" "}
               <a
-                href="http://www.bdminfotech.com"
+                href="https://bdm.co.in/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-semibold hover:opacity-70 transition-opacity text-[var(--color-text-secondary)]"
@@ -341,7 +341,7 @@ export default function Footer() {
               <p className="text-[11px] text-[var(--color-text-muted)]">
                 Designed &amp; Developed by{" "}
                 <a
-                  href="http://www.bdminfotech.com"
+                  href="https://bdm.co.in/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="font-semibold hover:opacity-70 transition-opacity text-[var(--color-text-secondary)]"
