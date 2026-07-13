@@ -1,17 +1,10 @@
-"use client";
-
-import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ZoomIn } from "lucide-react";
-import { AnimatePresence } from "framer-motion";
 import FadeInOnScroll from "@/components/shared/FadeInOnScroll";
 import AccentDivider from "@/components/shared/AccentDivider";
-import ProductLightbox from "@/components/products/ProductLightbox";
 import { featuredProducts } from "@/data/products";
 
 export default function FeaturedQualities() {
-  const [lightboxIdx, setLightboxIdx] = useState<number | null>(null);
 
   return (
     <section className="w-full py-8 lg:py-12 bg-[var(--color-bg-secondary)]">
@@ -50,11 +43,8 @@ export default function FeaturedQualities() {
             <FadeInOnScroll key={product.id} direction="up" delay={i * 0.12}>
               <article className="group flex flex-col h-full bg-white border border-[var(--color-border)] shadow-sm hover:shadow-lg transition-shadow duration-500">
 
-                {/* Clickable image */}
-                <div
-                  className="relative w-full overflow-hidden aspect-[5/3] cursor-pointer"
-                  onClick={() => setLightboxIdx(i)}
-                >
+                {/* Image */}
+                <div className="relative w-full overflow-hidden aspect-[5/3]">
                   <Image
                     src={product.image}
                     alt={product.name}
@@ -91,21 +81,6 @@ export default function FeaturedQualities() {
                       {product.leaRange}
                     </span>
                   )}
-                  {/* Zoom overlay */}
-                  <div
-                    className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
-                    style={{ backgroundColor: "rgba(0,0,0,0.20)" }}
-                  >
-                    <div
-                      className="flex items-center gap-2 px-4 py-2.5"
-                      style={{ backgroundColor: "rgba(10,10,8,0.58)", backdropFilter: "blur(6px)" }}
-                    >
-                      <ZoomIn size={14} style={{ color: "rgba(248,245,240,0.9)" }} />
-                      <span className="text-label" style={{ color: "rgba(248,245,240,0.9)", letterSpacing: "0.1em" }}>
-                        View
-                      </span>
-                    </div>
-                  </div>
                 </div>
 
                 {/* Card body */}
@@ -135,16 +110,6 @@ export default function FeaturedQualities() {
         </div>
       </div>
 
-      {/* Lightbox */}
-      <AnimatePresence>
-        {lightboxIdx !== null && (
-          <ProductLightbox
-            products={featuredProducts}
-            startIndex={lightboxIdx}
-            onClose={() => setLightboxIdx(null)}
-          />
-        )}
-      </AnimatePresence>
     </section>
   );
 }
