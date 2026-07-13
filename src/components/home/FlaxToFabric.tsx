@@ -43,7 +43,7 @@ const steps = [
   },
 ];
 
-const DURATION = 2800;
+const DURATION = 1800;
 
 export default function FlaxToFabric() {
   const [active, setActive] = useState(0);
