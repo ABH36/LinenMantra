@@ -133,7 +133,7 @@ export default function HeroBanner() {
                 fill
                 sizes="100vw"
                 className="object-cover object-center"
-                priority={s.id === 0}
+                loading={s.id === 0 ? "eager" : "lazy"}
               />
             </div>
           ))}
