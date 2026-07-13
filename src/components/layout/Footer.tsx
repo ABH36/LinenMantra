@@ -298,7 +298,29 @@ export default function Footer() {
           ════════════════════════════════ */}
       <div className="relative z-10 border-t border-[var(--color-border)]">
         <div className="container-site py-4">
-          <div className="flex items-center justify-between gap-4">
+          {/* Mobile layout */}
+          <div className="flex flex-col items-center gap-2 text-center md:hidden">
+            <LotusIcon />
+            <p className="text-[11px] text-[var(--color-text-muted)]">
+              &copy; {currentYear}{" "}
+              <span className="font-semibold text-[var(--color-text-secondary)]">Linen Mantra</span>.{" "}
+              All rights reserved.
+            </p>
+            <p className="text-[11px] text-[var(--color-text-muted)]">
+              Designed &amp; Developed by{" "}
+              <a
+                href="http://www.bdminfotech.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold hover:opacity-70 transition-opacity text-[var(--color-text-secondary)]"
+              >
+                BDM Infotech
+              </a>
+            </p>
+          </div>
+
+          {/* Desktop layout */}
+          <div className="hidden md:flex items-center justify-between gap-4">
 
             {/* Left: branch + copyright */}
             <div className="flex items-center gap-3">
