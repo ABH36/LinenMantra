@@ -126,6 +126,29 @@ export default function RootLayout({
       className={`${cormorant.variable} ${inter.variable}`}
     >
       <head>
+        {/* Establish early connection to Cloudinary CDN */}
+        <link rel="preconnect" href="https://res.cloudinary.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://res.cloudinary.com" />
+        {/* Preload LCP hero image (mobile) before JS executes */}
+        <link
+          rel="preload"
+          as="image"
+          fetchPriority="high"
+          href={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/f_auto,c_limit,w_750,q_auto/linen-mantra/hero/herobanner2mob.png`}
+          imageSrcSet={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/f_auto,c_limit,w_640,q_auto/linen-mantra/hero/herobanner2mob.png 640w, https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/f_auto,c_limit,w_750,q_auto/linen-mantra/hero/herobanner2mob.png 750w`}
+          imageSizes="100vw"
+          media="(max-width: 767px)"
+        />
+        {/* Preload LCP hero image (desktop) */}
+        <link
+          rel="preload"
+          as="image"
+          fetchPriority="high"
+          href={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/f_auto,c_limit,w_1920,q_auto/linen-mantra/hero/herobanner2.jpg`}
+          imageSrcSet={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/f_auto,c_limit,w_1080,q_auto/linen-mantra/hero/herobanner2.jpg 1080w, https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/f_auto,c_limit,w_1920,q_auto/linen-mantra/hero/herobanner2.jpg 1920w`}
+          imageSizes="100vw"
+          media="(min-width: 768px)"
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

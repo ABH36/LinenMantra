@@ -123,7 +123,6 @@ export default function HeroBanner() {
           style={{
             transform:  `translateX(-${current * 100}%)`,
             transition: "transform 0.65s cubic-bezier(0.65, 0, 0.35, 1)",
-            willChange: "transform",
           }}
         >
           {SLIDES.map((s) => (
@@ -224,7 +223,6 @@ export default function HeroBanner() {
           width:      `${TOTAL * 100}%`,
           transform:  `translateX(-${(current * 100) / TOTAL}%)`,
           transition: "transform 0.65s cubic-bezier(0.65, 0, 0.35, 1)",
-          willChange: "transform",
         }}
       >
         {SLIDES.map((s) => (
