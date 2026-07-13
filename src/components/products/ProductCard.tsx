@@ -84,21 +84,18 @@ export default function ProductCard({ product, onImageClick }: Props) {
       </div>
 
       {/* ── Card body ─────────────────────────────── */}
-      <div className="flex flex-col flex-1 p-5">
-        {/* Quality name */}
-        <h3 className="font-display font-normal leading-tight mb-1.5 text-2xl md:text-3xl text-[var(--color-text-primary)]">
-          {product.name}
-        </h3>
-
-        {/* Composition */}
-        {product.composition && (
-          <p className="text-label mb-3 text-[var(--color-accent)]">{product.composition}</p>
-        )}
-
-        {/* CTA */}
+      <div className="flex items-center justify-between gap-4 px-5 py-4">
+        <div>
+          <h3 className="font-display font-normal leading-tight text-xl md:text-2xl text-[var(--color-text-primary)]">
+            {product.name}
+          </h3>
+          {product.composition && (
+            <p className="text-label mt-0.5 text-[var(--color-accent)]">{product.composition}</p>
+          )}
+        </div>
         <Link
           href="/contact"
-          className="inline-flex items-center gap-2 text-sm font-medium tracking-widest uppercase transition-opacity hover:opacity-60 group/link mt-auto text-[var(--color-text-primary)]"
+          className="inline-flex items-center gap-1.5 text-xs font-semibold tracking-widest uppercase transition-opacity hover:opacity-60 group/link shrink-0 text-[var(--color-text-primary)]"
         >
           <span>Get a Quote</span>
           <span className="transition-transform duration-300 group-hover/link:translate-x-1">→</span>
