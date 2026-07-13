@@ -235,6 +235,7 @@ export default function HeroBanner() {
               className="object-cover"
               style={{ objectPosition: s.objectPosition ?? "center" }}
               priority={s.id === 0}
+              loading={s.id === 0 ? "eager" : "lazy"}
             />
           </div>
         ))}
