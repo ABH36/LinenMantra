@@ -1,7 +1,19 @@
 import { NextRequest, NextResponse } from "next/server";
 import nodemailer from "nodemailer";
+import fs from "fs";
+import path from "path";
 
-const SITE = "https://linenmantra.com";
+function imgBase64(filePath: string): string {
+  try {
+    const abs = path.join(process.cwd(), "public", filePath);
+    const data = fs.readFileSync(abs);
+    const ext = path.extname(filePath).replace(".", "");
+    const mime = ext === "webp" ? "image/webp" : ext === "png" ? "image/png" : "image/jpeg";
+    return `data:${mime};base64,${data.toString("base64")}`;
+  } catch {
+    return "";
+  }
+}
 
 function buildHtml(fields: {
   name: string;
@@ -11,6 +23,9 @@ function buildHtml(fields: {
   interest?: string;
   message: string;
 }) {
+  const logo = imgBase64("images/about/footer/companylogo.png");
+  const leaf = imgBase64("images/about/footer/leaf.webp");
+
   const row = (label: string, value: string, isLast = false) => `
     <tr>
       <td width="130" valign="top" style="
@@ -43,71 +58,44 @@ function buildHtml(fields: {
 <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#F0EBE3;padding:40px 16px;">
 <tr><td align="center">
 
-  <!-- Card -->
   <table width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:600px;width:100%;background:#FFFFFF;">
 
-    <!-- ── Header ── -->
+    <!-- Header -->
     <tr>
       <td align="center" style="background:#2C4A2D;padding:40px 40px 32px;">
+        ${logo ? `<img src="${logo}" alt="Linen Mantra" height="72" style="display:block;margin:0 auto;max-width:220px;" />` : `<p style="color:#F8F5F0;font-family:Arial,sans-serif;font-size:20px;font-weight:600;margin:0;">Linen Mantra</p>`}
 
-        <!-- Logo -->
-        <img
-          src="${SITE}/images/about/footer/companylogo.png"
-          alt="Linen Mantra"
-          height="72"
-          style="display:block;margin:0 auto;max-width:220px;"
-        />
-
-        <!-- Leaf divider -->
         <table cellpadding="0" cellspacing="0" border="0" style="margin:20px auto 18px;">
           <tr>
             <td style="width:50px;border-bottom:1px solid rgba(201,164,82,0.6);vertical-align:middle;"> </td>
             <td style="padding:0 10px;vertical-align:middle;">
-              <img
-                src="${SITE}/images/about/footer/leaf.webp"
-                alt=""
-                width="18"
-                height="16"
-                style="display:block;"
-              />
+              ${leaf ? `<img src="${leaf}" alt="" width="18" height="16" style="display:block;" />` : `<span style="color:#C9A452;font-size:16px;">✦</span>`}
             </td>
             <td style="width:50px;border-bottom:1px solid rgba(201,164,82,0.6);vertical-align:middle;"> </td>
           </tr>
         </table>
 
-        <!-- Title -->
-        <p style="
-          margin:0;
-          font-family:Arial,sans-serif;
-          font-size:10px;
-          font-weight:600;
-          letter-spacing:0.25em;
-          text-transform:uppercase;
-          color:#C9A452;
-        ">Web Enquiry from Linen Mantra</p>
-
+        <p style="margin:0;font-family:Arial,sans-serif;font-size:10px;font-weight:600;letter-spacing:0.25em;text-transform:uppercase;color:#C9A452;">
+          Web Enquiry from Linen Mantra
+        </p>
       </td>
     </tr>
 
-    <!-- ── Gold top border on content ── -->
+    <!-- Gold border -->
     <tr>
-      <td style="background:linear-gradient(90deg,#C9A452,#A08C72);height:2px;font-size:0;line-height:0;"> </td>
+      <td style="background:#C9A452;height:2px;font-size:0;line-height:0;"> </td>
     </tr>
 
-    <!-- ── Intro strip ── -->
+    <!-- Intro strip -->
     <tr>
       <td style="background:#F8F5F0;padding:16px 40px;border-bottom:1px solid #EDE8E0;">
-        <p style="
-          margin:0;
-          font-family:Arial,sans-serif;
-          font-size:12px;
-          color:#6B6560;
-          letter-spacing:0.04em;
-        ">A new enquiry has been submitted via the Linen Mantra website.</p>
+        <p style="margin:0;font-family:Arial,sans-serif;font-size:12px;color:#6B6560;letter-spacing:0.04em;">
+          A new enquiry has been submitted via the Linen Mantra website.
+        </p>
       </td>
     </tr>
 
-    <!-- ── Field rows ── -->
+    <!-- Fields -->
     <tr>
       <td style="padding:8px 40px 24px;">
         <table width="100%" cellpadding="0" cellspacing="0" border="0">
@@ -121,48 +109,36 @@ function buildHtml(fields: {
       </td>
     </tr>
 
-    <!-- ── Reply CTA ── -->
+    <!-- Reply CTA -->
     <tr>
       <td style="padding:0 40px 36px;">
         <table cellpadding="0" cellspacing="0" border="0">
           <tr>
             <td style="background:#2C4A2D;padding:12px 28px;">
-              <a href="mailto:${fields.email}" style="
-                font-family:Arial,sans-serif;
-                font-size:11px;
-                font-weight:600;
-                letter-spacing:0.15em;
-                text-transform:uppercase;
-                color:#F8F5F0;
-                text-decoration:none;
-              ">Reply to ${fields.name} →</a>
+              <a href="mailto:${fields.email}" style="font-family:Arial,sans-serif;font-size:11px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:#F8F5F0;text-decoration:none;">
+                Reply to ${fields.name} &rarr;
+              </a>
             </td>
           </tr>
         </table>
       </td>
     </tr>
 
-    <!-- ── Gold bottom border ── -->
+    <!-- Gold border -->
     <tr>
-      <td style="background:linear-gradient(90deg,#C9A452,#A08C72);height:1px;font-size:0;line-height:0;"> </td>
+      <td style="background:#C9A452;height:1px;font-size:0;line-height:0;"> </td>
     </tr>
 
-    <!-- ── Footer ── -->
+    <!-- Footer -->
     <tr>
       <td align="center" style="background:#2C4A2D;padding:20px 40px;">
-        <p style="
-          margin:0;
-          font-family:Arial,sans-serif;
-          font-size:10px;
-          letter-spacing:0.12em;
-          color:rgba(248,245,240,0.45);
-          text-transform:uppercase;
-        ">© ${new Date().getFullYear()} Linen Mantra &nbsp;·&nbsp; Silverline Fashion Fabrics Ltd. &nbsp;·&nbsp; Mumbai, India</p>
+        <p style="margin:0;font-family:Arial,sans-serif;font-size:10px;letter-spacing:0.12em;color:rgba(248,245,240,0.45);text-transform:uppercase;">
+          &copy; ${new Date().getFullYear()} Linen Mantra &nbsp;&middot;&nbsp; Silverline Fashion Fabrics Ltd. &nbsp;&middot;&nbsp; Mumbai, India
+        </p>
       </td>
     </tr>
 
   </table>
-  <!-- /Card -->
 
 </td></tr>
 </table>
