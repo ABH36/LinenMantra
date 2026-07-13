@@ -28,7 +28,8 @@ export default function WeavingExcellence() {
               className="font-display font-normal leading-tight mb-5 text-[var(--color-text-primary)]"
               style={{ fontSize: "clamp(1.75rem, 3vw, 2.75rem)" }}
             >
-              Textile Expertise for Over <em className="italic text-[var(--color-accent)]">35 Years</em>
+              <span className="block">Textile Expertise for Over</span>
+              <em className="italic text-[var(--color-accent)]">35 Years</em>
             </h2>
             <AccentDivider className="mb-6" />
           </FadeInOnScroll>

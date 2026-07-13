@@ -24,7 +24,8 @@ export default function LinenSpecialists() {
           className="font-display font-normal leading-tight max-w-lg text-[var(--color-text-primary)]"
           style={{ fontSize: "clamp(1.75rem, 3vw, 2.75rem)" }}
         >
-          Linen Specialists, <em className="italic text-[var(--color-accent)]">Since 2010</em>
+          <span className="block">Linen Specialists,</span>
+          <em className="italic text-[var(--color-accent)]">Since 2010</em>
         </h2>
         <AccentDivider className="mt-1" />
       </FadeInOnScroll>
