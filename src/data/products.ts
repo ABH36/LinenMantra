@@ -9,6 +9,7 @@ export type Product = {
   name: string;
   category: ProductCategory;
   composition?: string;
+  showComposition?: boolean;
   leaRange?: string;
   description: string;
   image: string;
@@ -32,6 +33,7 @@ export const products: Product[] = [
     name: "Alpino",
     category: "shirting",
     composition: "100% Linen",
+    showComposition: true,
     leaRange: "60 LEA",
     description:
       "A sophisticated linen suiting fabric offering exceptional drape and structure for formal tailoring.",
