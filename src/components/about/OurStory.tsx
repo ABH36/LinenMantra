@@ -42,7 +42,7 @@ export default function OurStory() {
               className="font-display font-normal leading-tight mb-6 text-[var(--color-text-primary)]"
               style={{ fontSize: "clamp(1.75rem, 3vw, 2.75rem)" }}
             >
-              <span className="block md:inline">Built on Craft.</span>
+              <span className="block md:inline">Built on Craft.</span>{" "}
               <em className="italic text-[var(--color-accent)]">Driven by Quality.</em>
             </h2>
             <AccentDivider className="mb-8" />
