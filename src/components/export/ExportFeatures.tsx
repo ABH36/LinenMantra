@@ -1,6 +1,7 @@
 import { Globe, Scissors, Package, BarChart3, Users, ShieldCheck, Plane, type LucideIcon } from "lucide-react";
 import FadeInOnScroll from "@/components/shared/FadeInOnScroll";
 import AccentDivider from "@/components/shared/AccentDivider";
+import { CLD } from "@/lib/cloudinary";
 
 const FEATURES: { Icon: LucideIcon; title: string; body: string }[] = [
   {
@@ -97,7 +98,7 @@ export default function ExportFeatures() {
     <section
       className="w-full py-10 lg:py-14 relative overflow-hidden"
       style={{
-        backgroundImage: "url('/images/about/footer/fabric.webp')",
+        backgroundImage: `url('${CLD.about.fabric}')`,
         backgroundSize: "400px auto",
         backgroundRepeat: "repeat",
       }}

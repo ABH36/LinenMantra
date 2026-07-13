@@ -5,6 +5,7 @@ import WeavingExcellence from "@/components/about/WeavingExcellence";
 import WhatWeCreate from "@/components/about/WhatWeCreate";
 import OurVision from "@/components/about/OurVision";
 import ContactCTABand from "@/components/shared/ContactCTABand";
+import { CLD } from "@/lib/cloudinary";
 
 export const metadata: Metadata = {
   title: "About Us",
@@ -21,7 +22,7 @@ export default function AboutPage() {
         heading="About Linen Mantra"
         subText="35+ years of craftsmanship, manufacturing expertise, and an unwavering commitment to quality — from Mumbai to global markets."
         lightImage
-        image="/images/about/aboutherobanner.png"
+        image={CLD.about.heroBanner}
       />
 
       {/* Our Story — company narrative + leadership */}

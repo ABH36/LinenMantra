@@ -158,12 +158,12 @@ export async function POST(req: NextRequest) {
     attachments: [
       {
         filename: "companylogo.png",
-        path: path.join(process.cwd(), "public/images/about/footer/companylogo.png"),
+        path: path.join(process.cwd(), "public/email/companylogo.png"),
         cid: "logo",
       },
       {
         filename: "leaf.webp",
-        path: path.join(process.cwd(), "public/images/about/footer/leaf.webp"),
+        path: path.join(process.cwd(), "public/email/leaf.webp"),
         cid: "leaf",
       },
     ],

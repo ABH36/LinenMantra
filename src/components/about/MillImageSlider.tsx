@@ -2,12 +2,13 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import { CLD } from "@/lib/cloudinary";
 
 const images = [
-  "/images/about/mill1.jpeg",
-  "/images/about/mill2.jpeg",
-  "/images/about/mill4.jpeg",
-  "/images/about/mill5.jpeg",
+  CLD.about.mill1,
+  CLD.about.mill2,
+  CLD.about.mill4,
+  CLD.about.mill5,
 ];
 
 const INTERVAL = 3200;

@@ -1,3 +1,5 @@
+import { CLD } from "@/lib/cloudinary";
+
 export type ProductCategory =
   | "all"
   | "shirting"
@@ -23,7 +25,7 @@ export const products: Product[] = [
     leaRange: "60 LEA",
     description:
       "A refined, breathable shirting fabric with a natural muted finish — ideal for premium menswear collections.",
-    image: "/images/products/Limestone.png",
+    image: CLD.products.limestone,
     featured: true,
   },
   {
@@ -34,7 +36,7 @@ export const products: Product[] = [
     leaRange: "60 LEA",
     description:
       "A sophisticated linen suiting fabric offering exceptional drape and structure for formal tailoring.",
-    image: "/images/products/Alpino.png",
+    image: CLD.products.alpino,
     featured: true,
   },
   {
@@ -45,7 +47,7 @@ export const products: Product[] = [
     leaRange: "60 LEA",
     description:
       "An exquisite linen fabric with a silken hand-feel — crafted for designers who seek fabric that bridges heritage and luxury.",
-    image: "/images/products/la-seta-linen.jpg",
+    image: CLD.products.laSetaLinen,
     featured: true,
   },
   {
@@ -54,7 +56,7 @@ export const products: Product[] = [
     category: "shirting",
     description:
       "A premium high-count linen suiting with unmatched finesse — delivering rare construction and superior drape for bespoke tailoring.",
-    image: "/images/products/rare-lea.png",
+    image: CLD.products.rareLea,
   },
   {
     id: "ireland",
@@ -63,7 +65,7 @@ export const products: Product[] = [
     leaRange: "60 LEA",
     description:
       "Inspired by the finest Irish linen tradition — a pure linen shirting with crisp texture and superior breathability for discerning menswear.",
-    image: "/images/products/ireland.png",
+    image: CLD.products.ireland,
   },
   {
     id: "euro-style",
@@ -72,7 +74,7 @@ export const products: Product[] = [
     leaRange: "25 LEA",
     description:
       "A classic European-inspired linen suiting with refined structure and a clean hand-feel — ideal for formal and semi-formal tailoring.",
-    image: "/images/products/suiting/euro-style.png",
+    image: CLD.products.euroStyle,
   },
   {
     id: "foglia",
@@ -80,7 +82,7 @@ export const products: Product[] = [
     category: "suiting",
     description:
       "A lightweight linen suiting with natural texture and elegant drape — where Italian design sensibility meets premium linen craft.",
-    image: "/images/products/suiting/foglia.png",
+    image: CLD.products.foglia,
   },
   {
     id: "leonard",
@@ -89,7 +91,7 @@ export const products: Product[] = [
     leaRange: "40 LEA",
     description:
       "A premium high-count linen suiting delivering weight, structure, and versatility — built for brands that demand the finest.",
-    image: "/images/products/suiting/leonard.jpg",
+    image: CLD.products.leonard,
   },
   {
     id: "on-star",
@@ -98,7 +100,7 @@ export const products: Product[] = [
     leaRange: "60 LEA",
     description:
       "A distinguished linen suiting with standout character — crafted for fashion-forward brands seeking fabrics that make a statement.",
-    image: "/images/products/suiting/on-star.png",
+    image: CLD.products.onStar,
   },
   {
     id: "coord-set-gift-box",
@@ -106,7 +108,7 @@ export const products: Product[] = [
     category: "gift",
     description:
       "A curated linen coord set presented in an elegant gift box — the perfect premium gifting solution for lifestyle and fashion brands.",
-    image: "/images/products/giftproducts/Coord%20Set%20Linen%20Gift%20Box.PNG",
+    image: CLD.products.coordSetGiftBox,
     featured: false,
   },
   {
@@ -115,7 +117,7 @@ export const products: Product[] = [
     category: "gift",
     description:
       "A thoughtfully paired duo of premium linen pieces, beautifully packaged — ideal for corporate gifting and retail collections.",
-    image: "/images/products/giftproducts/Linen%20Duo%20Gift%20Set.jpg",
+    image: CLD.products.linenDuoGiftSet,
     featured: false,
   },
   {
@@ -124,7 +126,7 @@ export const products: Product[] = [
     category: "gift",
     description:
       "A single premium linen piece presented in a refined gift box — perfect for individual gifting with a touch of elegance.",
-    image: "/images/products/giftproducts/Single%20Piece%20Gift%20Box.PNG",
+    image: CLD.products.singlePieceGiftBox,
     featured: false,
   },
 ];

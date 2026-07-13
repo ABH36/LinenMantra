@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import { CLD } from "@/lib/cloudinary";
 
 export default function MillVideoCard() {
   const [showVideo, setShowVideo] = useState(false);
@@ -25,7 +26,7 @@ export default function MillVideoCard() {
         }}
       >
         <Image
-          src="/images/logo/logo.png"
+          src={CLD.logo}
           alt="Linen Mantra"
           width={1536}
           height={1024}
@@ -50,7 +51,7 @@ export default function MillVideoCard() {
           transition: "opacity 0.9s ease",
         }}
       >
-        <source src="/images/about/A_cinematic_slow_motion_docum.mp4" type="video/mp4" />
+        <source src={CLD.about.millVideo} type="video/mp4" />
       </video>
 
     </div>

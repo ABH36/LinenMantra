@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import PageHero from "@/components/shared/PageHero";
 import GlobalMapSection from "@/components/export/GlobalMapSection";
 import ExportFeatures from "@/components/export/ExportFeatures";
+import { CLD } from "@/lib/cloudinary";
 
 export const metadata: Metadata = {
   title: "Export",
@@ -17,7 +18,7 @@ export default function ExportPage() {
         heading="Global Export"
         subText="India's trusted B2B source for premium apparel linen — shirting, suiting, and linen blend fabrics supplied to fashion labels and garment manufacturers across 14+ countries."
         lightImage
-        image="/images/Export/exportherobanner.png"
+        image={CLD.export.heroBanner}
       />
 
       {/* 7 export feature cards — 3-3-1 layout */}

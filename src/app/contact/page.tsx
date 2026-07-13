@@ -3,6 +3,7 @@ import PageHero from "@/components/shared/PageHero";
 import EnquiryForm from "@/components/contact/EnquiryForm";
 import FadeInOnScroll from "@/components/shared/FadeInOnScroll";
 import Image from "next/image";
+import { CLD } from "@/lib/cloudinary";
 
 export const metadata: Metadata = {
   title: "Contact Us",
@@ -18,7 +19,7 @@ export default async function ContactPage() {
         heading="Contact Us"
         subText="Tell us what you're looking for. Our team will respond with the detail and clarity your sourcing decisions deserve."
         lightImage
-        image="/images/contactus/contactherobanner.png"
+        image={CLD.contact.heroBanner}
       />
 
       {/* ════════════════════════════════════════════
@@ -28,7 +29,7 @@ export default async function ContactPage() {
         className="w-full py-12 lg:py-16 relative overflow-hidden"
         style={{
           backgroundColor: "var(--color-bg-dark)",
-          backgroundImage: "url('/images/about/footer/fabric.webp')",
+          backgroundImage: `url('${CLD.about.fabric}')`,
           backgroundSize: "400px auto",
           backgroundRepeat: "repeat",
         }}
@@ -65,7 +66,7 @@ export default async function ContactPage() {
 
                   <div className="flex flex-col items-center text-center mb-4">
                     <div className="w-8 h-8 flex items-center justify-center border border-[var(--color-border)] bg-[var(--color-bg-secondary)] mb-2">
-                      <Image src="/images/SocialMediaicon/google-maps.png" alt="Address" width={18} height={18} />
+                      <Image src={CLD.social.googleMaps} alt="Address" width={18} height={18} />
                     </div>
                     <p className="text-[10px] font-semibold tracking-[0.14em] uppercase mb-1 text-[var(--color-text-muted)]">
                       Address
@@ -77,7 +78,7 @@ export default async function ContactPage() {
 
                   <div className="flex flex-col items-center text-center">
                     <div className="w-8 h-8 flex items-center justify-center border border-[var(--color-border)] bg-[var(--color-bg-secondary)] mb-2">
-                      <Image src="/images/SocialMediaicon/landline.png" alt="Phone" width={18} height={18} />
+                      <Image src={CLD.social.landline} alt="Phone" width={18} height={18} />
                     </div>
                     <p className="text-[10px] font-semibold tracking-[0.14em] uppercase mb-1 text-[var(--color-text-muted)]">
                       Phone
@@ -113,7 +114,7 @@ export default async function ContactPage() {
 
                   <div className="flex flex-col items-center text-center mb-4">
                     <div className="w-8 h-8 flex items-center justify-center border border-[var(--color-border)] bg-[var(--color-bg-secondary)] mb-2">
-                      <Image src="/images/SocialMediaicon/google-maps.png" alt="Address" width={18} height={18} />
+                      <Image src={CLD.social.googleMaps} alt="Address" width={18} height={18} />
                     </div>
                     <p className="text-[10px] font-semibold tracking-[0.14em] uppercase mb-1 text-[var(--color-text-muted)]">
                       Address
@@ -125,7 +126,7 @@ export default async function ContactPage() {
 
                   <div className="flex flex-col items-center text-center">
                     <div className="w-8 h-8 flex items-center justify-center border border-[var(--color-border)] bg-[var(--color-bg-secondary)] mb-2">
-                      <Image src="/images/SocialMediaicon/landline.png" alt="Phone" width={18} height={18} />
+                      <Image src={CLD.social.landline} alt="Phone" width={18} height={18} />
                     </div>
                     <p className="text-[10px] font-semibold tracking-[0.14em] uppercase mb-1 text-[var(--color-text-muted)]">
                       Phone

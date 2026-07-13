@@ -2,6 +2,7 @@ import Image from "next/image";
 import FadeInOnScroll from "@/components/shared/FadeInOnScroll";
 import AccentDivider from "@/components/shared/AccentDivider";
 import MillVideoCard from "./MillVideoCard";
+import { CLD } from "@/lib/cloudinary";
 
 const paragraphs = [
   "Linen Mantra is one of India's leading manufacturers of premium linen and linen blend fabrics, serving fashion brands, garment manufacturers, designers, retailers, and export markets across the globe.",
@@ -99,7 +100,7 @@ export default function OurStory() {
               </span>
               <div className="w-px h-9 shrink-0 bg-[var(--color-border)]" />
               <Image
-                src="/images/about/footer/companylogo.png"
+                src={CLD.about.companyLogo}
                 alt="Silverline Group"
                 width={1536}
                 height={1024}

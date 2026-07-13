@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { Shirt, LayoutGrid, Factory, Home } from "lucide-react";
+import { CLD } from "@/lib/cloudinary";
 
 // ── Hero-specific colour palette ─────────────────────────────────────
 const FOREST = "var(--color-forest)";
@@ -39,8 +40,8 @@ interface SlideData {
 const SLIDES: SlideData[] = [
   {
     id:          0,
-    image:       "/images/hero/herobanner2.png",
-    mobileImage: "/images/hero/herobanner2mob.png",
+    image:       CLD.hero.banner2,
+    mobileImage: CLD.hero.banner2Mob,
     h1:          "From Flax to Fabric.",
     h1Color:     FOREST,
     h2:          "Crafted by Linen Mantra.",
@@ -49,8 +50,8 @@ const SLIDES: SlideData[] = [
   },
   {
     id:          1,
-    image:       "/images/hero/herobanner1.png",
-    mobileImage: "/images/hero/herobanner1mob.png",
+    image:       CLD.hero.banner1,
+    mobileImage: CLD.hero.banner1Mob,
     h1:          "Linen",
     h1Color:     FOREST,
     h2:          "Reimagined.",
@@ -60,8 +61,8 @@ const SLIDES: SlideData[] = [
   },
   {
     id:             2,
-    image:          "/images/hero/herobanner.png",
-    mobileImage:    "/images/hero/herobannermob.png",
+    image:          CLD.hero.banner,
+    mobileImage:    CLD.hero.bannerMob,
     objectPosition: "top",
     h1:             "Trusted by",
     h1Color:        FOREST,
@@ -80,7 +81,7 @@ function Flourish() {
   return (
     <div className="flex items-center gap-3 my-5">
       <span className="block h-px w-10 bg-[var(--color-accent)]" />
-      <Image src="/images/about/footer/leaf.webp" alt="" width={20} height={17} className="w-5 h-auto object-contain opacity-85" aria-hidden="true" />
+      <Image src={CLD.about.leaf} alt="" width={20} height={17} className="w-5 h-auto object-contain opacity-85" aria-hidden="true" />
       <span className="block h-px w-10 bg-[var(--color-accent)]" />
     </div>
   );

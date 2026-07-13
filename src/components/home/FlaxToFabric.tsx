@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import FadeInOnScroll from "@/components/shared/FadeInOnScroll";
 import AccentDivider from "@/components/shared/AccentDivider";
+import { CLD } from "@/lib/cloudinary";
 
 const steps = [
   {
@@ -11,35 +12,35 @@ const steps = [
     label:       "Flax",
     description: "Natural plant origin",
     body:        "Everything begins with the finest European flax — a natural fibre harvested from the linen plant. Its inherent strength, breathability, and texture form the foundation of every premium fabric we create.",
-    image:       "/images/process/Flax.png",
+    image:       CLD.process.flax,
   },
   {
     id:          "fiber",
     label:       "Fiber",
     description: "Retted & processed",
     body:        "Through careful retting and scutching, raw flax stalks are transformed into long, clean fibres ready for spinning. This stage determines the softness, lustre, and fineness of the final fabric.",
-    image:       "/images/process/Fiber.png",
+    image:       CLD.process.fiber,
   },
   {
     id:          "yarn",
     label:       "Yarn",
     description: "Spun to count",
     body:        "Processed fibres are spun into yarn across our precise count range of 6–150 LEA. Higher counts yield finer, lighter fabrics while lower counts produce structured, robust textiles for tailoring.",
-    image:       "/images/process/Yarn.png",
+    image:       CLD.process.yarn,
   },
   {
     id:          "weave",
     label:       "Weave",
     description: "Precision crafted",
     body:        "Our European-standard looms interlace the yarn into distinct constructions — plain weave, twill, and blends. Precision weaving defines the drape, texture, and character of every metre produced.",
-    image:       "/images/process/Weave.png",
+    image:       CLD.process.weave,
   },
   {
     id:          "fabric",
     label:       "Fabric",
     description: "Premium finish",
     body:        "Each roll undergoes finishing, quality inspection, and colour treatment before dispatch. The result is a premium linen fabric that meets international export standards and exacting brand specifications.",
-    image:       "/images/process/Fabric.png",
+    image:       CLD.process.fabric,
   },
 ];
 

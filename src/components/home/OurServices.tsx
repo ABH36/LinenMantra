@@ -2,34 +2,35 @@ import Image from "next/image";
 import Link from "next/link";
 import SectionTitle from "@/components/shared/SectionTitle";
 import FadeInOnScroll from "@/components/shared/FadeInOnScroll";
+import { CLD } from "@/lib/cloudinary";
 
 const services = [
   {
     number: "01",
     title: "Linen Fabrics",
     description: "100% premium linen across the full 6–150 LEA count spectrum",
-    image: "/images/products/Limestone.png",
+    image: CLD.products.limestone,
     href: "/products",
   },
   {
     number: "02",
     title: "Linen Blends",
     description: "Cotton-linen, viscose-linen, and poly-linen compositions",
-    image: "/images/products/Ivory%20Plain.png",
+    image: CLD.products.laSetaLinen,
     href: "/products",
   },
   {
     number: "03",
     title: "Custom Development",
     description: "Bespoke fabric construction and exclusive weave development",
-    image: "/images/about/mill2.jpeg",
+    image: CLD.about.mill2,
     href: "/contact",
   },
   {
     number: "04",
     title: "Export & Sampling",
     description: "B2B export support from sampling to bulk production",
-    image: "/images/about/mill4.jpeg",
+    image: CLD.about.mill4,
     href: "/export",
   },
 ];
