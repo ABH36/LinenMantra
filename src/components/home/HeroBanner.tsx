@@ -202,9 +202,9 @@ export default function HeroBanner() {
 
       {/* Bottom strip — 2×2 grid on mobile */}
       <div className="bg-[var(--color-forest)]">
-        <div className="grid grid-cols-3">
+        <div className="grid grid-cols-2">
           {STRIP.map(({ Icon, bold, light }, i) => (
-            <div key={i} className="flex items-center gap-2.5 px-4 py-3" style={{ borderRight: (i + 1) % 3 !== 0 ? "1px solid rgba(248,245,240,0.08)" : "none", borderTop: i >= 3 ? "1px solid rgba(248,245,240,0.08)" : "none" }}>
+            <div key={i} className="flex items-center gap-2.5 px-4 py-3" style={{ borderRight: (i + 1) % 2 !== 0 ? "1px solid rgba(248,245,240,0.08)" : "none", borderTop: i >= 2 ? "1px solid rgba(248,245,240,0.08)" : "none" }}>
               <Icon size={13} style={{ color: GOLD, opacity: 0.8, flexShrink: 0 }} />
               <div>
                 <p className="font-semibold leading-tight" style={{ fontSize: "0.58rem", color: CREAM, letterSpacing: "0.06em" }}>{bold}</p>
