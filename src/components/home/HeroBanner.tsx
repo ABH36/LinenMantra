@@ -185,7 +185,7 @@ export default function HeroBanner() {
         <div className="flex gap-2 mt-6">
           {SLIDES.map((_, i) => (
             <button key={i} onClick={() => setCurrent(i)} aria-label={`Slide ${i + 1}`} className="cursor-pointer p-1" style={{ background: "none", border: "none" }}>
-              <span className="block rounded-full transition-all duration-300" style={{ width: i === current ? "20px" : "6px", height: "4px", backgroundColor: i === current ? FOREST : "rgba(44,74,45,0.25)" }} />
+              <span className="block rounded-full" style={{ width: "20px", height: "4px", transform: `scaleX(${i === current ? 1 : 0.3})`, transformOrigin: "left", transition: "transform 300ms, background-color 300ms", backgroundColor: i === current ? FOREST : "rgba(44,74,45,0.25)" }} />
             </button>
           ))}
         </div>
@@ -290,7 +290,7 @@ export default function HeroBanner() {
       <div className="absolute z-30 flex flex-col gap-2 items-center" style={{ bottom: "68px", right: "2rem" }}>
         {SLIDES.map((_, i) => (
           <button key={i} onClick={() => setCurrent(i)} aria-label={`Slide ${i + 1}`} className="cursor-pointer" style={{ background: "none", border: "none", padding: "3px" }}>
-            <span className="block rounded-full transition-all duration-300" style={{ width: i === current ? "8px" : "5px", height: i === current ? "8px" : "5px", backgroundColor: i === current ? GOLD : "rgba(44,74,45,0.35)" }} />
+            <span className="block rounded-full" style={{ width: "8px", height: "8px", transform: `scale(${i === current ? 1 : 0.625})`, transition: "transform 300ms, background-color 300ms", backgroundColor: i === current ? GOLD : "rgba(44,74,45,0.35)" }} />
           </button>
         ))}
       </div>

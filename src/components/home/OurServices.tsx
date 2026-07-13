@@ -112,7 +112,7 @@ export default function OurServices() {
 
                 {/* Green accent line on hover */}
                 <div
-                  className="h-px w-0 group-hover:w-full mt-3 transition-all duration-500 bg-[var(--color-cta)]"
+                  className="h-px w-full origin-left scale-x-0 group-hover:scale-x-100 mt-3 transition-transform duration-500 bg-[var(--color-cta)]"
                 />
               </div>
             </Link>
