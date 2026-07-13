@@ -90,8 +90,8 @@ export default function ProductCard({ product, onImageClick }: Props) {
           {product.name}
         </h3>
 
-        {/* Composition — only shown when flagged */}
-        {product.showComposition && product.composition && (
+        {/* Composition */}
+        {product.composition && (
           <p className="text-label mb-3 text-[var(--color-accent)]">{product.composition}</p>
         )}
 

@@ -113,7 +113,7 @@ export default function FeaturedQualities() {
                   <h3 className="font-display font-normal mb-1.5 text-2xl md:text-3xl text-[var(--color-text-primary)]">
                     {product.name}
                   </h3>
-                  {product.showComposition && product.composition && (
+                  {product.composition && (
                     <p className="text-label mb-3 text-[var(--color-accent)]">{product.composition}</p>
                   )}
                   <Link
