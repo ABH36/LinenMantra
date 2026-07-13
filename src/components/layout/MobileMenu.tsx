@@ -110,7 +110,7 @@ export default function MobileMenu({ isOpen, onClose, currentPath }: Props) {
             >
               <div className="h-px w-full mb-8 bg-[var(--color-border-dark)]" />
               <Link
-                href="/contact"
+                href="/contact#enquiry"
                 onClick={onClose}
                 className="inline-flex items-center gap-3 text-sm font-medium tracking-widest uppercase transition-opacity hover:opacity-70 text-[var(--color-accent)]"
               >

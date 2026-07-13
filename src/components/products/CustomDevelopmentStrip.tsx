@@ -58,7 +58,7 @@ export default function CustomDevelopmentStrip() {
               </ul>
 
               <Link
-                href="/contact"
+                href="/contact#enquiry"
                 className="inline-flex items-center gap-3 px-7 py-3.5 text-sm font-medium tracking-widest uppercase rounded transition-opacity hover:opacity-80 group bg-[var(--color-cta)] text-[var(--color-text-light)]"
               >
                 <span>Discuss Your Brief</span>

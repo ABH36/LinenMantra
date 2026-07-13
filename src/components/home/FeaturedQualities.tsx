@@ -94,7 +94,7 @@ export default function FeaturedQualities() {
                     )}
                   </div>
                   <Link
-                    href="/contact"
+                    href="/contact#enquiry"
                     className="inline-flex items-center gap-1.5 text-xs font-semibold tracking-widest uppercase transition-all duration-300 hover:opacity-70 group/link shrink-0 text-[var(--color-text-primary)]"
                   >
                     <span>Get a Quote</span>
