@@ -82,7 +82,7 @@ export default function ProductCard({ product }: Props) {
       </div>
 
       {/* Accent bottom line — slides in on hover */}
-      <div className="h-px w-0 group-hover:w-full transition-all duration-500 bg-[var(--color-accent)]" />
+      <div className="h-px w-full origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 bg-[var(--color-accent)]" />
     </motion.article>
   );
 }

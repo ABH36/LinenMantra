@@ -92,7 +92,7 @@ export default async function ContactPage() {
                   </div>
                 </div>
 
-                <div className="absolute inset-x-0 bottom-0 h-px w-0 group-hover:w-full bg-[var(--color-accent)] transition-all duration-500" />
+                <div className="absolute inset-x-0 bottom-0 h-px w-full origin-left scale-x-0 group-hover:scale-x-100 bg-[var(--color-accent)] transition-transform duration-500" />
               </div>
             </FadeInOnScroll>
 
@@ -140,7 +140,7 @@ export default async function ContactPage() {
                   </div>
                 </div>
 
-                <div className="absolute inset-x-0 bottom-0 h-px w-0 group-hover:w-full bg-[var(--color-accent)] transition-all duration-500" />
+                <div className="absolute inset-x-0 bottom-0 h-px w-full origin-left scale-x-0 group-hover:scale-x-100 bg-[var(--color-accent)] transition-transform duration-500" />
               </div>
             </FadeInOnScroll>
 
@@ -161,7 +161,7 @@ export default async function ContactPage() {
                 >
                   +91 97694 22606
                 </a>
-                <div className="absolute inset-x-0 bottom-0 h-px w-0 group-hover:w-full bg-[var(--color-accent)] transition-all duration-500" />
+                <div className="absolute inset-x-0 bottom-0 h-px w-full origin-left scale-x-0 group-hover:scale-x-100 bg-[var(--color-accent)] transition-transform duration-500" />
               </div>
             </FadeInOnScroll>
 
@@ -177,7 +177,7 @@ export default async function ContactPage() {
                 >
                   linenmantra@gmail.com
                 </a>
-                <div className="absolute inset-x-0 bottom-0 h-px w-0 group-hover:w-full bg-[var(--color-accent)] transition-all duration-500" />
+                <div className="absolute inset-x-0 bottom-0 h-px w-full origin-left scale-x-0 group-hover:scale-x-100 bg-[var(--color-accent)] transition-transform duration-500" />
               </div>
             </FadeInOnScroll>
 
@@ -193,7 +193,7 @@ export default async function ContactPage() {
                 >
                   +91 98202 86875
                 </a>
-                <div className="absolute inset-x-0 bottom-0 h-px w-0 group-hover:w-full bg-[var(--color-accent)] transition-all duration-500" />
+                <div className="absolute inset-x-0 bottom-0 h-px w-full origin-left scale-x-0 group-hover:scale-x-100 bg-[var(--color-accent)] transition-transform duration-500" />
               </div>
             </FadeInOnScroll>
 
