@@ -1,9 +1,15 @@
 "use client";
 
 import { useState, useRef, FormEvent } from "react";
-import emailjs from "@emailjs/browser";
-import { EMAILJS_CONFIG, type EnquiryFormData } from "@/lib/emailjs";
 import FadeInOnScroll from "@/components/shared/FadeInOnScroll";
+
+type EnquiryFormData = {
+  name: string;
+  email: string;
+  phone?: string;
+  company?: string;
+  message: string;
+};
 
 type FieldStatus = "idle" | "sending" | "success" | "error";
 
@@ -59,17 +65,18 @@ export default function EnquiryForm() {
       company: (fd.get("company") as string) || undefined,
       message: (fd.get("message") as string) || "",
     };
+    const interest = (fd.get("interest") as string) || "";
 
     if (!validate(data)) return;
     setStatus("sending");
 
     try {
-      await emailjs.sendForm(
-        EMAILJS_CONFIG.serviceId,
-        EMAILJS_CONFIG.templateId,
-        formRef.current,
-        EMAILJS_CONFIG.publicKey
-      );
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...data, interest }),
+      });
+      if (!res.ok) throw new Error();
       setStatus("success");
       formRef.current.reset();
     } catch {
