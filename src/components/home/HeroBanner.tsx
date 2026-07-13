@@ -205,10 +205,10 @@ export default function HeroBanner() {
         <div className="grid grid-cols-2">
           {STRIP.map(({ Icon, bold, light }, i) => (
             <div key={i} className="flex items-center gap-2.5 px-4 py-3" style={{ borderRight: (i + 1) % 2 !== 0 ? "1px solid rgba(248,245,240,0.08)" : "none", borderTop: i >= 2 ? "1px solid rgba(248,245,240,0.08)" : "none" }}>
-              <Icon size={13} style={{ color: GOLD, opacity: 0.8, flexShrink: 0 }} />
+              <Icon size={12} style={{ color: GOLD, opacity: 0.8, flexShrink: 0 }} />
               <div>
-                <p className="font-semibold leading-tight" style={{ fontSize: "0.58rem", color: CREAM, letterSpacing: "0.06em" }}>{bold}</p>
-                <p className="leading-tight mt-0.5" style={{ fontSize: "0.55rem", color: "rgba(248,245,240,0.70)" }}>{light}</p>
+                <p className="font-semibold leading-tight" style={{ fontSize: "0.52rem", color: CREAM, letterSpacing: "0.05em" }}>{bold}</p>
+                <p className="leading-tight mt-0.5" style={{ fontSize: "0.50rem", color: "rgba(248,245,240,0.70)" }}>{light}</p>
               </div>
             </div>
           ))}
