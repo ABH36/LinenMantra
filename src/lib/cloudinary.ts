@@ -1,5 +1,6 @@
-const I = "https://res.cloudinary.com/jpcr3zsi/image/upload";
-const V = "https://res.cloudinary.com/jpcr3zsi/video/upload";
+const CLOUD = process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME;
+const I = `https://res.cloudinary.com/${CLOUD}/image/upload`;
+const V = `https://res.cloudinary.com/${CLOUD}/video/upload`;
 
 export const CLD = {
   hero: {
