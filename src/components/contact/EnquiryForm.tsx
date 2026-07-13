@@ -66,6 +66,7 @@ export default function EnquiryForm() {
       message: (fd.get("message") as string) || "",
     };
     const interest = (fd.get("interest") as string) || "";
+    const website  = (fd.get("website")  as string) || ""; // honeypot
 
     if (!validate(data)) return;
     setStatus("sending");
@@ -74,7 +75,7 @@ export default function EnquiryForm() {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...data, interest }),
+        body: JSON.stringify({ ...data, interest, website }),
       });
       if (!res.ok) throw new Error();
       setStatus("success");
@@ -126,6 +127,10 @@ export default function EnquiryForm() {
         </p>
 
         <form ref={formRef} onSubmit={handleSubmit} noValidate className="flex flex-col gap-5">
+          {/* LM-009: Honeypot — visually hidden, traps bots that auto-fill all fields */}
+          <div style={{ position: "absolute", left: "-9999px", top: "auto", width: "1px", height: "1px", overflow: "hidden" }} aria-hidden="true">
+            <input name="website" type="text" defaultValue="" tabIndex={-1} autoComplete="off" />
+          </div>
           {/* Name + Email */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             <div>

@@ -2,6 +2,22 @@ import { NextRequest, NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 import path from "path";
 
+// ── LM-002: HTML escape — prevents injection in email body ─
+function esc(s: string): string {
+  return s
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#x27;");
+}
+
+// ── LM-005: Server-side email format validation ────────────
+const EMAIL_RE = /^[^\s@]{1,64}@[^\s@]{1,253}\.[^\s@]{1,63}$/;
+
+// ── LM-007: Per-field length limits ───────────────────────
+const LIMITS = { name: 100, email: 254, phone: 20, company: 200, message: 2000 };
+
 function buildHtml(fields: {
   name: string;
   email: string;
@@ -33,6 +49,14 @@ function buildHtml(fields: {
         border-bottom: ${isLast ? "none" : "1px solid #EDE8E0"};
       ">${value}</td>
     </tr>`;
+
+  // All user fields are escaped via esc() before interpolation (LM-002)
+  const safeName    = esc(fields.name);
+  const safeEmail   = esc(fields.email);
+  const safePhone   = esc(fields.phone   ?? "—");
+  const safeCompany = esc(fields.company ?? "—");
+  const safeInterest = esc(fields.interest ?? "—");
+  const safeMessage = esc(fields.message);
 
   return `<!DOCTYPE html>
 <html lang="en">
@@ -84,12 +108,12 @@ function buildHtml(fields: {
     <tr>
       <td style="padding:8px 40px 24px;">
         <table width="100%" cellpadding="0" cellspacing="0" border="0">
-          ${row("Name", fields.name)}
-          ${row("Email", `<a href="mailto:${fields.email}" style="color:#2C4A2D;text-decoration:none;">${fields.email}</a>`)}
-          ${row("Phone", fields.phone || "—")}
-          ${row("Company", fields.company || "—")}
-          ${row("Interest", fields.interest || "—")}
-          ${row("Message", `<span style="white-space:pre-wrap;">${fields.message}</span>`, true)}
+          ${row("Name",    safeName)}
+          ${row("Email",   `<a href="mailto:${safeEmail}" style="color:#2C4A2D;text-decoration:none;">${safeEmail}</a>`)}
+          ${row("Phone",   safePhone)}
+          ${row("Company", safeCompany)}
+          ${row("Interest", safeInterest)}
+          ${row("Message", `<span style="white-space:pre-wrap;">${safeMessage}</span>`, true)}
         </table>
       </td>
     </tr>
@@ -100,8 +124,8 @@ function buildHtml(fields: {
         <table cellpadding="0" cellspacing="0" border="0">
           <tr>
             <td style="background:#2C4A2D;padding:12px 28px;">
-              <a href="mailto:${fields.email}" style="font-family:Arial,sans-serif;font-size:11px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:#F8F5F0;text-decoration:none;">
-                Reply to ${fields.name} &rarr;
+              <a href="mailto:${safeEmail}" style="font-family:Arial,sans-serif;font-size:11px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:#F8F5F0;text-decoration:none;">
+                Reply to ${safeName} &rarr;
               </a>
             </td>
           </tr>
@@ -133,15 +157,46 @@ function buildHtml(fields: {
 }
 
 export async function POST(req: NextRequest) {
-  const { name, email, phone, company, interest, message } = await req.json();
+  // ── Parse body safely (LM-004) ──────────────────────────
+  let body: Record<string, unknown>;
+  try {
+    body = await req.json();
+  } catch {
+    return NextResponse.json({ error: "Invalid request body" }, { status: 400 });
+  }
 
+  const { name, email, phone, company, interest, message, website } =
+    body as Record<string, string | undefined>;
+
+  // ── LM-009: Honeypot — bots fill this, humans leave blank ─
+  if (website) {
+    return NextResponse.json({ ok: true }); // Silent reject
+  }
+
+  // ── Required fields ──────────────────────────────────────
   if (!name?.trim() || !email?.trim() || !message?.trim()) {
     return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
   }
 
+  // ── LM-005: Email format validation ─────────────────────
+  if (!EMAIL_RE.test(email)) {
+    return NextResponse.json({ error: "Invalid email address" }, { status: 422 });
+  }
+
+  // ── LM-007: Length limits ────────────────────────────────
+  if (
+    name.length    > LIMITS.name    ||
+    email.length   > LIMITS.email   ||
+    (phone   && phone.length   > LIMITS.phone)   ||
+    (company && company.length > LIMITS.company) ||
+    message.length > LIMITS.message
+  ) {
+    return NextResponse.json({ error: "Input exceeds maximum length" }, { status: 413 });
+  }
+
   const transporter = nodemailer.createTransport({
-    host: process.env.SMTP_HOST,
-    port: Number(process.env.SMTP_PORT),
+    host:   process.env.SMTP_HOST,
+    port:   Number(process.env.SMTP_PORT),
     secure: true,
     auth: {
       user: process.env.SMTP_USER,
@@ -149,25 +204,34 @@ export async function POST(req: NextRequest) {
     },
   });
 
-  await transporter.sendMail({
-    from: `"Linen Mantra Website" <${process.env.SMTP_USER}>`,
-    to: process.env.SMTP_TO,
-    subject: "Web Inquiry from Linen Mantra",
-    html: buildHtml({ name, email, phone, company, interest, message }),
-    replyTo: email,
-    attachments: [
-      {
-        filename: "companylogo.png",
-        path: path.join(process.cwd(), "public/email/companylogo.png"),
-        cid: "logo",
-      },
-      {
-        filename: "leaf.webp",
-        path: path.join(process.cwd(), "public/email/leaf.webp"),
-        cid: "leaf",
-      },
-    ],
-  });
+  // ── LM-004: Wrap sendMail in try/catch ───────────────────
+  try {
+    await transporter.sendMail({
+      from:    `"Linen Mantra Website" <${process.env.SMTP_USER}>`,
+      to:      process.env.SMTP_TO,
+      subject: "Web Inquiry from Linen Mantra",
+      html:    buildHtml({ name, email, phone, company, interest, message }),
+      replyTo: email, // validated above — safe to use
+      attachments: [
+        {
+          filename: "companylogo.png",
+          path: path.join(process.cwd(), "public/email/companylogo.png"),
+          cid: "logo",
+        },
+        {
+          filename: "leaf.webp",
+          path: path.join(process.cwd(), "public/email/leaf.webp"),
+          cid: "leaf",
+        },
+      ],
+    });
+  } catch (err) {
+    console.error("[contact] SMTP error:", err instanceof Error ? err.message : String(err));
+    return NextResponse.json(
+      { error: "Failed to send message. Please try again or email us directly." },
+      { status: 500 }
+    );
+  }
 
   return NextResponse.json({ ok: true });
 }
