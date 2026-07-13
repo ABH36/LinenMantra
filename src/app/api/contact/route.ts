@@ -1,19 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import nodemailer from "nodemailer";
-import fs from "fs";
 import path from "path";
-
-function imgBase64(filePath: string): string {
-  try {
-    const abs = path.join(process.cwd(), "public", filePath);
-    const data = fs.readFileSync(abs);
-    const ext = path.extname(filePath).replace(".", "");
-    const mime = ext === "webp" ? "image/webp" : ext === "png" ? "image/png" : "image/jpeg";
-    return `data:${mime};base64,${data.toString("base64")}`;
-  } catch {
-    return "";
-  }
-}
 
 function buildHtml(fields: {
   name: string;
@@ -23,9 +10,6 @@ function buildHtml(fields: {
   interest?: string;
   message: string;
 }) {
-  const logo = imgBase64("images/about/footer/companylogo.png");
-  const leaf = imgBase64("images/about/footer/leaf.webp");
-
   const row = (label: string, value: string, isLast = false) => `
     <tr>
       <td width="130" valign="top" style="
@@ -63,13 +47,14 @@ function buildHtml(fields: {
     <!-- Header -->
     <tr>
       <td align="center" style="background:#2C4A2D;padding:40px 40px 32px;">
-        ${logo ? `<img src="${logo}" alt="Linen Mantra" height="72" style="display:block;margin:0 auto;max-width:220px;" />` : `<p style="color:#F8F5F0;font-family:Arial,sans-serif;font-size:20px;font-weight:600;margin:0;">Linen Mantra</p>`}
+
+        <img src="cid:logo" alt="Linen Mantra" height="72" style="display:block;margin:0 auto;max-width:220px;" />
 
         <table cellpadding="0" cellspacing="0" border="0" style="margin:20px auto 18px;">
           <tr>
             <td style="width:50px;border-bottom:1px solid rgba(201,164,82,0.6);vertical-align:middle;"> </td>
             <td style="padding:0 10px;vertical-align:middle;">
-              ${leaf ? `<img src="${leaf}" alt="" width="18" height="16" style="display:block;" />` : `<span style="color:#C9A452;font-size:16px;">✦</span>`}
+              <img src="cid:leaf" alt="" width="18" height="16" style="display:block;" />
             </td>
             <td style="width:50px;border-bottom:1px solid rgba(201,164,82,0.6);vertical-align:middle;"> </td>
           </tr>
@@ -170,6 +155,18 @@ export async function POST(req: NextRequest) {
     subject: "Web Inquiry from Linen Mantra",
     html: buildHtml({ name, email, phone, company, interest, message }),
     replyTo: email,
+    attachments: [
+      {
+        filename: "companylogo.png",
+        path: path.join(process.cwd(), "public/images/about/footer/companylogo.png"),
+        cid: "logo",
+      },
+      {
+        filename: "leaf.webp",
+        path: path.join(process.cwd(), "public/images/about/footer/leaf.webp"),
+        cid: "leaf",
+      },
+    ],
   });
 
   return NextResponse.json({ ok: true });
