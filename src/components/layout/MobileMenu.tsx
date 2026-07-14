@@ -111,12 +111,6 @@ export default function MobileMenu({ isOpen, onClose, currentPath }: Props) {
               className="px-10 pb-12"
             >
               <AccentDivider className="mb-5" />
-              <p
-                className="font-display italic mb-5"
-                style={{ color: "rgba(255,255,255,0.85)", fontSize: "clamp(1.25rem, 5vw, 1.6rem)", lineHeight: 1.3 }}
-              >
-                Let&apos;s Create Something Exceptional
-              </p>
               <Link
                 href="/contact#enquiry"
                 onClick={onClose}
