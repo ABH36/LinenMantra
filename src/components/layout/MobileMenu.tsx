@@ -7,6 +7,7 @@ import { X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { navLinks } from "@/data/navigation";
 import { CLD } from "@/lib/cloudinary";
+import AccentDivider from "@/components/shared/AccentDivider";
 
 type Props = {
   isOpen: boolean;
@@ -62,7 +63,6 @@ export default function MobileMenu({ isOpen, onClose, currentPath }: Props) {
                   width: "36px",
                   height: "36px",
                   objectFit: "contain",
-                  filter: "brightness(0) invert(1)",
                 }}
               />
               <button
@@ -110,7 +110,13 @@ export default function MobileMenu({ isOpen, onClose, currentPath }: Props) {
               transition={{ delay: 0.45, duration: 0.35 }}
               className="px-10 pb-12"
             >
-              <div className="h-px w-full mb-8" style={{ backgroundColor: "rgba(255,255,255,0.2)" }} />
+              <AccentDivider className="mb-5" />
+              <p
+                className="font-display italic mb-5"
+                style={{ color: "rgba(255,255,255,0.85)", fontSize: "clamp(1.25rem, 5vw, 1.6rem)", lineHeight: 1.3 }}
+              >
+                Let&apos;s Create Something Exceptional
+              </p>
               <Link
                 href="/contact#enquiry"
                 onClick={onClose}
