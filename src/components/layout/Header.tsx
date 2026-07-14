@@ -105,7 +105,7 @@ export default function Header() {
               >
                 <Menu
                   size={22}
-                  color={isSolid ? "var(--color-text-primary)" : "rgba(248,245,240,0.9)"}
+                  color="var(--color-text-primary)"
                 />
               </button>
             </div>
