@@ -48,7 +48,8 @@ export default function MobileMenu({ isOpen, onClose, currentPath }: Props) {
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
-            className="fixed top-0 right-0 bottom-0 z-50 w-4/5 max-w-sm flex flex-col bg-[var(--color-bg-dark)]"
+            className="fixed top-0 right-0 bottom-0 z-50 w-4/5 max-w-sm flex flex-col"
+            style={{ backgroundColor: "#2C4A2D" }}
           >
             {/* Top bar — logo + close */}
             <div className="flex items-center justify-between px-8 py-5">
@@ -68,7 +69,7 @@ export default function MobileMenu({ isOpen, onClose, currentPath }: Props) {
                 className="p-2 transition-opacity hover:opacity-60 cursor-pointer"
                 aria-label="Close menu"
               >
-                <X size={22} className="text-[var(--color-text-light)]" />
+                <X size={22} color="#FFFFFF" />
               </button>
             </div>
 
@@ -90,7 +91,7 @@ export default function MobileMenu({ isOpen, onClose, currentPath }: Props) {
                       style={{
                         color: isActive
                           ? "var(--color-accent)"
-                          : "var(--color-text-light)",
+                          : "#FFFFFF",
                         fontSize: "clamp(1.5rem, 4vw, 2rem)",
                       }}
                     >
@@ -108,7 +109,7 @@ export default function MobileMenu({ isOpen, onClose, currentPath }: Props) {
               transition={{ delay: 0.45, duration: 0.35 }}
               className="px-10 pb-12"
             >
-              <div className="h-px w-full mb-8 bg-[var(--color-border-dark)]" />
+              <div className="h-px w-full mb-8" style={{ backgroundColor: "rgba(255,255,255,0.2)" }} />
               <Link
                 href="/contact#enquiry"
                 onClick={onClose}
@@ -116,7 +117,7 @@ export default function MobileMenu({ isOpen, onClose, currentPath }: Props) {
               >
                 Get a Quote
               </Link>
-              <p className="mt-6 text-sm leading-relaxed opacity-40 text-[var(--color-text-light)]">
+              <p className="mt-6 text-sm leading-relaxed opacity-60" style={{ color: "#FFFFFF" }}>
                 linenmantra@gmail.com
               </p>
             </motion.div>
