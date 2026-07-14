@@ -54,13 +54,14 @@ export default function MobileMenu({ isOpen, onClose, currentPath }: Props) {
             {/* Top bar — logo + close */}
             <div className="flex items-center justify-between px-8 py-5">
               <Image
-                src={CLD.logo}
+                src={CLD.about.leaf}
                 alt="Linen Mantra"
-                width={1536}
-                height={1024}
+                width={80}
+                height={80}
                 style={{
-                  width: "auto",
-                  height: "38px",
+                  width: "36px",
+                  height: "36px",
+                  objectFit: "contain",
                   filter: "brightness(0) invert(1)",
                 }}
               />
