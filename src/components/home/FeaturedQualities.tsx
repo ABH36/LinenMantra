@@ -28,7 +28,7 @@ export default function FeaturedQualities() {
           </FadeInOnScroll>
           <FadeInOnScroll direction="up" delay={0.1} className="shrink-0">
             <Link
-              href="/products"
+              href="/products/all"
               className="inline-flex items-center gap-2 text-sm font-medium tracking-widest uppercase transition-opacity hover:opacity-60 group text-[var(--color-text-secondary)]"
             >
               <span>View All Products</span>

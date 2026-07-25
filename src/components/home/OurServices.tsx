@@ -10,14 +10,14 @@ const services = [
     title: "Linen Fabrics",
     description: "100% premium linen across the full 6–150 LEA count spectrum",
     image: CLD.products.limestone,
-    href: "/products",
+    href: "/products/all",
   },
   {
     number: "02",
     title: "Linen Blends",
     description: "Cotton-linen, viscose-linen, and poly-linen compositions",
     image: CLD.products.laSetaLinen,
-    href: "/products",
+    href: "/products/all",
   },
   {
     number: "03",
@@ -46,7 +46,7 @@ export default function OurServices() {
         </FadeInOnScroll>
         <FadeInOnScroll direction="up" delay={0.1} className="shrink-0">
           <Link
-            href="/products"
+            href="/products/all"
             className="inline-flex items-center gap-2 text-sm font-medium tracking-widest uppercase transition-opacity hover:opacity-60 group text-[var(--color-text-secondary)]"
           >
             <span>View All</span>

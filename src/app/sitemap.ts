@@ -1,8 +1,17 @@
 import type { MetadataRoute } from "next";
+import { productCategories } from "@/data/products";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = "https://linenmantra.com";
   const now = new Date();
+
+  // Every filter is a real, indexable route — /products/all, /products/shirting, …
+  const productRoutes: MetadataRoute.Sitemap = productCategories.map(({ value }) => ({
+    url: `${base}/products/${value}`,
+    lastModified: now,
+    changeFrequency: "weekly",
+    priority: value === "all" ? 0.9 : 0.8,
+  }));
 
   return [
     {
@@ -17,12 +26,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.8,
     },
-    {
-      url: `${base}/products`,
-      lastModified: now,
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
+    ...productRoutes,
     {
       url: `${base}/export`,
       lastModified: now,

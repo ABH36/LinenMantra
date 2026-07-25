@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import type { Product } from "@/data/products";
+import { categoryLabel, type Product } from "@/data/products";
 
 type Props = {
   product: Product;
@@ -37,14 +37,14 @@ export default function ProductCard({ product }: Props) {
 
         {/* Category badge */}
         <span
-          className="absolute top-4 left-4 text-label px-3 py-1.5 capitalize"
+          className="absolute top-4 left-4 text-label px-3 py-1.5"
           style={{
             backgroundColor: "rgba(28,28,26,0.55)",
             color: "rgba(248,245,240,0.9)",
             backdropFilter: "blur(6px)",
           }}
         >
-          {product.category}
+          {categoryLabel(product.category)}
         </span>
 
         {/* LEA badge — top right */}

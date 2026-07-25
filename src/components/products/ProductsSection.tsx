@@ -1,28 +1,30 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 import ProductFilter from "./ProductFilter";
 import ProductCard from "./ProductCard";
 import FadeInOnScroll from "@/components/shared/FadeInOnScroll";
-import { products, type ProductCategory } from "@/data/products";
+import {
+  categoryHref,
+  categoryLabel,
+  productsByCategory,
+  type ProductCategory,
+} from "@/data/products";
 import { CLD } from "@/lib/cloudinary";
 
-export default function ProductsSection({ initialCategory = "all" }: { initialCategory?: ProductCategory }) {
-  const [activeCategory, setActiveCategory] = useState<ProductCategory>(initialCategory);
-
-  const filtered = useMemo(
-    () =>
-      activeCategory === "all"
-        ? products
-        : products.filter((p) => p.category === activeCategory),
-    [activeCategory]
-  );
+export default function ProductsSection({
+  activeCategory,
+}: {
+  activeCategory: ProductCategory;
+}) {
+  // The URL segment is the single source of truth for the active filter.
+  const filtered = productsByCategory(activeCategory);
 
   return (
     <>
       {/* ── Filter tabs ────────────────────────────────── */}
-      <ProductFilter active={activeCategory} onChange={setActiveCategory} />
+      <ProductFilter active={activeCategory} />
 
       {/* ── Product grid ───────────────────────────────── */}
       <section
@@ -48,7 +50,7 @@ export default function ProductsSection({ initialCategory = "all" }: { initialCa
                 <>
                   {" "}in{" "}
                   <span className="font-medium text-[var(--color-accent)]">
-                    {activeCategory}
+                    {categoryLabel(activeCategory)}
                   </span>
                 </>
               )}
@@ -78,12 +80,13 @@ export default function ProductsSection({ initialCategory = "all" }: { initialCa
               </p>
               <p className="text-sm text-[var(--color-text-muted)]">
                 Try a different category or{" "}
-                <button
-                  onClick={() => setActiveCategory("all")}
+                <Link
+                  href={categoryHref("all")}
+                  scroll={false}
                   className="underline cursor-pointer text-[var(--color-accent)]"
                 >
                   view all collections
-                </button>
+                </Link>
               </p>
             </div>
           )}

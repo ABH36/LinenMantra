@@ -1,10 +1,11 @@
 import { CLD } from "@/lib/cloudinary";
 
+// These values are the URL segments: /products/all, /products/gift-packing, …
 export type ProductCategory =
   | "all"
   | "shirting"
   | "suiting"
-  | "gift";
+  | "gift-packing";
 
 export type Product = {
   id: string;
@@ -105,7 +106,7 @@ export const products: Product[] = [
   {
     id: "coord-set-gift-box",
     name: "Coord Set Linen Gift Box",
-    category: "gift",
+    category: "gift-packing",
     description:
       "A curated linen coord set presented in an elegant gift box — the perfect premium gifting solution for lifestyle and fashion brands.",
     image: CLD.products.coordSetGiftBox,
@@ -114,7 +115,7 @@ export const products: Product[] = [
   {
     id: "linen-duo-gift-set",
     name: "Linen Duo Gift Set",
-    category: "gift",
+    category: "gift-packing",
     description:
       "A thoughtfully paired duo of premium linen pieces, beautifully packaged — ideal for corporate gifting and retail collections.",
     image: CLD.products.linenDuoGiftSet,
@@ -123,7 +124,7 @@ export const products: Product[] = [
   {
     id: "single-piece-gift-box",
     name: "Single Piece Gift Box",
-    category: "gift",
+    category: "gift-packing",
     description:
       "A single premium linen piece presented in a refined gift box — perfect for individual gifting with a touch of elegance.",
     image: CLD.products.singlePieceGiftBox,
@@ -135,7 +136,52 @@ export const productCategories: { value: ProductCategory; label: string }[] = [
   { value: "all", label: "All Collections" },
   { value: "shirting", label: "Shirting" },
   { value: "suiting", label: "Suiting" },
-  { value: "gift", label: "Gift Packing" },
+  { value: "gift-packing", label: "Gift Packing" },
 ];
 
 export const featuredProducts = products.filter((p) => p.featured);
+
+/** Each category is its own route — /products/all, /products/shirting, … */
+export function categoryHref(category: ProductCategory) {
+  return `/products/${category}`;
+}
+
+/** Human-readable name for a category — slugs like "gift-packing" never reach the UI. */
+export function categoryLabel(category: ProductCategory) {
+  return productCategories.find((cat) => cat.value === category)?.label ?? category;
+}
+
+/** Guards the `[category]` URL segment before it is used as a ProductCategory. */
+export function isProductCategory(value: string): value is ProductCategory {
+  return productCategories.some((cat) => cat.value === value);
+}
+
+export function productsByCategory(category: ProductCategory) {
+  return category === "all"
+    ? products
+    : products.filter((p) => p.category === category);
+}
+
+/** Per-route SEO copy, so every filter URL is indexable on its own terms. */
+export const categorySeo: Record<ProductCategory, { title: string; description: string }> = {
+  all: {
+    title: "Products",
+    description:
+      "Explore Linen Mantra's premium linen fabric collections — 100% linen, linen blends, shirting, suiting, and home furnishing fabrics ranging from 6 to 150 LEA. Custom development available.",
+  },
+  shirting: {
+    title: "Linen Shirting Fabrics",
+    description:
+      "Premium linen shirting fabrics from Linen Mantra — pure linen and linen-silk blends with crisp texture, breathability, and a refined hand-feel for discerning menswear brands.",
+  },
+  suiting: {
+    title: "Linen Suiting Fabrics",
+    description:
+      "Linen suiting fabrics from Linen Mantra — 25 to 60 LEA constructions offering weight, structure, and elegant drape for formal, semi-formal, and bespoke tailoring.",
+  },
+  "gift-packing": {
+    title: "Linen Gift Packing",
+    description:
+      "Curated linen gift boxes and coord sets from Linen Mantra — premium presentation for corporate gifting, retail collections, and lifestyle brands.",
+  },
+};

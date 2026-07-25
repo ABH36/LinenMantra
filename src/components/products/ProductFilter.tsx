@@ -1,22 +1,28 @@
+import Link from "next/link";
 import type { ProductCategory } from "@/data/products";
-import { productCategories } from "@/data/products";
+import { categoryHref, productCategories } from "@/data/products";
 
 type Props = {
   active: ProductCategory;
-  onChange: (cat: ProductCategory) => void;
 };
 
-export default function ProductFilter({ active, onChange }: Props) {
+export default function ProductFilter({ active }: Props) {
   return (
     <div className="w-full sticky top-[64px] md:top-[120px] z-20 bg-[var(--color-bg-primary)] border-b border-[var(--color-border)]">
       <div className="container-site">
-        <div className="flex items-center gap-0 overflow-x-auto no-scrollbar">
+        <nav
+          aria-label="Filter collections"
+          className="flex items-center gap-0 overflow-x-auto no-scrollbar"
+        >
           {productCategories.map((cat) => {
             const isActive = cat.value === active;
             return (
-              <button
+              <Link
                 key={cat.value}
-                onClick={() => onChange(cat.value)}
+                href={categoryHref(cat.value)}
+                // Keep the reader where they are — the tabs are sticky
+                scroll={false}
+                aria-current={isActive ? "page" : undefined}
                 className="relative shrink-0 px-5 py-4 text-sm font-medium tracking-wide transition-all duration-200 cursor-pointer"
                 style={{
                   color: isActive
@@ -37,10 +43,10 @@ export default function ProductFilter({ active, onChange }: Props) {
                     transformOrigin: "left",
                   }}
                 />
-              </button>
+              </Link>
             );
           })}
-        </div>
+        </nav>
       </div>
     </div>
   );

@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import { navLinks } from "@/data/navigation";
+import { isNavLinkActive, navLinks } from "@/data/navigation";
 import { CLD } from "@/lib/cloudinary";
 import AccentDivider from "@/components/shared/AccentDivider";
 
@@ -77,7 +77,7 @@ export default function MobileMenu({ isOpen, onClose, currentPath }: Props) {
             {/* Nav links */}
             <div className="flex-1 flex flex-col justify-center px-10 gap-2">
               {navLinks.map((link, i) => {
-                const isActive = currentPath === link.href;
+                const isActive = isNavLinkActive(currentPath, link.href);
                 return (
                   <motion.div
                     key={link.href}

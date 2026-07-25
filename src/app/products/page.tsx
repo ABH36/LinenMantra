@@ -1,47 +1,26 @@
-import type { Metadata } from "next";
-import PageHero from "@/components/shared/PageHero";
-import ProductsSection from "@/components/products/ProductsSection";
-import CustomDevelopmentStrip from "@/components/products/CustomDevelopmentStrip";
-import ContactCTABand from "@/components/shared/ContactCTABand";
-import { CLD } from "@/lib/cloudinary";
+import { permanentRedirect } from "next/navigation";
+import { isProductCategory } from "@/data/products";
 
-export const metadata: Metadata = {
-  title: "Products",
-  description:
-    "Explore Linen Mantra's premium linen fabric collections — 100% linen, linen blends, shirting, suiting, and home furnishing fabrics ranging from 6 to 150 LEA. Custom development available.",
+// Categories that were reachable at an older URL, mapped to their route today.
+const LEGACY_CATEGORIES: Record<string, string> = {
+  gift: "gift-packing",
 };
 
-export default async function ProductsPage({
+/**
+ * /products has no content of its own — every collection view lives at
+ * /products/[category]. This keeps old links working, including the
+ * previous ?category= query form.
+ *
+ * Permanent (308) so search engines consolidate the old /products URL's
+ * ranking signals onto /products/all. Note that browsers cache 308s
+ * aggressively — if this ever needs to change, expect to clear that cache.
+ */
+export default async function ProductsIndexPage({
   searchParams,
-}: {
-  searchParams: Promise<{ category?: string }>;
-}) {
+}: PageProps<"/products">) {
   const { category } = await searchParams;
-  const initial = category === "shirting" || category === "suiting" || category === "gift" ? category : "all";
+  const requested = Array.isArray(category) ? category[0] : category;
+  const mapped = requested ? LEGACY_CATEGORIES[requested] ?? requested : undefined;
 
-  return (
-    <>
-      {/* Page hero */}
-      <PageHero
-        label="Premium Linen Fabric Qualities"
-        heading="Our Collections"
-        subText="A curated range of signature linen fabrics — crafted across the full count spectrum for brands, designers, and garment manufacturers worldwide."
-        lightImage
-        image={CLD.products.productHeroBanner}
-      />
-
-      {/* Filter tabs + animated product grid */}
-      <ProductsSection initialCategory={initial} />
-
-      {/* Custom development CTA */}
-      <CustomDevelopmentStrip />
-
-      {/* Contact CTA band */}
-      <ContactCTABand
-        heading="Interested in Our Fabrics?"
-        subText="Send us an enquiry and our team will get back to you with detailed specifications, pricing, and sampling options."
-        ctaLabel="Get a Quote"
-      />
-    </>
-  );
+  permanentRedirect(`/products/${mapped && isProductCategory(mapped) ? mapped : "all"}`);
 }

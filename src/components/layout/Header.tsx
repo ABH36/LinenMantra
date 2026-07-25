@@ -6,7 +6,7 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Menu } from "lucide-react";
 import MobileMenu from "./MobileMenu";
-import { navLinks } from "@/data/navigation";
+import { isNavLinkActive, navLinks } from "@/data/navigation";
 import { CLD } from "@/lib/cloudinary";
 
 export default function Header() {
@@ -66,7 +66,7 @@ export default function Header() {
             {/* Desktop nav */}
             <nav className="hidden md:flex items-center gap-8" aria-label="Main navigation">
                {navLinks.map((link) => {
-                const isActive = pathname === link.href;
+                const isActive = isNavLinkActive(pathname, link.href);
                 return (
                   <Link
                     key={link.href}
