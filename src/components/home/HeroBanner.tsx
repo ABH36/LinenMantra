@@ -13,6 +13,9 @@ const TERRA  = "var(--color-terra)";
 const GOLD   = "var(--color-gold)";
 const CREAM  = "var(--color-text-light)";
 
+// ── Page H1 — shown above every slide so the primary keyword never rotates away ──
+const HERO_H1 = "Premium Linen Fabric Manufacturer & Exporter in India";
+
 // ── Persistent bottom strip ──────────────────────────────────────────
 const STRIP = [
   { Icon: Factory,    bold: "B2B MANUFACTURING",       light: "For Brands. For Business."    },
@@ -26,6 +29,7 @@ interface SlideData {
   id:              number;
   image:           string;
   mobileImage:     string;
+  alt:             string;
   objectPosition?: string;
   h1:              string;
   h1Color:         string;
@@ -42,6 +46,7 @@ const SLIDES: SlideData[] = [
     id:          0,
     image:       CLD.hero.banner2,
     mobileImage: CLD.hero.banner2Mob,
+    alt:         "Stack of pure linen fabrics in blush, natural, sky blue and denim with a roll of ecru linen and dried flax flowers",
     h1:          "From Flax to Fabric.",
     h1Color:     FOREST,
     h2:          "Crafted by Linen Mantra.",
@@ -52,6 +57,7 @@ const SLIDES: SlideData[] = [
     id:          1,
     image:       CLD.hero.banner1,
     mobileImage: CLD.hero.banner1Mob,
+    alt:         "Model in a natural beige linen shirt and trousers beside linen fabric swatches and a cone of linen yarn",
     h1:          "Linen",
     h1Color:     FOREST,
     h2:          "Reimagined.",
@@ -63,6 +69,7 @@ const SLIDES: SlideData[] = [
     id:             2,
     image:          CLD.hero.banner,
     mobileImage:    CLD.hero.bannerMob,
+    alt:            "Model in a lime green linen shirt and wide-leg linen trousers against a sunlit wall",
     objectPosition: "top",
     h1:             "Trusted by",
     h1Color:        FOREST,
@@ -129,11 +136,12 @@ export default function HeroBanner() {
             <div key={s.id} className="relative flex-shrink-0" style={{ minWidth: "100%", aspectRatio: "4/5" }}>
               <Image
                 src={s.mobileImage}
-                alt="Linen Mantra"
-                fill
+                alt={s.alt}
+                width={800}
+                height={1000}
                 sizes="100vw"
-                className="object-cover object-center"
-                loading={s.id === 0 ? "eager" : "lazy"}
+                className="w-full h-full object-cover object-center"
+                fetchPriority={s.id === 0 ? "high" : "auto"}
               />
             </div>
           ))}
@@ -148,6 +156,8 @@ export default function HeroBanner() {
 
       {/* Content — below image */}
       <div className="px-6 py-8 bg-[var(--color-bg-primary)]">
+        {/* The page's single H1 — static across slides */}
+        <h1 className="text-label mb-4" style={{ color: FOREST }}>{HERO_H1}</h1>
         <AnimatePresence mode="wait">
           <motion.div
             key={slide.id}
@@ -157,10 +167,10 @@ export default function HeroBanner() {
             transition={{ duration: 0.45, ease: [0.25, 0.1, 0.25, 1] }}
           >
             {(slide.h1 || slide.h2) && (
-              <h1 className="font-display font-normal leading-none uppercase" style={{ fontSize: slide.large ? "clamp(2.2rem, 9vw, 3.5rem)" : "clamp(2rem, 8vw, 2.8rem)", letterSpacing: "-0.01em" }}>
+              <p className="font-display font-normal leading-none uppercase" style={{ fontSize: slide.large ? "clamp(2.2rem, 9vw, 3.5rem)" : "clamp(2rem, 8vw, 2.8rem)", letterSpacing: "-0.01em" }}>
                 <span className="block" style={{ color: slide.h1Color }}>{slide.h1}</span>
                 <span className="block" style={{ color: slide.h2Color }}>{slide.h2}</span>
-              </h1>
+              </p>
             )}
             {slide.flourish && <Flourish />}
             {slide.body && (
@@ -184,7 +194,7 @@ export default function HeroBanner() {
         {/* Dots */}
         <div className="flex gap-2 mt-6">
           {SLIDES.map((_, i) => (
-            <button key={i} onClick={() => setCurrent(i)} aria-label={`Slide ${i + 1}`} className="cursor-pointer p-1" style={{ background: "none", border: "none" }}>
+            <button key={i} onClick={() => setCurrent(i)} aria-label={`Slide ${i + 1}`} className="cursor-pointer" style={{ background: "none", border: "none", padding: "10px 4px", margin: "-6px 0" }}>
               <span className="block rounded-full" style={{ width: "20px", height: "4px", transform: `scaleX(${i === current ? 1 : 0.3})`, transformOrigin: "left", transition: "transform 300ms, background-color 300ms", backgroundColor: i === current ? FOREST : "rgba(44,74,45,0.25)" }} />
             </button>
           ))}
@@ -198,8 +208,8 @@ export default function HeroBanner() {
             <div key={i} className="flex items-center gap-2.5 px-4 py-3" style={{ borderRight: (i + 1) % 2 !== 0 ? "1px solid rgba(248,245,240,0.08)" : "none", borderTop: i >= 2 ? "1px solid rgba(248,245,240,0.08)" : "none" }}>
               <Icon size={12} style={{ color: GOLD, opacity: 0.8, flexShrink: 0 }} />
               <div>
-                <p className="font-semibold leading-tight" style={{ fontSize: "0.52rem", color: CREAM, letterSpacing: "0.05em" }}>{bold}</p>
-                <p className="leading-tight mt-0.5" style={{ fontSize: "0.50rem", color: "rgba(248,245,240,0.70)" }}>{light}</p>
+                <p className="font-semibold leading-tight" style={{ fontSize: "0.75rem", color: CREAM, letterSpacing: "0.03em" }}>{bold}</p>
+                <p className="leading-tight mt-0.5" style={{ fontSize: "0.75rem", color: "rgba(248,245,240,0.70)" }}>{light}</p>
               </div>
             </div>
           ))}
@@ -229,13 +239,13 @@ export default function HeroBanner() {
           <div key={s.id} className="relative h-full flex-shrink-0" style={{ width: `${100 / TOTAL}%` }}>
             <Image
               src={s.image}
-              alt="Linen Mantra"
-              fill
+              alt={s.alt}
+              width={1920}
+              height={1080}
               sizes="100vw"
-              className="object-cover"
+              className="w-full h-full object-cover"
               style={{ objectPosition: s.objectPosition ?? "center" }}
-              priority={s.id === 0}
-              loading={s.id === 0 ? "eager" : "lazy"}
+              fetchPriority={s.id === 0 ? "high" : "auto"}
             />
           </div>
         ))}
@@ -257,6 +267,8 @@ export default function HeroBanner() {
       <div className="absolute inset-0 z-20 flex flex-col pt-[120px] pb-[48px]" style={{ paddingRight: "clamp(0px, 14vw, 215px)" }}>
         <div className="container-site flex-1 flex items-center">
           <div className="w-full max-w-[555px]">
+            {/* Mirrors the mobile H1; role/aria-level keep it the level-1 heading for screen readers on desktop */}
+            <p role="heading" aria-level={1} className="text-label mb-5" style={{ color: FOREST }}>{HERO_H1}</p>
             <AnimatePresence mode="wait">
               <motion.div
                 key={slide.id}
@@ -265,10 +277,10 @@ export default function HeroBanner() {
                 exit={{ opacity: 0, y: -14 }}
                 transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
               >
-                <h1 className="font-display font-normal leading-none uppercase" style={{ fontSize: slide.large ? "clamp(2.8rem, 5.5vw, 5.5rem)" : "clamp(2.3rem, 4.8vw, 4rem)", letterSpacing: "-0.01em" }}>
+                <p className="font-display font-normal leading-none uppercase" style={{ fontSize: slide.large ? "clamp(2.8rem, 5.5vw, 5.5rem)" : "clamp(2.3rem, 4.8vw, 4rem)", letterSpacing: "-0.01em" }}>
                   <span className="block" style={{ color: slide.h1Color }}>{slide.h1}</span>
                   <span className="block" style={{ color: slide.h2Color }}>{slide.h2}</span>
-                </h1>
+                </p>
                 {slide.flourish && <Flourish />}
                 {slide.body && (
                   <p className="leading-relaxed mb-6" style={{ fontSize: "0.9rem", color: "rgba(44,74,45,0.82)" }}>
@@ -290,7 +302,7 @@ export default function HeroBanner() {
       {/* ── Slide navigation dots ── */}
       <div className="absolute z-30 flex flex-col gap-2 items-center" style={{ bottom: "68px", right: "2rem" }}>
         {SLIDES.map((_, i) => (
-          <button key={i} onClick={() => setCurrent(i)} aria-label={`Slide ${i + 1}`} className="cursor-pointer" style={{ background: "none", border: "none", padding: "3px" }}>
+          <button key={i} onClick={() => setCurrent(i)} aria-label={`Slide ${i + 1}`} className="cursor-pointer" style={{ background: "none", border: "none", padding: "8px", margin: "-5px" }}>
             <span className="block rounded-full" style={{ width: "8px", height: "8px", transform: `scale(${i === current ? 1 : 0.625})`, transition: "transform 300ms, background-color 300ms", backgroundColor: i === current ? GOLD : "rgba(44,74,45,0.35)" }} />
           </button>
         ))}

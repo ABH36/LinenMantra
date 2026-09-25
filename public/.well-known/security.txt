@@ -1,4 +1,3 @@
 Contact: mailto:info@linenmantra.com
 Expires: 2027-07-13T00:00:00.000Z
 Preferred-Languages: en, hi
-Policy: https://linenmantra.com/security

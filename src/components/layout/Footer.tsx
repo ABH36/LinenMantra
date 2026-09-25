@@ -75,8 +75,10 @@ export default function Footer() {
               <Image
                 src={CLD.about.companyLogo}
                 alt="Silverline Linen Mantra"
-                width={1536}
-                height={1024}
+                width={300}
+                height={200}
+                sizes="200px"
+                loading="lazy"
                 style={{ height: "111px", width: "auto" }}
               />
             </Link>
@@ -113,7 +115,7 @@ export default function Footer() {
                       <span className="text-[var(--color-accent)] leading-none" style={{ fontSize: "0.75rem" }}>›</span>
                       <Link
                         href={link.href}
-                        className="text-[13px] leading-snug hover:opacity-60 transition-opacity text-[var(--color-text-secondary)]"
+                        className="py-1 -my-1 text-[13px] leading-snug hover:opacity-60 transition-opacity text-[var(--color-text-secondary)]"
                       >
                         {link.label}
                       </Link>
@@ -134,7 +136,7 @@ export default function Footer() {
                       <span className="text-[var(--color-accent)] leading-none" style={{ fontSize: "0.75rem" }}>›</span>
                       <Link
                         href={link.href}
-                        className="text-[13px] leading-snug hover:opacity-60 transition-opacity text-[var(--color-text-secondary)]"
+                        className="py-1 -my-1 text-[13px] leading-snug hover:opacity-60 transition-opacity text-[var(--color-text-secondary)]"
                       >
                         {link.label}
                       </Link>
@@ -146,7 +148,7 @@ export default function Footer() {
 
             {/* Follow Us — sits below links, filling the empty space */}
             <div>
-              <p className="text-[10px] font-semibold tracking-[0.18em] uppercase text-center text-[var(--color-text-muted)] mb-3">
+              <p className="text-[12px] font-semibold tracking-[0.18em] uppercase text-center text-[var(--color-text-muted)] mb-3">
                 Follow Us
               </p>
               <div className="flex items-center gap-3">
@@ -157,9 +159,6 @@ export default function Footer() {
                   </a>
                   <a href="https://www.linkedin.com/company/linen-mantra/" target="_blank" rel="noopener noreferrer" aria-label="Connect on LinkedIn" className="hover:opacity-80 transition-opacity">
                     <Image src={CLD.social.linkedin} alt="LinkedIn" width={32} height={32} style={{ width: 32, height: 32 }} />
-                  </a>
-                  <a href="#" aria-label="Follow on Facebook" className="hover:opacity-80 transition-opacity">
-                    <Image src={CLD.social.facebook} alt="Facebook" width={32} height={32} style={{ width: 32, height: 32 }} />
                   </a>
                 </div>
                 <span className="flex-1 h-px bg-[var(--color-accent)] opacity-30" />
@@ -182,7 +181,7 @@ export default function Footer() {
                 <a href="https://wa.me/919769422606" target="_blank" rel="noopener noreferrer" className="shrink-0 flex items-center leading-none hover:opacity-60 transition-opacity">
                   <Image src={CLD.social.whatsapp} alt="WhatsApp" width={24} height={24} />
                 </a>
-                <a href="https://wa.me/919769422606" target="_blank" rel="noopener noreferrer" className="text-[12px] hover:opacity-60 transition-opacity text-[var(--color-text-secondary)]">
+                <a href="https://wa.me/919769422606" target="_blank" rel="noopener noreferrer" className="inline-block py-1 -my-1 text-[12px] hover:opacity-60 transition-opacity text-[var(--color-text-secondary)]">
                   +91 97694 22606
                 </a>
               </li>
@@ -191,7 +190,7 @@ export default function Footer() {
                 <a href="tel:+912245005662" className="shrink-0 flex items-center leading-none hover:opacity-60 transition-opacity">
                   <Image src={CLD.social.landline} alt="Phone" width={24} height={24} />
                 </a>
-                <a href="tel:+912245005662" className="text-[12px] hover:opacity-60 transition-opacity text-[var(--color-text-secondary)]">
+                <a href="tel:+912245005662" className="inline-block py-1 -my-1 text-[12px] hover:opacity-60 transition-opacity text-[var(--color-text-secondary)]">
                   +91 22 4500 5662
                 </a>
               </li>
@@ -200,7 +199,7 @@ export default function Footer() {
                 <a href="mailto:linenmantra@gmail.com" className="shrink-0 flex items-center leading-none hover:opacity-60 transition-opacity">
                   <Image src={CLD.social.gmail} alt="Email" width={24} height={24} />
                 </a>
-                <a href="mailto:linenmantra@gmail.com" className="text-[12px] hover:opacity-60 transition-opacity text-[var(--color-text-secondary)]">
+                <a href="mailto:linenmantra@gmail.com" className="inline-block py-1 -my-1 text-[12px] hover:opacity-60 transition-opacity text-[var(--color-text-secondary)]">
                   linenmantra@gmail.com
                 </a>
               </li>
@@ -241,7 +240,7 @@ export default function Footer() {
                 <a href="https://wa.me/919769422606" target="_blank" rel="noopener noreferrer" className="shrink-0 flex items-center leading-none hover:opacity-60 transition-opacity">
                   <Image src={CLD.social.whatsapp} alt="WhatsApp" width={24} height={24} />
                 </a>
-                <a href="https://wa.me/919769422606" target="_blank" rel="noopener noreferrer" className="text-[12px] hover:opacity-60 transition-opacity text-[var(--color-text-secondary)]">
+                <a href="https://wa.me/919769422606" target="_blank" rel="noopener noreferrer" className="inline-block py-1 -my-1 text-[12px] hover:opacity-60 transition-opacity text-[var(--color-text-secondary)]">
                   +91 97694 22606
                 </a>
               </li>
@@ -250,7 +249,7 @@ export default function Footer() {
                 <a href="tel:+912245687288" className="shrink-0 flex items-center leading-none hover:opacity-60 transition-opacity">
                   <Image src={CLD.social.landline} alt="Phone" width={24} height={24} />
                 </a>
-                <a href="tel:+912245687288" className="text-[12px] hover:opacity-60 transition-opacity text-[var(--color-text-secondary)]">
+                <a href="tel:+912245687288" className="inline-block py-1 -my-1 text-[12px] hover:opacity-60 transition-opacity text-[var(--color-text-secondary)]">
                   +91 22 4568 7288
                 </a>
               </li>
@@ -259,7 +258,7 @@ export default function Footer() {
                 <a href="mailto:linenmantra@gmail.com" className="shrink-0 flex items-center leading-none hover:opacity-60 transition-opacity">
                   <Image src={CLD.social.gmail} alt="Email" width={24} height={24} />
                 </a>
-                <a href="mailto:linenmantra@gmail.com" className="text-[12px] hover:opacity-60 transition-opacity text-[var(--color-text-secondary)]">
+                <a href="mailto:linenmantra@gmail.com" className="inline-block py-1 -my-1 text-[12px] hover:opacity-60 transition-opacity text-[var(--color-text-secondary)]">
                   linenmantra@gmail.com
                 </a>
               </li>
@@ -307,13 +306,22 @@ export default function Footer() {
               <span className="font-semibold text-[var(--color-text-secondary)]">Linen Mantra</span>.{" "}
               All rights reserved.
             </p>
+            <div className="flex items-center gap-3 text-[11px] text-[var(--color-text-muted)]">
+              <Link href="/privacy-policy" className="inline-block py-1 -my-1 hover:text-[var(--color-text-primary)] transition-colors">
+                Privacy Policy
+              </Link>
+              <span>·</span>
+              <Link href="/terms" className="inline-block py-1 -my-1 hover:text-[var(--color-text-primary)] transition-colors">
+                Terms
+              </Link>
+            </div>
             <p className="text-[11px] text-[var(--color-text-muted)]">
               Designed &amp; Developed by{" "}
               <a
                 href="https://bdm.co.in/"
                 target="_blank"
-                rel="noopener noreferrer"
-                className="font-semibold hover:opacity-70 transition-opacity text-[var(--color-text-secondary)]"
+                rel="noopener noreferrer nofollow"
+                className="inline-block py-[5px] -my-[5px] font-semibold hover:opacity-70 transition-opacity text-[var(--color-text-secondary)]"
               >
                 BDM Infotech
               </a>
@@ -323,7 +331,7 @@ export default function Footer() {
           {/* Desktop layout */}
           <div className="hidden md:flex items-center justify-between gap-4">
 
-            {/* Left: branch + copyright */}
+            {/* Left: branch + copyright + policy */}
             <div className="flex items-center gap-3">
               <LeafBranch />
               <p className="text-[11px] text-[var(--color-text-muted)]">
@@ -331,6 +339,16 @@ export default function Footer() {
                 <span className="font-semibold text-[var(--color-text-secondary)]">Linen Mantra</span>.
                 {" "}All rights reserved.
               </p>
+              <span className="text-[var(--color-text-muted)] opacity-40">·</span>
+              <div className="flex items-center gap-2 text-[11px] text-[var(--color-text-muted)]">
+                <Link href="/privacy-policy" className="inline-block py-1 -my-1 hover:text-[var(--color-text-primary)] transition-colors">
+                  Privacy Policy
+                </Link>
+                <span>·</span>
+                <Link href="/terms" className="inline-block py-1 -my-1 hover:text-[var(--color-text-primary)] transition-colors">
+                  Terms
+                </Link>
+              </div>
             </div>
 
             {/* Center: lotus */}
@@ -343,8 +361,8 @@ export default function Footer() {
                 <a
                   href="https://bdm.co.in/"
                   target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-semibold hover:opacity-70 transition-opacity text-[var(--color-text-secondary)]"
+                  rel="noopener noreferrer nofollow"
+                  className="inline-block py-[5px] -my-[5px] font-semibold hover:opacity-70 transition-opacity text-[var(--color-text-secondary)]"
                 >
                   BDM Infotech
                 </a>

@@ -3,23 +3,38 @@ import PageHero from "@/components/shared/PageHero";
 import EnquiryForm from "@/components/contact/EnquiryForm";
 import FadeInOnScroll from "@/components/shared/FadeInOnScroll";
 import Image from "next/image";
+import JsonLd from "@/components/shared/JsonLd";
 import { CLD } from "@/lib/cloudinary";
+import { pageMetadata, webPageJsonLd } from "@/lib/seo";
+
+const TITLE = "Contact Linen Mantra | Linen Fabric Enquiries, Mumbai";
+const DESCRIPTION =
+  "Request fabric samples, pricing, or custom development. Offices in Lower Parel and Kalbadevi, Mumbai. We reply within 1–2 business days.";
 
 export const metadata: Metadata = {
-  title: "Contact Us",
-  description:
-    "Reach out to Linen Mantra for fabric sourcing enquiries, custom development, export pricing, or sampling requests. We respond within 1–2 business days.",
+  title: { absolute: TITLE },
+  ...pageMetadata({ title: TITLE, description: DESCRIPTION, path: "/contact", imageAlt: "Contact Linen Mantra" }),
 };
 
 export default async function ContactPage() {
   return (
     <>
+      <JsonLd
+        data={webPageJsonLd({
+          type: "ContactPage",
+          name: TITLE,
+          description: DESCRIPTION,
+          path: "/contact",
+          breadcrumb: [{ name: "Contact", path: "/contact" }],
+        })}
+      />
       <PageHero
         label="Start a Conversation"
         heading="Contact Us"
         subText="Tell us what you're looking for. Our team will respond with the detail and clarity your sourcing decisions deserve."
         lightImage
         image={CLD.contact.heroBanner}
+        imageAlt="Stacked linen fabrics in ecru, mustard and olive with a Linen Mantra tag, linen yarn cone and an autumn leaf"
       />
 
       {/* ════════════════════════════════════════════
@@ -54,13 +69,13 @@ export default async function ContactPage() {
                 <div className="absolute inset-x-0 top-0 h-px bg-[var(--color-accent)]" />
 
                 <div className="p-6 pt-7">
-                  <p className="text-[10px] font-black tracking-[0.22em] uppercase text-center mb-2 text-[var(--color-accent)]">
+                  <p className="text-[12px] font-black tracking-[0.22em] uppercase text-center mb-2 text-[var(--color-accent)]">
                     Head Office
                   </p>
                   <div className="mx-auto mb-4 h-px w-10 bg-[var(--color-accent)] opacity-50" />
-                  <h3 className="font-display font-semibold text-center mb-5 text-[var(--text-h3)] text-[var(--color-text-primary)]">
+                  <h2 className="font-display font-semibold text-center mb-5 text-[var(--text-h3)] text-[var(--color-text-primary)]">
                     Mumbai — Lower Parel
-                  </h3>
+                  </h2>
 
                   <div className="mb-4 h-px bg-[var(--color-border)]" />
 
@@ -68,7 +83,7 @@ export default async function ContactPage() {
                     <div className="w-8 h-8 flex items-center justify-center border border-[var(--color-border)] bg-[var(--color-bg-secondary)] mb-2">
                       <Image src={CLD.social.googleMaps} alt="Address" width={18} height={18} />
                     </div>
-                    <p className="text-[10px] font-semibold tracking-[0.14em] uppercase mb-1 text-[var(--color-text-muted)]">
+                    <p className="text-[12px] font-semibold tracking-[0.14em] uppercase mb-1 text-[var(--color-text-muted)]">
                       Address
                     </p>
                     <span className="text-sm leading-relaxed text-[var(--color-text-secondary)]">
@@ -80,7 +95,7 @@ export default async function ContactPage() {
                     <div className="w-8 h-8 flex items-center justify-center border border-[var(--color-border)] bg-[var(--color-bg-secondary)] mb-2">
                       <Image src={CLD.social.landline} alt="Phone" width={18} height={18} />
                     </div>
-                    <p className="text-[10px] font-semibold tracking-[0.14em] uppercase mb-1 text-[var(--color-text-muted)]">
+                    <p className="text-[12px] font-semibold tracking-[0.14em] uppercase mb-1 text-[var(--color-text-muted)]">
                       Phone
                     </p>
                     <a
@@ -102,13 +117,13 @@ export default async function ContactPage() {
                 <div className="absolute inset-x-0 top-0 h-px bg-[var(--color-accent)]" />
 
                 <div className="p-6 pt-7">
-                  <p className="text-[10px] font-black tracking-[0.22em] uppercase text-center mb-2 text-[var(--color-accent)]">
+                  <p className="text-[12px] font-black tracking-[0.22em] uppercase text-center mb-2 text-[var(--color-accent)]">
                     Branch Office
                   </p>
                   <div className="mx-auto mb-4 h-px w-10 bg-[var(--color-accent)] opacity-50" />
-                  <h3 className="font-display font-semibold text-center mb-5 text-[var(--text-h3)] text-[var(--color-text-primary)]">
+                  <h2 className="font-display font-semibold text-center mb-5 text-[var(--text-h3)] text-[var(--color-text-primary)]">
                     Mumbai — Kalbadevi
-                  </h3>
+                  </h2>
 
                   <div className="mb-4 h-px bg-[var(--color-border)]" />
 
@@ -116,7 +131,7 @@ export default async function ContactPage() {
                     <div className="w-8 h-8 flex items-center justify-center border border-[var(--color-border)] bg-[var(--color-bg-secondary)] mb-2">
                       <Image src={CLD.social.googleMaps} alt="Address" width={18} height={18} />
                     </div>
-                    <p className="text-[10px] font-semibold tracking-[0.14em] uppercase mb-1 text-[var(--color-text-muted)]">
+                    <p className="text-[12px] font-semibold tracking-[0.14em] uppercase mb-1 text-[var(--color-text-muted)]">
                       Address
                     </p>
                     <span className="text-sm leading-relaxed text-[var(--color-text-secondary)]">
@@ -128,7 +143,7 @@ export default async function ContactPage() {
                     <div className="w-8 h-8 flex items-center justify-center border border-[var(--color-border)] bg-[var(--color-bg-secondary)] mb-2">
                       <Image src={CLD.social.landline} alt="Phone" width={18} height={18} />
                     </div>
-                    <p className="text-[10px] font-semibold tracking-[0.14em] uppercase mb-1 text-[var(--color-text-muted)]">
+                    <p className="text-[12px] font-semibold tracking-[0.14em] uppercase mb-1 text-[var(--color-text-muted)]">
                       Phone
                     </p>
                     <a
@@ -151,7 +166,7 @@ export default async function ContactPage() {
 
             <FadeInOnScroll direction="right" delay={0.15} className="h-full">
               <div className="group relative h-full flex flex-col items-center justify-center px-8 py-5 bg-[var(--color-bg-primary)] border-b sm:border-b-0 sm:border-r border-[var(--color-border)] text-center">
-                <p className="text-[10px] font-black tracking-[0.18em] uppercase mb-2.5 text-[var(--color-accent)]">
+                <p className="text-[12px] font-black tracking-[0.18em] uppercase mb-2.5 text-[var(--color-accent)]">
                   Shrey Raichura
                 </p>
                 <div className="mb-3 h-px w-8 bg-[var(--color-accent)] opacity-50" />
@@ -167,7 +182,7 @@ export default async function ContactPage() {
 
             <FadeInOnScroll direction="up" delay={0.22} className="h-full">
               <div className="group relative h-full flex flex-col items-center justify-center px-8 py-5 bg-[var(--color-bg-primary)] border-b sm:border-b-0 sm:border-r border-[var(--color-border)] text-center">
-                <p className="text-[10px] font-black tracking-[0.18em] uppercase mb-2.5 text-[var(--color-accent)]">
+                <p className="text-[12px] font-black tracking-[0.18em] uppercase mb-2.5 text-[var(--color-accent)]">
                   Email Us
                 </p>
                 <div className="mb-3 h-px w-8 bg-[var(--color-accent)] opacity-50" />
@@ -183,7 +198,7 @@ export default async function ContactPage() {
 
             <FadeInOnScroll direction="left" delay={0.15} className="h-full">
               <div className="group relative h-full flex flex-col items-center justify-center px-8 py-5 bg-[var(--color-bg-primary)] text-center">
-                <p className="text-[10px] font-black tracking-[0.18em] uppercase mb-2.5 text-[var(--color-accent)]">
+                <p className="text-[12px] font-black tracking-[0.18em] uppercase mb-2.5 text-[var(--color-accent)]">
                   Vipul Raichura
                 </p>
                 <div className="mb-3 h-px w-8 bg-[var(--color-accent)] opacity-50" />

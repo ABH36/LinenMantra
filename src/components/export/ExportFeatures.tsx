@@ -1,9 +1,14 @@
+import type { ReactNode } from "react";
+import Link from "next/link";
 import { Globe, Scissors, Package, BarChart3, Users, ShieldCheck, Plane, type LucideIcon } from "lucide-react";
 import FadeInOnScroll from "@/components/shared/FadeInOnScroll";
 import AccentDivider from "@/components/shared/AccentDivider";
 import { CLD } from "@/lib/cloudinary";
+import { categoryHref } from "@/data/products";
 
-const FEATURES: { Icon: LucideIcon; title: string; body: string }[] = [
+const inlineLink = "underline underline-offset-2 decoration-[var(--color-accent)] hover:text-[var(--color-text-primary)] transition-colors";
+
+const FEATURES: { Icon: LucideIcon; title: string; body: ReactNode }[] = [
   {
     Icon: Globe,
     title: "14+ Countries Served",
@@ -17,7 +22,14 @@ const FEATURES: { Icon: LucideIcon; title: string; body: string }[] = [
   {
     Icon: Package,
     title: "Ready Stock Collection",
-    body: "Fast dispatch from our in-stock product range.",
+    body: (
+      <>
+        Fast dispatch of in-stock{" "}
+        <Link href={categoryHref("shirting")} className={inlineLink}>linen shirting</Link>,{" "}
+        <Link href={categoryHref("suiting")} className={inlineLink}>suiting</Link> and{" "}
+        <Link href={categoryHref("gift-packing")} className={inlineLink}>gift sets</Link>.
+      </>
+    ),
   },
   {
     Icon: BarChart3,

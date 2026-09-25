@@ -22,7 +22,7 @@ function getIp(req: NextRequest): string {
   );
 }
 
-export function middleware(req: NextRequest) {
+export function proxy(req: NextRequest) {
   const { pathname } = req.nextUrl;
   const isDev = process.env.NODE_ENV === "development";
 
@@ -72,7 +72,7 @@ export function middleware(req: NextRequest) {
   return NextResponse.next();
 }
 
-// Only run middleware on API routes
+// Only run the proxy on API routes
 export const config = {
   matcher: ["/api/:path*"],
 };

@@ -1,7 +1,9 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { categoryLabel, type Product } from "@/data/products";
+import { categoryLabel, productHref, productImageAlt, type Product } from "@/data/products";
 
 type Props = {
   product: Product;
@@ -18,13 +20,14 @@ export default function ProductCard({ product }: Props) {
       className="group flex flex-col h-full bg-white border border-[var(--color-border)] shadow-sm hover:shadow-xl transition-shadow duration-500"
     >
       {/* ── Product image ─────────────────────────── */}
-      <div className="relative overflow-hidden aspect-[5/3]">
+      <Link href={productHref(product)} className="relative block overflow-hidden aspect-[5/3]" tabIndex={-1} aria-hidden="true">
         <Image
           src={product.image}
-          alt={product.name}
-          fill
+          alt={productImageAlt(product)}
+          width={600}
+          height={360}
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
+          className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
         />
 
         {/* Top gradient for badge readability */}
@@ -60,21 +63,21 @@ export default function ProductCard({ product }: Props) {
             {product.leaRange}
           </span>
         )}
-      </div>
+      </Link>
 
       {/* ── Card body ─────────────────────────────── */}
       <div className="flex items-center justify-between gap-4 px-5 py-4">
-        <div>
-          <h3 className="font-display font-normal leading-tight text-xl md:text-2xl text-[var(--color-text-primary)]">
+        <Link href={productHref(product)} className="block group/name">
+          <h2 className="font-display font-normal leading-tight text-xl md:text-2xl text-[var(--color-text-primary)] group-hover/name:text-[var(--color-accent)] transition-colors">
             {product.name}
-          </h3>
+          </h2>
           {product.composition && (
             <p className="text-label mt-0.5 text-[var(--color-accent)]">{product.composition}</p>
           )}
-        </div>
+        </Link>
         <Link
-          href="/contact#enquiry"
-          className="inline-flex items-center gap-1.5 text-xs font-semibold tracking-widest uppercase transition-opacity hover:opacity-60 group/link shrink-0 text-[var(--color-text-primary)]"
+          href={`/contact?product=${encodeURIComponent(product.name)}#enquiry`}
+          className="inline-flex items-center gap-1.5 py-1.5 -my-1.5 text-xs font-semibold tracking-widest uppercase transition-opacity hover:opacity-60 group/link shrink-0 text-[var(--color-text-primary)]"
         >
           <span>Get a Quote</span>
           <span className="transition-transform duration-300 group-hover/link:translate-x-1">→</span>

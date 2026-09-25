@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 import FadeInOnScroll from "@/components/shared/FadeInOnScroll";
 import AccentDivider from "@/components/shared/AccentDivider";
@@ -10,6 +11,8 @@ const productTypes = [
     id: "pure-linen",
     number: "01",
     title: "100% Linen Fabrics",
+    href: "/products/shirting",
+    linkText: "Explore Shirting Fabrics →",
     description:
       "The purest expression of linen — breathable, naturally textured, and crafted across a full count range from 6 LEA to 150 LEA.",
   },
@@ -17,6 +20,8 @@ const productTypes = [
     id: "blended",
     number: "02",
     title: "Linen Blended Fabrics",
+    href: "/products/all",
+    linkText: "Explore Linen Blends →",
     description:
       "Carefully engineered blends of linen with cotton, lyocell, viscose, silk, PU & polyester — combining the best of each fibre for superior performance and hand-feel.",
   },
@@ -24,6 +29,8 @@ const productTypes = [
     id: "menswear-womenswear",
     number: "03",
     title: "Menswear & Womenswear",
+    href: "/products/suiting",
+    linkText: "Explore Suiting Fabrics →",
     description:
       "Premium linen fabrics crafted for contemporary apparel across men's and women's fashion. Offering versatile qualities, colours, and finishes for every season.",
   },
@@ -31,6 +38,8 @@ const productTypes = [
     id: "home-furnishings",
     number: "04",
     title: "Home Furnishings",
+    href: "/products/all",
+    linkText: "View Full Collection →",
     description:
       "Beautifully woven linen for curtains, upholstery, cushions, table linens, and home décor.",
   },
@@ -38,6 +47,8 @@ const productTypes = [
     id: "custom",
     number: "05",
     title: "Custom Fabric Development",
+    href: "/contact#enquiry",
+    linkText: "Request Custom Development →",
     description:
       "End-to-end bespoke fabric development for brands — from construction specification and yarn selection through to sampling and production.",
   },
@@ -154,9 +165,17 @@ export default function WhatWeCreate() {
                   <h3 className="font-display font-normal leading-tight mb-6 text-2xl md:text-3xl text-[var(--color-text-primary)]">
                     {activeItem.title}
                   </h3>
-                  <p className="leading-relaxed text-[var(--color-text-secondary)]">
+                  <p className="leading-relaxed text-[var(--color-text-secondary)] mb-6">
                     {activeItem.description}
                   </p>
+                  {activeItem.href && (
+                    <Link
+                      href={activeItem.href}
+                      className="inline-flex items-center gap-1.5 text-xs font-semibold tracking-widest uppercase transition-opacity hover:opacity-70 text-[var(--color-accent)]"
+                    >
+                      <span>{activeItem.linkText}</span>
+                    </Link>
+                  )}
                 </motion.div>
               </AnimatePresence>
 

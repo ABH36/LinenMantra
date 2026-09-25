@@ -56,7 +56,7 @@ export default function Header() {
                 alt="Linen Mantra"
                 width={1536}
                 height={1024}
-                priority
+                loading="eager"
                 sizes="(max-width: 768px) 140px, 280px"
                 className="h-[70px] md:h-[140px] w-auto transition-all duration-300"
                 style={{ filter: "none" }}

@@ -36,9 +36,10 @@ export default function ArtAndScience() {
             <Image
               src={CLD.expert.expert1}
               alt="Linen weaving mill"
-              fill
+              width={800}
+              height={600}
               sizes="(max-width: 1024px) calc(100vw - 3rem), 50vw"
-              className="object-cover"
+              className="w-full h-full object-cover"
             />
           </motion.div>
 
@@ -67,6 +68,9 @@ export default function ArtAndScience() {
               35+ Years of
               <br />
               Textile Expertise
+              <span className="block text-[var(--color-accent)] font-normal text-sm md:text-base mt-2.5 tracking-widest normal-case">
+                Premium Linen Fabric Manufacturer & Exporter
+              </span>
             </motion.h2>
 
             {/* Description */}

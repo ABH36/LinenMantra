@@ -30,7 +30,7 @@ export default function MillVideoCard() {
           alt="Linen Mantra"
           width={1536}
           height={1024}
-          priority
+          sizes="300px"
           className="h-[140px] md:h-[200px] w-auto transition-all duration-300"
           style={{
             filter: "brightness(0) invert(1)",
@@ -45,6 +45,7 @@ export default function MillVideoCard() {
         muted
         loop
         playsInline
+        preload="none"
         className="absolute inset-0 w-full h-full object-cover"
         style={{
           opacity: showVideo ? 1 : 0,

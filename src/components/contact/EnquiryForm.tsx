@@ -1,7 +1,9 @@
 "use client";
 
-import { useState, useRef, FormEvent } from "react";
+import { useState, useRef, useEffect, FormEvent } from "react";
+import Link from "next/link";
 import FadeInOnScroll from "@/components/shared/FadeInOnScroll";
+import { trackLead } from "@/lib/analytics";
 
 type EnquiryFormData = {
   name: string;
@@ -43,6 +45,28 @@ export default function EnquiryForm() {
   const [errors, setErrors] = useState<Partial<Record<keyof EnquiryFormData, string>>>({});
   const [focused, setFocused] = useState<string | null>(null);
 
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const params = new URLSearchParams(window.location.search);
+    const prod = params.get("product");
+    const interestParam = params.get("interest");
+    if (prod && formRef.current) {
+      const msgInput = formRef.current.elements.namedItem("message") as HTMLTextAreaElement | null;
+      if (msgInput && !msgInput.value) {
+        msgInput.value = `I would like to request swatches and bulk pricing details for ${prod}.`;
+      }
+      const interestSelect = formRef.current.elements.namedItem("interest") as HTMLSelectElement | null;
+      if (interestSelect) {
+        interestSelect.value = "Sampling Request";
+      }
+    } else if (interestParam && formRef.current) {
+      const interestSelect = formRef.current.elements.namedItem("interest") as HTMLSelectElement | null;
+      if (interestSelect) {
+        interestSelect.value = interestParam;
+      }
+    }
+  }, []);
+
   function validate(data: EnquiryFormData): boolean {
     const errs: typeof errors = {};
     if (!data.name.trim()) errs.name = "Name is required";
@@ -80,6 +104,10 @@ export default function EnquiryForm() {
       if (!res.ok) throw new Error();
       setStatus("success");
       formRef.current.reset();
+      trackLead({
+        lead_type: interest || "General Enquiry",
+        method: "enquiry_form",
+      });
     } catch {
       setStatus("error");
     }
@@ -105,9 +133,9 @@ export default function EnquiryForm() {
               <path d="M4 11L9 16L18 7" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </div>
-          <h3 className="font-display font-normal mb-3 text-[var(--text-h3)] text-[var(--color-text-primary)]">
+          <h2 className="font-display font-normal mb-3 text-[var(--text-h3)] text-[var(--color-text-primary)]">
             Enquiry Sent
-          </h3>
+          </h2>
           <p className="text-sm max-w-xs text-[var(--color-text-secondary)]">
             Thank you for reaching out. Our team will review your enquiry and respond within 1–2 business days.
           </p>
@@ -119,9 +147,9 @@ export default function EnquiryForm() {
   return (
     <FadeInOnScroll direction="up" delay={0.1} className="h-full">
       <div className="h-full p-8 md:p-10 border border-[var(--color-border)] bg-[var(--color-bg-primary)]">
-        <h3 className="font-display font-normal mb-1 text-[var(--text-h3)] text-[var(--color-text-primary)]">
+        <h2 className="font-display font-normal mb-1 text-[var(--text-h3)] text-[var(--color-text-primary)]">
           Send an Enquiry
-        </h3>
+        </h2>
         <p className="text-sm mb-8 text-[var(--color-text-muted)]">
           Fields marked with <span className="text-[var(--color-accent)]">*</span> are required.
         </p>
@@ -271,6 +299,18 @@ export default function EnquiryForm() {
               We respond within 1–2 business days.
             </p>
           </div>
+
+          {/* Privacy & terms notice */}
+          <p className="text-[11px] leading-relaxed text-[var(--color-text-muted)]">
+            By submitting this enquiry, you agree to our{" "}
+            <Link href="/privacy-policy" className="underline hover:text-[var(--color-text-primary)] transition-colors">
+              Privacy Policy
+            </Link>{" "}
+            and{" "}
+            <Link href="/terms" className="underline hover:text-[var(--color-text-primary)] transition-colors">
+              Terms of Service
+            </Link>.
+          </p>
 
           {status === "error" && (
             <p className="text-sm p-4" style={{ backgroundColor: "var(--color-error-bg)", color: "var(--color-error)", border: "1px solid var(--color-error-border)" }}>

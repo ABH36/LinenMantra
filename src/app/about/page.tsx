@@ -5,17 +5,32 @@ import WeavingExcellence from "@/components/about/WeavingExcellence";
 import WhatWeCreate from "@/components/about/WhatWeCreate";
 import OurVision from "@/components/about/OurVision";
 import ContactCTABand from "@/components/shared/ContactCTABand";
+import JsonLd from "@/components/shared/JsonLd";
 import { CLD } from "@/lib/cloudinary";
+import { pageMetadata, webPageJsonLd } from "@/lib/seo";
+
+const TITLE = "About Linen Mantra | Premium Linen Fabric Maker";
+const DESCRIPTION =
+  "Learn about Linen Mantra's 35+ year journey — premium linen fabric manufacturer founded by Vipul Raichura with weaving facilities in Navsari, Gujarat.";
 
 export const metadata: Metadata = {
-  title: "About Us",
-  description:
-    "Learn about Linen Mantra's 35+ year journey — from a textile trading venture to one of India's leading premium linen fabric manufacturers. Founded by Vipul Raichura, manufacturing in Navsari, Gujarat.",
+  title: { absolute: TITLE },
+  ...pageMetadata({ title: TITLE, description: DESCRIPTION, path: "/about", imageAlt: "About Linen Mantra" }),
 };
 
 export default function AboutPage() {
   return (
     <>
+      <JsonLd
+        data={webPageJsonLd({
+          type: "AboutPage",
+          name: TITLE,
+          description: DESCRIPTION,
+          path: "/about",
+          breadcrumb: [{ name: "About", path: "/about" }],
+        })}
+      />
+
       {/* Page hero */}
       <PageHero
         label="A Legacy of Linen Excellence"
@@ -23,6 +38,7 @@ export default function AboutPage() {
         subText="35+ years of craftsmanship, manufacturing expertise, and an unwavering commitment to quality — from Mumbai to global markets."
         lightImage
         image={CLD.about.heroBanner}
+        imageAlt="Folded pure linen fabrics in natural ecru, mustard, olive and brown with a Linen Mantra swing tag and a cone of linen yarn"
       />
 
       {/* Our Story — company narrative + leadership */}

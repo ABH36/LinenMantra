@@ -110,9 +110,10 @@ export default function FlaxToFabric() {
               <Image
                 src={step.image}
                 alt={step.label}
-                fill
+                width={600}
+                height={700}
                 sizes="(max-width: 768px) 50vw, 20vw"
-                className="object-cover object-center"
+                className="absolute inset-0 w-full h-full object-cover object-center"
                 style={{
                   transform:  isActive ? "scale(1.06)" : "scale(1)",
                   transition: "transform 0.9s cubic-bezier(0.25, 0.1, 0.25, 1)",
@@ -211,7 +212,8 @@ export default function FlaxToFabric() {
             key={step.id}
             onClick={() => setActive(i)}
             aria-label={step.label}
-            style={{ background: "none", border: "none", padding: "4px", cursor: "pointer" }}
+            // Visual size unchanged; padding/negative margin give a 24px tap area.
+            style={{ background: "none", border: "none", padding: "11px 8px", margin: "-7px -4px", cursor: "pointer" }}
           >
             <span
               className="block rounded-full"

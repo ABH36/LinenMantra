@@ -4,14 +4,17 @@ import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 import ProductFilter from "./ProductFilter";
 import ProductCard from "./ProductCard";
+import CategoryGuideSection from "./CategoryGuideSection";
 import FadeInOnScroll from "@/components/shared/FadeInOnScroll";
 import {
+  categoryGuide,
   categoryHref,
   categoryLabel,
   productsByCategory,
   type ProductCategory,
 } from "@/data/products";
 import { CLD } from "@/lib/cloudinary";
+
 
 export default function ProductsSection({
   activeCategory,
@@ -20,6 +23,10 @@ export default function ProductsSection({
 }) {
   // The URL segment is the single source of truth for the active filter.
   const filtered = productsByCategory(activeCategory);
+  // categoryGuide only has keys for shirting/suiting/gift-packing, not "all"
+  const guide = activeCategory !== "all"
+    ? categoryGuide[activeCategory as Exclude<ProductCategory, "all">]
+    : null;
 
   return (
     <>
@@ -92,6 +99,15 @@ export default function ProductsSection({
           )}
         </div>
       </section>
+
+      {/* ── Buying guide + FAQ ──────────────────────────────── */}
+      {guide && (
+        <CategoryGuideSection
+          category={categoryLabel(activeCategory)}
+          guide={guide.guide}
+          faqs={guide.faqs}
+        />
+      )}
 
     </>
   );

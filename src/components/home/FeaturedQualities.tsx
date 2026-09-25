@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import FadeInOnScroll from "@/components/shared/FadeInOnScroll";
 import AccentDivider from "@/components/shared/AccentDivider";
-import { featuredProducts } from "@/data/products";
+import { featuredProducts, productHref, productImageAlt } from "@/data/products";
 
 export default function FeaturedQualities() {
 
@@ -21,7 +21,7 @@ export default function FeaturedQualities() {
                 className="font-display font-normal leading-tight text-[var(--color-text-primary)]"
                 style={{ fontSize: "clamp(1.75rem, 3vw, 2.75rem)" }}
               >
-                Featured Fabric Qualities
+                Our Linen Fabric Collections for Global Fashion Brands
               </h2>
               <AccentDivider className="mt-1" />
             </div>
@@ -29,7 +29,7 @@ export default function FeaturedQualities() {
           <FadeInOnScroll direction="up" delay={0.1} className="shrink-0">
             <Link
               href="/products/all"
-              className="inline-flex items-center gap-2 text-sm font-medium tracking-widest uppercase transition-opacity hover:opacity-60 group text-[var(--color-text-secondary)]"
+              className="inline-flex items-center gap-2 py-1 -my-1 text-sm font-medium tracking-widest uppercase transition-opacity hover:opacity-60 group text-[var(--color-text-secondary)]"
             >
               <span>View All Products</span>
               <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
@@ -44,13 +44,14 @@ export default function FeaturedQualities() {
               <article className="group flex flex-col h-full bg-white border border-[var(--color-border)] shadow-sm hover:shadow-lg transition-shadow duration-500">
 
                 {/* Image */}
-                <div className="relative w-full overflow-hidden aspect-[5/3]">
+                <Link href={productHref(product)} className="relative w-full overflow-hidden aspect-[5/3] block" tabIndex={-1} aria-hidden="true">
                   <Image
                     src={product.image}
-                    alt={product.name}
-                    fill
+                    alt={productImageAlt(product)}
+                    width={600}
+                    height={360}
                     sizes="(max-width: 768px) 100vw, 33vw"
-                    className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
+                    className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
                   />
                   {/* Top gradient for badge */}
                   <div
@@ -81,23 +82,23 @@ export default function FeaturedQualities() {
                       {product.leaRange}
                     </span>
                   )}
-                </div>
+                </Link>
 
                 {/* Card body */}
                 <div className="flex items-center justify-between gap-4 px-5 py-4">
-                  <div>
-                    <h3 className="font-display font-normal leading-tight text-xl md:text-2xl text-[var(--color-text-primary)]">
+                  <Link href={productHref(product)} className="block group/name">
+                    <h3 className="font-display font-normal leading-tight text-xl md:text-2xl text-[var(--color-text-primary)] group-hover/name:text-[var(--color-accent)] transition-colors">
                       {product.name}
                     </h3>
                     {product.composition && (
                       <p className="text-label mt-0.5 text-[var(--color-accent)]">{product.composition}</p>
                     )}
-                  </div>
+                  </Link>
                   <Link
-                    href="/contact#enquiry"
-                    className="inline-flex items-center gap-1.5 text-xs font-semibold tracking-widest uppercase transition-all duration-300 hover:opacity-70 group/link shrink-0 text-[var(--color-text-primary)]"
+                    href={productHref(product)}
+                    className="inline-flex items-center gap-1.5 py-1 -my-1 text-xs font-semibold tracking-widest uppercase transition-all duration-300 hover:opacity-70 group/link shrink-0 text-[var(--color-text-primary)]"
                   >
-                    <span>Get a Quote</span>
+                    <span>View Quality</span>
                     <span className="transition-transform duration-300 group-hover/link:translate-x-1">→</span>
                   </Link>
                 </div>

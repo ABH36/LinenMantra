@@ -11,6 +11,8 @@ type Props = {
   subText?: string;
   dark?: boolean;
   image?: string;
+  /** Describes the hero photo; falls back to the heading. */
+  imageAlt?: string;
   lightImage?: boolean;
 };
 
@@ -20,6 +22,7 @@ export default function PageHero({
   subText,
   dark = false,
   image,
+  imageAlt,
   lightImage = false,
 }: Props) {
   const hasImage = !!image;
@@ -45,11 +48,12 @@ export default function PageHero({
           <div className="relative w-full" style={{ aspectRatio: "16/9" }}>
             <Image
               src={image}
-              alt=""
-              fill
+              alt={imageAlt ?? heading}
+              width={1600}
+              height={900}
               sizes="100vw"
-              className="object-cover object-center"
-              priority
+              className="w-full h-full object-cover object-center"
+              fetchPriority="high"
             />
           </div>
         )}
@@ -111,11 +115,12 @@ export default function PageHero({
           <>
             <Image
               src={image}
-              alt=""
-              fill
+              alt={imageAlt ?? heading}
+              width={1920}
+              height={1080}
               sizes="100vw"
-              className="object-cover object-center"
-              priority
+              className="absolute inset-0 w-full h-full object-cover object-center"
+              fetchPriority="high"
             />
             {!lightImage && (
               <div
@@ -135,15 +140,20 @@ export default function PageHero({
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
           >
-            <h1
+            {/* Not an <h1>: the mobile block above carries the page's single H1.
+                role/aria-level keep it a level-1 heading for screen readers on desktop. */}
+            <p
+              role="heading"
+              aria-level={1}
               className="font-display font-normal leading-tight"
               style={{
                 color: headingColor,
                 fontSize: "clamp(2.75rem, 5.5vw, 5rem)",
+                letterSpacing: "-0.01em",
               }}
             >
               {heading}
-            </h1>
+            </p>
             {label && (
               <p
                 className="font-display italic leading-snug mt-2"

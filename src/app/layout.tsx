@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Inter } from "next/font/google";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import WebVitals from "@/components/shared/WebVitals";
+import ContactClickTracker from "@/components/shared/ContactClickTracker";
 
 const cormorant = Cormorant_Garamond({
   variable: "--font-cormorant",
@@ -18,6 +21,11 @@ const inter = Inter({
   display: "swap",
 });
 
+const googleVerificationRaw = process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION;
+const googleVerification = googleVerificationRaw
+  ? (googleVerificationRaw.match(/content=["']([^"']+)["']/)?.[1] || googleVerificationRaw).trim()
+  : undefined;
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://linenmantra.com"),
   title: {
@@ -26,26 +34,27 @@ export const metadata: Metadata = {
   },
   description:
     "India's leading manufacturer of premium linen and linen blend fabrics. Serving fashion brands, garment manufacturers, designers, and export markets worldwide. 35+ years of textile expertise.",
-  keywords: [
-    "linen fabric manufacturer",
-    "premium linen",
-    "linen shirting",
-    "linen suiting",
-    "linen blends",
-    "textile manufacturer India",
-    "linen export India",
-    "Navsari Gujarat textile",
-  ],
   authors: [{ name: "Linen Mantra" }],
   creator: "Linen Mantra",
+  icons: {
+    // favicon.ico holds 16/32/48px; icon.png (src/app/icon.png) is the 192px mark Google Search prefers.
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icon.png", type: "image/png", sizes: "192x192" },
+    ],
+    apple: "/apple-touch-icon.png",
+  },
+  verification: {
+    google: googleVerification,
+  },
   openGraph: {
     type: "website",
     locale: "en_IN",
     url: "https://linenmantra.com",
     siteName: "Linen Mantra",
-    title: "Linen Mantra — Premium Linen Fabric Manufacturer",
+    title: "Linen Fabric Manufacturer in India | Linen Mantra",
     description:
-      "16+ years of linen manufacturing expertise. Serving global brands, designers, and garment manufacturers.",
+      "India's leading manufacturer of premium linen and linen blend fabrics. 35+ years of textile expertise. Serving global brands, designers, and garment manufacturers.",
     images: [
       {
         url: "/og-image.jpg",
@@ -57,9 +66,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Linen Mantra — Premium Linen Fabric Manufacturer",
+    title: "Linen Fabric Manufacturer in India | Linen Mantra",
     description:
-      "16+ years of linen manufacturing. Premium shirting, suiting & blends for global brands.",
+      "India's leading manufacturer of premium linen and linen blend fabrics. 35+ years of textile expertise. Serving global brands, designers, and garment manufacturers.",
     images: ["/og-image.jpg"],
   },
   robots: {
@@ -80,29 +89,107 @@ const jsonLd = {
       "@type": "Organization",
       "@id": "https://linenmantra.com/#organization",
       name: "Linen Mantra",
+      legalName: "Silverline Fashion Fabrics Ltd.",
       url: "https://linenmantra.com",
       logo: {
         "@type": "ImageObject",
-        url: "https://linenmantra.com/logo.png",
+        url: "https://linenmantra.com/linen-mantra-logo.png",
+        width: 512,
+        height: 512,
       },
       description:
-        "Premium linen and linen blend fabric manufacturer based in India. Serving global fashion brands, garment manufacturers, and designers since 2010.",
+        "India's leading manufacturer of premium linen and linen blend fabrics. Serving global fashion brands, garment manufacturers, and designers.",
       foundingDate: "2010",
+      telephone: "+91-22-4500-5662",
+      email: "info@linenmantra.com",
       address: {
         "@type": "PostalAddress",
-        addressCountry: "IN",
-        addressLocality: "Bhiwandi",
+        streetAddress: "A-111, Kewal Industrial Estate, Lower Parel (West)",
+        addressLocality: "Mumbai",
         addressRegion: "Maharashtra",
+        postalCode: "400013",
+        addressCountry: "IN",
       },
-      contactPoint: {
-        "@type": "ContactPoint",
-        contactType: "sales",
-        email: "info@linenmantra.com",
-        availableLanguage: ["English", "Hindi"],
-      },
+      contactPoint: [
+        {
+          "@type": "ContactPoint",
+          contactType: "sales",
+          telephone: "+91-22-4500-5662",
+          email: "info@linenmantra.com",
+          availableLanguage: ["English", "Hindi"],
+        },
+      ],
+      subOrganization: [
+        { "@id": "https://linenmantra.com/#office-lower-parel" },
+        { "@id": "https://linenmantra.com/#office-kalbadevi" },
+      ],
       sameAs: [
-        "https://www.instagram.com/linenmantra",
-        "https://www.linkedin.com/company/linenmantra",
+        "https://www.instagram.com/linen_mantra",
+        "https://www.linkedin.com/company/linen-mantra/",
+      ],
+    },
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://linenmantra.com/#office-lower-parel",
+      name: "Linen Mantra — Head Office (Lower Parel)",
+      parentOrganization: { "@id": "https://linenmantra.com/#organization" },
+      url: "https://linenmantra.com/contact",
+      telephone: "+91-22-4500-5662",
+      email: "info@linenmantra.com",
+      image: "https://linenmantra.com/linen-mantra-logo.png",
+      priceRange: "$$",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "A-111, Kewal Industrial Estate, Lower Parel (West)",
+        addressLocality: "Mumbai",
+        addressRegion: "Maharashtra",
+        postalCode: "400013",
+        addressCountry: "IN",
+      },
+      geo: {
+        "@type": "GeoCoordinates",
+        latitude: 18.9971884,
+        longitude: 72.8267863,
+      },
+      openingHoursSpecification: [
+        {
+          "@type": "OpeningHoursSpecification",
+          dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+          opens: "10:00",
+          closes: "19:00",
+        },
+      ],
+    },
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://linenmantra.com/#office-kalbadevi",
+      name: "Linen Mantra — Branch Office (Kalbadevi)",
+      parentOrganization: { "@id": "https://linenmantra.com/#organization" },
+      url: "https://linenmantra.com/contact",
+      telephone: "+91-22-4568-7288",
+      email: "info@linenmantra.com",
+      image: "https://linenmantra.com/linen-mantra-logo.png",
+      priceRange: "$$",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "#384-M Building, Shop No. 1, Ground Floor, Dabholkar Wadi, Kalbadevi Road",
+        addressLocality: "Mumbai",
+        addressRegion: "Maharashtra",
+        postalCode: "400002",
+        addressCountry: "IN",
+      },
+      geo: {
+        "@type": "GeoCoordinates",
+        latitude: 18.9482,
+        longitude: 72.8286,
+      },
+      openingHoursSpecification: [
+        {
+          "@type": "OpeningHoursSpecification",
+          dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+          opens: "10:00",
+          closes: "19:00",
+        },
       ],
     },
     {
@@ -120,6 +207,8 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const gaId = process.env.NEXT_PUBLIC_GA_ID;
+
   return (
     <html
       lang="en"
@@ -130,26 +219,6 @@ export default function RootLayout({
         {/* Establish early connection to Cloudinary CDN */}
         <link rel="preconnect" href="https://res.cloudinary.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://res.cloudinary.com" />
-        {/* Preload LCP hero image (mobile) — imageSrcSet lets browser pick right size for DPR */}
-        <link
-          rel="preload"
-          as="image"
-          fetchPriority="high"
-          href={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/f_auto,fl_lossy,c_limit,w_640,q_auto/linen-mantra/hero/herobanner2mob.png`}
-          imageSrcSet={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/f_auto,fl_lossy,c_limit,w_412,q_auto/linen-mantra/hero/herobanner2mob.png 412w, https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/f_auto,fl_lossy,c_limit,w_512,q_auto/linen-mantra/hero/herobanner2mob.png 512w, https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/f_auto,fl_lossy,c_limit,w_640,q_auto/linen-mantra/hero/herobanner2mob.png 640w, https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/f_auto,fl_lossy,c_limit,w_750,q_auto/linen-mantra/hero/herobanner2mob.png 750w, https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/f_auto,fl_lossy,c_limit,w_828,q_auto/linen-mantra/hero/herobanner2mob.png 828w`}
-          imageSizes="100vw"
-          media="(max-width: 767px)"
-        />
-        {/* Preload LCP hero image (desktop) */}
-        <link
-          rel="preload"
-          as="image"
-          fetchPriority="high"
-          href={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/f_auto,fl_lossy,c_limit,w_1920,q_auto/linen-mantra/hero/herobanner2.jpg`}
-          imageSrcSet={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/f_auto,fl_lossy,c_limit,w_1080,q_auto/linen-mantra/hero/herobanner2.jpg 1080w, https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/f_auto,fl_lossy,c_limit,w_1200,q_auto/linen-mantra/hero/herobanner2.jpg 1200w, https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/f_auto,fl_lossy,c_limit,w_1920,q_auto/linen-mantra/hero/herobanner2.jpg 1920w`}
-          imageSizes="100vw"
-          media="(min-width: 768px)"
-        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -160,8 +229,14 @@ export default function RootLayout({
       >
         <a href="#main-content" className="skip-nav">Skip to main content</a>
         <Header />
-        <main id="main-content" className="flex-1">{children}</main>
+        {/* overflow-x-clip: slide-in animations start off-screen and would otherwise widen the
+            mobile layout viewport. Set on <main>, not <body>, because body overflow propagates to
+            the viewport; clip (unlike hidden) keeps position: sticky working. */}
+        <main id="main-content" className="flex-1 overflow-x-clip">{children}</main>
         <Footer />
+        {gaId && <GoogleAnalytics gaId={gaId} />}
+        {gaId && <WebVitals />}
+        {gaId && <ContactClickTracker />}
       </body>
     </html>
   );

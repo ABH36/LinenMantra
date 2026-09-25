@@ -28,14 +28,14 @@ export default function MillImageSlider() {
           key={src}
           src={src}
           alt={`Linen Mantra weaving mill ${i + 1}`}
-          fill
+          width={800}
+          height={600}
           sizes="(max-width: 1024px) 100vw, 50vw"
-          className="object-cover object-center"
+          className="absolute inset-0 w-full h-full object-cover object-center"
           style={{
             opacity: i === current ? 1 : 0,
             transition: "opacity 0.85s ease",
           }}
-          priority={i === 0}
         />
       ))}
 

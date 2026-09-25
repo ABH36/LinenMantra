@@ -8,11 +8,11 @@ const isDev = process.env.NODE_ENV === "development";
 // Cloudinary CDN whitelisted for images/video. Google Maps whitelisted for embed iframe.
 const CSP = [
   "default-src 'self'",
-  `script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ""}`,
+  `script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://*.google-analytics.com${isDev ? " 'unsafe-eval'" : ""}`,
   "style-src 'self' 'unsafe-inline'",
-  "img-src 'self' data: blob: https://res.cloudinary.com",
+  "img-src 'self' data: blob: https://res.cloudinary.com https://www.googletagmanager.com https://*.google-analytics.com",
   "font-src 'self'",
-  `connect-src 'self'${isDev ? " ws: wss:" : ""}`,
+  `connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com${isDev ? " ws: wss:" : ""}`,
   "media-src 'self' https://res.cloudinary.com",
   "frame-src https://maps.google.com https://www.google.com",
   "frame-ancestors 'none'",
@@ -44,6 +44,20 @@ const nextConfig: NextConfig = {
     formats: ["image/avif", "image/webp"],
     minimumCacheTTL: 31536000,
     deviceSizes: [412, 512, 640, 750, 828, 1080, 1200, 1920, 2048],
+  },
+
+  // ── Permanent 301 redirects for legacy URLs and single-hop routes ──
+  async redirects() {
+    return [
+      { source: "/index.:ext(php|html)", destination: "/", permanent: true },
+      { source: "/:p(about-us.php|aboutus.html|infrastructure.php)", destination: "/about", permanent: true },
+      { source: "/:p(contact-us.php|contactus.html|enquiry.php|enquiry.html)", destination: "/contact", permanent: true },
+      { source: "/products.html", destination: "/products/all", permanent: true },
+      { source: "/:p(regular-shirting.php|linen-new-arrival-shirting.php)", destination: "/products/shirting", permanent: true },
+      { source: "/linen-regular-suiting.php", destination: "/products/suiting", permanent: true },
+      { source: "/gift-packing.php", destination: "/products/gift-packing", permanent: true },
+      { source: "/products", destination: "/products/all", permanent: true },
+    ];
   },
 
   // ── LM-003: Apply security headers to all routes ─────────
