@@ -21,7 +21,8 @@ export default function FeaturedQualities() {
             >
               Our Premium Linen Fabric Collections &amp; Featured Fabric Qualities for Global Fashion Brands.
             </h2>
-            <div className="text-left">
+            {/* Centred while the title wraps (below xl); starts under the title once it is one line */}
+            <div className="text-center xl:text-left">
               <AccentDivider className="mt-1" />
             </div>
           </div>
