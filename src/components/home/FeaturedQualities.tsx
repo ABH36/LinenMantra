@@ -12,14 +12,19 @@ export default function FeaturedQualities() {
 
         {/* Heading — centred, one line on desktop */}
         <FadeInOnScroll direction="up" className="mb-8 text-center">
-          <h2
-            className="font-display font-normal leading-tight text-[var(--color-text-primary)] xl:whitespace-nowrap"
-            // 1.75rem is the largest size at which this line fits the ~1150px container on one line
-            style={{ fontSize: "1.75rem" }}
-          >
-            Our Premium Linen Fabric Collections &amp; Featured Fabric Qualities for Global Fashion Brands.
-          </h2>
-          <AccentDivider className="mt-1" />
+          {/* inline-block shrinks to the title's width, so the divider starts where the title starts */}
+          <div className="inline-block">
+            <h2
+              className="font-display font-normal leading-tight text-[var(--color-text-primary)] xl:whitespace-nowrap"
+              // 1.75rem is the largest size at which this line fits the ~1150px container on one line
+              style={{ fontSize: "1.75rem" }}
+            >
+              Our Premium Linen Fabric Collections &amp; Featured Fabric Qualities for Global Fashion Brands.
+            </h2>
+            <div className="text-left">
+              <AccentDivider className="mt-1" />
+            </div>
+          </div>
         </FadeInOnScroll>
 
         {/* Product cards */}

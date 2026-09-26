@@ -44,7 +44,7 @@ export default function ArtAndScience() {
           </motion.div>
 
           {/* ── Right — content ── */}
-          <div className="flex flex-col justify-center">
+          <div className="@container flex flex-col justify-center">
 
             {/* Tag */}
             <motion.p className="text-label mb-1" {...fadeUp(0.15)}>
@@ -60,14 +60,13 @@ export default function ArtAndScience() {
             </motion.div>
 
             {/* Heading */}
+            {/* md+: sized to the column (cqi) so the sentence always sits on exactly two balanced lines */}
             <motion.h2
-              className="font-display font-normal leading-tight mb-6 uppercase text-[var(--color-text-primary)]"
-              style={{ fontSize: "clamp(1.75rem, 3vw, 2.75rem)", letterSpacing: "-0.01em" }}
+              className="font-display font-normal leading-tight mb-6 uppercase text-[var(--color-text-primary)] text-[1.5rem] md:text-[length:3.55cqi]"
+              style={{ letterSpacing: "-0.01em", textWrap: "balance" }}
               {...fadeUp(0.28)}
             >
-              With 35+ Years of Textile Expertise,
-              <br />
-              We Are a Premium Linen Fabric Manufacturer & Exporter from India.
+              With 35+ Years of Textile Expertise, We Are a Premium Linen Fabric Manufacturer & Exporter from India.
             </motion.h2>
 
             {/* Description */}
