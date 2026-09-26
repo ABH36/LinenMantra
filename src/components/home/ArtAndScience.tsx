@@ -60,10 +60,11 @@ export default function ArtAndScience() {
             </motion.div>
 
             {/* Heading */}
-            {/* md+: sized to the column (cqi) so the sentence always sits on exactly two balanced lines */}
+            {/* Same type as the collections title (1.75rem). md+: capped by the column width (cqi)
+                so the sentence always sits on exactly two balanced lines */}
             <motion.h2
-              className="font-display font-normal leading-tight mb-6 uppercase text-[var(--color-text-primary)] text-[1.5rem] md:text-[length:3.55cqi]"
-              style={{ letterSpacing: "-0.01em", textWrap: "balance" }}
+              className="font-display font-normal leading-tight mb-6 text-[var(--color-text-primary)] text-[1.75rem] md:text-[length:min(1.75rem,4.65cqi)]"
+              style={{ textWrap: "balance" }}
               {...fadeUp(0.28)}
             >
               With 35+ Years of Textile Expertise, We Are a Premium Linen Fabric Manufacturer & Exporter from India.
