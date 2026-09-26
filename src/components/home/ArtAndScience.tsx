@@ -65,12 +65,9 @@ export default function ArtAndScience() {
               style={{ fontSize: "clamp(1.75rem, 3vw, 2.75rem)", letterSpacing: "-0.01em" }}
               {...fadeUp(0.28)}
             >
-              35+ Years of
+              With 35+ Years of Textile Expertise,
               <br />
-              Textile Expertise
-              <span className="block text-[var(--color-accent)] font-normal text-sm md:text-base mt-2.5 tracking-widest normal-case">
-                Premium Linen Fabric Manufacturer & Exporter
-              </span>
+              We Are a Premium Linen Fabric Manufacturer & Exporter from India.
             </motion.h2>
 
             {/* Description */}
