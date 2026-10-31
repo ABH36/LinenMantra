@@ -250,6 +250,7 @@ export default async function ProductDetailPage({
                   </p>
                 </div>
 
+                {/* TODO: Fabric Specifications hidden until client provides final data.
                 {specRows.length > 0 && (
                   <div>
                     <p className="text-[0.75rem] tracking-[0.18em] uppercase mb-3 text-[var(--color-text-muted)]">
@@ -284,6 +285,7 @@ export default async function ProductDetailPage({
                     </table>
                   </div>
                 )}
+                */}
 
                 <div className="flex flex-col sm:flex-row gap-3 mt-2">
                   <Link
