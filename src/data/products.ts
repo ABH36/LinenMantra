@@ -36,10 +36,8 @@ export const products: Product[] = [
     name: "Limestone",
     category: "shirting",
     leaRange: "60 LEA",
-    composition: "100% Linen",
-    tagline: "A natural muted finish — crafted for premium menswear.",
     description:
-      "A refined, breathable shirting fabric with a natural muted finish — ideal for premium menswear collections.",
+      "Chambray Linen features a distinctive two-tone appearance created by weaving differently coloured yarns, typically a coloured warp with a white or lighter weft, resulting in a subtle, mélange-like texture.",
     image: CLD.products.limestone,
     featured: true,
     specs: {
@@ -58,9 +56,8 @@ export const products: Product[] = [
     category: "shirting",
     composition: "100% Linen",
     leaRange: "60 LEA",
-    tagline: "Exceptional drape and structure for formal tailoring.",
     description:
-      "A sophisticated linen suiting fabric offering exceptional drape and structure for formal tailoring.",
+      "Discover the timeless elegance of 100% Pure Linen, offers exceptional softness, breathability and comfort. A perfect choice for creating premium shirts, dresses and a variety of garments and home furnishings. Expertly woven in India, available in over 70 colours.",
     image: CLD.products.alpino,
     featured: true,
     specs: {
@@ -79,9 +76,8 @@ export const products: Product[] = [
     category: "shirting",
     composition: "Linen-Silk Blend",
     leaRange: "60 LEA",
-    tagline: "Heritage meets luxury — silken hand-feel, linen soul.",
     description:
-      "An exquisite linen fabric with a silken hand-feel — crafted for designers who seek fabric that bridges heritage and luxury.",
+      "An exquisite blend of natural linen elegance and luxurious silk-like softness, offering a beautifully smooth hand-feel and refined texture. This fabric is ideal for premium shirts, dresses, kurtas and statement garments.",
     image: CLD.products.laSetaLinen,
     featured: true,
     specs: {
@@ -98,7 +94,6 @@ export const products: Product[] = [
     id: "rare-lea",
     name: "Rare Lea",
     category: "shirting",
-    composition: "100% Linen",
     tagline: "Rare construction. Superior drape. Bespoke finesse.",
     description:
       "A premium high-count linen suiting with unmatched finesse — delivering rare construction and superior drape for bespoke tailoring.",
@@ -118,7 +113,6 @@ export const products: Product[] = [
     name: "Ireland",
     category: "shirting",
     leaRange: "60 LEA",
-    composition: "100% Linen",
     tagline: "Finest Irish linen tradition — crisp texture, pure breathability.",
     description:
       "Inspired by the finest Irish linen tradition — a pure linen shirting with crisp texture and superior breathability for discerning menswear.",
