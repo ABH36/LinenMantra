@@ -94,9 +94,8 @@ export const products: Product[] = [
     id: "rare-lea",
     name: "Rare Lea",
     category: "shirting",
-    tagline: "Rare construction. Superior drape. Bespoke finesse.",
     description:
-      "A premium high-count linen suiting with unmatched finesse — delivering rare construction and superior drape for bespoke tailoring.",
+      "One of our bestsellers, this fabric is loved for its beautiful natural texture, soft hand-feel and everyday comfort. A versatile and economical choice for creating men's formal and casual shirts, co-ord sets and dresses.",
     image: CLD.products.rareLea,
     specs: {
       gsm: "150–170 GSM",
@@ -113,9 +112,8 @@ export const products: Product[] = [
     name: "Ireland",
     category: "shirting",
     leaRange: "60 LEA",
-    tagline: "Finest Irish linen tradition — crisp texture, pure breathability.",
     description:
-      "Inspired by the finest Irish linen tradition — a pure linen shirting with crisp texture and superior breathability for discerning menswear.",
+      "A premium fabric with a beautifully crisp texture and superior breathability. Perfect for menswear & womenswear shirts, dresses, co-ord sets and contemporary garments.",
     image: CLD.products.ireland,
     specs: {
       gsm: "125–145 GSM",
@@ -132,9 +130,8 @@ export const products: Product[] = [
     name: "Euro Style",
     category: "suiting",
     leaRange: "25 LEA",
-    tagline: "Classic European suiting — refined structure, clean hand-feel.",
     description:
-      "A classic European-inspired linen suiting with refined structure and a clean hand-feel — ideal for formal and semi-formal tailoring.",
+      "A refined linen-rich suiting fabric with a crisp texture, natural elegance and breathable comfort. Ideal for tailored suits, blazers, formal and casual trousers, and separates. Available in our selection of classic colours, with made-to-order options in a colour of your choice.",
     image: CLD.products.euroStyle,
     specs: {
       gsm: "200–220 GSM",
