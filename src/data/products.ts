@@ -132,7 +132,6 @@ export const products: Product[] = [
     name: "Euro Style",
     category: "suiting",
     leaRange: "25 LEA",
-    composition: "100% Linen",
     tagline: "Classic European suiting — refined structure, clean hand-feel.",
     description:
       "A classic European-inspired linen suiting with refined structure and a clean hand-feel — ideal for formal and semi-formal tailoring.",
@@ -151,7 +150,7 @@ export const products: Product[] = [
     id: "foglia",
     name: "Foglia",
     category: "suiting",
-    composition: "100% Linen",
+    leaRange: "25 LEA",
     tagline: "Italian design sensibility meets premium linen craft.",
     description:
       "A lightweight linen suiting with natural texture and elegant drape — where Italian design sensibility meets premium linen craft.",
@@ -171,7 +170,6 @@ export const products: Product[] = [
     name: "Leonard",
     category: "suiting",
     leaRange: "40 LEA",
-    composition: "100% Linen",
     tagline: "Weight, structure, versatility — built for the finest brands.",
     description:
       "A premium high-count linen suiting delivering weight, structure, and versatility — built for brands that demand the finest.",
@@ -210,7 +208,6 @@ export const products: Product[] = [
     id: "coord-set-gift-box",
     name: "Coord Set Linen Gift Box",
     category: "gift-packing",
-    composition: "100% Linen",
     tagline: "Premium curated linen coord set in an elegant gift box.",
     description:
       "A curated linen coord set presented in an elegant gift box — the perfect premium gifting solution for lifestyle and fashion brands.",
@@ -226,7 +223,6 @@ export const products: Product[] = [
     id: "linen-duo-gift-set",
     name: "Linen Duo Gift Set",
     category: "gift-packing",
-    composition: "100% Linen",
     tagline: "Thoughtfully paired linen — beautifully presented.",
     description:
       "A thoughtfully paired duo of premium linen pieces, beautifully packaged — ideal for corporate gifting and retail collections.",
@@ -242,7 +238,6 @@ export const products: Product[] = [
     id: "single-piece-gift-box",
     name: "Single Piece Gift Box",
     category: "gift-packing",
-    composition: "100% Linen",
     tagline: "One piece, refined presentation — the art of gifting.",
     description:
       "A single premium linen piece presented in a refined gift box — perfect for individual gifting with a touch of elegance.",
