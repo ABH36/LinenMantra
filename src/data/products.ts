@@ -187,9 +187,8 @@ export const products: Product[] = [
     category: "suiting",
     leaRange: "60 LEA",
     composition: "100% Linen",
-    tagline: "Standout character — for fashion-forward brands.",
     description:
-      "A distinguished linen suiting with standout character — crafted for fashion-forward brands seeking fabrics that make a statement.",
+      "A premium 100% linen suiting fabric featuring a distinctive texture. Crafted for fashion-forward brands, contemporary tailoring and refined home furnishings. Available in a selection of classic colours, with custom colour options available.",
     image: CLD.products.onStar,
     specs: {
       gsm: "240–260 GSM",
